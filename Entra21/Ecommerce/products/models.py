@@ -6,12 +6,11 @@ class Product(models.Model):
 
     Tags turn the search more easy.
     """
-    name                = models.CharField(max_length=255)
-    desc                = models.CharField(max_length=255)
-    price               = models.DecimalField(max_digits=7, decimal_places=2)
-    PREÇO BY ADRIANO
-    img                 = models.FileField(upload_to='media')
-    #tags                = models.ManyToManyField('modelo', related_name='produtos')
+    nome                = models.CharField(max_length=255)
+    descricao           = models.CharField(max_length=255)
+    preco               = models.DecimalField(max_digits=7, decimal_places=2)
+    imgagem             = models.FileField(upload_to='media')
+    #tags               = models.ManyToManyField('modelo', related_name='produtos')
 
     def __str__(self):
         return self.nome

@@ -8,6 +8,6 @@ class Cart(models.Model):
 
     Each user only can have one cart, and one cart only can have one user.
     """
-    user = models.OneToOneField(MyUser, on_delete=models.CASCADE, related_name='cart')
+    usuario = models.OneToOneField(MyUser, on_delete=models.CASCADE, related_name='cart')
     produtos = models.ManyToManyField(Product, related_name='products')
     
