@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+
+</head>
+<body>
+
+    <header>
+
+    <!-- BARRA DE NAVEGAÇÃO -->
+
+        <nav id="mainNav">
+            <a class="logo" href="#">LOJAO DOS BRUDA</a>
+            <ul class="navBar">
+                <li><div>
+                    <form id="searchBar" method="GET">
+                        <div class="searchInput"><input id="searchBarSubmit" type="text" placeholder="Buscar..."></div>
+                        <div class="searchIcon"><input id="searchIconSubmit" type="submit"></div>
+                    </form>
+                </div></li>
+                <li><a href="#">Olá, Pedro</a></li>
+                <li><a href="#">Carrinho</a></li>
+            </ul>
+        </nav>
+
+    <!-- SUB BARRA DE NAVEGAÇÃO -->
+
+        <nav id="subNav">
+            <ul class="subNavBar">
+                <li><a href="#">MAIS VISITADOS</a></li>
+                <li><a href="#">MAIS COMPRADOS</a></li>
+                <li><a href="#">LANÇAMENTOS</a></li>
+            </ul>
+        </nav>
+    </header>  
+
+    <main>
+
+    <!-- BLOCO DE CONTEÚDO -->
+
+    {% block content %}
+
+    {% endblock %}
+
+    </main>
+
+    <footer>
+
+    <!-- RODAPÉ -->
+
+    <p>Contate-nos</p>
+    
+    <ul class="footerBar">
+        <li><img class="footerIcon" src="{% static 'img/instagram.png' %}"><a href="#">NOSSO INSTAGRAM</a></li>
+        <li><img class="footerIcon" src="{% static 'img/facebook.png' %}"><a href="#">NOSSO FACEBOOK</a></li>
+        <li><img class="footerIcon" src="{% static 'img/tiktok.png' %}"><a href="#">NOSSO TIKTOK</a></li>
+        <li><img class="footerIcon" src="{% static 'img/gmail.png' %}"><a href="#">NOSSO EMAIL</a></li>
+    </ul>
+
+    <!-- <div class="referenciaIcon">Ícones feitos por <a href="https://www.flaticon.com/br/autores/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
+    <div class="referenciaIcon">Ícones feitos por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
+     -->
+    </footer>
+</body>
+</html>
