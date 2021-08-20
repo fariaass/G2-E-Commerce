@@ -9,7 +9,7 @@ Pré-requisitos:
                 - django-rest-framework
                 - django-colorfield
                 - pillow
-                - python
+                - Python
 
 Contribuintes:  
                 - Lucas de Farias Teixeira
@@ -20,7 +20,7 @@ Database: SQLite
 
 Tarefas em aberto:
 
-    -Desenvolver templates
+    -Desenvolver templates e deixa-los responsivos
 
     -Terminar a modelagem de banco de dados
 
