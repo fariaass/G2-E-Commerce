@@ -6,42 +6,42 @@ from rest_framework.authtoken.models import Token
 
 class MyUserManager(BaseUserManager):
     """
-    Custom user manager with the respective functions that create users and superusers.
+    Gerenciador de usuários personalizados que cria e salva usuários e super usuários.
     """
-    def create_user(self, email, username, first_name, last_name, password=None):
+    def create_user(self, email, nome_usuario, primeiro_nome, ultimo_nome, senha=None):
         """
-        Creates and saves a User with the given email, username, first_name, last_name and password.
+        Cria e salva um usuário com o email, nome de usuário, primeiro nome e ultimo nome fornecidos.
         """
         if not email:
-            raise ValueError('Users must have an email address')
-        if not username:
-            raise ValueError('Users must have an username')
-        if not first_name:
-            raise ValueError('Users must have a first name')
-        if not last_name:
-            raise ValueError('Users must have a last name')
+            raise ValueError('Usuários devem ter um email')
+        if not nome_usuario:
+            raise ValueError('Usuários devem ter um nome de usuário')
+        if not primeiro_nome:
+            raise ValueError('Usuários devem ter um primeiro nome')
+        if not ultimo_nome:
+            raise ValueError('Usuários devem ter um último nome')
 
         user = self.model(
             email=self.normalize_email(email),
-            username=username,
-            first_name=first_name,
-            last_name=last_name,
+            nome_usuario=nome_usuario,
+            primeiro_nome=primeiro_nome,
+            ultimo_nome=ultimo_nome,
         )
 
-        user.set_password(password)
+        user.set_password(senha)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, username, first_name, last_name, password=None):
+    def create_superuser(self, email, nome_usuario, primeiro_nome, ultimo_nome, senha=None):
         """
-        Creates and saves a superuser with the given email, username, first_name, last_name and password.
+        Cira e salva um super usuário com email, nome de usuário, primeiro nome e último nome fornecidos.
         """
         user = self.create_user(
             email,
-            password=password,
-            username=username,
-            first_name=first_name,
-            last_name=last_name,
+            senha=senha,
+            nome_usuario=nome_usuario,
+            primeiro_nome=primeiro_nome,
+            ultimo_nome=ultimo_nome,
         )
         user.is_admin = True
         user.is_superuser = True
@@ -51,28 +51,28 @@ class MyUserManager(BaseUserManager):
 
 class MyUser(AbstractBaseUser):
     """
-    Custom user model with the respective fields.
+    Modelo de usuário personalizado com seus respectivos campos.
     """
     email                   = models.EmailField(verbose_name='email',max_length=60, unique=True)
-    username                = models.CharField(max_length=40)
-    first_name              = models.CharField(max_length=255)
-    last_name               = models.CharField(max_length=255)
-    date_joined             = models.DateTimeField(verbose_name='date joined', auto_now_add=True)
-    last_login              = models.DateTimeField(verbose_name='last login', auto_now=True)
-    is_admin                = models.BooleanField(default=False)
-    is_active               = models.BooleanField(default=True)
+    nome_usuario            = models.CharField(max_length=40)
+    primeiro_nome           = models.CharField(max_length=255)
+    ultimo_nome             = models.CharField(max_length=255)
+    data_criacao            = models.DateTimeField(verbose_name='date joined', auto_now_add=True)
+    ultimo_login            = models.DateTimeField(verbose_name='last login', auto_now=True)
+    is_admin                 = models.BooleanField(default=False)
+    is_active                = models.BooleanField(default=True)
     is_staff                = models.BooleanField(default=False)
     is_superuser            = models.BooleanField(default=False)
-    contact                 = models.CharField(max_length=11)
+    contato                 = models.CharField(max_length=11)
 
     objects = MyUserManager()
 
     USERNAME_FIELD = 'email'
     EMAIL_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
+    REQUIRED_FIELDS = ['nome_usuario', 'primeiro_nome', 'ultimo_nome']
 
     def __str__(self):
-        return self.username
+        return self.nome_usuario
 
     def has_perm(self, perm, obj=None):
         return self.is_admin
@@ -82,13 +82,13 @@ class MyUser(AbstractBaseUser):
 
 class Address(models.Model):
     """
-    Address model to connect with the respective user, because a user can have various addresses but a address only can had a user
+    Modelo de endereço com seus respectivos campos.
     """
-    country = models.CharField(max_length=255)
+    pais = models.CharField(max_length=255)
 
 
 """
-Create a token to the new user and makes a foreignkey relation.
+Cria um token para o novo usuário cadastrado.
 """
 @receiver(post_save, sender=MyUser)
 def create_auth_token(sender, instance=None, created=False, **kwargs):

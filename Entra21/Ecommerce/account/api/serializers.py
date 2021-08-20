@@ -3,7 +3,7 @@ from rest_framework.serializers import ModelSerializer
 
 class MyUserSerializer(ModelSerializer):
     """
-    Serialize the custom user model
+    Serializa o modelo de usuário personalizado.
     """
     class Meta:
         model = MyUser

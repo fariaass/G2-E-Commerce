@@ -1,15 +1,15 @@
 from django.db import models
 
-class Product(models.Model):
+class Produto(models.Model):
     """
-    Product model with the respective fields.
+    Modelo dos produtos com seus respectivos campos.
 
-    Tags turn the search more easy.
+    Tags tornam a pesquisa mais fácil.
     """
     nome                = models.CharField(max_length=255)
     descricao           = models.CharField(max_length=255)
     preco               = models.DecimalField(max_digits=7, decimal_places=2)
-    imgagem             = models.FileField(upload_to='media')
+    imagem              = models.FileField(upload_to='media')
     #tags               = models.ManyToManyField('modelo', related_name='produtos')
 
     def __str__(self):

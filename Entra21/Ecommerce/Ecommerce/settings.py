@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'colorfield',
     'account',
-    'products',
-    'cart',
+    'produtos',
+    'carrinho',
 ]
 
 MIDDLEWARE = [

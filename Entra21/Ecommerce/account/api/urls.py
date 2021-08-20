@@ -4,7 +4,7 @@ from . import viewsets
 app_name = 'account'
 
 """
-Api and application urls
+Urls da API.
 """
 
 urlpatterns = [

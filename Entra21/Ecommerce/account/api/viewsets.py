@@ -9,7 +9,7 @@ class MyUserViewSet(ModelViewSet):
 
     def list(self, request):
         """
-        This function returns the users serialized.
+        Esta função retorna os usuários serializados.
         """
         users = self.queryset
         users = self.serializer_class(users, many=True)
