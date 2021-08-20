@@ -12,9 +12,11 @@ Pré-requisitos:
                 - Python
 
 Contribuintes:  
-                - Lucas de Farias Teixeira
-                - Pedro Felipe Matos Menezes
-                - Pedro Lucas Volpato da Rosa
+                - Lucas de Farias Teixeira: Líder do grupo, responsável pela segurança e banco de dados.
+                
+                - Pedro Felipe Matos Menezes: Responsável pela documentação e testes do projeto.
+
+                - Pedro Lucas Volpato da Rosa: Responsável pelo design, conteúdo e testes do projeto.
 
 Database: SQLite
 
