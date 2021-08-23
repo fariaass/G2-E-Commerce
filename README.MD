@@ -20,12 +20,14 @@ Contribuintes:
 
 Database: SQLite
 
-#Nota by Adriano 20/08/2021
-# Exemplo de documentação de tabelas
 # Tabela: Produtos
-# Campos: codigo,nome,descrição,data_hora_cadastro,categoria,preço
-# Tabela: Categorias_de_produtos
-# Campos: codigo,categoria
+# Campos: nome, descrição, preço, imagem, tags
+
+# Tabela: Carrinho
+# Campos: produtos, usuario
+
+# Tabela: Usuário
+# Campos: email, nome de usuário, primeiro nome, último nome, data de criação, último login, é administrador, é ativo, é staff, é super usuário, contato
 
 
 Tarefas em aberto:
