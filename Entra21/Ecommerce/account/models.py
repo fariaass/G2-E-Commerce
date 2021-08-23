@@ -8,7 +8,7 @@ class MyUserManager(BaseUserManager):
     """
     Gerenciador de usuários personalizados que cria e salva usuários e super usuários.
     """
-    def create_user(self, email, nome_usuario, primeiro_nome, ultimo_nome, senha=None):
+    def create_user(self, email, nome_usuario, primeiro_nome, ultimo_nome, password=None):
         """
         Cria e salva um usuário com o email, nome de usuário, primeiro nome e ultimo nome fornecidos.
         """
@@ -28,17 +28,17 @@ class MyUserManager(BaseUserManager):
             ultimo_nome=ultimo_nome,
         )
 
-        user.set_password(senha)
+        user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, nome_usuario, primeiro_nome, ultimo_nome, senha=None):
+    def create_superuser(self, email, nome_usuario, primeiro_nome, ultimo_nome, password=None):
         """
-        Cira e salva um super usuário com email, nome de usuário, primeiro nome e último nome fornecidos.
+        Cria e salva um super usuário com email, nome de usuário, primeiro nome e último nome fornecidos.
         """
         user = self.create_user(
-            email,
-            senha=senha,
+            email=email,
+            password=password,
             nome_usuario=nome_usuario,
             primeiro_nome=primeiro_nome,
             ultimo_nome=ultimo_nome,
@@ -59,8 +59,8 @@ class MyUser(AbstractBaseUser):
     ultimo_nome             = models.CharField(max_length=255)
     data_criacao            = models.DateTimeField(verbose_name='date joined', auto_now_add=True)
     ultimo_login            = models.DateTimeField(verbose_name='last login', auto_now=True)
-    is_admin                 = models.BooleanField(default=False)
-    is_active                = models.BooleanField(default=True)
+    is_admin                = models.BooleanField(default=False)
+    is_active               = models.BooleanField(default=True)
     is_staff                = models.BooleanField(default=False)
     is_superuser            = models.BooleanField(default=False)
     contato                 = models.CharField(max_length=11)
