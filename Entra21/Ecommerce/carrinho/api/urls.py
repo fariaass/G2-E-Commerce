@@ -8,5 +8,6 @@ URLs da API.
 """
 
 urlpatterns = [
-    path('', CarrinhoViewSet.list, name='list')    
+    path('', CarrinhoViewSet.list, name='list'),
+    path('/<int:pk>', CarrinhoViewSet.retrieve, name='retrieve')
 ]

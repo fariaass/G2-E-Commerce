@@ -27,7 +27,7 @@ Database: SQLite
 # Campos: produtos, usuario
 
 # Tabela: Usuário
-# Campos: email, nome de usuário, primeiro nome, último nome, data de criação, último login, é administrador, é ativo, é staff, é super usuário, contato
+# Campos: email, senha, nome de usuário, primeiro nome, último nome, data de criação, último login, é administrador, é ativo, é staff, é super usuário, contato
 
 
 Tarefas em aberto:
