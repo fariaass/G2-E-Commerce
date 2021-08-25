@@ -8,6 +8,6 @@ Urls da API.
 """
 
 urlpatterns = [
-    path('/tags', TagViewSet.list, name='taglist'),
-    path('/categorias', CategoriaViewSet, name='categorialist'),
+    path('', TagViewSet.list, name='taglist'),
+    path('', CategoriaViewSet, name='categorialist'),
 ]
