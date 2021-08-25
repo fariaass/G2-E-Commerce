@@ -6,6 +6,9 @@ from categorias.models import Categoria
 from rest_framework import viewsets
 
 class CategoriaViewSet(viewsets.ModelViewSet):
+    """
+    Esta função retorna as categorias serializadas.
+    """
     queryset = Categoria.objects.all()
     serializer_class = CategoriaSerializer
 
@@ -16,6 +19,9 @@ class CategoriaViewSet(viewsets.ModelViewSet):
 
 
 class TagViewSet(viewsets.ModelViewSet):
+    """
+    Esta função retorna as tags serializadas.
+    """
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
 
