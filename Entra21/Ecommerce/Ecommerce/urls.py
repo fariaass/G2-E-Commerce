@@ -7,16 +7,21 @@ from . import settings
 from carrinho.api.viewsets import CarrinhoViewSet
 from produtos.api.viewsets import ProdutoViewSet
 from account.api.viewsets import MyUserViewSet
+from categorias.api.viewsets import CategoriaViewSet, TagViewSet
+from .views import home
 
 router = DefaultRouter()
 router.register(r'account', MyUserViewSet, basename='account')
 router.register(r'produtos', ProdutoViewSet, basename='produtos')
 router.register(r'carrinho', CarrinhoViewSet, basename='carrinho')
+router.register(r'categorias', CategoriaViewSet, basename='categorias')
+router.register(r'tags', TagViewSet, basename='tags')
 
 urlpatterns = [
+    path('', home, name='home'),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('login/', auth_views.LoginView.as_view())
+    path('login/', auth_views.LoginView.as_view()),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
