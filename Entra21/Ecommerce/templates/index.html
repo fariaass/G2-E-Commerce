@@ -26,7 +26,14 @@
                         <div class="searchIcon"><input id="searchIconSubmit" type="submit"></div>
                     </form>
                 </div></li>
-                <li><a href="#">LOGIN</a></li>
+                <li>
+                    {% if user.is_authenticated %}
+                        <a href="#">Olá, {{user.primeiro_nome}}!</a>
+
+                    {% else %}
+                        <a href="{% url 'login' %}">Faça Login</a>
+                    {% endif %}
+                </li>
                 <li><a href="#">Carrinho</a></li>
             </ul>
         </nav>
