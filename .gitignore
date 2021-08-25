@@ -1,7 +1,9 @@
 settings_local.py
 db.sqlite3
+
 # Byte-compiled / optimized / DLL files
 pycache/
+*.pyc
 *.py[cod]
 
 # C extensions
