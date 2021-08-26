@@ -13,6 +13,9 @@ class Produto(models.Model):
     imagem              = models.FileField(upload_to='media')
     categoria           = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='produtos')
     tags                = models.ManyToManyField(Tag, related_name='produtos')
+    data_criacao        = models.DateField(auto_now_add=True)
+    visualizacoes       = models.IntegerField()
+    vendas              = models.IntegerField()
 
     def __str__(self):
         return self.nome

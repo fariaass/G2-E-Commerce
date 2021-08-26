@@ -23,6 +23,9 @@ class Migration(migrations.Migration):
                 ('imagem', models.FileField(upload_to='media')),
                 ('categoria', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='produtos', to='categorias.categoria')),
                 ('tags', models.ManyToManyField(related_name='produtos', to='categorias.Tag')),
+                ('data_criacao', models.DateField(auto_now_add=True)),
+                ('visualizacoes', models.IntegerField()),
+                ('vendas', models.IntegerField()),
             ],
         ),
     ]

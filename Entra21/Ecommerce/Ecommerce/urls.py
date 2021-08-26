@@ -21,7 +21,7 @@ urlpatterns = [
     path('', home, name='home'),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('login/', auth_views.LoginView.as_view()),
+    path('login/', auth_views.LoginView.as_view(), name='login'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
