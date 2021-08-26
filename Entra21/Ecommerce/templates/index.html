@@ -28,8 +28,13 @@
                 </div></li>
                 <li>
                     {% if user.is_authenticated %}
-                        <a href="#">Olá, {{user.primeiro_nome}}!</a>
-
+                    <div class=dropdown>
+                    <a class="dropbtn" href="#">Olá, {{user.primeiro_nome}}!</a>
+                        <div class="dropdown-content">
+                            <a href="#">Holder</a>
+                            <a href="{% url 'logout' %}">Log Out</a>
+                        </div>
+                    </div>
                     {% else %}
                         <a href="{% url 'login' %}">Faça Login</a>
                     {% endif %}

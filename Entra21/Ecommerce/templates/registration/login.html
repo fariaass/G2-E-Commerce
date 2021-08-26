@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{% static 'css/style-login.css' %}"> 
 
 </head>
+    {% block content %}
+
     <div class="centro">
         <h1>Login</h1>
         <form method="post">
@@ -30,4 +32,6 @@
             </div>
         </form>
     </div>
+
+    {% endblock %}
 <body>
