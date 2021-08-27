@@ -4,4 +4,18 @@
 
 {% block content %}
 
+<section class="catalogoMaisVisitados">
+    {% for i in dados %}
+        <div class="grid_produtos">
+            <div class="foto_produto"><img class="foto_produto" src="{{i.imagem.url}}"></div>
+            <div class="grid_desc">
+                <p class="nome_produto">{{i.nome</a></p><br>
+                <p class="desc_produto">Por: {{i.descricao}}</p><br>
+                <p class="categoria_produto">Gênero: {{i.categoria}}</p><br>
+                <!-- <p class="saiba_mais"><a class="saiba_mais" href={{i.get_absolute_url}}>Clique aqui para detalhes</a></p> -->
+            </div>
+        </div>            
+    {% endfor %}
+</section>
+
 {% endblock %}
