@@ -45,4 +45,4 @@ def retorna_produtos_mais_visualizados(request):
     dados = dados.json()
     maior = list(dados)
     bubblesort(maior, len(maior) - 1)
-    return render(request, 'maisVisitados.html', {'dados':maior[:20]})
+    return render(request, 'produtos/maisVisitados.html', {'dados':maior[:20]})
