@@ -7,7 +7,7 @@ def bubblesort(v, n):
         return
     
     for i in range(n):
-        if v[i].vendas < v[i + 1].vendas:
+        if v[i]['vendas'] < v[i + 1]['vendas']:
             temp = v[i]
             v[i] = v[i + 1]
             v[i + 1] = temp
@@ -44,10 +44,5 @@ def retorna_produtos_mais_visualizados(request):
     dados = requests.get('http://127.0.0.1:8000/api/produtos')
     dados = dados.json()
     maior = list(dados)
-<<<<<<< Updated upstream
-    maior.sort(reverse=True)
-    return render(request, 'maisVisitados', {'dados':maior[:20]})
-=======
     bubblesort(maior, len(maior) - 1)
-    return render(request, 'TEMPLATE PRODUTOS', {'dados':maior[:20]})
->>>>>>> Stashed changes
+    return render(request, 'maisVisitados.html', {'dados':maior[:20]})
