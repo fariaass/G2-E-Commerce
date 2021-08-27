@@ -8,7 +8,7 @@ class Produto(models.Model):
     Tags tornam a pesquisa mais fácil.
     """
     nome                = models.CharField(max_length=256)
-    descricao           = models.CharField(max_length=256)
+    descricao           = models.TextField()
     preco               = models.DecimalField(max_digits=7, decimal_places=2)
     imagem              = models.FileField(upload_to='media')
     categoria           = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='produtos')
