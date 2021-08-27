@@ -52,10 +52,11 @@
 
 # Contribuintes:
 # Autores: 
-# yyyyyy - Lider de equipe de desenvolv (fulano@gmail.com)
-# OOOOOO - Testes e documentação de aplicativos e ferramentas
-# xxxx   - Desenvolvimento de Banco de dados 
-# 
+# Lucas de Farias Teixeira - Lider de equipe de desenvolv (fulano@gmail.com)
+# Pedro Felipe Matos Menezes - Testes e documentação de aplicativos e ferramentas
+# Lucas de Farias Teixeira - Desenvolvimento de Banco de dados 
+# Pedro Lucas Volpato da Rosa - Conteúdista
+# Pedro Felipe Matos Menezes e Pedro Lucas Volpato da Rosa - Design
 
 # Licença de Software
 # Todo o desenvolvimento descrito aqui em suar partes esta sendo liberado em A Licença Pública Geral GNU. Você pode copiar, por partes ou inteiro a sua vontade. Se você for utilizar mais de 20% do codigo aqui, por favor, me avise, e registre em seus documentos. Obrigado. 
