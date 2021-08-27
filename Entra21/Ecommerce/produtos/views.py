@@ -1,6 +1,19 @@
 from django.shortcuts import render
 import requests
 
+def bubblesort(v, n):
+
+    if n < 1:
+        return
+    
+    for i in range(n):
+        if v[i].vendas < v[i + 1].vendas:
+            temp = v[i]
+            v[i] = v[i + 1]
+            v[i + 1] = temp
+
+    bubblesort(v, n - 1)
+
 def retorna_produtos(request):
     """
     Esta função retorna os dados da api, obtidos através do consumo da mesma pela url.
@@ -17,22 +30,6 @@ def retorna_produtos_mais_vendidos(request):
     utilizando do método de ordenação, bubblesort, o qual compara os itens em pares,
     e realiza trocas entre os mesmos.
     """
-
-
-    def bubblesort(v, n):
-
-        if n < 1:
-            return
-        
-        for i in range(n):
-            if v[i].vendas < v[i + 1].vendas:
-                temp = v[i]
-                v[i] = v[i + 1]
-                v[i + 1] = temp
-
-        bubblesort(v, n - 1)
-
-
     dados = requests.get('http://127.0.0.1:8000/api/produtos')
     dados = dados.json()
     maior = list(dados)
@@ -47,5 +44,10 @@ def retorna_produtos_mais_visualizados(request):
     dados = requests.get('http://127.0.0.1:8000/api/produtos')
     dados = dados.json()
     maior = list(dados)
+<<<<<<< Updated upstream
     maior.sort(reverse=True)
     return render(request, 'maisVisitados', {'dados':maior[:20]})
+=======
+    bubblesort(maior, len(maior) - 1)
+    return render(request, 'TEMPLATE PRODUTOS', {'dados':maior[:20]})
+>>>>>>> Stashed changes
