@@ -19,3 +19,12 @@ class Produto(models.Model):
 
     def __str__(self):
         return self.nome
+
+    def __eq__(self, other):
+        return self.nome == other.nome
+
+    def __gt__(self, other):
+        return self.visualizacoes > other.visualizacoes
+
+    def __lt__(self, other):
+        return self.visualizacoes < other.visualizacoes
