@@ -1,5 +1,8 @@
 from django.shortcuts import render
 import requests
+from django.shortcuts import get_object_or_404, render
+from requests.api import get
+from categorias.models import Categoria
 
 def bubblesort(v, n):
 
@@ -45,4 +48,4 @@ def retorna_produtos_mais_visualizados(request):
     dados = dados.json()
     maior = list(dados)
     bubblesort(maior, len(maior) - 1)
-    return render(request, 'produtos/maisVisitados.html', {'dados':maior[:20]})
+    return render(request, 'produtos/maisVisitados.html', {'dados':maior})
