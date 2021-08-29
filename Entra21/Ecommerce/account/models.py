@@ -80,11 +80,14 @@ class MyUser(AbstractBaseUser):
     def has_module_perms(self, app_label):
         return True
 
-class Address(models.Model):
-    """
-    Modelo de endereço com seus respectivos campos.
-    """
-    pais = models.CharField(max_length=255)
+
+class Endereco(models.Model):
+    usuario                 = models.ForeignKey(MyUser, on_delete=models.CASCADE, related_name='enderecos')
+    cep                     = models.IntegerField()
+    rua                     = models.CharField(max_length=256)
+    bairro                  = models.CharField(max_length=256)
+    cidade                  = models.CharField(max_length=256)
+    estado                  = models.CharField(max_length=256)
 
 
 """

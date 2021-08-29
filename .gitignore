@@ -3,6 +3,7 @@
 pycache/
 *.pyc
 *.py[cod]
+*.cpython-38
 
 # C extensions
 *.so
