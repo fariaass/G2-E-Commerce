@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+:root{
+    --font: "Ubuntu", sans-serif;
+}
+
+#form-cadastro{
+    display: grid;
+    grid-template-areas: ;
+}
+
+.control-group{
+    font-family: var(--font);
+
+}
+
+#btn{
+    font-family: var(--font);
+    grid-area: btn;
+}
+
+#div_id_email{
+    grid-area: email;
+}
+
+#div_id_nome_usuario{
+    grid-area: nome_usuario;
+}
+
+#div_id_primeiro_nome{
+    grid-area: primeiro_nome;
+}
+
+#div_id_ultimo-nome{
+    grid-area: ultimo-nome;
+}
+
+#div_id_contato{
+    grid-area: contato;
+}

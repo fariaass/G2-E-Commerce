@@ -1,3 +1,4 @@
+from account.views import cadastra_user
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
@@ -24,6 +25,7 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('cadastrar/', cadastra_user, name='cadastrar'),
     path('maisVisitados/', retorna_produtos_mais_visualizados, name='maisVisitados'),
 ]
 
