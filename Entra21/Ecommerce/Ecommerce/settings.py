@@ -147,5 +147,5 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
 
-with open('Ecommerce/settings_local') as infile:
+with open('Ecommerce/settings_local.py') as infile:
     exec(infile.read())
