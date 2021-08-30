@@ -87,22 +87,43 @@ body{
 /* --------------------------------------- FORMULÁRIO DE CADASTRO CONCLUIDO--------------------------------------- */
 
 .text{
-    border: 1px solid #1a1a1a;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border: 1px solid var(--preto);
+    border-radius: 10px;
+    padding: 3px;
     width: 400px;
-    margin-left: 50px;
-    margin-right: 50px;
+    font-size: 16px;
+    margin: auto;
     margin-top: 30px;
 }
 
 .subtitle{
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 30px;
 }
 
 .link-success{
+    flex-basis: 30%;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid var(--preto);
+    border-radius: 50px;
+}
+
+.btn-link-success{
+    color: black;
     text-decoration: none;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    padding: 3px;
+}
+
+.link-success:hover{
+    background-color: var(--preto);
+}
+
+.link-success:hover > .btn-link-success{
+    color: white;
 }
 
 #content-success{
@@ -112,4 +133,11 @@ body{
 
 #title-success{
     margin-top: 20px;
+}
+
+#links{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
