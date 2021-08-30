@@ -1,3 +1,4 @@
+from account.forms import EnderecoForm
 from account.forms import MyUserForm
 from django.shortcuts import render
 import requests

@@ -1,40 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
+body{
+    background-color: var(--azul);
+}
+
 :root{
     --font: "Ubuntu", sans-serif;
+    --azul: rgb(56, 56, 255);
+}
+
+#content{
+    position: absolute;
+    display: grid;
+    grid-template-areas: 
+    "form"
+    "btn";
+    place-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 300px;
+    box-shadow: 5px 5px 10px black;
+    background-color: white;
+    border-radius: 15px;
 }
 
 #form-cadastro{
-    display: grid;
-    grid-template-areas: ;
+    display: flex;
+    width: 400px;
+    flex-wrap: wrap;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    grid-area: form;
 }
 
 .control-group{
     font-family: var(--font);
+    flex-basis: 50%;
+    margin: auto;
+    margin-top: 10px;
+}
 
+.control-group .controls{
+    text-align: center;
+}
+
+.control-group label{
+    margin-left: 10px;
 }
 
 #btn{
     font-family: var(--font);
+    font-size: 16px;
+    margin: auto;
     grid-area: btn;
-}
-
-#div_id_email{
-    grid-area: email;
-}
-
-#div_id_nome_usuario{
-    grid-area: nome_usuario;
-}
-
-#div_id_primeiro_nome{
-    grid-area: primeiro_nome;
-}
-
-#div_id_ultimo-nome{
-    grid-area: ultimo-nome;
-}
-
-#div_id_contato{
-    grid-area: contato;
+    margin-top: 10px;
+    width: 200px;
+    background-color: rgb(63, 238, 63);
+    box-shadow: 3px 3px 5px black;
+    border-radius: 5px;
+    border: 1px solid black;
 }
