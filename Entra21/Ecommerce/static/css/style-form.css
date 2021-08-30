@@ -6,22 +6,16 @@
 }
 
 body{
-    background-color: var(--azul);
+    background-color: var(--preto);
 }
 
 :root{
     --font: "Ubuntu", sans-serif;
-    --azul: rgb(56, 56, 255);
+    --preto: #1a1a1a;
 }
 
-#content{
+.content{
     position: absolute;
-    display: grid;
-    grid-template-areas:
-    "title" 
-    "form"
-    "btn";
-    place-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -32,10 +26,21 @@ body{
     border-radius: 15px;
 }
 
-#title{
+.title{
     font-family: var(--font);
     font-size: 20px;
     grid-area: title;
+}
+
+/* --------------------------------------- FORMULÁRIO DE CADASTRO --------------------------------------- */
+
+#content-form{
+    display: grid;
+    grid-template-areas:
+    "title" 
+    "form"
+    "btn";
+    place-items: center;
 }
 
 #form-cadastro{
@@ -77,4 +82,34 @@ body{
 #btn:hover{
     width: 220px;
     transition: 0.2s;
+}
+
+/* --------------------------------------- FORMULÁRIO DE CADASTRO CONCLUIDO--------------------------------------- */
+
+.text{
+    border: 1px solid #1a1a1a;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 400px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+}
+
+.subtitle{
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.link-success{
+    text-decoration: none;
+}
+
+#content-success{
+    text-align: center;
+    font-family: var(--font);
+}
+
+#title-success{
+    margin-top: 20px;
 }

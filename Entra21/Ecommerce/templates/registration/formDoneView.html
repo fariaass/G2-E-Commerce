@@ -1,0 +1,21 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concluido!</title>
+    <link rel="stylesheet" href="{% static 'css/style-form.css' %}">
+</head>
+<body>
+    <section id="content-success" class="content">
+        <h1 class="title" id="title-success">Usuário cadastrado!</h1>
+        <h2 class="subtitle">Olá, {{usuario}}!</h2>
+        <p class="text">Você gostaria de adicionar um endereço à sua conta?</p>
+        <a class="link-success" href="{% url 'home' %}">Não</a>
+    </section>
+</body>
+</html>

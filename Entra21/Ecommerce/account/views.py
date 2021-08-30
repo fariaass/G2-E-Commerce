@@ -18,7 +18,8 @@ def cadastra_user(request):
         form = MyUserForm(request.POST)
         if form.is_valid():
             form.save()
-        return render(request, 'registration/formDoneView.html', {'form':form})
+        usuario = form.cleaned_data['primeiro_nome']
+        return render(request, 'registration/formDoneView.html', {'usuario':usuario})
     else:
         form = MyUserForm()
     return render(request, 'registration/form.html', {'form':form})

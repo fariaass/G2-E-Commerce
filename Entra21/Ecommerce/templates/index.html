@@ -26,21 +26,25 @@
                         <div class="searchIcon"><input id="searchIconSubmit" type="submit"></div>
                     </form>
                 </div></li>
+                {% if user.is_authenticated %}
                 <li>
-                    {% if user.is_authenticated %}
                     <div class=dropdown>
                     <a class="dropbtn" href="#">Olá, {{user.primeiro_nome}}!</a>
                         <div class="dropdown-content">
-                            <a href="#">Holder</a>
-                            <a href="{% url 'logout' %}">Log Out</a>
+                            <a href="#">Meu perfil</a>
+                            <a href="{% url 'logout' %}">Sair</a>
                         </div>
                     </div>
-                    {% else %}
-                        <a href="{% url 'login' %}">Faça Login</a>
-                        <a href="{% url 'cadastrar' %}">Cadastre-se</a>
-                    {% endif %}
                 </li>
                 <li><a href="#">Carrinho</a></li>
+                {% else %}
+                <li>
+                    <a href="{% url 'login' %}">Faça Login</a>
+                </li>
+                <li>
+                    <a href="{% url 'cadastrar' %}">Cadastre-se</a>    
+                </li>
+                {% endif %}
             </ul>
         </nav>
 

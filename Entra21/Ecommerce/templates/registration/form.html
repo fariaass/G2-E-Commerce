@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="{% static 'css/style-form.css' %}">
 </head>
 <body>
-    <section id="content">
-        <h1 id="title">Cadastre-se</h1>
+    <section id="content-form" class="content">
+        <h1 class="title">Cadastre-se</h1>
         <form method="post" id="form-cadastro">
             {% crispy form %}
             <button id="btn" type="submit" form="form-cadastro">Enviar</button>
