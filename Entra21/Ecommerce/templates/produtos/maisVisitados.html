@@ -4,17 +4,13 @@
 
 {% block content %}
 
-<section class="catalogoMaisVisitados">
+<section class="catalogo">
     {% for i in dados %}
-        <div class="grid_produtos">
-            <div class="foto_produto"><img class="foto_produto" src="{{i.imagem}}"></div>
-            <div class="grid_desc">
-                <p class="nome_produto">{{i.nome}}</a></p><br>
-                <p class="desc_produto">{{i.descricao}}</p><br>
-                <p class="categoria_produto">{{i.categoria}}</p><br>
-                <!-- <p class="saiba_mais"><a class="saiba_mais" href={% url 'nome_url' pk=i.id %}>Clique aqui para detalhes</a></p> -->
-            </div>
-        </div>            
+        <div class="grid_produto">
+            <div class="foto_produto"><img src="{{i.imagem}}"></div>
+            <div class="nome_produto"><a>{{i.nome}}</a></div>
+            <div class="preco_produto">R${{i.preco}}</div>
+        </div>           
     {% endfor %}
 </section>
 
