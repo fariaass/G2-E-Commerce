@@ -15,7 +15,10 @@
         <h1 class="title" id="title-success">Usuário cadastrado!</h1>
         <h2 class="subtitle">Olá, {{usuario}}!</h2>
         <p class="text">Você gostaria de adicionar um endereço à sua conta?</p>
-        <a class="link-success" href="{% url 'home' %}">Não</a>
+        <div id="links">
+            <a class="link-success" href="#"><button class="btn-link-success">Sim</button></a>
+            <a class="link-success" href="{% url 'home' %}"><button class="btn-link-success">Não</button></a>
+        </div>
     </section>
 </body>
 </html>
