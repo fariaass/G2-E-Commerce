@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
+:root{
+    --font: "Ubuntu", sans-serif;
+    --preto: #1a1a1a;
+}
+
 * {
     padding: 0px;
     margin: 0px;
@@ -20,7 +25,7 @@ a:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font);
     background: #000000;
     height: 10vh;
 }
@@ -31,7 +36,7 @@ a:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-family: 'Ubuntu', sans-serif;;
+    font-family: var(--font);
     background: #1a1a1a;
     height: 8vh;
 }
@@ -126,26 +131,31 @@ body {
 
 /* MAIS VISITADOS */
 
-.catalogoMaisVisitados {
+.catalogo {
     display: flex;
-    flex-basis: 100%;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
 }
   
 .grid_produto {
     display: grid;
-    width: 25%;
-    grid-template-rows: 400px;
-    padding: 20px 20px 20px 20px;
+    place-items: center;
+    height: 55vh;
+    width: 25vw;
+    padding: 20px;
+    margin: 5px;
     grid-template-areas: "foto" "foto" "foto" "foto"
                          "nome" "nome" "nome" "nome"
                          "preco" "preco" "preco" "preco";
-    border: 1px black;
+    outline: 1px solid rgb(218, 218, 218);
+    border: transparent;
 }
   
 .foto_produto img{
-    max-width: 400px;
-    max-height: 300px;
+    max-width: 210px;
+    max-height: 210px;
     border-radius: 5px;
     grid-area: foto;
 }
@@ -156,12 +166,14 @@ body {
     text-decoration: none;
     color: black;
     grid-area: nome;
+    position: relative;
 }
 
 .preco_produto {
-    margin: 0 auto;
     font-size: 20px;
     grid-area: preco;
+    position: relative;
+    text-align: left;
 }
 
 footer {
