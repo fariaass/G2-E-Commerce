@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body{
     background-color: var(--azul);
 }
@@ -12,7 +17,8 @@ body{
 #content{
     position: absolute;
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
+    "title" 
     "form"
     "btn";
     place-items: center;
@@ -24,6 +30,12 @@ body{
     box-shadow: 5px 5px 10px black;
     background-color: white;
     border-radius: 15px;
+}
+
+#title{
+    font-family: var(--font);
+    font-size: 20px;
+    grid-area: title;
 }
 
 #form-cadastro{
@@ -40,7 +52,7 @@ body{
     font-family: var(--font);
     flex-basis: 50%;
     margin: auto;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .control-group .controls{
@@ -48,18 +60,21 @@ body{
 }
 
 .control-group label{
-    margin-left: 10px;
+    margin-left: 12px;
 }
 
 #btn{
     font-family: var(--font);
     font-size: 16px;
-    margin: auto;
     grid-area: btn;
-    margin-top: 10px;
     width: 200px;
     background-color: rgb(63, 238, 63);
-    box-shadow: 3px 3px 5px black;
     border-radius: 5px;
     border: 1px solid black;
+    transition: 0.2s;
+}
+
+#btn:hover{
+    width: 220px;
+    transition: 0.2s;
 }
