@@ -7,8 +7,8 @@
 <section class="catalogo">
     {% for i in dados %}
         <div class="grid_produto">
-            <div class="foto_produto"><img src="{{i.imagem}}"></div>
-            <div class="nome_produto"><a>{{i.nome}}</a></div>
+            <div class="foto_produto"><img src="{{i.imagem}}" alt="Foto de {{i.nome}}"></div>
+            <div class="nome_produto"><a href="{% url 'detalhes_produto' pk=i.id %}">{{i.nome}}</a></div>
             <div class="preco_produto">R${{i.preco}}</div>
         </div>           
     {% endfor %}

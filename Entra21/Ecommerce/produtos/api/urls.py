@@ -8,5 +8,5 @@ URLs da API.
 """
 
 urlpatterns = [
-    path('', ProdutoViewSet.list, name='list')
+    path('', ProdutoViewSet.list, name='list'),
 ]

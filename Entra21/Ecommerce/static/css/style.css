@@ -149,8 +149,8 @@ body {
     grid-template-areas: "foto" "foto" "foto" "foto"
                          "nome" "nome" "nome" "nome"
                          "preco" "preco" "preco" "preco";
-    outline: 1px solid rgb(218, 218, 218);
-    border: transparent;
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px;
 }
   
 .foto_produto img{
@@ -175,6 +175,58 @@ body {
     position: relative;
     text-align: left;
 }
+
+/* PRODUTO DETALHES */
+
+.container_detalhes {
+    display: flex;
+    font-family: var(--font);
+    align-items: center;
+    justify-content: center;
+}
+  
+.grid_produto_detalhe {
+    display: grid;
+    place-items: center;
+    margin-top: 20px;
+    height: 70vh;
+    grid-template-areas: "foto desc info";
+    border: 1px solid rgb(218, 218, 218);
+}
+ 
+.foto_detalhe {
+    border: 1px solid rgb(218, 218, 218);
+    width: 20vw;
+    height: 100%;
+    grid-area: foto;
+    margin: 0 auto;
+}
+
+.foto_detalhe img {
+    padding: 10px;
+}
+
+.descricao_detalhe {
+    width: 40vw;
+    height: 100%;
+    border: 1px solid rgb(218, 218, 218);
+    grid-area: desc;
+    place-items: center;
+}
+
+.descricao_detalhe p {
+    padding: 3px;
+    font-size: 20;
+}
+  
+.cart_detalhe {
+    width: 20vw;
+    height: 100%;
+    border: 1px solid rgb(218, 218, 218);
+    grid-area: info;
+}
+
+/* FOOTER */
 
 footer {
     display: flex;

@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}{{nome}}{% endblock %}
+
+{% block content %}
+
+<section class="container_detalhes">
+<div class="grid_produto_detalhe">
+    <div class="foto_detalhe"><img src="{{i.imagem}}"></div>
+    <div class="descricao_detalhe">
+        <p>R${{i.preco}}</p>
+        <p>Detalhes: {{i.descricao}}</p>
+    </div>
+    <div class="cart_detalhe">
+        <p class="nome_detalhe">{{i.nome}}</p>
+        <p class="add_cart"></p>
+    </div>
+</div>
+</section>
+
+{% endblock %}

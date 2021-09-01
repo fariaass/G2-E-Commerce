@@ -9,7 +9,7 @@ def retorna_account(request, pk):
 
     O retorno consiste em um template acompanhado de um json.
     """
-    dados = requests.get('http://127.0.0.1:8000/api/account/' + pk + '/')
+    dados = requests.get('http://127.0.0.1:8000/api/account/' + str(pk) + '/')
     dados = dados.json()
     return render(request, 'EM ABERTO', {'dados':dados})
 

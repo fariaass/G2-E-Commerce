@@ -10,7 +10,7 @@ from produtos.api.viewsets import ProdutoViewSet
 from account.api.viewsets import MyUserViewSet
 from categorias.api.viewsets import CategoriaViewSet, TagViewSet
 from .views import home
-from produtos.views import retorna_produtos_mais_vendidos, retorna_produtos_mais_visualizados
+from produtos.views import retorna_produtos_mais_vendidos, retorna_produtos_mais_visualizados, detalhes_produto
 
 router = DefaultRouter()
 router.register(r'account', MyUserViewSet, basename='account')
@@ -28,6 +28,7 @@ urlpatterns = [
     path('cadastrar/', cadastra_user, name='cadastrar'),
     path('maisVisitados/', retorna_produtos_mais_visualizados, name='maisVisitados'),
     path('maisVendidos/', retorna_produtos_mais_vendidos, name='maisVendidos'),
+    path('produto/<int:pk>/', detalhes_produto, name='detalhes_produto'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

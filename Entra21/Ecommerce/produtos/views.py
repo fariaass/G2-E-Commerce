@@ -3,6 +3,7 @@ import requests
 from django.shortcuts import get_object_or_404, render
 from requests.api import get
 from categorias.models import Categoria
+from .models import Produto
 
 def bubblesort(v, n):
 
@@ -17,6 +18,8 @@ def bubblesort(v, n):
 
     bubblesort(v, n - 1)
 
+
+
 def retorna_produtos(request):
     """
     Esta função retorna os dados da api, obtidos através do consumo da mesma pela url.
@@ -26,6 +29,8 @@ def retorna_produtos(request):
     dados = requests.get('http://127.0.0.1:8000/api/produtos')
     dados = dados.json()
     return render(request, 'TEMPLATE PRODUTOS', {'dados':dados})
+
+
 
 def retorna_produtos_mais_vendidos(request):
     """
@@ -38,6 +43,8 @@ def retorna_produtos_mais_vendidos(request):
     maior = list(dados)
     bubblesort(maior, len(maior) - 1)
     return render(request, 'HOLDER', {'dados': maior[:20]})
+
+
 
 def retorna_produtos_mais_visualizados(request):
     """
@@ -52,3 +59,10 @@ def retorna_produtos_mais_visualizados(request):
     for i in maior:
         i['categoria'] = get_object_or_404(Categoria, id=i['categoria']).nome
     return render(request, 'produtos/maisVisitados.html', {'dados':maior})
+
+
+
+def detalhes_produto(request, pk):
+    produto = requests.get('http://127.0.0.1:8000/api/produtos/' + str(pk) + '/')
+    produto = produto.json()
+    return render(request, 'produtos/detalhes_produto.html', {'i': produto, 'nome': 'Produto'})

@@ -1,5 +1,6 @@
 from categorias.models import Categoria, Tag
 from django.db import models
+from django.urls import reverse
 
 class Produto(models.Model):
     """
@@ -25,3 +26,4 @@ class Produto(models.Model):
 
     def __lt__(self, other):
         return self.visualizacoes < other.visualizacoes
+

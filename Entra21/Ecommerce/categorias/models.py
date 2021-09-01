@@ -6,6 +6,9 @@ class Categoria(models.Model):
     """
     nome = models.CharField(max_length=256)
 
+    def __str__(self):
+        return self.nome
+
 class Tag(models.Model):
     """
     Modelo de tag com seus respectivos campos.
@@ -13,3 +16,6 @@ class Tag(models.Model):
     Tags tornam a pesquisa mais fácil.
     """
     nome = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.nome
