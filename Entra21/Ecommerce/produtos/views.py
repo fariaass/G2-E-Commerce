@@ -4,6 +4,7 @@ from django.shortcuts import get_object_or_404, render
 from requests.api import get
 from categorias.models import Categoria
 from .models import Produto
+from random import randint
 
 def bubblesort(v, n):
 
@@ -68,4 +69,8 @@ def detalhes_produto(request, pk):
     """
     produto = requests.get('http://127.0.0.1:8000/api/produtos/' + str(pk) + '/')
     produto = produto.json()
-    return render(request, 'produtos/detalhes_produto.html', {'i': produto, 'nome': 'Produto'})
+    dados = requests.get('http://127.0.0.1:8000/api/produtos/')
+    dados = dados.json()
+    dados = list(dados)
+    recomendacao = [ randint(1, len(dados)) for i in range(0, 3)]
+    return render(request, 'produtos/detalhes_produto.html', {'i': produto, 'dados': recomendacao, 'nome': 'Produto'})

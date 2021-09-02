@@ -20,4 +20,16 @@
 </div>
 </section>
 
+<!-- RECOMENDADOS -->
+
+<section class="catalogo">
+    {% for j in dados %}
+    <div class="grid_produto">
+        <div class="foto_produto"><img src="{{j.imagem}}" alt="Foto de {{j.nome}}"></div>
+        <div class="nome_produto"><a href="{% url 'detalhes_produto' pk=j.id %}">{{j.nome}}</a></div>
+        <div class="preco_produto">R${{j.preco}}</div>
+    </div> 
+    {% endfor %}
+</section>
+
 {% endblock %}

@@ -202,6 +202,8 @@ body {
 .foto_detalhe img {
     margin-right: 20px;
     margin-left: 20px;
+    max-width: 210px;
+    max-height: 210px;
 }
 
 .descricao_detalhe {
