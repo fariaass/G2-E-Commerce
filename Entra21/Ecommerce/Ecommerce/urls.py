@@ -29,6 +29,7 @@ urlpatterns = [
     path('maisVisitados/', retorna_produtos_mais_visualizados, name='maisVisitados'),
     path('maisVendidos/', retorna_produtos_mais_vendidos, name='maisVendidos'),
     path('produto/<int:pk>/', detalhes_produto, name='detalhes_produto'),
+    path('categoria/<int:pk>/', name='categoria')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
