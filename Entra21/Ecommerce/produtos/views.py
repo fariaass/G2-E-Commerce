@@ -42,7 +42,7 @@ def retorna_produtos_mais_vendidos(request):
     dados = dados.json()
     maior = list(dados)
     bubblesort(maior, len(maior) - 1)
-    return render(request, 'HOLDER', {'dados': maior[:20]})
+    return render(request, 'produtos/maisVendidos.html', {'dados': maior[:20]})
 
 
 
@@ -63,6 +63,9 @@ def retorna_produtos_mais_visualizados(request):
 
 
 def detalhes_produto(request, pk):
+    """
+    Esta função retorna os dados do produto selecionado.
+    """
     produto = requests.get('http://127.0.0.1:8000/api/produtos/' + str(pk) + '/')
     produto = produto.json()
     return render(request, 'produtos/detalhes_produto.html', {'i': produto, 'nome': 'Produto'})

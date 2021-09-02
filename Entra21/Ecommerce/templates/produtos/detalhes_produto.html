@@ -10,12 +10,12 @@
 <div class="grid_produto_detalhe">
     <div class="foto_detalhe"><img src="{{i.imagem}}"></div>
     <div class="descricao_detalhe">
-        <p>R${{i.preco}}</p>
-        <p>Detalhes: {{i.descricao}}</p>
+        <p>Detalhes: <br><br> {{i.descricao}}</p>
     </div>
     <div class="cart_detalhe">
-        <p class="nome_detalhe">{{i.nome}}</p>
-        <p class="add_cart"></p>
+        <p class="nome_detalhe">{{i.nome}}</p><br>
+        <p id="preco_detalhe">R${{i.preco}}</p>
+        <button><p class="add_cart">Adicionar ao carrinho</p></button>
     </div>
 </div>
 </section>
