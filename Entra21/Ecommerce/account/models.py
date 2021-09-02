@@ -83,7 +83,7 @@ class MyUser(AbstractBaseUser):
 
 class Endereco(models.Model):
     usuario                 = models.ForeignKey(MyUser, on_delete=models.CASCADE, related_name='enderecos')
-    cep                     = models.IntegerField()
+    cep                     = models.CharField(max_length=10)
     rua                     = models.CharField(max_length=256)
     bairro                  = models.CharField(max_length=256)
     cidade                  = models.CharField(max_length=256)
