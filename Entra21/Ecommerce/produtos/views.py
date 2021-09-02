@@ -1,13 +1,9 @@
-from Entra21.Ecommerce.produtos.models import Produto
-from django.shortcuts import get_list_or_404, render
+from produtos.models import Produto
+from django.shortcuts import get_list_or_404, render, get_object_or_404
 import requests
-from django.shortcuts import get_object_or_404, render
 from categorias.models import Categoria
-<<<<<<< HEAD
 from .models import Produto
 from random import randint
-=======
->>>>>>> 8be5a31c37b1228351288dc6f63d7d15f202407f
 
 def bubblesort(v, n):
 
@@ -71,9 +67,8 @@ def detalhes_produto(request, pk):
     dados = requests.get('http://127.0.0.1:8000/api/produtos/')
     dados = dados.json()
     dados = list(dados)
-    recomendacao = [ randint(1, len(dados)) for i in range(0, 3)]
+    recomendacao = [dados[randint(0, len(dados))] for i in range(3)]
     return render(request, 'produtos/detalhes_produto.html', {'i': produto, 'dados': recomendacao, 'nome': 'Produto'})
-    return render(request, 'produtos/detalhes_produto.html', {'i': produto, 'nome': 'Produto'})
 
 def retorna_produtos_categoria(request, pk):
     """

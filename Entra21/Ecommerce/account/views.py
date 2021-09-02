@@ -1,5 +1,4 @@
-from account.forms import EnderecoForm
-from account.forms import MyUserForm
+from account.forms import MyUserForm, EnderecoForm
 from django.shortcuts import render
 import requests
 
@@ -23,3 +22,15 @@ def cadastra_user(request):
     else:
         form = MyUserForm()
     return render(request, 'registration/form.html', {'form':form})
+
+def addEndereco(request):
+    if request.method == 'POST':
+        form = EnderecoForm(request.POST)
+        if form.is_valid():
+            endereco = form.save(commit=False)
+            endereco.usuario = request.user
+            endereco.save()
+        return render(request, 'index.html')
+    else:
+        form = EnderecoForm()
+    return render(request, 'registration/addEndereco.html', {'form':form})
