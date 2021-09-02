@@ -42,7 +42,7 @@ def retorna_produtos_mais_vendidos(request):
     dados = dados.json()
     maior = list(dados)
     bubblesort(maior, len(maior) - 1)
-    return render(request, 'produtos/maisVendidos.html', {'dados': maior[:20]})
+    return render(request, 'produtos/produtos.html', {'dados': maior[:20], 'titulo':'Mais Vendidos'})
 
 
 
@@ -58,7 +58,7 @@ def retorna_produtos_mais_visualizados(request):
     maior = maior[:20]
     for i in maior:
         i['categoria'] = get_object_or_404(Categoria, id=i['categoria']).nome
-    return render(request, 'produtos/maisVisitados.html', {'dados':maior})
+    return render(request, 'produtos/produtos.html', {'dados':maior, 'titulo':'Mais Visitados'})
 
 
 

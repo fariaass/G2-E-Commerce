@@ -1,6 +1,5 @@
 from categorias.models import Categoria, Tag
 from django.db import models
-from django.urls import reverse
 
 class Produto(models.Model):
     """
