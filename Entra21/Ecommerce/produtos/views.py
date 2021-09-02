@@ -1,9 +1,8 @@
-from django.shortcuts import render
+from Entra21.Ecommerce.produtos.models import Produto
+from django.shortcuts import get_list_or_404, render
 import requests
 from django.shortcuts import get_object_or_404, render
-from requests.api import get
 from categorias.models import Categoria
-from .models import Produto
 
 def bubblesort(v, n):
 
@@ -19,7 +18,6 @@ def bubblesort(v, n):
     bubblesort(v, n - 1)
 
 
-
 def retorna_produtos(request):
     """
     Esta função retorna os dados da api, obtidos através do consumo da mesma pela url.
@@ -28,8 +26,7 @@ def retorna_produtos(request):
     """
     dados = requests.get('http://127.0.0.1:8000/api/produtos')
     dados = dados.json()
-    return render(request, 'TEMPLATE PRODUTOS', {'dados':dados})
-
+    return render(request, 'produtos/produtos.html', {'dados':dados})
 
 
 def retorna_produtos_mais_vendidos(request):
@@ -43,7 +40,6 @@ def retorna_produtos_mais_vendidos(request):
     maior = list(dados)
     bubblesort(maior, len(maior) - 1)
     return render(request, 'produtos/produtos.html', {'dados': maior[:20], 'titulo':'Mais Vendidos'})
-
 
 
 def retorna_produtos_mais_visualizados(request):
@@ -61,7 +57,6 @@ def retorna_produtos_mais_visualizados(request):
     return render(request, 'produtos/produtos.html', {'dados':maior, 'titulo':'Mais Visitados'})
 
 
-
 def detalhes_produto(request, pk):
     """
     Esta função retorna os dados do produto selecionado.
@@ -69,3 +64,12 @@ def detalhes_produto(request, pk):
     produto = requests.get('http://127.0.0.1:8000/api/produtos/' + str(pk) + '/')
     produto = produto.json()
     return render(request, 'produtos/detalhes_produto.html', {'i': produto, 'nome': 'Produto'})
+
+def retorna_produtos_categoria(request, pk):
+    """
+    Esta função retorna os produtos de determinada categoria.
+    """
+    categoria = requests.get('http://127.0.0.1:8000/api/categorias/' + str(pk) + '/')
+    categoria = categoria.json()
+    produtos = get_list_or_404(Produto, categoria=categoria.id)
+    return render(request, 'produtos/produtos.html', {'dados': produtos, 'titulo':categoria.nome})
