@@ -265,6 +265,77 @@ body {
     text-transform: uppercase;
 }
 
+/* RECOMENDADOS */
+
+/* <section class="recomendados">
+    {% for j in dados %}
+    <div class="grid_recomendados">
+        <div class="foto_recomendados"><img src="{{j.imagem}}" alt="Foto de {{j.nome}}"></div>
+        <div class="nome_recomendados"><a href="{% url 'detalhes_produto' pk=j.id %}">{{j.nome}}</a></div>
+        <div class="preco_recomendados">R${{j.preco}}</div>
+    </div> 
+    {% endfor %}
+</section> */
+
+.recomendados {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+}
+
+.grid_recomendados {
+    display: grid;
+    place-items: center;
+    width: 25vw;
+    padding: 20px;
+    margin: 150px 5px 5px 5px;
+    grid-template-areas:
+                         "foto foto foto"
+                         "nome nome nome"
+                         "preco preco preco";
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px;
+}
+
+.palagrafo {
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    grid-area: palagrafo;
+}
+
+.foto_recomendados {
+    width: 15vw;
+    height: 250px;
+    grid-area: foto;
+}
+
+.foto_recomendados img {
+    margin-right: 20px;
+    margin-left: 20px;
+    max-width: 210px;
+    max-height: 210px;
+}
+
+.nome_recomendados a {
+    margin: 0 auto;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    grid-area: nome;
+    position: relative;
+}
+
+.preco_recomendados {
+    font-size: 20px;
+    grid-area: preco;
+    position: relative;
+    text-align: left;
+}
+
+
 /* FOOTER */
 
 footer {
