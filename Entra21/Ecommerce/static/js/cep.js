@@ -38,3 +38,9 @@ function pesquisacep(valor){
         alert("Formato de CEP inválido.");
     }
 }
+
+$(document).ready(function(){
+    $("#id_cep").blur(function(){
+        pesquisacep($(this).val());
+    })
+    })

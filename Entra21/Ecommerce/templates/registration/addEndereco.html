@@ -4,5 +4,8 @@
 {% block title%}Adicione um endereço{% endblock %}
 
 {% block content %}
-{% crispy form %}
+<form method="post" id="form-endereco">
+    {% crispy form %}
+</form>
+<button type="submit" form="form-endereco">Adicionar</button>
 {% endblock %}
