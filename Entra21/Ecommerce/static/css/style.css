@@ -42,10 +42,10 @@ a:hover {
 }
 
 .logo img {
-    max-height: 150px;
-    max-width: 200px;
-    width: 120px;
-    height: 120px;
+    max-height: 250px;
+    width: 250px;
+    height: 250px;
+    margin-top: 30px;
 }
 
 .navBar {
