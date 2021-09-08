@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}Carrinho{% endblock %}
+
+{% block content %}
+
+<section id="cart">
+    {% for i in dados %}
+    <div class="grid_cart">
+        <div class="foto_produto"><img src="{{i.imagem}}" alt="Foto de {{i.nome}}"></div>
+        <div class="nome_produto"><a href="{% url 'detalhes_produto' pk=i.id %}">{{i.nome}}</a></div>
+        <div class="preco_produto">R${{i.preco}}</div>
+    </div>   
+    {% endfor %}
+</section>
+
+{% endblock %}

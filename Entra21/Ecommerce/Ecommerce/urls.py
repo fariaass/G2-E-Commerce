@@ -11,6 +11,8 @@ from account.api.viewsets import MyUserViewSet
 from categorias.api.viewsets import CategoriaViewSet, TagViewSet
 from .views import home
 from produtos.views import retorna_produtos_mais_vendidos, retorna_produtos_mais_visualizados, detalhes_produto, retorna_produtos_categoria
+from carrinho.views import retorna_carrinho
+
 
 router = DefaultRouter()
 router.register(r'account', MyUserViewSet, basename='account')
@@ -31,6 +33,7 @@ urlpatterns = [
     path('produto/<int:pk>/', detalhes_produto, name='detalhes_produto'),
     path('categoria/<int:pk>/', retorna_produtos_categoria, name='categoria'),
     path('addEndereco/', addEndereco, name='addEndereco'),
+    path('carrinho/', retorna_carrinho, name='carrinho'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
