@@ -41,10 +41,11 @@ a:hover {
     height: 8vh;
 }
 
-.logo {
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
+.logo img {
+    max-height: 150px;
+    max-width: 200px;
+    width: 120px;
+    height: 120px;
 }
 
 .navBar {
