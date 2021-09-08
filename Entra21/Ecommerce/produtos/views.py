@@ -67,8 +67,10 @@ def detalhes_produto(request, pk):
     dados = requests.get('http://127.0.0.1:8000/api/produtos/')
     dados = dados.json()
     dados = list(dados)
-    recomendacao = [dados[randint(0, len(dados))] for i in range(3)]
-    return render(request, 'produtos/detalhes_produto.html', {'i': produto, 'dados': recomendacao, 'nome': 'Produto'})
+    recomendacao = [dados[randint(0, (len(dados)-1))] for i in range((len(dados)-1))]
+    while(recomendacao[0]==recomendacao[1] or recomendacao[1]==recomendacao[2] or recomendacao[2]==recomendacao[0]):
+        recomendacao = [dados[randint(0, (len(dados)-1))] for i in range((len(dados)-1))]
+    return render(request, 'produtos/detalhes_produto.html', {'i': produto, 'dados': recomendacao[:3], 'nome': 'Produto'})
 
 def retorna_produtos_categoria(request, pk):
     """
