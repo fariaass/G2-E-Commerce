@@ -180,28 +180,27 @@ body {
 
 .container_detalhes {
     display: flex;
-    font-family: var(--font);
     align-items: center;
     justify-content: center;
+    font-family: var(--font);
 }
   
 .grid_produto_detalhe {
     display: grid;
     place-items: center;
     margin-top: 20px;
-    height: 100%;
     grid-template-areas: "foto desc info";
 }
  
 .foto_detalhe {
     width: 15vw;
-    height: 300px;
+    height: 250px;
     grid-area: foto;
 }
 
 .foto_detalhe img {
-    margin-right: 20px;
-    margin-left: 20px;
+    padding: 15px;
+    margin: 15px;
     max-width: 210px;
     max-height: 210px;
 }
@@ -267,19 +266,23 @@ body {
 
 /* RECOMENDADOS */
 
-/* <section class="recomendados">
-    {% for j in dados %}
-    <div class="grid_recomendados">
-        <div class="foto_recomendados"><img src="{{j.imagem}}" alt="Foto de {{j.nome}}"></div>
-        <div class="nome_recomendados"><a href="{% url 'detalhes_produto' pk=j.id %}">{{j.nome}}</a></div>
-        <div class="preco_recomendados">R${{j.preco}}</div>
-    </div> 
-    {% endfor %}
-</section> */
+
+#detalhes_recomendados {
+    margin: 0 auto;
+    width: 85%;
+    border-radius: 5px;
+    height: 5vh;
+    margin-top: 5vh;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1vh;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
 
 .recomendados {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     font-family: var(--font);
@@ -289,34 +292,23 @@ body {
     display: grid;
     place-items: center;
     width: 25vw;
-    padding: 20px;
-    margin: 150px 5px 5px 5px;
+    height: 80vh;
+    padding: 10px;
+    margin: 5px;
     grid-template-areas:
-                         "foto foto foto"
-                         "nome nome nome"
-                         "preco preco preco";
-    border: 1px solid rgb(218, 218, 218);
+                         "foto" "foto" "foto"
+                         "nome" "nome" "nome"
+                         "preco" "preco" "preco";
+    grid-template-rows: 400px;
     border-radius: 5px;
-}
-
-.palagrafo {
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    grid-area: palagrafo;
-}
-
-.foto_recomendados {
-    width: 15vw;
-    height: 250px;
-    grid-area: foto;
+    border: 1px solid rgb(218, 218, 218);
 }
 
 .foto_recomendados img {
-    margin-right: 20px;
-    margin-left: 20px;
     max-width: 210px;
     max-height: 210px;
+    border-radius: 5px;
+    grid-area: foto;
 }
 
 .nome_recomendados a {
@@ -328,7 +320,13 @@ body {
     position: relative;
 }
 
+.nome_recomendados {
+    place-items: center;
+}
+
 .preco_recomendados {
+    place-items: center;
+    margin: 5px;
     font-size: 20px;
     grid-area: preco;
     position: relative;
@@ -344,7 +342,7 @@ footer {
     align-items: center;
     font-family: 'Ubuntu', sans-serif;
     background: #1a1a1a;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     height:7vh;
