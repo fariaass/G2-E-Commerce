@@ -7,6 +7,6 @@ def retorna_carrinho(request, pk):
 
     O retorno consiste em um template acompanhado de um json.
     """
-    dados = requests.get('http://127.0.0.1:8000/api/carrinho/' + pk + '/')
+    dados = requests.get('http://127.0.0.1:8000/api/carrinho/' + str(pk) + '/')
     dados = dados.json()
-    return render(request, 'carrinho/carrinho.html', {'dados':dados})
+    return render(request, 'carrinho/carrinho.html', {'dados':dados.produtos})

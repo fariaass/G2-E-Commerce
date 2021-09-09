@@ -33,7 +33,7 @@ urlpatterns = [
     path('produto/<int:pk>/', detalhes_produto, name='detalhes_produto'),
     path('categoria/<int:pk>/', retorna_produtos_categoria, name='categoria'),
     path('addEndereco/', addEndereco, name='addEndereco'),
-    path('carrinho/', retorna_carrinho, name='carrinho'),
+    path('carrinho/<int:pk>/', retorna_carrinho, name='carrinho'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
