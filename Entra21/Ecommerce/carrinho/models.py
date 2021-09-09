@@ -9,5 +9,5 @@ class Carrinho(models.Model):
     Um usuário pode ter apenas um carrinho, e um carrinho pode ter apenas um usuário.
     """
     usuario = models.OneToOneField(MyUser, on_delete=models.CASCADE, related_name='carrinho')
-    produtos = models.ManyToManyField(Produto, related_name='produtos')
+    produtos = models.ManyToManyField(Produto, related_name='carrinho')
     

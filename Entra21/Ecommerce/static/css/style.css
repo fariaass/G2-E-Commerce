@@ -37,7 +37,7 @@ a:hover {
   justify-content: space-around;
   align-items: center;
   font-family: var(--font);
-  background: #1a1a1a;
+  background: #3d3d3d;
   height: 8vh;
 }
 
@@ -336,7 +336,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   font-family: "Ubuntu", sans-serif;
-  background: #1a1a1a;
+  background: #3d3d3d;
   position: relative;
   bottom: 0;
   width: 100%;

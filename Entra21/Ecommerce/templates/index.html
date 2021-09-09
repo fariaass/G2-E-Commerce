@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="#">Carrinho</a></li>
+                <li><a href="{% url 'carrinho' pk=user.id %}">Carrinho</a></li>
                 {% else %}
                 <li>
                     <a href="{% url 'login' %}">Faça Login</a>
