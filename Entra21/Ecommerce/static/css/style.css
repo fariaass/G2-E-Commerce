@@ -387,6 +387,12 @@ hr.solid {
   grid-area: divline;
 }
 
+#subtotal_cart {
+  width: 45vw;
+  height: 5vh;
+  font-size: 20px;
+}
+
 /* FOOTER */
 
 footer {

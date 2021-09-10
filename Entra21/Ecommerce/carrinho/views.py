@@ -15,11 +15,14 @@ def retorna_carrinho(request, pk):
     dados = dados.json()
     produtos = [get_object_or_404(Produto, id=i) for i in dados['produtos']]
 
-    # Itens recomendados
+    # total do carrinho
 
-    # recomendados = requests.get('http://127.0.0.1:8000/api/tags/' + str(pk) + '/')
+    itens = requests.get('http://127.0.0.1:8000/api/carrinho/' + str(pk) + '/')
+    itens = itens.json()
+    total_itens = len(list(itens))
+    prod = [get_object_or_404(Produto, id=i) for i in itens['produtos']]
+    total = [i.preco for i in prod]
+    total = sum(total)
 
-    # categoria = categoria.json()
-    # produtos = get_list_or_404(Produto, categoria=categoria.id)
 
-    return render(request, 'carrinho/carrinho.html', {'dados':produtos})
+    return render(request, 'carrinho/carrinho.html', {'dados':produtos, 'total_itens': total_itens, 'total': total})
