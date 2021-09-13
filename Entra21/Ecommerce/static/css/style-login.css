@@ -7,9 +7,14 @@ body {
     overflow: hidden;
 }
 
-.logo {
-    text-align: center;
-    z-index: 2;
+.logo img{
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    z-index: 1;
+    max-width: 50vw;
 }
 
 .centro {
@@ -17,10 +22,11 @@ body {
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 51.6vh;
-    height: 37vh;
+    width: 50vw;
+    height: 57vh;
     background: #fff;
     border-radius: 10px;
+    z-index: 2;
 }
 
 .centro h1 {
