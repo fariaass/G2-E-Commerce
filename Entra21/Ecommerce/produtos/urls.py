@@ -8,7 +8,7 @@ URLs do app produtos.
 """
 
 urlpatterns = [
-    path('<int:pk>/', detalhes_produto, name='retrieve'),
+    path('<int:pk>/', detalhes_produto, name='detalhes_produto'),
     path('list/', retorna_produtos, name='list'),
     path('maisVendidos/', retorna_produtos_mais_vendidos, name='maisVendidos'),
     path('maisVistos', retorna_produtos_mais_visualizados, name='maisVistos'),

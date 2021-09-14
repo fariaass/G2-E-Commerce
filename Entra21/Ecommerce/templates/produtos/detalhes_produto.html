@@ -8,7 +8,7 @@
 
 <section class="container_detalhes">
 <div class="grid_produto_detalhe">
-    <div class="foto_detalhe"><img src="{{i.imagem}}"></div>
+    <div class="foto_detalhe"><img src="{{i.imagem.url}}"></div>
     <div class="descricao_detalhe">
         <p>Detalhes: <br><br> {{i.descricao}}</p>
     </div>
@@ -27,8 +27,8 @@
 <section class="recomendados">
     {% for j in dados %}
     <div class="grid_recomendados">
-        <div class="foto_recomendados"><img src="{{j.imagem}}" alt="Foto de {{j.nome}}"></div>
-        <div class="nome_recomendados"><a href="{% url 'detalhes_produto' pk=j.id %}">{{j.nome}}</a></div>
+        <div class="foto_recomendados"><img src="{{j.imagem.url}}" alt="Foto de {{j.nome}}"></div>
+        <div class="nome_recomendados"><a href="{% url 'produtos:detalhes_produto' pk=j.id %}">{{j.nome}}</a></div>
         <div class="preco_recomendados">R${{j.preco}}</div>
     </div> 
     {% endfor %}
