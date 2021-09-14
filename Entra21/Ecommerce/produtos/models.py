@@ -1,5 +1,6 @@
 from categorias.models import Categoria, Tag
 from django.db import models
+import datetime
 
 class Produto(models.Model):
     """
@@ -21,8 +22,8 @@ class Produto(models.Model):
         return self.nome
 
     def __gt__(self, other):
-        return self.visualizacoes > other.visualizacoes
+        return datetime.date(self.data_criacao) > datetime.date(other.data_criacao)
 
     def __lt__(self, other):
-        return self.visualizacoes < other.visualizacoes
+        return datetime.date(self.data_criacao) < datetime.date(other.data_criacao)
 

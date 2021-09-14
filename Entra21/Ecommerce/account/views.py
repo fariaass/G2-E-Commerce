@@ -1,18 +1,18 @@
 from account.forms import MyUserForm, EnderecoForm
-from django.shortcuts import render
-import requests
+from django.shortcuts import get_object_or_404, render
+from account.models import MyUser
 
 def retorna_account(request, pk):
     """
-    Esta função retorna os dados da api, obtidos através do consumo da mesma pela url.
-
-    O retorno consiste em um template acompanhado de um json.
+    O retorno consiste em um template acompanhado de um json com as informações do usuário.
     """
-    dados = requests.get('http://127.0.0.1:8000/api/account/' + str(pk) + '/')
-    dados = dados.json()
+    dados = get_object_or_404(MyUser, pk=pk)
     return render(request, 'EM ABERTO', {'dados':dados})
 
 def cadastra_user(request):
+    """
+    Esta função consiste no cadastro de um novo usuário.
+    """
     if request.method == 'POST':
         form = MyUserForm(request.POST)
         if form.is_valid():
@@ -24,6 +24,9 @@ def cadastra_user(request):
     return render(request, 'registration/form.html', {'form':form})
 
 def addEndereco(request):
+    """
+    Esta função consiste no cadastro de um novo endereço.
+    """
     if request.method == 'POST':
         form = EnderecoForm(request.POST)
         if form.is_valid():
