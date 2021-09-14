@@ -46,7 +46,7 @@
                     <a href="{% url 'login' %}">Faça Login</a>
                 </li>
                 <li>
-                    <a href="{% url 'cadastrar' %}">Cadastre-se</a>    
+                    <a href="{% url 'account:cadastrar' %}">Cadastre-se</a>    
                 </li>
                 {% endif %}
             </ul>
@@ -56,8 +56,8 @@
 
         <nav id="subNav">
             <ul class="subNavBar">
-                <li><a href="{% url 'maisVisitados' %}">MAIS VISITADOS</a></li>
-                <li><a href="{% url 'maisVendidos' %}">MAIS COMPRADOS</a></li>
+                <li><a href="{% url 'produtos:maisVistos' %}">MAIS VISITADOS</a></li>
+                <li><a href="{% url 'produtos:maisVendidos' %}">MAIS COMPRADOS</a></li>
                 <li><a href="#">LANÇAMENTOS</a></li>
             </ul>
         </nav>
