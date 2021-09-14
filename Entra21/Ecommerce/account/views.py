@@ -1,4 +1,5 @@
 from account.forms import MyUserForm, EnderecoForm
+from .models import MyUser
 from django.shortcuts import render
 import requests
 
@@ -8,8 +9,7 @@ def retorna_account(request, pk):
 
     O retorno consiste em um template acompanhado de um json.
     """
-    dados = requests.get('http://127.0.0.1:8000/api/account/' + str(pk) + '/')
-    dados = dados.json()
+    dados = MyUser.pk()
     return render(request, 'EM ABERTO', {'dados':dados})
 
 def cadastra_user(request):

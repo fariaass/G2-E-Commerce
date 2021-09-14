@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from produtos.models import Produto
+from .models import Carrinho
 import requests
 
 def retorna_carrinho(request, pk):
@@ -11,8 +12,7 @@ def retorna_carrinho(request, pk):
 
     # Itens carrinho
 
-    dados = requests.get('http://127.0.0.1:8000/api/carrinho/' + str(pk) + '/')
-    dados = dados.json()
+    dados = Carrinho.pk()
     produtos = [get_object_or_404(Produto, id=i) for i in dados['produtos']]
 
     # total do carrinho

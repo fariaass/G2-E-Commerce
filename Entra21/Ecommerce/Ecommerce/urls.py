@@ -1,4 +1,3 @@
-from Entra21.Ecommerce.produtos.views import retorna_produtos
 from account.views import cadastra_user, addEndereco
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
@@ -6,7 +5,7 @@ from django.urls import path
 from django.conf.urls.static import static
 from . import settings
 from .views import home
-from produtos.views import retorna_produtos_mais_vendidos, retorna_produtos_mais_visualizados, detalhes_produto, retorna_produtos_categoria
+from produtos.views import retorna_produtos_mais_vendidos, retorna_produtos_mais_visualizados, detalhes_produto, retorna_produtos_categoria, retorna_produtos
 from carrinho.views import retorna_carrinho
 
 urlpatterns = [
