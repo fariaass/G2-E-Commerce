@@ -25,8 +25,7 @@ def retorna_produtos(request):
 
     O retorno consiste em um template acompanhado de um json.
     """
-    dados = requests.get('http://127.0.0.1:8000/api/produtos')
-    dados = dados.json()
+    dados = Produto.objects.all()
     return render(request, 'produtos/produtos.html', {'dados':dados})
 
 
