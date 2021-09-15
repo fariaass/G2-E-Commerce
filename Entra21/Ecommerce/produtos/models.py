@@ -2,6 +2,10 @@ from categorias.models import Categoria, Tag
 from django.db import models
 import datetime
 
+class DisponivelManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(is_disponivel=True)
+
 class Produto(models.Model):
     """
     Modelo dos produtos com seus respectivos campos.
@@ -17,7 +21,14 @@ class Produto(models.Model):
     data_criacao        = models.DateField(auto_now_add=True)
     visualizacoes       = models.IntegerField()
     vendas              = models.IntegerField()
+    is_disponivel       = models.BooleanField(default=True)
 
+    objects = models.Manager()
+    disponivel = DisponivelManager()
+
+    class Meta:
+        ordering = ("name",)
+        
     def __str__(self):
         return self.nome
 
