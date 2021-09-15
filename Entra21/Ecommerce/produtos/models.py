@@ -20,10 +20,3 @@ class Produto(models.Model):
 
     def __str__(self):
         return self.nome
-
-    def __gt__(self, other):
-        return datetime.date(self.data_criacao) > datetime.date(other.data_criacao)
-
-    def __lt__(self, other):
-        return datetime.date(self.data_criacao) < datetime.date(other.data_criacao)
-
