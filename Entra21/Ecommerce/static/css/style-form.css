@@ -5,12 +5,17 @@
     padding: 0;
 }
 
-body{
-    background-color: var(--preto);
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(120deg, #000000, #6b6b6b);
+    height: 100vh;
+    overflow: hidden;
 }
 
 :root{
-    --font: "Ubuntu", sans-serif;
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --preto: #1a1a1a;
 }
 
@@ -19,8 +24,10 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
-    height: 300px;
+    width: 50vh;
+    height: 80vh;
+    min-width: 500px;
+    min-height: 500px;
     box-shadow: 5px 5px 10px black;
     background-color: white;
     border-radius: 15px;
@@ -44,12 +51,10 @@ body{
 }
 
 #form-cadastro{
-    display: flex;
-    width: 400px;
-    flex-wrap: wrap;
+    display: inline;
     margin: 0;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
     grid-area: form;
 }
 
@@ -68,20 +73,17 @@ body{
     margin-left: 12px;
 }
 
-#btn{
-    font-family: var(--font);
-    font-size: 16px;
-    grid-area: btn;
-    width: 200px;
-    background-color: rgb(63, 238, 63);
-    border-radius: 5px;
-    border: 1px solid black;
-    transition: 0.2s;
-}
-
-#btn:hover{
-    width: 220px;
-    transition: 0.2s;
+#btn[type="submit"] {
+    width: 80%;
+    height: 50px;
+    border: 1px solid #6b6b6b;
+    background: linear-gradient(120deg, #adadad, #4e4e4e);;
+    border-radius: 25px;
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
 }
 
 /* --------------------------------------- FORMULÁRIO DE CADASTRO CONCLUIDO--------------------------------------- */
@@ -140,4 +142,19 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.seta img {
+    position: absolute;
+    height: 5vh;
+    width: 5vh;
+    margin-top: 3vh;
+    margin-left: 3vh;
+    transition: 0.3s;
+}
+
+.seta img:hover {
+    height: 6vh;
+    width: 6vh;
+    transition: 0.3s;
 }

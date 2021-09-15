@@ -11,3 +11,4 @@ class EnderecoForm(ModelForm):
     class Meta:
         model = Endereco
         fields = ('cep', 'rua', 'bairro', 'cidade', 'estado',)
+        
