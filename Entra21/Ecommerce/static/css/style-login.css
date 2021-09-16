@@ -1,131 +1,50 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+body{
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(120deg, #000000, #6b6b6b);
     height: 100vh;
-    overflow: hidden;
+    width: 100vh;
+    background-color: black;
+    font-family: 'PT Sans';
 }
 
-.seta img {
+#content{
     position: absolute;
-    height: 5vh;
-    width: 5vh;
-    margin-top: 3vh;
-    margin-left: 3vh;
-    transition: 0.3s;
-}
-
-.seta img:hover {
-    height: 6vh;
-    width: 6vh;
-    transition: 0.3s;
-}
-
-.centro {
-    position: absolute;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 30vw;
-    height: 40vh;
-    min-width: 500px;
-    min-height: 500px;
-    background: #fff;
+    height: 50vh;
+    box-shadow: 7px 5px 15px white;
     border-radius: 10px;
-    z-index: 2;
-}
-
-.centro h1 {
     text-align: center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver;
+    background-color: white;
 }
 
-.centro form {
-    padding: 0 40px;
-    box-sizing: border-box;
+#title{
+    letter-spacing: 2px;
+    border-bottom: 2px solid black;
+    width: 12vw;
+    padding-bottom: 5px;
+    font-size: 26px;
 }
 
-form .txt_field {
-    position: relative;
-    border-bottom: 2px solid #adadad;
-    margin: 30px 0;
-}
-
-.txt_field input {
-    width: 100%;
-    padding: 0 5px;
-    height: 40px;
-    font-size: 16px;
-    border: none;
-    background: none;
-    outline: none;
-}
-
-.txt_field label {
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    color: #adadad;
-    transform: translateY(-50%);
-    font-size: 16px;
-    pointer-events: none;
-    transition: .5s;
-}
-
-.txt_field span::before{
-    content: "";
-    position: absolute;
-    top: 40px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #6b6b6b;
-    transition: .5s;
-}
-
-.txt_field input:focus ~ label, 
-.txt_field input:valid ~ label {
-    top: -5px;
-    color: #6b6b6b;
-}
-
-.txt_field input:focus ~ span::before, 
-.txt_field input:valid ~ span::before {
-    width: 100%;
-}
-
-button[type="submit"] {
-    width: 100%;
-    height: 50px;
-    border: 1px solid #6b6b6b;
-    background: linear-gradient(120deg, #adadad, #4e4e4e);;
-    border-radius: 25px;
+.control-group{
     font-size: 18px;
-    color: black;
-    font-weight: 700;
-    cursor: pointer;
-    outline: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
-button[type="submit"]:hover {
-    border-color: #6b6b6b;
-    transition: .5s;
+.control-label{
+    padding-top: 10px;
 }
 
-.signup_link {
-    padding-top: 1.5vh;
-    text-align: center;
-    font-size: 16px;
-    color: #666666;
-}
-
-.signup_link a{
-    color: #6b6b6b;
-    text-decoration: none;
-}
-
-.signup_link a:hover {
-    text-decoration: underline;
+.textinput{
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
