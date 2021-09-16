@@ -26,8 +26,6 @@ class Produto(models.Model):
     objects = models.Manager()
     disponivel = DisponivelManager()
 
-    class Meta:
-        ordering = ("name",)
         
     def __str__(self):
         return self.nome

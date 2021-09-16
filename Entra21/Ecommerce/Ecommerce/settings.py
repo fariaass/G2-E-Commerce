@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'widget_tweaks',
     'colorfield',
     'crispy_forms',
     'account',
@@ -149,3 +150,9 @@ LOGOUT_REDIRECT_URL = '/'
 
 with open('Ecommerce/settings_local.py') as infile:
     exec(infile.read())
+
+
+# CONFIGS DO CARRINHO
+
+CART_SESSION_ID = "carrinho"
+CART_ITEM_MAX_QUANTITY = 20    

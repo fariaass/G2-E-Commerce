@@ -3,6 +3,12 @@ from django.shortcuts import render, get_object_or_404
 from categorias.models import Categoria
 from .models import Produto
 from random import randint
+from carrinho.forms import CarrinhoAddProdutoForm
+from django.views.generic import DetailView, ListView
+
+class ProdutoDetailView(DetailView):
+    queryset = Produto.disponivel.all()
+    extra_context = {"form": CarrinhoAddProdutoForm()}
 
 def retorna_produtos(request):
     """

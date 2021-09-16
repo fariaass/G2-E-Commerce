@@ -8,9 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="{% static 'js/cep.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/style-nav.css' %}"> 
 </head>
 <body>
 
@@ -18,7 +23,58 @@
 
     <!-- BARRA DE NAVEGAÇÃO -->
 
-        <nav id="mainNav">
+    <div class="wrapper">
+        <nav>
+          <input type="checkbox" id="show-search">
+          <input type="checkbox" id="show-menu">
+          <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+          <div class="content">
+          <div class="logo"><a href="#"><img src="{% static 'img/Logo Mini.png'%}"></a></div>
+            <ul class="links">
+              <li>
+                {% if user.is_authenticated %}
+                <li>
+                    <a href="#" class="desktop-link">Olá, {{user.primeiro_nome}}!</a>
+                    <input type="checkbox" id="show-features">
+                    <label for="show-features">Olá, {{user.primeiro_nome}}!</label>
+                    <ul>
+                      <li><a href="#">Meu perfil</a></li>
+                      {% if user.is_superuser %}
+                            <li><a href="/admin">Cadastrar produtos</a></li>
+                        {% endif %}
+                      <li><a href="{% url 'logout' %}">Sair</a></li>
+                    </ul>
+                  </li>
+                {% else %}
+                  <li>
+                      <a href="{% url 'login' %}">Faça Login</a>
+                  </li>
+                  <li>
+                      <a href="{% url 'account:cadastrar' %}">Cadastre-se</a>    
+                  </li>
+                {% endif %}
+              <li>
+                <a href="#" class="desktop-link">Destaques</a>
+                <input type="checkbox" id="show-features">
+                <label for="show-features">Destaques</label>
+                <ul>
+                  <li><a href="#">Mais Vendidos</a></li>
+                  <li><a href="#">Mais Visitados</a></li>
+                  <li><a href="#">Lançamentos</a></li>
+                </ul>
+              </li>
+              <li><a href="{% url 'carrinho:carrinho_detail' %}">Carrinho</a></li>
+            </ul>
+          </div>
+          <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+          <form action="#" class="search-box">
+            <input type="text" placeholder="Type Something to Search..." required>
+            <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+          </form>
+        </nav>
+      </div>
+
+        <!-- <nav id="mainNav">
             <a class="logo" href="/"><img src="{% static 'img/Logo Mini.png' %}"></a>
             <ul class="navBar">
                 <li><div>
@@ -40,7 +96,7 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="{% url 'carrinho' pk=user.id %}">Carrinho</a></li>
+                <li><a href="{% url 'carrinho:carrinho_detail' %}">Carrinho</a></li>
                 {% else %}
                 <li>
                     <a href="{% url 'login' %}">Faça Login</a>
@@ -50,17 +106,18 @@
                 </li>
                 {% endif %}
             </ul>
-        </nav>
+        </nav> -->
 
     <!-- SUB BARRA DE NAVEGAÇÃO -->
 
-        <nav id="subNav">
+        <!-- <nav id="subNav">
             <ul class="subNavBar">
                 <li><a href="{% url 'produtos:maisVistos' %}">MAIS VISITADOS</a></li>
                 <li><a href="{% url 'produtos:maisVendidos' %}">MAIS COMPRADOS</a></li>
                 <li><a href="{% url 'produtos:lancamentos' %}">LANÇAMENTOS</a></li>
             </ul>
-        </nav>
+        </nav> -->
+
     </header>  
 
     <main>
@@ -73,9 +130,9 @@
 
     </main>
 
-    <footer>
+    <!-- <footer>
 
-    <!-- RODAPÉ -->
+    RODAPÉ
 
     <p>Contate-nos</p>
     
@@ -86,9 +143,6 @@
         <li><img class="footerIcon" src="{% static 'img/gmail.png' %}"><a href="#">NOSSO EMAIL</a></li>
     </ul>
 
-    <!-- <div class="referenciaIcon">Ícones feitos por <a href="https://www.flaticon.com/br/autores/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
-    <div class="referenciaIcon">Ícones feitos por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
-     -->
-    </footer>
+    </footer> -->
 </body>
 </html>

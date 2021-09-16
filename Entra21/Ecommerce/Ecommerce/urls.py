@@ -18,7 +18,7 @@ urlpatterns = [
     path('account', include(account.urls)),
     path('produtos/', include(produtos.urls)),
     path('categorias/', include(categorias.urls)),
-    path('carrinho', include(carrinho.urls)),
+    path('carrinho/', include(carrinho.urls)),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
