@@ -1,0 +1,55 @@
+
+{% load static %}
+
+{% block navbar %}
+
+<nav>
+    <input type="checkbox" id="show-search">
+    <input type="checkbox" id="show-menu">
+    <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+    <div class="content">
+    <div class="logo"><a href="{% url 'home' %}">ALL COMMERCE</a></div>
+      <ul class="links">
+        <li>
+          {% if user.is_authenticated %}
+          <li>
+              <a href="#" class="desktop-link">Olá, {{user.primeiro_nome}}!</a>
+              <input type="checkbox" id="show-features">
+              <label for="show-features">Olá, {{user.primeiro_nome}}!</label>
+              <ul>
+                <li><a href="#">Meu perfil</a></li>
+                {% if user.is_superuser %}
+                      <li><a href="/admin">Cadastrar produtos</a></li>
+                  {% endif %}
+                <li><a href="{% url 'logout' %}">Sair</a></li>
+              </ul>
+            </li>
+          {% else %}
+            <li>
+                <a href="{% url 'login' %}">Faça Login</a>
+            </li>
+            <li>
+                <a href="{% url 'account:cadastrar' %}">Cadastre-se</a>    
+            </li>
+          {% endif %}
+        <li>
+          <a href="#" class="desktop-link">Destaques</a>
+          <input type="checkbox" id="show-features1">
+          <label for="show-features1">Destaques</label>
+          <ul>
+            <li><a href="{% url 'produtos:maisVendidos' %}">Mais Vendidos</a></li>
+            <li><a href="{% url 'produtos:maisVistos' %}">Mais Visitados</a></li>
+            <li><a href="#">Lançamentos</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'carrinho:carrinho_detail' %}">Carrinho</a></li>
+      </ul>
+    </div>
+    <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+    <form action="#" class="search-box">
+      <input type="text" placeholder="Type Something to Search..." required>
+      <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+    </form>
+  </nav>
+
+{% endblock %}

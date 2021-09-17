@@ -22,7 +22,7 @@ a:hover{
   text-decoration: none;
 }
 .wrapper{
-  background: transparent;
+  background: #FFFFFF;
   position: fixed;
   width: 100%;
 }
@@ -31,7 +31,6 @@ a:hover{
   display: flex;
   max-width: calc(100% - 200px);
   margin: 0 auto;
-  margin-top: 10px;
   height: 70px;
   align-items: center;
   justify-content: space-between;
@@ -92,11 +91,11 @@ nav .content .links{
 }
 .content .links li a:hover,
 .content .links li label:hover{
-  background: #323c4e;
+  background: #FFFFFF;
 }
 .wrapper .search-icon,
 .wrapper .menu-icon{
-  color: #fff;
+  color: black;
   font-size: 18px;
   cursor: pointer;
   line-height: 70px;
@@ -129,8 +128,8 @@ nav .content .links{
   border: none;
   outline: none;
   font-size: 17px;
-  color: #fff;
-  background: var(--corPrimaria);
+  color: black;
+  background: rgb(190, 190, 190);
   padding: 0 100px 0 15px;
 }
 .search-box input::placeholder{
@@ -143,12 +142,13 @@ nav .content .links{
   transform: translateY(-50%);
   line-height: 60px;
   width: 70px;
-  background: #171c24;
+  background: var(--corBackground);
   border: none;
   outline: none;
-  color: #fff;
+  color: black;
   font-size: 20px;
   cursor: pointer;
+  border-radius: 5px;
 }
 .wrapper input[type="checkbox"]{
   display: none;
@@ -157,7 +157,7 @@ nav .content .links{
 /* Dropdown Menu code start */
 .content .links ul{
   position: absolute;
-  background: var(--corSecundaria);
+  background: white;
   top: 80px;
   z-index: -1;
   opacity: 0;
@@ -168,6 +168,7 @@ nav .content .links{
   opacity: 1;
   visibility: visible;
   transition: all 0.3s ease;
+
 }
 .content .links ul li a{
   display: block;
@@ -217,7 +218,7 @@ nav .content .links{
   nav .content .links{
     display: block;
     position: fixed;
-    background: #14181f;
+    background: #FFFFFF;
     height: 100%;
     width: 100%;
     top: 70px;
@@ -257,6 +258,7 @@ nav .content .links{
     overflow: hidden;
   }
   .content .links #show-features:checked ~ ul,
+  .content .links #show-features1:checked ~ ul,
   .content .links #show-services:checked ~ ul,
   .content .links #show-items:checked ~ ul{
     max-height: 100vh;
