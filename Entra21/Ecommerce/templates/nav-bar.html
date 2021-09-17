@@ -42,7 +42,7 @@
             <li><a href="#">Lançamentos</a></li>
           </ul>
         </li>
-        <li><a href="{% url 'carrinho:carrinho_detail' %}">Carrinho</a></li>
+        <li><a href="{% url 'carrinho:retrieve' pk=user.id %}">Carrinho</a></li>
       </ul>
     </div>
     <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>

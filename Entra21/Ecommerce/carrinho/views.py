@@ -1,35 +1,20 @@
-from django.shortcuts import get_object_or_404, redirect, render
-from django.views.decorators.http import require_POST
+from django.shortcuts import render, get_object_or_404
 from produtos.models import Produto
-from .cart import Carrinho
-from .forms import CarrinhoAddProdutoForm
+from carrinho.models import Carrinho
 
+def retorna_carrinho(request, pk):
+    """
+    O retorno consiste em um template acompanhado de um json com os dados do carrinho.
+    """
 
-@require_POST
-def carrinho_add(request, produto_id):
-    carrinho = Carrinho(request)
-    produto = get_object_or_404(Produto, id=produto_id)
+    # Itens carrinho
 
-    form = CarrinhoAddProdutoForm(request.POST)
-    if form.is_valid():
-        cd = form.cleaned_data
-        carrinho.add(
-            produto=produto, quantity=cd["quantidade"], override_quantity=cd["override"]
-        )
+    dados = get_object_or_404(Carrinho, pk=pk)
+    produtos = [get_object_or_404(Produto, id=i) for i in dados['produtos']]
 
-    return redirect("carrinho:detail")
+    # total do carrinho
+    total_itens = len(list(dados))
+    total = [i.preco for i in produtos]
+    total = sum(total)
 
-
-@require_POST
-def carrinho_remove(request, produto_id):
-    carrinho = Carrinho(request)
-    produto = get_object_or_404(Produto, id=produto_id)
-    carrinho.remove(produto)
-    return redirect("carrinho:detail")
-
-
-def carrinho_detail(request):
-    carrinho = Carrinho(request)
-    return render(request, "carrinho/carrinho_detail.html", {"carrinho": carrinho})
-
-
+    return render(request, 'carrinho/carrinho.html', {'dados': produtos, 'total_itens': total_itens, 'total': total})

@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'widget_tweaks',
     'colorfield',
     'crispy_forms',
     'account',
@@ -152,7 +151,6 @@ with open('Ecommerce/settings_local.py') as infile:
     exec(infile.read())
 
 
-# CONFIGS DO CARRINHO
+# Crispy
 
-CART_SESSION_ID = "carrinho"
-CART_ITEM_MAX_QUANTITY = 20    
+CRISPY_TEMPLATE_PACK = "bootstrap4"

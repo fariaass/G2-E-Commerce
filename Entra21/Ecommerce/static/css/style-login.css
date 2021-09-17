@@ -1,110 +1,93 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap%27');
+
+body{
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(120deg, #000000, #880000);
     height: 100vh;
-    overflow: hidden;
+    width: 100vw;
+    background: white;
+    font-family: 'PT Sans';
 }
 
-.logo img{
+#content{
     position: absolute;
-    left: 50%;
-    top: 25%;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
-    z-index: 1;
-    max-width: 50vw;
-}
-
-.centro {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50vw;
-    height: 57vh;
-    background: #fff;
-    border-radius: 10px;
-    z-index: 2;
-}
-
-.centro h1 {
-    text-align: center;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid silver;
-}
-
-.centro form {
-    padding: 0 40px;
-    box-sizing: border-box;
-}
-
-form .txt_field {
-    position: relative;
-    border-bottom: 2px solid #adadad;
-    margin: 30px 0;
-}
-
-.txt_field input {
-    width: 100%;
-    padding: 0 5px;
-    height: 40px;
-    font-size: 16px;
-    border: none;
-    background: none;
-    outline: none;
-}
-
-.txt_field label {
-    position: absolute;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     top: 50%;
-    left: 5px;
-    color: #adadad;
-    transform: translateY(-50%);
-    font-size: 16px;
-    pointer-events: none;
-    transition: .5s;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20vw;
+    height: 40vh;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px #b6b6b6;
+    text-align: center;
+    background-color: white;
+    min-width: 300px;
+    min-height: 350px;
 }
 
-.txt_field span::before{
-    content: "";
-    position: absolute;
-    top: 40px;
-    left: 0;
+#title{
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 2px;
+    border-bottom: 2px solid black;
+    width: 12vw;
+    padding-bottom: 10px;
+    font-size: 26px;
+}
+
+.control-group{
+    font-size: 18px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.control-label{
+    padding-top: 10px;
+}
+
+.textinput{
     width: 100%;
-    height: 2px;
-    background: #880000;
-    transition: .5s;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
-.txt_field input:focus ~ label, 
-.txt_field input:valid ~ label {
-    top: -5px;
-    color: #880000;
-}
-
-.txt_field input:focus ~ span::before, 
-.txt_field input:valid ~ span::before {
-    width: 100%;
+.control-label {
+    color: black;
 }
 
 button[type="submit"] {
     width: 100%;
     height: 50px;
-    border: 1px solid #be1818;
-    background: #be1818;
+    border: 1px solid #6b6b6b;
+    background: linear-gradient(120deg, #e9ff9b, #8DA242);
     border-radius: 25px;
     font-size: 18px;
     color: black;
     font-weight: 700;
     cursor: pointer;
     outline: none;
+    margin-top: 3vh
 }
 
 button[type="submit"]:hover {
-    border-color: #880000;
+    border-color: #000000;
     transition: .5s;
+}
+
+.seta img {
+    position: absolute;
+    height: 5vh;
+    margin-top: 3vh;
+    margin-left: 3vh;
+    transition: 0.3s;
+}
+
+.seta img:hover {
+    height: 6vh;
+    transition: 0.3s;
 }
 
 .signup_link {
@@ -115,7 +98,7 @@ button[type="submit"]:hover {
 }
 
 .signup_link a{
-    color: #be1818;
+    color: #8DA242;
     text-decoration: none;
 }
 
