@@ -20,7 +20,7 @@ body{
     width: 20vw;
     height: 40vh;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px 5px#4e4e4e;
+    box-shadow: 5px 5px 5px 5px #b6b6b6;
     text-align: center;
     background-color: white;
     min-width: 300px;
@@ -62,7 +62,7 @@ button[type="submit"] {
     width: 100%;
     height: 50px;
     border: 1px solid #6b6b6b;
-    background: linear-gradient(120deg, #adadad, #4e4e4e);
+    background: linear-gradient(120deg, #e9ff9b, #8DA242);
     border-radius: 25px;
     font-size: 18px;
     color: black;
@@ -98,7 +98,7 @@ button[type="submit"]:hover {
 }
 
 .signup_link a{
-    color: #6b6b6b;
+    color: #8DA242;
     text-decoration: none;
 }
 
