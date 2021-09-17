@@ -60,7 +60,7 @@ body{
 
 button[type="submit"] {
     width: 100%;
-    height: 50px;
+    height: 30px;
     border: 1px solid #6b6b6b;
     background: linear-gradient(120deg, #e9ff9b, #8DA242);
     border-radius: 25px;
@@ -74,7 +74,7 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     border-color: #000000;
-    transition: .5s;
+    transition: .5;
 }
 
 .seta img {

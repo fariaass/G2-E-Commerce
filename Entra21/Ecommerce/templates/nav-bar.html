@@ -24,6 +24,7 @@
                 <li><a href="{% url 'logout' %}">Sair</a></li>
               </ul>
             </li>
+          <li><a href="{% url 'carrinho:retrieve' pk=user.pk %}">Carrinho</a></li>
           {% else %}
             <li>
                 <a href="{% url 'login' %}">Faça Login</a>
@@ -42,7 +43,6 @@
             <li><a href="#">Lançamentos</a></li>
           </ul>
         </li>
-        <li><a href="{% url 'carrinho:retrieve' pk=user.id %}">Carrinho</a></li>
       </ul>
     </div>
     <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
