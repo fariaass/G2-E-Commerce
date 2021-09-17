@@ -4,9 +4,20 @@ Internet extra
 
 ordem de apresentar-se
 
+Menezes
+Farias
+Volpato
+Rosa
 
-Lucas
-Pedro Lucas
+Menezes: Nosso projeto trás uma solução em ecommerce para os pequenos empreendedores de Blumenau e região,
+através de um portifólio pronto, podemos disponibilizar a um custo muito abaixo da média, lojas onlines, 
+prontas para comercialização e uso.
 
+Teixeira: Eu, Farias, contribuí para o projeto, através da montagem das tabelas de dados,
+organizações de urls e integrações com as views.
 
-Nossa aplicação...
+Volpato: Eu, Volpato, junto do meu colega Menezes e Rosa, trabalhei no design do front-end, desenvolvendo
+os templates e trabalhando nas funções.
+
+Rosa: Eu, Rosa, dei suporte aos meus colegas de equipe, trabalhando na resolução de conflitos de arquivos 
+e adicionando conteúdo ao site.
