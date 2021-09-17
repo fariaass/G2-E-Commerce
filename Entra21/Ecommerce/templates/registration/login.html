@@ -15,7 +15,7 @@
         <form method="POST">
             <h1 id="title">Login</h1>
             {% csrf_token %}
-            {{form.as_p}}
+            {{form|crispy}}
             <input type="hidden" name="next" value="{{next}}">
             <button type="submit">Entrar</button>
         </form>

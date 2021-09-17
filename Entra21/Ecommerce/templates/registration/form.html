@@ -17,7 +17,7 @@
     <section id="content-form" class="content">
         <h1 class="title">Cadastre-se</h1>
         <form method="post" id="form-cadastro">
-            {% crispy form %}
+            {{form|crispy}}
             <button id="btn" type="submit" form="form-cadastro">Enviar</button>
         </form>
     </section>
