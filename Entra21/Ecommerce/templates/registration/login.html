@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{% static 'css/style-login.css' %}">
     <title>Login</title>
 </head>
+    <div class="seta">
+        <a class="seta" href="/"><img src="{% static 'img/seta.png' %}"></a>
+    </div>
 <body>
     <section id="content">
         <form method="POST">
@@ -18,6 +21,9 @@
             {{form|crispy}}
             <input type="hidden" name="next" value="{{next}}">
             <button type="submit">Entrar</button>
+            <div class="signup_link">
+                Ainda não é cadastrado? <a href="{% url 'account:cadastrar' %}">Cadastre-se</a>
+            </div>
         </form>
     </section>
 </body>
