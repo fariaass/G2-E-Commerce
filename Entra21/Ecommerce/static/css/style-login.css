@@ -26,6 +26,8 @@ body{
 }
 
 #title{
+    margin-left: auto;
+    margin-right: auto;
     letter-spacing: 2px;
     border-bottom: 2px solid black;
     width: 12vw;
@@ -44,7 +46,27 @@ body{
 }
 
 .textinput{
+    width: 100%;
     border-top: none;
     border-left: none;
     border-right: none;
+}
+
+.control-label {
+    color: lime;
+}
+
+button[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #6b6b6b;
+    background: linear-gradient(120deg, #adadad, #4e4e4e);;
+    border-radius: 25px;
+    font-size: 18px;
+    color: black;
+}
+
+button[type="submit"]:hover {
+    border-color: #6b6b6b;
+    transition: .5s;
 }
