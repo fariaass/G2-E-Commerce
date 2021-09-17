@@ -16,8 +16,10 @@ prontas para comercialização e uso.
 Teixeira: Eu, Farias, contribuí para o projeto, através da montagem das tabelas de dados,
 organizações de urls e integrações com as views.
 
-Volpato: Eu, Volpato, junto do meu colega Menezes e Rosa, trabalhei no design do front-end, desenvolvendo
-os templates e trabalhando nas funções.
+Volpato: Boa tarde, eu sou o Volpato, sou responsável pela parte do
+ design do nosso site juntamente do meus colega Menezes e Rosá,
+ trabalhei no design do front-end, desenvolvendo
+ os templates e trabalhando nas funções.
 
 Rosa: Eu, Rosa, dei suporte aos meus colegas de equipe, trabalhando na resolução de conflitos de arquivos 
 e adicionando conteúdo ao site.
