@@ -19,24 +19,32 @@ body {
     --preto: #1a1a1a;
 }
 
-.content{
+.content {
     position: absolute;
-    top: 50%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
-    width: 50vh;
+    width: 40vw;
     height: 80vh;
-    min-width: 500px;
-    min-height: 500px;
-    box-shadow: 5px 5px 10px black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px #b6b6b6;
+    text-align: center;
     background-color: white;
-    border-radius: 15px;
+    min-width: 300px;
+    min-height: 350px;
 }
 
 .title{
-    font-family: var(--font);
-    font-size: 20px;
-    grid-area: title;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 2px;
+    border-bottom: 2px solid black;
+    width: 12vw;
+    padding-bottom: 10px;
+    font-size: 26px;
 }
 
 /* --------------------------------------- FORMULÁRIO DE CADASTRO --------------------------------------- */
@@ -62,7 +70,7 @@ body {
     font-family: var(--font);
     flex-basis: 50%;
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .control-group .controls{
@@ -157,4 +165,15 @@ body {
     height: 6vh;
     width: 6vh;
     transition: 0.3s;
+}
+
+li {
+    list-style: none;
+}
+
+input{
+    width: 80%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
