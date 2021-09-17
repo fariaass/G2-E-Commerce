@@ -2,9 +2,6 @@ from categorias.models import Categoria, Tag
 from django.db import models
 import datetime
 
-class DisponivelManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(is_disponivel=True)
 
 class Produto(models.Model):
     """
@@ -24,8 +21,6 @@ class Produto(models.Model):
     is_disponivel       = models.BooleanField(default=True)
 
     objects = models.Manager()
-    disponivel = DisponivelManager()
-
         
     def __str__(self):
         return self.nome

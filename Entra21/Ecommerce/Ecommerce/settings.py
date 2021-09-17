@@ -151,7 +151,6 @@ with open('Ecommerce/settings_local.py') as infile:
     exec(infile.read())
 
 
-# CONFIGS DO CARRINHO
+# Crispy
 
-CART_SESSION_ID = "carrinho"
-CART_ITEM_MAX_QUANTITY = 20    
+CRISPY_TEMPLATE_PACK = "bootstrap4"

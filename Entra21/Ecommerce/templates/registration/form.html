@@ -10,11 +10,14 @@
     <title>Cadastre-se</title>
     <link rel="stylesheet" href="{% static 'css/style-form.css' %}">
 </head>
+    <div class="seta">
+        <a class="seta" href="/"><img src="{% static 'img/seta.png' %}"></a>
+    </div>
 <body>
     <section id="content-form" class="content">
         <h1 class="title">Cadastre-se</h1>
         <form method="post" id="form-cadastro">
-            {% crispy form %}
+            {{form|crispy}}
             <button id="btn" type="submit" form="form-cadastro">Enviar</button>
         </form>
     </section>
