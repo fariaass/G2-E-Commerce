@@ -32,8 +32,10 @@ Database: SQLite
 
 Tarefas em aberto:
 
-    -Desenvolver templates e deixa-los responsivos
+    -Deixar todos os templates responsivos
 
     -Terminar a modelagem de banco de dados
 
     -Trabalhar na integração
+
+    -Terminar implementação do carrinho
