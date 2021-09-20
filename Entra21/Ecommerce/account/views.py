@@ -1,13 +1,16 @@
+from django.contrib.auth.decorators import login_required
 from account.forms import MyUserForm, EnderecoForm
 from django.shortcuts import get_object_or_404, render
 from account.models import MyUser
 
+@login_required(login_url='/login/')
 def retorna_account(request, pk):
     """
     O retorno consiste em um template acompanhado de um json com as informações do usuário.
     """
     dados = get_object_or_404(MyUser, pk=pk)
     return render(request, 'EM ABERTO', {'dados':dados})
+
 
 def cadastra_user(request):
     """
@@ -24,6 +27,8 @@ def cadastra_user(request):
         form = MyUserForm()
     return render(request, 'registration/form.html', {'form':form})
 
+
+@login_required(login_url='/login/')
 def addEndereco(request):
     """
     Esta função consiste no cadastro de um novo endereço.
