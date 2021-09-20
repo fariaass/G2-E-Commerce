@@ -1,5 +1,5 @@
 from django.urls import path
-from carrinho.views import retorna_carrinho
+from carrinho.views import retorna_carrinho, adicionar
 
 app_name = 'carrinho'
 
@@ -8,5 +8,6 @@ URLs do app carrinho.
 """
 
 urlpatterns = [
-    path('<int:pk>/', retorna_carrinho, name='retrieve')
+    path('<int:pk>/', retorna_carrinho, name='retrieve'),
+    path('adicionar/<int:pk>/', adicionar, name='adicionar')
 ]

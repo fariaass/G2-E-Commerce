@@ -10,17 +10,24 @@
 
 <section class="container_detalhes">
 <div class="grid_produto_detalhe">
-    <div class="foto_detalhe"><img src="{{i.imagem.url}}"></div>
+    <div class="foto_detalhe"><img src="{{produto.imagem.url}}"></div>
     <div class="descricao_detalhe">
-        <p>Detalhes: <br><br> {{i.descricao}}</p>
+        <p>Detalhes: <br><br> {{produto.descricao}}</p>
     </div>
     <div class="cart_detalhe">
-        <p class="nome_detalhe">{{i.nome}}</p><br>
-        <p id="preco_detalhe">R${{i.preco}}</p>
-        <button><p class="add_cart">Adicionar ao carrinho</p></button>
+        <p class="nome_detalhe">{{produto.nome}}</p><br>
+        <p id="preco_detalhe">R${{produto.preco}}</p>
+        <a class='add_cart' href="{% url 'carrinho:adicionar' pk=produto.id %}"><button>Adicionar ao carrinho</button></a>
     </div>
 </div>
 </section>
+
+{% if success %}
+<div id='images'>
+    <img src="{% static 'img/carrinho.png' %}" alt="carrinho de compras" id="carrinho-img">
+    <img src="{% static 'img/ok.png' %}" alt="okay imagem" id="ok-img">
+</div>
+{% endif %}
 
 <!-- RECOMENDADOS -->
 
