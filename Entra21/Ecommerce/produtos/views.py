@@ -1,7 +1,10 @@
+from django.utils.encoding import is_protected_type
 from produtos.models import Produto
 from django.shortcuts import render, get_object_or_404
+from produtos.serializers import ProdutoSerializer
 from .models import Produto
 from random import randint
+from datetime import date, datetime
 
 def retorna_produtos(request):
     """
@@ -33,8 +36,10 @@ def retorna_produtos_mais_vendidos(request):
 
         bubblesort(v, n - 1)
     dados = Produto.objects.all()
-    bubblesort(dados, len(dados) - 1)
-    return render(request, 'produtos/produtos.html', {'dados': dados, 'titulo':'Mais Vendidos'})
+    dados = ProdutoSerializer(Produto, many=True, data=dados)
+    if dados.is_valid():
+        bubblesort(dados.data, len(dados.data) - 1)
+    return render(request, 'produtos/produtos.html', {'dados': dados.data, 'titulo':'Mais Vendidos'})
 
 
 def retorna_produtos_mais_visualizados(request):
@@ -59,9 +64,10 @@ def retorna_produtos_mais_visualizados(request):
 
         bubblesort(v, n - 1)
     dados = Produto.objects.all()
-    bubblesort(dados, len(dados) - 1)
-    dados = dados[:20]
-    return render(request, 'produtos/produtos.html', {'dados':dados, 'titulo':'Mais Visitados'})
+    dados = ProdutoSerializer(Produto, many=True, data=dados)
+    if dados.is_valid():
+        bubblesort(dados.data, len(dados.data) - 1)
+    return render(request, 'produtos/produtos.html', {'dados':dados.data, 'titulo':'Mais Visitados'})
 
 
 def retorna_produtos_mais_recentes(request):
@@ -77,18 +83,22 @@ def retorna_produtos_mais_recentes(request):
         """
         if n < 1:
             return
-        
+            
         for i in range(n):
-            if v[i].data_criacao < v[i + 1].data_criacao:
+            data_1 = str(v[i].data_criacao).split('-')
+            data_2 = str(v[i + 1].data_criacao).split('-')
+            if date(data_1[0], data_1[1], data_1[2]) < date(data_2[0], data_2[1], data_2[2]):
                 temp = v[i]
                 v[i] = v[i + 1]
                 v[i + 1] = temp
 
         bubblesort(v, n - 1)
+    
     dados = Produto.objects.all()
-    bubblesort(list(dados), len(dados) - 1)
-    dados = dados[:20]
-    return render(request, 'produtos/produtos.html', {'dados':dados, 'titulo':'Lançamentos'})
+    dados = ProdutoSerializer(Produto, many=True, data=dados)
+    if dados.is_valid():
+        bubblesort(dados.data, len(dados.data) - 1)
+    return render(request, 'produtos/produtos.html', {'dados':dados.data, 'titulo':'Lançamentos'})
 
 
 def detalhes_produto(request, pk):
@@ -97,11 +107,15 @@ def detalhes_produto(request, pk):
     """
     produto = get_object_or_404(Produto, pk=pk)
     dados = Produto.objects.all()
-    recomendacao = []
-    for _ in range(3):
-        reco = dados[randint(0, len(dados) - 1)]
-        if reco not in recomendacao:
-            recomendacao.append(reco)
+    reco = recomendacao(dados, produto)
+    return render(request, 'produtos/detalhes_produto.html', {'produto': produto, 'dados': reco, 'nome': 'Produto   ', 'success':False})
 
-    data = [produto.data_criacao]    
-    return render(request, 'produtos/detalhes_produto.html', {'i': produto, 'dados': recomendacao, 'data':data ,'nome': 'Produto'})
+
+def recomendacao(query, exclude):
+    recomendacao_list = []
+    for _ in range(3):
+        reco = query[randint(0, len(query) - 1)]
+        if reco not in recomendacao_list and reco.nome != exclude.nome:
+            recomendacao_list.append(reco)
+    
+    return recomendacao_list

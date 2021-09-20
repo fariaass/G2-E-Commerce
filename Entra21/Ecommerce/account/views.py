@@ -1,4 +1,4 @@
-from account.forms import MyUserCreationForm, EnderecoForm
+from account.forms import MyUserForm, EnderecoForm
 from django.shortcuts import get_object_or_404, render
 from account.models import MyUser
 
@@ -14,13 +14,14 @@ def cadastra_user(request):
     Esta função consiste no cadastro de um novo usuário.
     """
     if request.method == 'POST':
-        form = MyUserCreationForm(request.POST)
+        form = MyUserForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save(commit=False)
+            user.save()
         usuario = form.cleaned_data['primeiro_nome']
         return render(request, 'registration/formDoneView.html', {'usuario':usuario})
     else:
-        form = MyUserCreationForm()
+        form = MyUserForm()
     return render(request, 'registration/form.html', {'form':form})
 
 def addEndereco(request):
