@@ -1,3 +1,4 @@
+from django.utils.encoding import is_protected_type
 from produtos.models import Produto
 from django.shortcuts import render, get_object_or_404
 from produtos.serializers import ProdutoSerializer
@@ -35,8 +36,10 @@ def retorna_produtos_mais_vendidos(request):
 
         bubblesort(v, n - 1)
     dados = Produto.objects.all()
-    bubblesort(dados, len(dados) - 1)
-    return render(request, 'produtos/produtos.html', {'dados': dados, 'titulo':'Mais Vendidos'})
+    dados = ProdutoSerializer(Produto, many=True, data=dados)
+    if dados.is_valid():
+        bubblesort(dados.data, len(dados.data) - 1)
+    return render(request, 'produtos/produtos.html', {'dados': dados.data, 'titulo':'Mais Vendidos'})
 
 
 def retorna_produtos_mais_visualizados(request):
@@ -61,8 +64,10 @@ def retorna_produtos_mais_visualizados(request):
 
         bubblesort(v, n - 1)
     dados = Produto.objects.all()
-    bubblesort(dados, len(dados) - 1)
-    return render(request, 'produtos/produtos.html', {'dados':dados, 'titulo':'Mais Visitados'})
+    dados = ProdutoSerializer(Produto, many=True, data=dados)
+    if dados.is_valid():
+        bubblesort(dados.data, len(dados.data) - 1)
+    return render(request, 'produtos/produtos.html', {'dados':dados.data, 'titulo':'Mais Visitados'})
 
 
 def retorna_produtos_mais_recentes(request):
