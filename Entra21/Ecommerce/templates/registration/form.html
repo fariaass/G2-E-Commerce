@@ -23,6 +23,7 @@
                 <div class="card-body p-4 p-sm-5">
                 <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
                 <form method="post" id="form-cadastro">
+                    {% csrf_token %}
                     {{form|crispy}}
 
                     <div class="d-grid mb-2">
