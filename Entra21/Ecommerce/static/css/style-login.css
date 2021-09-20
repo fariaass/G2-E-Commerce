@@ -105,3 +105,25 @@ button[type="submit"]:hover {
 .signup_link a:hover {
     text-decoration: underline;
 }
+
+.login {
+    min-height: 100vh;
+  }
+  
+  .bg-image {
+    background-image: url('https://source.unsplash.com/5drSp70oRmY/600x1200');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  
+  .login-heading {
+    font-weight: 300;
+  }
+  
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }
+  

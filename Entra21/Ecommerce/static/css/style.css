@@ -42,6 +42,7 @@ body {
 
 .grid_produto {
   display: grid;
+  z-index: -1;
   place-items: center;
   height: 55vh;
   width: 25vw;
@@ -92,6 +93,7 @@ body {
   display: grid;
   place-items: center;
   margin-top: 20px;
+  height: 100%;
   grid-template-areas: "foto desc info";
 }
 
@@ -103,6 +105,8 @@ body {
 
 .foto_detalhe img {
   padding: 30px;
+  min-width: 210px;
+  max-width: 210px;
   max-width: 210px;
   max-height: 210px;
 }
@@ -292,7 +296,6 @@ body {
 /* CARRINHO */
 
 .cart {
-  padding-top: 100px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

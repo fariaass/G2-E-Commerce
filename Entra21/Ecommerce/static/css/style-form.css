@@ -4,15 +4,24 @@
     margin: 0;
     padding: 0;
 }
-
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(120deg, #000000, #6b6b6b);
-    height: 100vh;
-    overflow: hidden;
+    background: #007bff;
+    background: linear-gradient(to right, #0062E6, #33AEFF);
 }
+                                    
+.card-img-left {
+    width: 45%;
+    /* Link to your background image using in the property below! */
+    background: scroll center url('https://source.unsplash.com/5drSp70oRmY/600x1200');
+    background-size: cover;
+}
+
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+}
+
 
 :root{
     --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
