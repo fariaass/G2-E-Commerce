@@ -40,7 +40,6 @@ body {
     height: 80vh;
     border-radius: 10px;
     box-shadow: 5px 5px 5px 5px #b6b6b6;
-    text-align: center;
     background-color: white;
     min-width: 300px;
     min-height: 350px;
@@ -91,16 +90,22 @@ body {
 }
 
 #btn[type="submit"] {
-    width: 80%;
-    height: 50px;
+    width: 100%;
+    height: 30px;
     border: 1px solid #6b6b6b;
-    background: linear-gradient(120deg, #adadad, #4e4e4e);;
+    background: linear-gradient(120deg, #e9ff9b, #8DA242);
     border-radius: 25px;
     font-size: 18px;
     color: black;
     font-weight: 700;
     cursor: pointer;
     outline: none;
+    margin-top: 3vh
+}
+
+#btn[type="submit"]:hover {
+    border-color: #000000;
+    transition: .5;
 }
 
 /* --------------------------------------- FORMULÁRIO DE CADASTRO CONCLUIDO--------------------------------------- */
@@ -168,6 +173,7 @@ body {
     margin-top: 3vh;
     margin-left: 3vh;
     transition: 0.3s;
+    z-index: 1;
 }
 
 .seta img:hover {
@@ -185,4 +191,10 @@ input{
     border-top: none;
     border-left: none;
     border-right: none;
+}
+
+@media screen and (max-width: 650px) {
+    .seta img {
+      display: none;
+    }
 }
