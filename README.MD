@@ -34,8 +34,14 @@ Tarefas em aberto:
 
     -Deixar todos os templates responsivos
 
-    -Terminar a modelagem de banco de dados
-
     -Trabalhar na integração
 
     -Terminar implementação do carrinho
+
+    -Implementar pagamento
+
+    -Implementar termos de política, e solicitação para emails
+
+    -Implementar sistema de recuperação de senha
+
+    -Implementar autenticação social
