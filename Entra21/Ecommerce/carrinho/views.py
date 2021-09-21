@@ -1,7 +1,10 @@
-from produtos.views import recomendacao
+from django.db import reset_queries
+from produtos.views import produto_queryset_parser, recomendacao
+from django.core.serializers import serialize
 from django.shortcuts import render, get_object_or_404
 from produtos.models import Produto
 from carrinho.models import Carrinho
+from json import loads
 
 def retorna_carrinho(request, pk=None):
     """
@@ -30,7 +33,7 @@ def retorna_carrinho(request, pk=None):
         return render(request, 'carrinho/carrinho.html', {'no_match': no_match})
     else:
         try:
-            products = request.session['cart_products'][:]
+            products = [loads(p) for p in request.session['cart_products']]
         except:
             request.session['cart_products'] = []
             return render(request, 'carrinho/carrinho.html', {'no_match': True})
@@ -38,8 +41,10 @@ def retorna_carrinho(request, pk=None):
             if len(products) == 0:
                 return render(request, 'carrinho/carrinho.html', {'no_match': True})
             else:
+                products = [p[0] for p in products]
+                products = produto_queryset_parser(products, to_session_cart=True)
                 total_itens = len(products)
-                total = [i.preco for i in products]
+                total = [float(p['preco']) for p in products]
                 total = sum(total)
                 
                 return render(request, 'carrinho/carrinho.html', {'dados': products, 'total_itens': total_itens, 'total': total, 'no_match': False})
@@ -52,14 +57,16 @@ def adicionar(request, pk):
         carrinho.produtos.add(produto)
     else:
         try:
-            products = request.session['cart_products'][:]
+            products = request.session['cart_products']
         except:
-            request.session['cart_products'] = []
-
-        request.session['cart_products'].append(produto)
+            request.session['cart_products'] = [serialize('json', [produto])]
+        
+        products = serialize('json', [produto])
+        request.session['cart_products'].append(products)
 
     reco = recomendacao(Produto.objects.all(), produto)
     return render(request, 'produtos/detalhes_produto.html', {'produto':produto, 'dados':reco, 'nome':'Produto', 'success': True, 'in_cart': True})
+
 
 
 def remover(request, pk):
