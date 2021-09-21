@@ -1,9 +1,7 @@
-from django.utils.encoding import is_protected_type
 from produtos.models import Produto
 from django.shortcuts import render, get_object_or_404
 from .models import Produto
 from random import randint
-from datetime import date
 
 def retorna_produtos(request):
     """
@@ -56,10 +54,25 @@ def detalhes_produto(request, pk):
     produto = get_object_or_404(Produto, pk=pk)
     dados = Produto.objects.all()
     reco = recomendacao(dados, produto)
-    if produto in request.user.carrinho.produtos.all():
-        in_cart = True
+    if request.user.is_authenticated:
+        try:
+            if produto in request.user.carrinho.produtos.all():
+                in_cart = True
+            else:
+                in_cart = False
+        except:
+            in_cart = False
     else:
-        in_cart = False
+        try: 
+            products = request.session['cart_products']
+        except:
+            in_cart = False
+        else:
+            if produto in products:
+                in_cart = True
+            else:
+                in_cart = False
+
     return render(request, 'produtos/detalhes_produto.html', {'produto': produto, 'dados': reco, 'nome': 'Produto', 'success': False, 'in_cart': in_cart})
 
 
