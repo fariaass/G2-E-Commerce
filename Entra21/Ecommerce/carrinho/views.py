@@ -11,16 +11,20 @@ def retorna_carrinho(request, pk):
     """
 
     # Itens carrinho
+    try:
+        dados = get_object_or_404(Carrinho, pk=pk)
+        produtos = [get_object_or_404(Produto, id=i.id) for i in dados.produtos.all()]
 
-    dados = get_object_or_404(Carrinho, pk=pk)
-    produtos = [get_object_or_404(Produto, id=i.id) for i in dados.produtos.all()]
+        # total do carrinho
+        total_itens = len(produtos)
+        total = [i.preco for i in produtos]
+        total = sum(total)
+        
+        return render(request, 'carrinho/carrinho.html', {'dados': produtos, 'total_itens': total_itens, 'total': total, 'no_match': False})
+    except:
+        no_match = True
 
-    # total do carrinho
-    total_itens = len(list(produtos))
-    total = [i.preco for i in produtos]
-    total = sum(total)
-
-    return render(request, 'carrinho/carrinho.html', {'dados': produtos, 'total_itens': total_itens, 'total': total})
+    return render(request, 'carrinho/carrinho.html', {'no_match': no_match})
 
 
 @login_required(login_url='/login/')
@@ -29,4 +33,13 @@ def adicionar(request, pk):
     carrinho = get_object_or_404(Carrinho, id=request.user.carrinho.id)
     carrinho.produtos.add(produto)
     reco = recomendacao(Produto.objects.all(), produto)
-    return render(request, 'produtos/detalhes_produto.html', {'produto':produto, 'dados':reco, 'nome':'Produto', 'success':True})
+    return render(request, 'produtos/detalhes_produto.html', {'produto':produto, 'dados':reco, 'nome':'Produto', 'success': True, 'in_cart': True})
+
+
+@login_required(login_url='/login/')
+def remover(request, pk):
+    produto = get_object_or_404(Produto, pk=pk)
+    carrinho = get_object_or_404(Carrinho, id=request.user.carrinho.id)
+    carrinho.produtos.remove(produto)
+    reco = recomendacao(Produto.objects.all(), produto)
+    return render(request, 'produtos/detalhes_produto.html', {'produto':produto, 'dados':reco, 'nome':'Produto', 'success': False, 'in_cart': False})

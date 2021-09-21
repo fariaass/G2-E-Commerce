@@ -17,7 +17,15 @@
     <div class="cart_detalhe">
         <p class="nome_detalhe">{{produto.nome}}</p><br>
         <p id="preco_detalhe">R${{produto.preco}}</p>
+<<<<<<< HEAD
         <a class='add_cart' href="{% url 'carrinho:adicionar' pk=produto.id %}"><button>Adicionar ao carrinho</button></a>
+=======
+        {% if in_cart %}
+            <a class='add_cart' href="{% url 'carrinho:remover' pk=produto.id %}"><button>Remover do carrinho</button></a>
+        {% else %}
+            <a class='add_cart' href="{% url 'carrinho:adicionar' pk=produto.id %}"><button>Adicionar ao carrinho</button></a>
+        {% endif %}
+>>>>>>> teste
     </div>
 </div>
 </section>

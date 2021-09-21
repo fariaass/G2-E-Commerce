@@ -6,6 +6,7 @@
 
 {% block content %}
 
+<<<<<<< HEAD
 <section id="cart">
     {% for i in dados %}
     <div class="grid_cart">
@@ -17,5 +18,23 @@
     {% endfor %}
     <div id="subtotal_cart">Sub-total({{total_itens}}) R${{total}}</div>
 </section>
+=======
+{% if no_match %}
+    <p>Seu carrinho está vazio!</p>
+    <p>Vamos encher esse carrinho?</p>
+{% else %}
+    <section id="cart">
+        {% for i in dados %}
+        <div class="grid_cart">
+            <div class="foto_produto_cart"><img src="{{i.imagem.url}}" alt="Foto de {{i.nome}}"></div>
+            <div class="nome_produto_cart">{{i.nome}}</div>
+            <div class="preco_produto_cart">R${{i.preco}}</div>
+            <hr class="solid">
+        </div>
+        {% endfor %}
+        <div id="subtotal_cart">Sub-total({{total_itens}}) R${{total}}</div>
+    </section>
+{% endif %}
+>>>>>>> teste
 
 {% endblock %}
