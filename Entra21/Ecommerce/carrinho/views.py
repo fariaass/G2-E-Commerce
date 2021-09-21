@@ -33,4 +33,13 @@ def adicionar(request, pk):
     carrinho = get_object_or_404(Carrinho, id=request.user.carrinho.id)
     carrinho.produtos.add(produto)
     reco = recomendacao(Produto.objects.all(), produto)
-    return render(request, 'produtos/detalhes_produto.html', {'produto':produto, 'dados':reco, 'nome':'Produto', 'success':True})
+    return render(request, 'produtos/detalhes_produto.html', {'produto':produto, 'dados':reco, 'nome':'Produto', 'success': True, 'in_cart': True})
+
+
+@login_required(login_url='/login/')
+def remover(request, pk):
+    produto = get_object_or_404(Produto, pk=pk)
+    carrinho = get_object_or_404(Carrinho, id=request.user.carrinho.id)
+    carrinho.produtos.remove(produto)
+    reco = recomendacao(Produto.objects.all(), produto)
+    return render(request, 'produtos/detalhes_produto.html', {'produto':produto, 'dados':reco, 'nome':'Produto', 'success': False, 'in_cart': False})

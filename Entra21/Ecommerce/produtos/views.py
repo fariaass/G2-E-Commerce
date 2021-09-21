@@ -54,7 +54,11 @@ def detalhes_produto(request, pk):
     produto = get_object_or_404(Produto, pk=pk)
     dados = Produto.objects.all()
     reco = recomendacao(dados, produto)
-    return render(request, 'produtos/detalhes_produto.html', {'produto': produto, 'dados': reco, 'nome': 'Produto   ', 'success':False})
+    if produto in request.user.carrinho.produtos.all():
+        in_cart = True
+    else:
+        in_cart = False
+    return render(request, 'produtos/detalhes_produto.html', {'produto': produto, 'dados': reco, 'nome': 'Produto', 'success': False, 'in_cart': in_cart})
 
 
 def recomendacao(query, exclude):

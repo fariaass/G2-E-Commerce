@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login
 from account.forms import MyUserForm, EnderecoForm
 from django.shortcuts import get_object_or_404, render
 from account.models import MyUser
@@ -22,6 +23,7 @@ def cadastra_user(request):
             user = form.save(commit=False)
             user.save()
         usuario = form.cleaned_data['primeiro_nome']
+        login(request, user)
         return render(request, 'registration/formDoneView.html', {'usuario':usuario})
     else:
         form = MyUserForm()

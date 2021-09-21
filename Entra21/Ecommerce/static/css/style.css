@@ -42,7 +42,6 @@ body {
 
 .grid_produto {
   display: grid;
-  z-index: -1;
   place-items: center;
   height: 55vh;
   width: 25vw;
