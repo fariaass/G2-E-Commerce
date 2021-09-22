@@ -83,6 +83,7 @@ button[type="submit"]:hover {
     margin-top: 3vh;
     margin-left: 3vh;
     transition: 0.3s;
+    z-index: 1;
 }
 
 .seta img:hover {

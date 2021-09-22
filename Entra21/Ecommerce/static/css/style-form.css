@@ -186,3 +186,9 @@ input{
     border-left: none;
     border-right: none;
 }
+
+@media screen and (max-width: 650px) {
+    .seta img {
+      display: none;
+    }
+}
