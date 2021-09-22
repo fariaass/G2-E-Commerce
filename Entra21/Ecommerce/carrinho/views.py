@@ -24,9 +24,9 @@ def retorna_carrinho(request):
     else:
         if request.session.get('cart_products', False):
             products = request.session['cart_products']
-            if len(products) == 0:
+            if not products:
                 return render('carrinho/carrinho.html', {'no_match': True})
-            products = [loads(p) for p in products]
+            products = [loads(v) for k, v in products.items()]
             products = [p[0] for p in products]
             products = produto_queryset_parser(products, to_session_cart=True)
             total_itens = len(products)
@@ -45,10 +45,12 @@ def adicionar(request, pk):
         carrinho.produtos.add(produto)
     else:
         if request.session.get('cart_products', False):
-            request.session['cart_products'].append(serialize('json', [produto]))
+            request.session['cart_products'][produto.pk] = serialize('json', [produto])
         else:
-            request.session['cart_products'] = []
-            request.session['cart_products'].append(serialize('json', [produto]))
+            request.session['cart_products'] = {}
+            request.session['cart_products'][produto.pk] = serialize('json', [produto])
+
+        request.session.modified = True
 
     reco = recomendacao(Produto.objects.all(), produto)
     return render(request, 'produtos/detalhes_produto.html', {'produto':produto, 'dados':reco, 'nome':'Produto', 'success': True, 'in_cart': True})
@@ -61,13 +63,13 @@ def remover(request, pk):
         carrinho = get_object_or_404(Carrinho, id=request.user.carrinho.id)
         carrinho.produtos.remove(produto)
     else:
-        try:
-            products = request.session['cart_products'][:]
-        except:
-            request.session['cart_products'] = []
-            products = request.session['cart_products'][:]
+        if request.session.get('cart_products', False):
+            request.session['cart_products'].pop(str(produto.pk))
+        else:
+            request.session['cart_products'] = {}
+            return render(request, 'erro.html', {'message': 'Este produto não está no seu carrinho'})
 
-        products.pop(produto)
-
+        request.session.modified = True
+        
     reco = recomendacao(Produto.objects.all(), produto)
     return render(request, 'produtos/detalhes_produto.html', {'produto':produto, 'dados':reco, 'nome':'Produto', 'success': False, 'in_cart': False})

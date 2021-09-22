@@ -70,7 +70,7 @@ def detalhes_produto(request, pk):
         except:
             in_cart = False
         else:
-            if produto in products:
+            if products.get(str(produto.pk), False):
                 in_cart = True
             else:
                 in_cart = False

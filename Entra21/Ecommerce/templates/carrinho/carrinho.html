@@ -13,7 +13,7 @@
     <section id="cart">
         {% for i in dados %}
         <div class="grid_cart">
-            <div class="foto_produto_cart"><img src="{{i.imagem.url}}" alt="Foto de {{i.nome}}"></div>
+            <div class="foto_produto_cart"><img src="../../media/{{i.imagem}}" alt="Foto de {{i.nome}}"></div>
             <div class="nome_produto_cart">{{i.nome}}</div>
             <div class="preco_produto_cart">R${{i.preco}}</div>
             <hr class="solid">
@@ -22,7 +22,5 @@
         <div id="subtotal_cart">Sub-total({{total_itens}}) R${{total}}</div>
     </section>
 {% endif %}
-
-{{dados}}
 
 {% endblock %}
