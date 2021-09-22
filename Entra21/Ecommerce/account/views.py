@@ -3,6 +3,7 @@ from django.contrib.auth import login
 from account.forms import MyUserForm, EnderecoForm
 from django.shortcuts import get_object_or_404, render
 from account.models import MyUser
+from carrinho.models import Carrinho
 
 @login_required(login_url='/login/')
 def retorna_account(request, pk):
@@ -24,6 +25,9 @@ def cadastra_user(request):
             user.save()
         usuario = form.cleaned_data['primeiro_nome']
         login(request, user)
+        carrinho = Carrinho()
+        carrinho.usuario = user
+        carrinho.save()
         return render(request, 'registration/formDoneView.html', {'usuario':usuario})
     else:
         form = MyUserForm()
