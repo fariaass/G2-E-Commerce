@@ -1,16 +1,13 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Swift Root{% endblock %}</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{% static 'js/nav-bar.js' %}"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="{% static 'js/cep.js' %}"></script>
+    <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
     <link rel="stylesheet" href="{% static 'css/style-nav.css' %}"> 
     <link rel="stylesheet" href="{% static 'css/style-adress.css' %}">
@@ -20,12 +17,8 @@
     <header>
 
     <!-- BARRA DE NAVEGAÇÃO -->
-
-    <div class="wrapper">
-        
-      {% include 'nav-bar.html' %}
-
-      </div>
+   
+    {% include 'snippets/nav-bar.html' %}
 
     </header>  
 
@@ -39,19 +32,9 @@
 
     </main>
 
-    <!-- <footer>
 
-    RODAPÉ
-
-    <p>Contate-nos</p>
-    
-    <ul class="footerBar">
-        <li><img class="footerIcon" src="{% static 'img/instagram.png' %}"><a href="#">NOSSO INSTAGRAM</a></li>
-        <li><img class="footerIcon" src="{% static 'img/facebook.png' %}"><a href="#">NOSSO FACEBOOK</a></li>
-        <li><img class="footerIcon" src="{% static 'img/tiktok.png' %}"><a href="#">NOSSO TIKTOK</a></li>
-        <li><img class="footerIcon" src="{% static 'img/gmail.png' %}"><a href="#">NOSSO EMAIL</a></li>
-    </ul>
-
-    </footer> -->
+    <script src="{% static 'js/nav-bar.js' %}"></script>
+    <script src="{% static 'js/cep.js' %}"></script>
+    <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

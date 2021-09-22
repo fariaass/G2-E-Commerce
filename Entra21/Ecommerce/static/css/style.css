@@ -20,10 +20,11 @@ a:hover {
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #FFF;
   height: 100vh;
   width: 100vw;
 }
+
 
 /* ---------------------------- PRODUTOS ---------------------------- */
 
@@ -33,7 +34,6 @@ body {
   align-items: center;
   justify-content: center;
   font-family: var(--font);
-  padding-top: 100px;
 }
 
 .grid_produto {
