@@ -21,9 +21,11 @@ a{
 a:hover{
   text-decoration: none;
 }
+.logo a{
+  text-decoration: none;
+}
 .wrapper{
   background: #FFFFFF;
-  position: fixed;
   width: 100%;
   margin: 0 auto;
 }
@@ -193,6 +195,27 @@ nav .content .links{
 }
 
 /* Responsive code start */
+
+@media screen and (min-width: 1250px){
+  .wrapper nav{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  nav .content .links{
+    margin-left: 30px;
+  }
+  .content .links li a{
+    padding: 8px 13px;
+  }
+  .wrapper .search-box{
+    max-width: calc(100% - 100px);
+  }
+  .wrapper .search-box input{
+    padding: 0 100px 0 15px;
+  }
+}
+
+
 @media screen and (max-width: 1250px){
   .wrapper nav{
     max-width: 100%;
