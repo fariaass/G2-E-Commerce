@@ -9,3 +9,10 @@ def retorna_produtos_categoria(request, pk):
     categoria = get_object_or_404(Categoria, pk=pk)
     produtos = get_list_or_404(Produto, categoria=categoria.id)
     return render(request, 'produtos/produtos.html', {'dados': produtos, 'titulo':categoria.nome})
+
+def categoria_queryset_parser(query):
+    query_parsed = []
+    for item in query:
+        dic = {'id': item.id, 'nome': item.nome, 'imagem': item.imagem}
+        query_parsed.append(dic)
+    return query_parsed

@@ -23,7 +23,7 @@
     align-items: center;
 }
 
-#detalhes_recomendados {
+#palagrafo-carrossel {
     margin: 0 auto;
     width: 85%;
     border-radius: 5px;
@@ -34,5 +34,7 @@
     padding: 1vh;
     font-size: 20px;
     text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
     text-align: center;
   }

@@ -7,8 +7,8 @@ new Glider($responsiveCarousel, {
   duration: 0.25,
   dots: ".js-carousel--responsive-dots",
   arrows: {
-    prev: ".js-carousel--responsive-prev",
-    next: ".js-carousel--responsive-next",
+    prev: "#glider-prev",
+    next: "#glider-next",
   },
   responsive: [
     {
@@ -25,5 +25,15 @@ new Glider($responsiveCarousel, {
         slidesToScroll: 3,
       },
     },
+    {
+      breakpoint: 500,
+      settings: {
+          slidesToScroll: 2,
+          slidesToShow: 2,
+          dots: false,
+          arrows: false,
+          scrollLock: true
+      }
+  }
   ],
 });

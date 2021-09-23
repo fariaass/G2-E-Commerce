@@ -23,15 +23,15 @@ a:hover{
 }
 .wrapper{
   background: #FFFFFF;
-  top: 0;
-  position: absolute;
+  /* top: 0;
+  position: absolute; */
   width: 100%;
   margin: 0 auto;
   z-index: 1;
 }
 .wrapper nav{
   margin: 0 auto;
-  background: #68D4B9;
+  background: #FFFFFF;
   display: flex;
   width: 100%;
   max-width: calc(100% - 200px);
@@ -70,7 +70,7 @@ nav .content .links{
   display: block;
   width: 0;
   height: 2px;
-  background: #373941;
+  background: var(--corSecundaria);
   transition: width .2s;
   margin-top: 2px;
 }
