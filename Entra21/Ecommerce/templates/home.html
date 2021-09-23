@@ -4,14 +4,14 @@
 
 {% block content %}  
 
+<p id="detalhes_recomendados">Navegue por nossas categorias</p>
 
 <article id="carrossel-container" class="c-carousel c-carousel--responsive">
     <div class="c-carousel__slides js-carousel--responsive">
         {% for categoria in categorias %}
 
         <article class="cards">
-            <p>{{categoria.nome}}</p>
-            <img src="{{categoria.imagem.url}}" height="300" alt="Foto de {{categoria.nome}}">
+            <img src="{{categoria.imagem.url}}" alt="Foto de {{categoria.nome}}">
             <p>{{categoria.nome}}</p>
         </article>
 

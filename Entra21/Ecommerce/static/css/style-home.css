@@ -3,4 +3,36 @@
 #carrossel-container {
     width: 100%;
     height: 50vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
+
+.cards {
+    max-width: 345px;
+    max-height: 45vh;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.cards img {
+    width: 300px;
+    height: 210px;
+    justify-content: center;
+    align-items: center;
+}
+
+#detalhes_recomendados {
+    margin: 0 auto;
+    width: 85%;
+    border-radius: 5px;
+    height: 5vh;
+    margin-top: 5vh;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1vh;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+  }
