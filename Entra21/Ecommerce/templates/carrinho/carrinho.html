@@ -10,11 +10,12 @@
     <p>Seu carrinho está vazio!</p>
     <p>Vamos encher esse carrinho?</p>
 {% else %}
+
     <section id="cart">
         {% for i in dados %}
         <div class="grid_cart">
             <div class="foto_produto_cart"><img src="../../media/{{i.imagem}}" alt="Foto de {{i.nome}}"></div>
-            <div class="nome_produto_cart">{{i.nome}}</div>
+            <div class="nome_produto_cart"><a href="{% url 'produtos:detalhes_produto' pk=i.id %}">{{i.nome}}</a></div>
             <div class="preco_produto_cart">R${{i.preco}}</div>
             <hr class="solid">
         </div>
