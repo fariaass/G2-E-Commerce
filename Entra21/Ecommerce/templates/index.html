@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
     <link rel="stylesheet" href="{% static 'css/style-nav.css' %}"> 
     <link rel="stylesheet" href="{% static 'css/style-adress.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-footer.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -29,29 +31,27 @@
 
     </header>  
 
-    <main>
-
     <!-- BLOCO DE CONTEÚDO -->
 
-    {% block content %}
+    <main>    
 
-    {% endblock %}
+        {% block content %}
+
+        {% endblock %}
 
     </main>
 
-    <!-- <footer>
+    <!-- FOOTER -->
 
-    RODAPÉ
+    <footer>
 
-    <p>Contate-nos</p>
-    
-    <ul class="footerBar">
-        <li><img class="footerIcon" src="{% static 'img/instagram.png' %}"><a href="#">NOSSO INSTAGRAM</a></li>
-        <li><img class="footerIcon" src="{% static 'img/facebook.png' %}"><a href="#">NOSSO FACEBOOK</a></li>
-        <li><img class="footerIcon" src="{% static 'img/tiktok.png' %}"><a href="#">NOSSO TIKTOK</a></li>
-        <li><img class="footerIcon" src="{% static 'img/gmail.png' %}"><a href="#">NOSSO EMAIL</a></li>
-    </ul>
+        <div class="footer-content">
 
-    </footer> -->
+        {% include 'footer.html' %}
+
+        </div>
+
+    </footer>
+
 </body>
 </html>
