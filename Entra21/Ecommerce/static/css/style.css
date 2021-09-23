@@ -20,11 +20,10 @@ a:hover {
 }
 
 body {
-  background-color: #FFF;
+  background-color: #F4FCFA;
   height: 100vh;
   width: 100vw;
 }
-
 
 /* ---------------------------- PRODUTOS ---------------------------- */
 
@@ -34,9 +33,12 @@ body {
   align-items: center;
   justify-content: center;
   font-family: var(--font);
+  padding-top: 100px;
 }
 
 .grid_produto {
+  background: white;
+  box-shadow:  3px 3px 3px 3px #A1A4AF;
   display: grid;
   place-items: center;
   height: 55vh;
@@ -100,7 +102,6 @@ body {
 
 .foto_detalhe img {
   padding: 30px;
-  min-width: 210px;
   max-width: 210px;
   max-width: 210px;
   max-height: 210px;

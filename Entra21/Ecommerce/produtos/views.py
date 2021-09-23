@@ -53,8 +53,6 @@ def detalhes_produto(request, pk):
     """
     produto = get_object_or_404(Produto, pk=pk)
     dados = Produto.objects.all()
-    produto.visualizacoes += 1
-    produto.save()
     reco = recomendacao(dados, produto)
     if request.user.is_authenticated:
         try:
@@ -70,7 +68,7 @@ def detalhes_produto(request, pk):
         except:
             in_cart = False
         else:
-            if products.get(str(produto.pk), False):
+            if produto in products:
                 in_cart = True
             else:
                 in_cart = False
@@ -87,21 +85,12 @@ def recomendacao(query, exclude):
     
     return recomendacao_list
 
-def produto_queryset_parser(query, to_session_cart=False):
+def produto_queryset_parser(query):
     query_parsed = []
-    if to_session_cart:
-        for item in query:
-            dic = {'id': item['pk'], 'nome': item['fields']['nome'], 'descricao': item['fields']['descricao'], 'preco': item['fields']['preco'], 'imagem': item['fields']['imagem'], 'data_criacao': item['fields']['data_criacao'], 'visualizacoes': item['fields']['visualizacoes'], 'vendas': item['fields']['vendas'], 'is_disponivel': item['fields']['is_disponivel'], 'categoria': item['fields']['categoria'], 'tags': item['fields']['tags']}
-            query_parsed.append(dic)
-    else:
-        for item in query:
-            dic = {'id': item.id, 'nome': item.nome, 'descricao': item.descricao, 'preco': item.preco, 'imagem': item.imagem, 'data_criacao': item.data_criacao, 'visualizacoes': item.visualizacoes, 'vendas': item.vendas, 'is_disponivel': item.is_disponivel, 'categoria': item.categoria, 'tags': item.tags}
-            query_parsed.append(dic)
+    for item in query:
+        dic = {'id': item.id, 'nome': item.nome, 'descricao': item.descricao, 'preco': item.preco, 'imagem': item.imagem, 'data_criacao': item.data_criacao, 'visualizacoes': item.visualizacoes, 'vendas': item.vendas, 'is_disponivel': item.is_disponivel, 'categoria': item.categoria, 'tags': item.tags}
+        query_parsed.append(dic)
     return query_parsed
-
-def produto_instance_parser(item):
-    dic = {'id': item.id, 'nome': item.nome, 'descricao': item.descricao, 'preco': item.preco, 'imagem': item.imagem, 'data_criacao': item.data_criacao, 'visualizacoes': item.visualizacoes, 'vendas': item.vendas, 'is_disponivel': item.is_disponivel, 'categoria': item.categoria, 'tags': item.tags}
-    return dic
 
 def bubblesort(v, n, key):
         """

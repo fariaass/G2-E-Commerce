@@ -8,7 +8,7 @@ URLs do app carrinho.
 """
 
 urlpatterns = [
-    path('', retorna_carrinho, name='retrieve'),
+    path('<int:pk>/', retorna_carrinho, name='retrieve'),
     path('adicionar/<int:pk>/', adicionar, name='adicionar'),
     path('remover/<int:pk>/', remover, name='remover')
 ]

@@ -1,11 +1,7 @@
+
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'css/style-nav.css' %}">
-<link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
 {% block navbar %}
-
-<div class="wrapper">
 
 <nav>
     <input type="checkbox" id="show-search">
@@ -28,7 +24,7 @@
                 <li><a href="{% url 'logout' %}">Sair</a></li>
               </ul>
             </li>
-            <li><a href="{% url 'carrinho:retrieve' %}">Carrinho</a></li>
+            <li><a href="{% url 'carrinho:retrieve' pk=user.pk %}">Carrinho</a></li>
           {% else %}
             <li>
                 <a href="{% url 'login' %}">Faça Login</a>
@@ -36,8 +32,8 @@
             <li>
                 <a href="{% url 'account:cadastrar' %}">Cadastre-se</a>    
             </li>
-            <li><a href="{% url 'carrinho:retrieve' %}">Carrinho</a></li>
           {% endif %}
+          <li><a href="{% url 'carrinho:retrieve' pk=0 %}">Carrinho</a></li>
         <li>
           <a href="#" class="desktop-link">Destaques</a>
           <input type="checkbox" id="show-features1">
@@ -57,5 +53,4 @@
     </form>
   </nav>
 
-  </div>
 {% endblock %}

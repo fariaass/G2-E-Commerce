@@ -21,17 +21,17 @@ a{
 a:hover{
   text-decoration: none;
 }
-.logo a{
-  text-decoration: none;
-}
 .wrapper{
   background: #FFFFFF;
+  top: 0;
+  position: absolute;
   width: 100%;
   margin: 0 auto;
+  z-index: 1;
 }
 .wrapper nav{
   margin: 0 auto;
-  background: #FFFFFF;
+  background: #68D4B9;
   display: flex;
   width: 100%;
   max-width: calc(100% - 200px);
@@ -70,12 +70,11 @@ nav .content .links{
   display: block;
   width: 0;
   height: 2px;
-  background: var(--corSecundaria);
+  background: #373941;
   transition: width .2s;
   margin-top: 2px;
 }
 .links li a:hover {
-  color: rgb(218, 214, 26);
   transition: 250ms;
 }
 .links li a:hover::after {
@@ -162,7 +161,7 @@ nav .content .links{
 /* Dropdown Menu code start */
 .content .links ul{
   position: absolute;
-  background: white;
+  background: #F2F2F4;
   box-shadow: 1px 1px 2px rgb(141, 141, 141);
   top: 80px;
   z-index: 1;
@@ -195,8 +194,7 @@ nav .content .links{
 }
 
 /* Responsive code start */
-
-@media screen and (min-width: 1250px){
+@media screen and (max-width: 1250px){
   .wrapper nav{
     max-width: 100%;
     padding: 0 20px;
@@ -215,8 +213,7 @@ nav .content .links{
   }
 }
 
-
-@media screen and (max-width: 1250px){
+@media screen and (min-width: 1250px){
   .wrapper nav{
     max-width: 100%;
     padding: 0 20px;
