@@ -1,47 +1,50 @@
-AllCommerce
+<h1>SWIFT ROOT</h1>
 
-Este projeto é voltado para os microempreendedores da região do Vale do Itajaí. Seu principal objetivo é atender os comerciantes que se interessam em possuir um e-commerce. Acessível, prático, e ideal para o seu negócio.
-
-Status: Em desenvolvimento
-
-Pré-requisitos: 
-                - Django
-                - django-rest-framework
-                - django-colorfield
-                - pillow
-                - Python
-
-Contribuintes:  
-                - Lucas de Farias Teixeira: Líder do grupo, responsável pela segurança e banco de dados.
-                
-                - Pedro Felipe Matos Menezes: Responsável pela documentação e testes do projeto.
-
-                - Pedro Lucas Volpato da Rosa: Responsável pelo design, conteúdo e testes do projeto.
-
-Database: SQLite
-
-# Tabela: Produtos
-# Campos: nome, descrição, preço, imagem, tags
-
-# Tabela: Carrinho
-# Campos: produtos, usuario
-
-# Tabela: Usuário
-# Campos: email, senha, nome de usuário, primeiro nome, último nome, data de criação, último login, é administrador, é ativo, é staff, é super usuário, contato
+<p id="sobre">
+Swift Root, é uma solução em Ecommerce, desenvolvida em Blumenau, através do Entra21, com o objetivo de ajudar micro e pequenos empreendedores da nossa região.
+</p>
 
 
-Tarefas em aberto:
+<h4 align="center"> SWIFT ROOT em processo de construção!</h4>
 
-    -Deixar todos os templates responsivos
 
-    -Trabalhar na integração
+<p align="center">  
+	<a href="#sobre">Sobre</a> • 
+	<a href="#features">Features</a> • 
+	<a href="#requisitos">Requisitos</a> • 
+	<a href="#contribuintes">Contribuintes</a> •
+	<a href="#tecnologias">Tecnologias</a> • 
+	<a href="#licenca">Licença</a>  
+</p>
 
-    -Terminar implementação do carrinho
+<h2 id="features">Features</h2>
 
-    -Implementar pagamento
+- [x] Cadastro de administrador
+- [x] Cadastro de usuário
+- [x] Login
+- [x] Cadastro de produtos
+- [x] Cadastro de categorias
+- [x] Cadastro de tags
+- [x] Carrinho ligado as sessões
+- [x] Recomendações
+- [ ] Responsividade
+- [ ] Fechamento de compra
+- [ ] Pagamento via pix
+- [ ] Autenticação social
 
-    -Implementar termos de política, e solicitação para emails
+<h2> Demonstração da aplicação</h2>
+Deploy será feito na plataforma Heroku em breve
 
-    -Implementar sistema de recuperação de senha
-
-    -Implementar autenticação social
+<h2 id="contribuintes"> Contribuintes</h2>
+<table>
+  <tr>
+  <!-- Farias -->
+    <td align="center"><a href="https://github.com/FarinhaProgrammer"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/77069076?v=4" width="100px;" alt=""/><br /><sub><b>Lucas de Farias <br>Teixeira</b></sub></a><br /></td>
+    <!-- Menezes -->
+    <td align="center"><a href="https://github.com/pedro-fmm"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/85511521?v=4" width="100px;" alt=""/><br /><sub><b>Pedro Felipe<br>Matos Menezes</b></sub></a><br /></td>
+    <!-- Volpato -->
+    <td align="center"><a href="https://github.com/PedroLuscao"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/89154708?" width="100px;" alt=""/><br /><sub><b>Pedro Lucas<br>Volpato da Rosa</b></sub></a><br /></td>
+    <!-- Rosá -->
+    <td align="center"><a href=""><img style="border-radius: 50%;" src="https://wp-content.bluebus.com.br/wp-content/uploads/2017/03/31142426/twitter-novo-avatar-padrao-2017-bluebus.png" width="100px;" alt=""/><br /><sub><b>João Rosá</b></sub></a><br /></td>
+  </tr>
+</table>
