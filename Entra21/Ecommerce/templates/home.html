@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block title %}Swift Root{% endblock %}
+
+{% block content %}  
+
+<p id="detalhes_recomendados">Navegue por nossas categorias</p>
+
+<article id="carrossel-container" class="c-carousel c-carousel--responsive">
+    <div class="c-carousel__slides js-carousel--responsive">
+        {% for categoria in categorias %}
+
+        <article class="cards">
+            <img src="{{categoria.imagem.url}}" alt="Foto de {{categoria.nome}}">
+            <p>{{categoria.nome}}</p>
+        </article>
+
+        {% endfor %}
+    </div>
+
+    <button class="js-carousel--responsive-prev" aria-label="Anterior">«</button>
+    <button class="js-carousel--responsive-next" aria-label="Próximo">»</button>
+    <div class="js-carousel--responsive-dots" role="tablist"></div>
+</article>
+    
+{% endblock %}

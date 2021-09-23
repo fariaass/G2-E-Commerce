@@ -22,8 +22,11 @@ def cadastra_user(request):
         if form.is_valid():
             user = form.save(commit=False)
             user.save()
+            login(request, user)
+            carrinho = Carrinho()
+            carrinho.usuario = user
+            carrinho.save()
         usuario = form.cleaned_data['primeiro_nome']
-        login(request, user)
         return render(request, 'registration/formDoneView.html', {'usuario':usuario})
     else:
         form = MyUserForm()
