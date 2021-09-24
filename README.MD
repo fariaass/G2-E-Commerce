@@ -14,7 +14,7 @@ Swift Root, é uma solução em Ecommerce, desenvolvida em Blumenau, através do
 	<a href="#funcionamento">Funcionamento</a> • 
 	<a href="#contribuintes">Contribuintes</a> •
 	<a href="#tecnologias">Tecnologias</a> • 
-	<a href="#licenca">Licença</a>  
+	<a href="#license">Licença</a>  
 </p>
 
 <h2 id="features">Features</h2>
@@ -31,6 +31,14 @@ Swift Root, é uma solução em Ecommerce, desenvolvida em Blumenau, através do
 - [ ] Fechamento de compra
 - [ ] Pagamento via pix
 - [ ] Autenticação social
+
+<h2 id="tecnologias">Pré-requisitos</h2>
+<p>As seguintes tecnologias foram empregadas no projeto</p>
+-Python 3.8 <br>
+-Django <br>
+-Editor de códigos, como o VScode <br>
+-MySQL <br>
+-Algum Web Browser <br>
 
 <h2 id="funcionamento"> Como rodar a loja</h2>
 <p>Para conseguir executar a aplicação e ver seu funcionamento, você precisa clonar este projeto em sua máquina, enquanto a aplicação não está completa, decidimos mantê-la dentro do ambiente virtual, para facilitar o trabalho de nossos colaboradores, então, não é necessário baixar as bibliotecas, visto que elas já estão instaladas. Mesmo assim, é de suma importância ter o Python 3.9.4 instalado em sua máquina para o pleno funcionamento da aplicação.<br>
@@ -61,12 +69,4 @@ Deploy será feito na plataforma Heroku em breve
   </tr>
 </table>
 
-<h2 id="tecnologias">Tecnologias</h2>
-<p>As seguintes tecnologias foram empregadas no projeto</p>
--Python <br>
--Django <br>
--Javascript <br>
--Bootstrap <br>
--Glider.js <br>
--JQuery <br>
-
+<h2 id="license">Licença</h2>
