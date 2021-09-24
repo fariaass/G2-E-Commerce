@@ -161,7 +161,7 @@ nav .content .links{
 /* Dropdown Menu code start */
 .content .links ul{
   position: absolute;
-  background: #F2F2F4;
+  background: #FFFFFF;
   box-shadow: 1px 1px 2px rgb(141, 141, 141);
   top: 80px;
   z-index: 1;
