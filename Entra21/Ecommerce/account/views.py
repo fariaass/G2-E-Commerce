@@ -3,6 +3,7 @@ from django.contrib.auth import login
 from account.forms import MyUserForm, EnderecoForm
 from django.shortcuts import get_object_or_404, render
 from account.models import MyUser
+from carrinho.models import Carrinho
 
 @login_required(login_url='/login/')
 def retorna_account(request, pk):

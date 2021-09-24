@@ -24,7 +24,7 @@
                 <li><a href="{% url 'logout' %}">Sair</a></li>
               </ul>
             </li>
-            <li><a href="{% url 'carrinho:retrieve' pk=user.pk %}">Carrinho</a></li>
+            <li><a href="{% url 'carrinho:retrieve' %}">Carrinho</a></li>
           {% else %}
             <li>
                 <a href="{% url 'login' %}">Faça Login</a>
@@ -33,7 +33,7 @@
                 <a href="{% url 'account:cadastrar' %}">Cadastre-se</a>    
             </li>
           {% endif %}
-          <li><a href="{% url 'carrinho:retrieve' pk=0 %}">Carrinho</a></li>
+          <li><a href="{% url 'carrinho:retrieve' %}">Carrinho</a></li>
         <li>
           <a href="#" class="desktop-link">Destaques</a>
           <input type="checkbox" id="show-features1">
