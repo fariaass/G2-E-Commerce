@@ -56,8 +56,7 @@ def adicionar(request, pk):
 
         request.session.modified = True
 
-    reco = recomendacao(Produto.objects.all(), produto)
-    return render(request, 'produtos/detalhes_produto.html', {'produto':produto, 'dados':reco, 'nome':'Produto', 'success': True, 'in_cart': True})
+    return render(request, 'produtos/retorno-ajax.html', {'produto':produto, 'in_cart': True})
 
 
 def remover(request, pk):
@@ -72,12 +71,14 @@ def remover(request, pk):
         carrinho.produtos.remove(produto)
     else:
         if request.session.get('cart_products', False):
-            request.session['cart_products'].pop(str(produto.pk))
+            if request.session['cart_products'].get(str(produto.pk), False):
+                request.session['cart_products'].pop(str(produto.pk))
+            else:
+                return render(request, 'erro.html', {'message': 'Este produto não está no seu carrinho'})
         else:
             request.session['cart_products'] = {}
             return render(request, 'erro.html', {'message': 'Este produto não está no seu carrinho'})
 
     request.session.modified = True
 
-    reco = recomendacao(Produto.objects.all(), produto)
-    return render(request, 'produtos/detalhes_produto.html', {'produto':produto, 'dados':reco, 'nome':'Produto', 'success': False, 'in_cart': False})
+    return render(request, 'produtos/retorno-ajax.html', {'produto':produto, 'in_cart': False})

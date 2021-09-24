@@ -68,3 +68,4 @@ docs/_build/
 *.pyc
 
 db.sqlite3
+Entra21/Ecommerce/db.sqlite3
