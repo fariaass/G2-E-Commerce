@@ -7,7 +7,9 @@ from django.core.exceptions import ValidationError
 
 
 class MyUserForm(ModelForm):
-
+    """
+    Este é um formulário personalizado para registro de usuários.
+    """
     password1 = forms.CharField(widget=PasswordInput, label='Senha')
     password2 = forms.CharField(widget=PasswordInput, label='Confirme a senha')
 
@@ -30,6 +32,9 @@ class MyUserForm(ModelForm):
         return user
 
 class EnderecoForm(ModelForm):
+    """
+    Este é um formulário para registro de endereços.
+    """
     class Meta:
         model = Endereco
         fields = ('cep', 'rua', 'bairro', 'cidade', 'estado',)

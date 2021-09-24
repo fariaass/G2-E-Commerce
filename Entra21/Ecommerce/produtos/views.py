@@ -79,6 +79,9 @@ def detalhes_produto(request, pk):
 
 
 def recomendacao(query, exclude):
+    """
+    Esta função sorteia produtos aleatórios para retornar como recomendação.
+    """
     recomendacao_list = []
     for _ in range(3):
         reco = query[randint(0, len(query) - 1)]
@@ -88,6 +91,9 @@ def recomendacao(query, exclude):
     return recomendacao_list
 
 def produto_queryset_parser(query, to_session_cart=False):
+    """
+    Esta função é um parser que pega uma queryset de produto, e retorna um json.
+    """
     query_parsed = []
     if to_session_cart:
         for item in query:
@@ -100,6 +106,9 @@ def produto_queryset_parser(query, to_session_cart=False):
     return query_parsed
 
 def produto_instance_parser(item):
+    """
+    Esta função é um parser que pega uma instancia de um modelo de produto, e retorna um json.
+    """
     dic = {'id': item.id, 'nome': item.nome, 'descricao': item.descricao, 'preco': item.preco, 'imagem': item.imagem, 'data_criacao': item.data_criacao, 'visualizacoes': item.visualizacoes, 'vendas': item.vendas, 'is_disponivel': item.is_disponivel, 'categoria': item.categoria, 'tags': item.tags}
     return dic
 

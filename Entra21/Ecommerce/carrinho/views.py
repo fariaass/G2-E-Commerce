@@ -7,7 +7,8 @@ from json import loads
 
 def retorna_carrinho(request):
     """
-    O retorno consiste em um template acompanhado de um json com os dados do carrinho.
+    Esta função retorna o carrinho em formato json, e confere se o carrinho é de sessão,
+    ou se é de um usuário logado.
     """
     if request.user.is_authenticated:
         dados = get_object_or_404(Carrinho, pk=request.user.carrinho.pk)
@@ -37,6 +38,10 @@ def retorna_carrinho(request):
         return render(request, 'carrinho/carrinho.html', {'dados': products, 'total_itens': total_itens, 'total': total, 'no_match': False})    
 
 def adicionar(request, pk):
+    """
+    Esta função adiciona um item ao carrinho, se o usuário estiver logado, e se não estiver,
+    adiciona um item ao carrinho da sessão.
+    """
     produto = get_object_or_404(Produto, pk=pk)
     if request.user.is_authenticated:
         carrinho = get_object_or_404(Carrinho, id=request.user.carrinho.id)
@@ -56,6 +61,10 @@ def adicionar(request, pk):
 
 
 def remover(request, pk):
+    """
+    Esta função remove um item do carrinho, se o usuário estiver logado, e se não estiver,
+    remove um item do carrinho da sessão.
+    """
     produto = get_object_or_404(Produto, pk=pk)
 
     if request.user.is_authenticated:

@@ -8,7 +8,7 @@ from carrinho.models import Carrinho
 @login_required(login_url='/login/')
 def retorna_account(request, pk):
     """
-    O retorno consiste em um template acompanhado de um json com as informações do usuário.
+    O retorno consiste em um template acompanhado das informações do usuário.
     """
     dados = get_object_or_404(MyUser, pk=pk)
     return render(request, 'EM ABERTO', {'dados':dados})
@@ -16,7 +16,7 @@ def retorna_account(request, pk):
 
 def cadastra_user(request):
     """
-    Esta função consiste no cadastro de um novo usuário.
+    Esta função consiste no cadastro de um novo usuário, logando-o e criando um carrinho para o mesmo.
     """
     if request.method == 'POST':
         form = MyUserForm(request.POST)

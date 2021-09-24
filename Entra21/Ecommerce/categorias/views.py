@@ -11,6 +11,9 @@ def retorna_produtos_categoria(request, pk):
     return render(request, 'produtos/produtos.html', {'dados': produtos, 'titulo':categoria.nome})
 
 def categoria_queryset_parser(query):
+    """
+    Esta função é um parser que pega uma queryset de categoria, e retorna um json.
+    """
     query_parsed = []
     for item in query:
         dic = {'id': item.id, 'nome': item.nome, 'imagem': item.imagem}
