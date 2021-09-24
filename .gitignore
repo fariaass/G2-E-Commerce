@@ -66,4 +66,5 @@ coverage.xml
 docs/_build/
 *.pyc
 *.pyc
-Entra21/Ecommerce/categorias/__pycache__/models.cpython-39.pyc
+
+db.sqlite3
