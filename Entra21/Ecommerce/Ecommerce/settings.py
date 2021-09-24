@@ -58,11 +58,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Ecommerce.urls'
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 CACHES = {
-  'default' : {
-    'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'
-  }
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'my_cache_table',
+    }
 }
 
 TEMPLATES = [
