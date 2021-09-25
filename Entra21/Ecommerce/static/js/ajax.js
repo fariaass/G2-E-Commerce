@@ -4,7 +4,6 @@ $(document).ready(function(){
             url: $(".change_cart").attr("value"),
             type: 'get',
             success: function(data){
-                $(data).replaceAll(".change_cart");
                 location.reload(true);
             },
             failure: function(data){

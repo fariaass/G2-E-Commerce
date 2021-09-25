@@ -87,8 +87,13 @@ def recomendacao(query, exclude):
         reco = query[randint(0, len(query) - 1)]
         if reco not in recomendacao_list and reco.nome != exclude.nome:
             recomendacao_list.append(reco)
-    
+        else:
+            while reco in recomendacao_list or reco.nome == exclude.nome:
+                reco = query[randint(0, len(query) - 1)]
+            recomendacao_list.append(reco)
+
     return recomendacao_list
+
 
 def produto_queryset_parser(query, to_session_cart=False):
     """
@@ -105,12 +110,14 @@ def produto_queryset_parser(query, to_session_cart=False):
             query_parsed.append(dic)
     return query_parsed
 
+
 def produto_instance_parser(item):
     """
     Esta função é um parser que pega uma instancia de um modelo de produto, e retorna um json.
     """
     dic = {'id': item.id, 'nome': item.nome, 'descricao': item.descricao, 'preco': item.preco, 'imagem': item.imagem, 'data_criacao': item.data_criacao, 'visualizacoes': item.visualizacoes, 'vendas': item.vendas, 'is_disponivel': item.is_disponivel, 'categoria': item.categoria, 'tags': item.tags}
     return dic
+
 
 def bubblesort(v, n, key):
         """

@@ -27,8 +27,8 @@ def cadastra_user(request):
             carrinho = Carrinho()
             carrinho.usuario = user
             carrinho.save()
-        usuario = form.cleaned_data['primeiro_nome']
-        return render(request, 'registration/formDoneView.html', {'usuario':usuario})
+            name = form.cleaned_data['primeiro_nome']
+            return render(request, 'registration/formDoneView.html', {'usuario': name})
     else:
         form = MyUserForm()
     return render(request, 'registration/form.html', {'form':form})

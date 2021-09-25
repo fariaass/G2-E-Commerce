@@ -112,7 +112,7 @@ button[type="submit"]:hover {
   }
   
   .bg-image {
-    background-image: url('https://source.unsplash.com/5drSp70oRmY/600x1200');
+    background-image: url('../img/login.svg');
     background-size: cover;
     background-position: center;
     z-index: -1;

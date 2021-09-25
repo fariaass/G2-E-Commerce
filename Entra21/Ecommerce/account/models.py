@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from rest_framework.authtoken.models import Token
+from carrinho.models import Carrinho
 
 class MyUserManager(BaseUserManager):
     """
@@ -30,7 +31,11 @@ class MyUserManager(BaseUserManager):
 
         user.set_password(password)
         user.save(using=self._db)
+        carrinho = Carrinho()
+        carrinho.usuario = user
+        carrinho.save()
         return user
+
 
     def create_superuser(self, email, nome_usuario, primeiro_nome, ultimo_nome, password=None):
         """
@@ -48,6 +53,7 @@ class MyUserManager(BaseUserManager):
         user.is_staff = True
         user.save(using=self._db)
         return user
+
 
 class MyUser(AbstractBaseUser, PermissionsMixin):
     """
@@ -74,8 +80,10 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.nome_usuario
 
+
     def has_perm(self, perm, obj=None):
         return self.is_admin
+
 
     def has_module_perms(self, app_label):
         return True
