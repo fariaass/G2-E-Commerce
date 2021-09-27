@@ -17,7 +17,28 @@ Swift Root, é uma solução em Ecommerce, desenvolvida em Blumenau, através do
 	<a href="#license">Licença</a>  
 </p>
 
-<h2 id="features">Features</h2>
+##### Incluir (By me)
+Conteúdo deste README
+
+    Nome do Projeto
+    Status
+    Conteudo
+    Descrição
+    Layout
+    Deploy
+    Pré-Requisitos
+    Dependencias e Libs Instaladas
+    Como rodar a aplicação teste na WEB
+    Como rodar a aplicação em seu PC
+    Databases
+    Solução de Problemas
+    Contribuites
+    Tarefas em Aberto (TODO)
+    Licenças
+
+##### 
+
+<h2 id="features">Recursos prontos e recursos em desenvolvimento</h2>
 
 - [x] Cadastro de administrador
 - [x] Cadastro de usuário
@@ -36,12 +57,21 @@ Swift Root, é uma solução em Ecommerce, desenvolvida em Blumenau, através do
 <p>As seguintes tecnologias foram empregadas no projeto</p>
 -Python 3.8 <br>
 -Django <br>
--Editor de códigos, como o VScode <br>
+
 -MySQL <br>
--Algum Web Browser <br>
+-Web Browser HTML5, compativel <br>
+
+# Ferramentas utilizadas para desenvolvimento
+-Editor de códigos, como o VScode <br>
+- Repositorio git em github.com
+
 
 <h2 id="funcionamento"> Como rodar a loja</h2>
-<p>Para conseguir executar a aplicação e ver seu funcionamento, você precisa clonar este projeto em sua máquina, enquanto a aplicação não está completa, decidimos mantê-la dentro do ambiente virtual, para facilitar o trabalho de nossos colaboradores, então, não é necessário baixar as bibliotecas, visto que elas já estão instaladas. Mesmo assim, é de suma importância ter o Python 3.9.4 instalado em sua máquina para o pleno funcionamento da aplicação.<br>
+<p>Para conseguir executar a aplicação e ver seu funcionamento, você precisa clonar este projeto em sua máquina, para clonar utilize o comando abaixo: 
+git clone https:/xxxxxxx.git
+
+Enquanto a aplicação não está terminada, decidimos mantê-la dentro do ambiente virtual, para facilitar o trabalho de nossos colaboradores. Para instalar em seu servidor será necessário instalar as bibliotecas abaixo listadas no arquivo requirements.txt. <br>
+
 </p>
 <p>
 -Abra o diretório Entra21 dentro da pasta do Projeto, através do terminal, essa pasta se trata do ambiente virtual.<br>
@@ -54,6 +84,7 @@ Swift Root, é uma solução em Ecommerce, desenvolvida em Blumenau, através do
 
 <h2> Demonstração da aplicação</h2>
 Deploy será feito na plataforma Heroku em breve
+<a href=https://heroku.com/xxx> LINK A SER INSERIDO </A>
 
 <h2 id="contribuintes"> Contribuintes</h2>
 <table>
@@ -70,3 +101,15 @@ Deploy será feito na plataforma Heroku em breve
 </table>
 
 <h2 id="license">Licença</h2>
+
+Este projeto está dinivel na licença: 
+
+ GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+ Leia mais em https://xxxxx.LICENCE ...
+
