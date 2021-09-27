@@ -6,29 +6,11 @@
 
 {% block content %}
 
-<!-- {% if no_match %}
-    <p>Seu carrinho está vazio!</p>
-    <p>Vamos encher esse carrinho?</p>
-{% else %}
-
-    <section id="cart">
-        {% for i in dados %}
-        <div class="grid_cart">
-            <div class="foto_produto_cart"><img src="../../media/{{i.imagem}}" alt="Foto de {{i.nome}}"></div>
-            <div class="nome_produto_cart"><a href="{% url 'produtos:detalhes_produto' pk=i.id %}">{{i.nome}}</a></div>
-            <div class="preco_produto_cart">R${{i.preco}}</div>
-            <hr class="solid">
-        </div>
-        {% endfor %}
-        <div id="subtotal_cart">Sub-total({{total_itens}}) R${{total}}</div>
-    </section>
-{% endif %} -->
-
 <link href="{% static 'css/checkout.css' %}" rel="stylesheet" type="text/css"/>
 
 <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
 
-<section>
+<section id="carrinho">
     <div class="wrapper">
     
         <div class="checkout">
@@ -36,18 +18,13 @@
             <div class="titulo">
                 <span class="fa fa-shopping-cart"></span>
                 <h1>Meu Carrinho</h1>
-            </div><!--/titulo-->
-
-             <!-- <div class="sugestao">
+            </div>
             
-                <p>Produtos que você também pode gostar!</p>
+            {% if no_match%}
 
-                <ul id="mycarousel" class="jcarousel-skin-tango">
-                    <li><img src="#" width="80" height="80" /></li>
-                </ul>
-                
-            </div>/sugestao  -->
-            
+            <p>Seu carrinho está vazio...</p><br><br><br>
+
+            {% else %}
             
             <div class="carrinho">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -104,7 +81,7 @@
                           </tr>
                         </table>
                     </td>
-                    <td class="dados" align="center">R$ 5,00</td>
+                    <td class="dados" align="center"></td>
                   </tr>
                   <tr>
                       <td colspan="3" align="right">
@@ -121,6 +98,8 @@
 
             
             </div><!--/carrinho-->
+
+            {% endif %}
             
             <div class="bt-continuar-comprando"><a href="javascript:history.go(-1)"> < continuar comprando</a></div>
             <div class="bt-concluir-compra"><a href="#">concluir compra > </a></div>
@@ -130,5 +109,15 @@
         
      </div><!--/wrapper-->
 </section>
+
+<!-- <div class="sugestao">
+            
+                <p>Produtos que você também pode gostar!</p>
+
+                <ul id="mycarousel" class="jcarousel-skin-tango">
+                    <li><img src="#" width="80" height="80" /></li>
+                </ul>
+                
+            </div>/sugestao  -->
 
 {% endblock %}
