@@ -1,4 +1,8 @@
-  
+
+.wrapper {width: 100%;
+}
+
+
 /*==============================================================================================================
  RESET PRINCIPAL
 ================================================================================================================*/
@@ -14,7 +18,7 @@ blockquote:before, blockquote:after, q:before, q:after {content: "";}
 blockquote, q {quotes: "" "";}
 header, section, nav, article, aside, footer{display:block;}
 
-.wrapper{width:990px; margin:auto;}
+.wrapper{width:100%; margin: 0 auto; padding-right: 5%; padding-left: 5%;}
 img {border: solid 0px; outline:none; text-decoration:none; max-width:100%;}
 p{padding:0 0 10px 0;}
 hr{width:auto; height:1px; border:solid 0px; background:#ccc;}
