@@ -1,0 +1,136 @@
+/* ---------------------------- CARRINHO ---------------------------- */
+
+.cart {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+    background-color: gray;
+    border-radius: 10px;
+}
+
+.grid_cart {
+    display: grid;
+    place-items: left;
+    grid-template-areas:
+        "foto nome"
+        "foto preco"
+        "divline divline";
+    margin: 50px 50px 10px 10px;
+    width: 80vw;
+}
+
+.foto_produto_cart {
+    grid-area: foto;
+    min-width: 300px;
+    padding: 20px;
+    text-align: center;
+}
+
+.foto_produto_cart img {
+    max-width: 210px;
+    max-height: 210px;
+    border-radius: 3px;
+}
+
+.nome_produto_cart a {
+    font-size: 20px;
+    color: black;
+    grid-area: nome;
+    padding-top: 25px;
+}
+
+.preco_produto_cart {
+    font-size: 20px;
+    grid-area: preco;
+    position: relative;
+    width: 400px;
+    padding-top: 25px;
+}
+
+hr.solid {
+    border-top: 1px solid #bbb;
+    width: 105%;
+    grid-area: divline;
+}
+
+#subtotal_cart {
+    width: 45vw;
+    height: 5vh;
+    font-size: 20px;
+    text-align: center;
+}
+
+#block-erro {
+    height: 200px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.txt-erro {
+    font-family: var(--font);
+}
+
+.barra {
+    opacity: 1;
+    height: 10px;
+    width: 40px;
+    background-color: red;
+}
+
+#direita {
+    animation: direita 1000ms;
+    animation-fill-mode: both;
+    position: absolute;
+    bottom: 35%;
+    left: 100%;
+}
+
+#esquerda {
+    animation: esquerda 1000ms;
+    animation-fill-mode: both;
+    position: absolute;
+    left: 0;
+    bottom: 35%;
+}
+
+@keyframes direita {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        left: 43%;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes esquerda {
+    0% {
+        opacity: 0;
+        left: 0;
+    }
+
+    100% {
+        opacity: 1;
+        left: 43%;
+        transform: rotate(-45deg);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .foto_produto_cart {
+        min-width: 200px;
+    }
+
+    .foto_produto_cart img {
+        max-width: 100px;
+        max-height: 100px;
+    }
+}

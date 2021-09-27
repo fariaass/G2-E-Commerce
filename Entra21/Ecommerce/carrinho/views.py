@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from produtos.models import Produto
 from carrinho.models import Carrinho
@@ -81,4 +82,4 @@ def remover(request, pk):
 
     request.session.modified = True
 
-    return render(request, 'produtos/retorno-ajax.html', {'produto':produto, 'in_cart': False})
+    return render(request, 'carrinho/carrinho.html', {'produto':produto, 'in_cart': False})

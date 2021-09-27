@@ -1,5 +1,0 @@
-{% if in_cart %}
-    <button class="change_cart" value="{% url 'carrinho:remover' pk=produto.id %}">Remover do carrinho</button>
-{% else %}
-    <button class="change_cart" value="{% url 'carrinho:adicionar' pk=produto.id %}">Adicionar ao carrinho</button>
-{% endif %}

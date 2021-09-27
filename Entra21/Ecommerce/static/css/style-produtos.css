@@ -1,0 +1,50 @@
+/* ---------------------------- PRODUTOS ---------------------------- */
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+  }
+  
+  .grid_produto {
+    background: #FFFFFF;
+    /* box-shadow:  3px 3px 3px 3px #FFFFFF; */
+    display: grid;
+    place-items: center;
+    height: 55vh;
+    width: 25vw;
+    padding: 20px;
+    margin: 5px;
+    grid-template-areas:
+      "foto" "foto" "foto" "foto"
+      "nome" "nome" "nome" "nome"
+      "preco" "preco" "preco" "preco";
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px;
+  }
+  
+  .foto_produto img {
+    max-width: 210px;
+    max-height: 210px;
+    border-radius: 5px;
+    grid-area: foto;
+  }
+  
+  .nome_produto a {
+    margin: 0 auto;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    grid-area: nome;
+    position: relative;
+  }
+  
+  .preco_produto {
+    font-size: 20px;
+    grid-area: preco;
+    position: relative;
+    text-align: left;
+  }
+  

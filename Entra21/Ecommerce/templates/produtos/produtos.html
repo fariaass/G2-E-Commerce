@@ -1,8 +1,12 @@
 {% extends 'index.html' %}
 
+{% load static %}
+
 {% block title %}{{titulo}}{% endblock %}
 
 {% block content %}
+
+<link rel="stylesheet" href="{% static 'css/style-produtos.css' %}">
 
 <!-- BLOCO DISPLAY DE ITENS/CATALOGO -->
 

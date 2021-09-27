@@ -6,7 +6,7 @@
 
 {% block content %}
 
-{% if no_match %}
+<!-- {% if no_match %}
     <p>Seu carrinho está vazio!</p>
     <p>Vamos encher esse carrinho?</p>
 {% else %}
@@ -22,6 +22,113 @@
         {% endfor %}
         <div id="subtotal_cart">Sub-total({{total_itens}}) R${{total}}</div>
     </section>
-{% endif %}
+{% endif %} -->
+
+<link href="{% static 'css/checkout.css' %}" rel="stylesheet" type="text/css"/>
+
+<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+
+<section>
+    <div class="wrapper">
+    
+        <div class="checkout">
+        
+            <div class="titulo">
+                <span class="fa fa-shopping-cart"></span>
+                <h1>Meu Carrinho</h1>
+            </div><!--/titulo-->
+
+             <!-- <div class="sugestao">
+            
+                <p>Produtos que você também pode gostar!</p>
+
+                <ul id="mycarousel" class="jcarousel-skin-tango">
+                    <li><img src="#" width="80" height="80" /></li>
+                </ul>
+                
+            </div>/sugestao  -->
+            
+            
+            <div class="carrinho">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="55%" class="header">Produto(s) no Meu Carrinho</td>
+                    <td width="15%" class="header">Quantidade</td>
+                    <td width="15%" class="header">Valor Unitário</td>
+                    <td width="15%" class="header">Valor Total</td>
+                  </tr>
+
+                  {% for produto in dados %}
+
+                  <tr >
+                    <td class="dados">
+                        <div class="carrinho-imagem-produto">
+                            <img src="../../media/{{produto.imagem}}" max-width="210" max-height="210">
+                        </div><!--/carrinho-imagem-produto-->
+                        
+                        <div class="carrinho-descricao-produto">
+                           <a><strong>{{produto.nome}}</strong></a>
+                        </div><!--/carrinho-descricao-produto-->
+                    </td>
+                    <td class="dados" align="center">
+                        <div class="quantidade">
+                            <input name="" type="text" class="pp">
+                            <div class="controle-de-unidades">
+                                <a href="#" class="fa fa-arrow-up"></a>
+                                <a href="#" class="fa fa-arrow-down"></a>
+                            </div><!--/controle-de-unidades-->
+                        </div><!--/quantidade-->
+                        <div class="bt-excluir">
+                            <a href="{% url 'carrinho:remover' pk=produto.id %}">retirar do carrinho</a>
+                        </div><!--/excluir-->
+                    </td>
+                    <td class="dados" align="center">Valor Unitário</td>
+                    <td class="dados" align="center">R$ {{produto.preco}}</td>
+                  </tr>
+                  
+                  {% endfor %}
+
+                  <tr>
+                      <td colspan="3" align="right" class="subtotal">SUBTOTAL</td>
+                    <td class="dados" align="center">R$ {{total}}</td>
+                  </tr>
+                  <tr>
+                      <td colspan="3" class="frete"> 
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td width="7%" align="center"><span class="fa fa-truck"></span></td>
+                            <td width="30%" align="left">Consulte o prazo de entrega e o frete para seu CEP</td>
+                            <td width="1%" align="left"><input name="" id="cep" type="text" class="p" ></td>
+                            <td width="1%"><div class="bt-ok"><a href="#">OK</a></div></td>
+                            <td width="10%" align="right">FRETE</td>
+                          </tr>
+                        </table>
+                    </td>
+                    <td class="dados" align="center">R$ 5,00</td>
+                  </tr>
+                  <tr>
+                      <td colspan="3" align="right">
+
+                    <table width="15%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td class="total">TOTAL</td>
+                      </tr>
+                    </table>
+                    </td>
+                    <td align="center" class="total">R$ {{total}}</td>
+                  </tr>
+                 </table>
+
+            
+            </div><!--/carrinho-->
+            
+            <div class="bt-continuar-comprando"><a href="javascript:history.go(-1)"> < continuar comprando</a></div>
+            <div class="bt-concluir-compra"><a href="#">concluir compra > </a></div>
+    
+        </div><!--/checkout-->
+        
+        
+     </div><!--/wrapper-->
+</section>
 
 {% endblock %}
