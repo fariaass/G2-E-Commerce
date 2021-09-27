@@ -1,7 +1,7 @@
 $(document).ready(function(){
-    $(".change_cart").click(function(){
+    $(".ajax-class").click(function(){
         $.ajax({
-            url: $(".change_cart").attr("value"),
+            url: $(".ajax-class").attr("value"),
             type: 'get',
             success: function(data){
                 location.reload(true);
