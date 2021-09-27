@@ -1,8 +1,10 @@
 from django.http.response import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.urls import reverse
+from django.shortcuts import redirect, render, get_object_or_404
 from produtos.models import Produto
+from produtos.views import detalhes_produto
 from carrinho.models import Carrinho
-from produtos.views import produto_queryset_parser, recomendacao
+from produtos.views import produto_queryset_parser
 from django.core.serializers import serialize
 from json import loads
 
@@ -57,7 +59,7 @@ def adicionar(request, pk):
 
         request.session.modified = True
 
-    return render(request, 'produtos/retorno-ajax.html', {'produto':produto, 'in_cart': True})
+    return render(request, 'produtos/detalhes_produto.html', {'produto': produto, 'in_cart': True})
 
 
 def remover(request, pk):
@@ -82,4 +84,7 @@ def remover(request, pk):
 
     request.session.modified = True
 
-    return render(request, 'carrinho/carrinho.html', {'produto':produto, 'in_cart': False})
+    if 'carrinho' in request.path:
+        return retorna_carrinho(request)
+
+    return render(request, 'produtos/detalhes_produto.html', {'produto': produto, 'in_cart': False})

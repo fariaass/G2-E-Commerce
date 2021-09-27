@@ -56,7 +56,7 @@
                             </div><!--/controle-de-unidades-->
                         </div><!--/quantidade-->
                         <div class="bt-excluir">
-                            <a href="{% url 'carrinho:remover' pk=produto.id %}">retirar do carrinho</a>
+                            <button class="change_cart" value="{% url 'carrinho:remover' pk=produto.id %}">Retirar do carrinho</button>
                         </div><!--/excluir-->
                     </td>
                     <td class="dados" align="center">Valor Unitário</td>

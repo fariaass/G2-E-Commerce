@@ -95,8 +95,8 @@ a{text-decoration:none; -webkit-transition:background 0.5s ease-out; -moz-transi
 .checkout .carrinho .quantidade .pp{ width:40px; border:solid 1px #cccccc; padding:5px; float:left; }
 .checkout .carrinho .quantidade .controle-de-unidades{ width:10px; margin:0 0 0 10px; float:left;}
 .checkout .carrinho .quantidade .controle-de-unidades a{color: #333; font-size: 10px;}
-.checkout .carrinho .bt-excluir a{background:#f9f9f9; border-radius:12px; padding:5px 10px 5px 10px; float:left; margin:10% 0 0 10%;  color:#333; text-decoration:none;}
-.checkout .carrinho .bt-excluir a:hover{background:#e5e5e5;}
+.checkout .carrinho .bt-excluir button{background:#f9f9f9; border-radius:12px; padding:5px 10px 5px 10px; float:left; margin:10% 0 0 10%;  color:#333; text-decoration:none;}
+.checkout .carrinho .bt-excluir button:hover{background:#e5e5e5;}
 
 .checkout .carrinho .carrinho-imagem-produto{float:left; width:15%; padding:20px;}
 .checkout .carrinho .carrinho-descricao-produto{ float:left; width:70%; padding:25px 0 0 0; }
