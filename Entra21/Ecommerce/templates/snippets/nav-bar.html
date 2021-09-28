@@ -1,4 +1,4 @@
-
+{% load crispy_forms_tags %}
 {% load static %}
 
 {% block navbar %}
@@ -48,8 +48,9 @@
       </ul>
     </div>
     <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
-    <form action="#" class="search-box">
-      <input type="text" placeholder="Type Something to Search..." required>
+    <form method="POST" class="search-box">
+      {% csrf_token %}
+      {{form}}
       <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
     </form>
   </nav>

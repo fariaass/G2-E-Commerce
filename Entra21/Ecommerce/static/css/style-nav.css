@@ -123,7 +123,7 @@ nav .content .links{
   opacity: 1;
   pointer-events: auto;
 }
-.search-box input{
+.search-box .search{
   width: 100%;
   height: 100%;
   border: none;
@@ -133,7 +133,7 @@ nav .content .links{
   background: rgb(190, 190, 190);
   padding: 0 100px 0 15px;
 }
-.search-box input::placeholder{
+.search-box .search::placeholder{
   color: #f2f2f2;
 }
 .search-box .go-icon{
@@ -205,7 +205,7 @@ nav .content .links{
   .wrapper .search-box{
     max-width: calc(100% - 100px);
   }
-  .wrapper .search-box input{
+  .wrapper .search-box .search{
     padding: 0 100px 0 15px;
   }
 }
@@ -224,7 +224,7 @@ nav .content .links{
   .wrapper .search-box{
     max-width: calc(100% - 100px);
   }
-  .wrapper .search-box input{
+  .wrapper .search-box .search{
     padding: 0 100px 0 15px;
   }
 }
@@ -310,9 +310,7 @@ nav .content .links{
     width: 30px;
     right: 0;
   }
-  .wrapper .search-box input{
+  .wrapper .search-box .search{
     padding-right: 30px;
   }
 }
-
-
