@@ -112,7 +112,7 @@ nav .content .links{
 
 .wrapper .search-box{
   position: absolute;
-  height: 100%;
+  height: 10%;
   max-width: calc(100% - 50px);
   width: 100%;
   opacity: 0;
@@ -132,6 +132,7 @@ nav .content .links{
   color: black;
   background: rgb(190, 190, 190);
   padding: 0 100px 0 15px;
+  border-radius: 10px;
 }
 .search-box .search::placeholder{
   color: #f2f2f2;
@@ -141,8 +142,8 @@ nav .content .links{
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
-  line-height: 60px;
-  width: 70px;
+  line-height: 40px;
+  width: 60px;
   background: var(--corBackground);
   border: none;
   outline: none;

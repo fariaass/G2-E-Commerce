@@ -17,6 +17,7 @@ def home(request):
 def search(request):
     form = SearchForm(request.POST)
     products_tags_products_parsed = []
+    products_final = []
     if form.is_valid():
         result = form.cleaned_data['result']
         result_broke = result.split()
@@ -28,7 +29,10 @@ def search(request):
             qs_parsed = produto_queryset_parser(qs)
             for p in qs_parsed:
                 products_tags_products_parsed.append(p)
-        products_tags_products = [p for p in products_tags_products_parsed if p not in products]
         products = products + products_tags_products_parsed
+        for p in products:
+            if p not in products_final:
+                products_final.append(p)
+    form = SearchForm()
     
-    return render(request, 'produtos/produtos.html', {'dados':products, 'titulo':'Resultados'})
+    return render(request, 'produtos/produtos.html', {'dados':products_final, 'titulo':'Resultados', 'form': form})
