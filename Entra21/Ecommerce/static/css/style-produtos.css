@@ -20,7 +20,7 @@
   /* box-shadow:  3px 3px 3px 3px #FFFFFF; */
   display: grid;
   place-items: center;
-  height: 55vh;
+  height: 400px;
   width: 25vw;
   padding: 20px;
   margin: 5px;
@@ -41,11 +41,13 @@
 
 .nome_produto a {
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
   color: black;
   grid-area: nome;
-  position: relative;
+  /* position: relative; */
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .nome_produto:hover a{
