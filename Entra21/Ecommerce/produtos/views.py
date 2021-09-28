@@ -2,13 +2,19 @@ from produtos.models import Produto
 from django.shortcuts import render, get_object_or_404
 from .models import Produto
 from random import randint
+from Ecommerce.forms import SearchForm
+from Ecommerce.views import search
 
 def retorna_produtos(request):
     """
     Retorna os objetos do modelo Produto.
     """
+    if request.method == 'POST':
+        return search(request)
+    else:
+        form = SearchForm()
     dados = Produto.objects.all()
-    return render(request, 'produtos/produtos.html', {'dados':dados})
+    return render(request, 'produtos/produtos.html', {'dados':dados, 'form': form})
 
 
 def retorna_produtos_mais_vendidos(request):
@@ -17,10 +23,14 @@ def retorna_produtos_mais_vendidos(request):
     utilizando do método de ordenação, bubblesort, o qual compara os itens em pares,
     e realiza trocas entre os mesmos.
     """
+    if request.method == 'POST':
+        return search(request)
+    else:
+        form = SearchForm()
     dados = Produto.objects.all()
     dados = produto_queryset_parser(dados)
     bubblesort(dados, len(dados) - 1, 'vendas')
-    return render(request, 'produtos/produtos.html', {'dados': dados, 'titulo':'Mais Vendidos'})
+    return render(request, 'produtos/produtos.html', {'dados': dados, 'titulo':'Mais Vendidos', 'form': form})
 
 
 def retorna_produtos_mais_visualizados(request):
@@ -29,10 +39,14 @@ def retorna_produtos_mais_visualizados(request):
     utilizando do método de ordenação, bubblesort, o qual compara os itens em pares,
     e realiza trocas entre os mesmos.
     """
+    if request.method == 'POST':
+        return search(request)
+    else:
+        form = SearchForm()
     dados = Produto.objects.all()
     dados = produto_queryset_parser(dados)
     bubblesort(dados, len(dados) - 1, 'visualizacoes')
-    return render(request, 'produtos/produtos.html', {'dados':dados, 'titulo':'Mais Visitados'})
+    return render(request, 'produtos/produtos.html', {'dados':dados, 'titulo':'Mais Visitados', 'form':form})
 
 
 def retorna_produtos_mais_recentes(request):
@@ -41,16 +55,24 @@ def retorna_produtos_mais_recentes(request):
     utilizando os métodos mágicos na classe Produto para fazer a comparação entre as datas,
     essas comparações sendo feitas utilizando a biblioteca datetime.
     """
+    if request.method == 'POST':
+        return search(request)
+    else:
+        form = SearchForm()
     dados = Produto.objects.all()
     dados = produto_queryset_parser(dados)
     bubblesort(dados, len(dados) - 1, 'data_criacao')
-    return render(request, 'produtos/produtos.html', {'dados':dados, 'titulo':'Lançamentos'})
+    return render(request, 'produtos/produtos.html', {'dados':dados, 'titulo':'Lançamentos', 'form': form})
 
 
 def detalhes_produto(request, pk):
     """
     Esta função retorna os dados do produto selecionado.
     """
+    if request.method == 'POST':
+        return search(request)
+    else:
+        form = SearchForm()
     produto = get_object_or_404(Produto, pk=pk)
     dados = Produto.objects.all()
     produto.visualizacoes += 1
@@ -75,7 +97,7 @@ def detalhes_produto(request, pk):
             else:
                 in_cart = False
 
-    return render(request, 'produtos/detalhes_produto.html', {'produto': produto, 'dados': reco, 'nome': 'Produto', 'success': False, 'in_cart': in_cart})
+    return render(request, 'produtos/detalhes_produto.html', {'produto': produto, 'dados': reco, 'nome': 'Produto', 'success': False, 'in_cart': in_cart, 'form': form})
 
 
 def recomendacao(query, exclude):
