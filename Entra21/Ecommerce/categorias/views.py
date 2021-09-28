@@ -2,7 +2,7 @@ from django.shortcuts import render, get_list_or_404, get_object_or_404
 from produtos.models import Produto
 from categorias.models import Categoria
 from Ecommerce.forms import SearchForm
-from Ecommerce.views import search
+from produtos.views import search
 
 def retorna_produtos_categoria(request, pk):
     """

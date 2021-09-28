@@ -1,9 +1,9 @@
 from produtos.models import Produto
 from django.shortcuts import render, get_object_or_404
 from .models import Produto
+from categorias.models import Tag
 from random import randint
 from Ecommerce.forms import SearchForm
-from Ecommerce.views import search
 
 def retorna_produtos(request):
     """
@@ -156,3 +156,29 @@ def bubblesort(v, n, key):
                 v[i + 1] = temp
 
         bubblesort(v, n - 1, key)
+
+def search(request):
+    form = SearchForm(request.POST)
+    if form.cleaned_data['result'] == '':
+        products_tags_products_parsed = []
+        products_final = []
+        if form.is_valid():
+            result = form.cleaned_data['result']
+            result_broke = result.split()
+            products = Produto.objects.all().filter(nome__icontains=result)
+            products = produto_queryset_parser(products)
+            products_tags = Tag.objects.all().filter(nome__in=result_broke)
+            products_tags_products = [t.produtos.all() for t in products_tags]
+            for qs in products_tags_products:
+                qs_parsed = produto_queryset_parser(qs)
+                for p in qs_parsed:
+                    products_tags_products_parsed.append(p)
+            products = products + products_tags_products_parsed
+            for p in products:
+                if p not in products_final:
+                    products_final.append(p)
+    else:
+        return render(request, 'erro.html', {'message': 'Pesquisa vazia...'})
+
+    form = SearchForm()
+    return render(request, 'produtos/produtos.html', {'dados':products_final, 'titulo':'Resultados', 'form': form})

@@ -5,7 +5,7 @@ from produtos.views import produto_queryset_parser
 from django.core.serializers import serialize
 from json import loads
 from Ecommerce.forms import SearchForm
-from Ecommerce.views import search
+from produtos.views import search
 
 def retorna_carrinho(request):
     """
