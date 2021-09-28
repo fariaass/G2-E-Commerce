@@ -4,9 +4,14 @@
 {% block title%}Adicione um endereço{% endblock %}
 
 {% block content %}
+
+<link rel="stylesheet" href="{% static 'css/style-adress.css' %}">
+
 <form method="post" id="form-endereco">
     {% csrf_token %}
     {{form|crispy}}
 </form>
 <button type="submit" form="form-endereco">Adicionar</button>
+
+
 {% endblock %}
