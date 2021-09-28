@@ -1,0 +1,31 @@
+{% load static %}
+
+{% block carrossel %}  
+
+<link rel="stylesheet" href="{% static 'css/style-carrossel.css' %}">
+
+<p id="aaa">Nossas categorias</p>
+
+<article id="carrossel-container" class="c-carousel c-carousel--responsive">
+    <div class="c-carousel__slides js-carousel--responsive">
+        {% for categoria in categorias %}
+
+        <article class="cards">
+            <a href="{% url 'categorias:list' pk=categoria.id %}">
+            <img src="{{categoria.imagem.url}}" alt="Foto de {{categoria.nome}}">
+            <p><strong>{{categoria.nome}}</strong></p>
+            </a>
+        </article>
+
+        {% endfor %}
+    </div>
+    <div class="buttons">
+        <a id="button-prev" class="js-carousel--responsive-prev" aria-label="Anterior"><i class="fas fa-chevron-circle-left"></i></a>
+        <a id="button-next" class="js-carousel--responsive-next" aria-label="Próximo"><i class="fas fa-chevron-circle-right"></i></a>
+    </div>
+    <div id="dots" class="js-carousel--responsive-dots" role="tablist"></div>
+</article>
+
+<script src="{% static 'js/carrossel.js' %}"></script>
+    
+{% endblock %}

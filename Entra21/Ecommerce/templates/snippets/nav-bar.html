@@ -3,6 +3,8 @@
 
 {% block navbar %}
 
+<link rel="stylesheet" href="{% static 'css/style-nav.css' %}">
+
 <nav>
     <input type="checkbox" id="show-search">
     <input type="checkbox" id="show-menu">
@@ -51,5 +53,9 @@
       <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
     </form>
   </nav>
+
+
+  <script src="{% static 'js/nav-bar.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
 
 {% endblock %}

@@ -8,8 +8,6 @@
 
 <link href="{% static 'css/checkout.css' %}" rel="stylesheet" type="text/css"/>
 
-<script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
-
 <section id="carrinho">
     <div class="wrapper">
     
@@ -56,7 +54,7 @@
                             </div><!--/controle-de-unidades-->
                         </div><!--/quantidade-->
                         <div class="bt-excluir">
-                            <button class="ajax-class" value="{% url 'carrinho:remover' pk=produto.id %}">Retirar do carrinho</button>
+                            <button class="ajax-class" value="{% url 'carrinho:remover' pk=produto.id %}"><i class="far fa-trash-alt"></i></button>
                         </div><!--/excluir-->
                     </td>
                     <td class="dados" align="center">Valor Unitário</td>
@@ -101,7 +99,7 @@
 
             {% endif %}
             
-            <div class="bt-continuar-comprando"><a href="javascript:history.go(-1)"> < continuar comprando</a></div>
+            <div class="bt-continuar-comprando"><a href="{% url 'produtos:lancamentos' %}"> < continuar comprando</a></div>
             <div class="bt-concluir-compra"><a href="#">concluir compra > </a></div>
     
         </div><!--/checkout-->

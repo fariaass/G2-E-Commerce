@@ -1,10 +1,16 @@
 /* ---------------------------- CARROSSEL ---------------------------- */
 
-#palagrafo-carrossel {
+#aaa {
     max-width: 80%;
     height: 100%;
     text-transform: uppercase;
-    align-items: center;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 1vh;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 #carrossel-container {
@@ -36,11 +42,10 @@ article #carrossel-container {
     place-items: center;
     grid-template-areas: 'foto'
                          'nome';
-    align-items: center;
-    justify-content: center;
 }
 .cards p{
     text-transform: uppercase;
+    color: black;
     grid-area: nome;
 }
 .cards img {
