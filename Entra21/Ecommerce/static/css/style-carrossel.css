@@ -1,0 +1,49 @@
+/* ---------------------------- CARROSSEL ---------------------------- */
+
+#palagrafo-carrossel {
+    max-width: 80%;
+    height: 100%;
+    text-transform: uppercase;
+    align-items: center;
+}
+
+#carrossel-container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.buttons {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons a{
+    color: black;
+}
+
+button.glider-dot.active {
+    background-color: grey;
+}
+
+article #carrossel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+.cards {
+    display: grid;
+    place-items: center;
+    grid-template-areas: 'foto'
+                         'nome';
+    align-items: center;
+    justify-content: center;
+}
+.cards p{
+    text-transform: uppercase;
+    grid-area: nome;
+}
+.cards img {
+    border-radius: 5px;
+    grid-area: foto;
+}

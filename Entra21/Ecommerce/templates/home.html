@@ -1,26 +1,33 @@
 {% extends 'index.html' %}
 
+{% load static %}
+
 {% block title %}Swift Root{% endblock %}
 
 {% block content %}  
 
-<p id="palagrafo-carrossel">Navegue por nossas categorias</p>
+<link rel="stylesheet" href="{% static 'css/style-carrossel.css' %}">
+
+<p id="palagrafo-carrossel">Nossas categorias</p>
 
 <article id="carrossel-container" class="c-carousel c-carousel--responsive">
-    <button id="glider-prev" class="js-carousel--responsive-prev" aria-label="Anterior"><i class="fas fa-chevron-circle-left"></i></button>
     <div class="c-carousel__slides js-carousel--responsive">
         {% for categoria in categorias %}
 
         <article class="cards">
+            <a href="{% url 'categorias:list' pk=categoria.id %}">
             <img src="{{categoria.imagem.url}}" alt="Foto de {{categoria.nome}}">
-            <p>{{categoria.nome}}</p>
+            <p><strong>{{categoria.nome}}</strong></p>
+            <!-- </a> -->
         </article>
+
         {% endfor %}
     </div>
-    <button id="glider-next" class="js-carousel--responsive-next" aria-label="Próximo"><i class="fas fa-chevron-circle-right"></i></button>
-    <!-- <button class="js-carousel--responsive-prev" aria-label="Anterior">«</button>
-    <button class="js-carousel--responsive-next" aria-label="Próximo">»</button> -->
-    <div class="js-carousel--responsive-dots" role="tablist"></div>
+    <div class="buttons">
+        <a id="button-prev" class="js-carousel--responsive-prev" aria-label="Anterior"><i class="fas fa-chevron-circle-left"></i></a>
+        <a id="button-next" class="js-carousel--responsive-next" aria-label="Próximo"><i class="fas fa-chevron-circle-right"></i></a>
+    </div>
+    <div id="dots" class="js-carousel--responsive-dots" role="tablist"></div>
 </article>
     
 {% endblock %}

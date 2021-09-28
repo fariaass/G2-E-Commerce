@@ -7,9 +7,10 @@ new Glider($responsiveCarousel, {
   duration: 0.25,
   dots: ".js-carousel--responsive-dots",
   arrows: {
-    prev: "#glider-prev",
-    next: "#glider-next",
+    prev: ".js-carousel--responsive-prev",
+    next: ".js-carousel--responsive-next",
   },
+  scrollLock: true,
   responsive: [
     {
       breakpoint: 600,
