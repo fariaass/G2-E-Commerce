@@ -1,18 +1,21 @@
-from django.http.response import HttpResponse
-from django.urls import reverse
-from django.shortcuts import redirect, render, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from produtos.models import Produto
-from produtos.views import detalhes_produto
 from carrinho.models import Carrinho
 from produtos.views import produto_queryset_parser
 from django.core.serializers import serialize
 from json import loads
+from Ecommerce.forms import SearchForm
+from Ecommerce.views import search
 
 def retorna_carrinho(request):
     """
     Esta função retorna o carrinho em formato json, e confere se o carrinho é de sessão,
     ou se é de um usuário logado.
     """
+    if request.method == 'POST':
+        return search(request)
+    else:
+        form = SearchForm()
     if request.user.is_authenticated:
         dados = get_object_or_404(Carrinho, pk=request.user.carrinho.pk)
         if len(dados.produtos.all()) == 0:
@@ -38,7 +41,7 @@ def retorna_carrinho(request):
         else:
             return render(request, 'carrinho/carrinho.html', {'no_match': True})
 
-        return render(request, 'carrinho/carrinho.html', {'dados': products, 'total_itens': total_itens, 'total': total, 'no_match': False})    
+        return render(request, 'carrinho/carrinho.html', {'dados': products, 'total_itens': total_itens, 'total': total, 'no_match': False, 'form': form})    
 
 def adicionar(request, pk):
     """
