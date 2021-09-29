@@ -92,7 +92,7 @@ nav .content .links{
 }
 .content .links li a:hover,
 .content .links li label:hover{
-  background: #FFFFFF;
+  background: transparent;
 }
 .wrapper .search-icon,
 .wrapper .menu-icon{
