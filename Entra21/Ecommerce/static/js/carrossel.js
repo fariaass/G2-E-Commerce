@@ -13,24 +13,24 @@ new Glider($responsiveCarousel, {
   scrollLock: true,
   responsive: [
     {
-      breakpoint: 600,
+      breakpoint: 750,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
       },
     },
     {
-      breakpoint: 900,
+      breakpoint: 1200,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToShow: 3,
+        slidesToScroll: 3,
       },
     },
     {
       breakpoint: 500,
       settings: {
-          slidesToScroll: 2,
-          slidesToShow: 2,
+          slidesToScroll: 1,
+          slidesToShow: 1,
           dots: false,
           arrows: false,
           scrollLock: true
