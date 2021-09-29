@@ -37,7 +37,7 @@ def retorna_produtos_mais_vendidos(request):
     dados_lista = produto_queryset_parser(dados_lista)
     bubblesort(dados_lista, len(dados_lista) - 1, 'vendas')
 
-    paginacao = Paginator(dados_lista, 3)
+    paginacao = Paginator(dados_lista, 6)
     pagina = request.GET.get('pagina')
     dados = paginacao.get_page(pagina)
 
@@ -57,6 +57,11 @@ def retorna_produtos_mais_visualizados(request):
     dados = Produto.objects.all()
     dados = produto_queryset_parser(dados)
     bubblesort(dados, len(dados) - 1, 'visualizacoes')
+
+    paginacao = Paginator(dados, 6)
+    pagina = request.GET.get('pagina')
+    dados = paginacao.get_page(pagina)
+
     return render(request, 'produtos/produtos.html', {'dados':dados, 'titulo':'Mais Visitados', 'form':form})
 
 
@@ -73,6 +78,11 @@ def retorna_produtos_mais_recentes(request):
     dados = Produto.objects.all()
     dados = produto_queryset_parser(dados)
     bubblesort(dados, len(dados) - 1, 'data_criacao')
+
+    paginacao = Paginator(dados, 6)
+    pagina = request.GET.get('pagina')
+    dados = paginacao.get_page(pagina)
+
     return render(request, 'produtos/produtos.html', {'dados':dados, 'titulo':'Lançamentos', 'form': form})
 
 
@@ -175,27 +185,38 @@ def search(request):
     e então quebra a pesquisa, pesquisa as tags com as palavras da pesquisa, entãp confere os itens que se repetiram
     e junta tudo em um vetor só, para retornar ao template que exibe os produtos.
     """
-    form = SearchForm(request.POST)
-    if form.is_valid():
-        if form.cleaned_data['result'] != '':
-            products_tags_products_parsed = []
-            products_final = []
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
             result = form.cleaned_data['result']
-            result_broke = result.split()
-            products = Produto.objects.all().filter(nome__icontains=result)
-            products = produto_queryset_parser(products)
-            products_tags = Tag.objects.all().filter(nome__in=result_broke)
-            products_tags_products = [t.produtos.all() for t in products_tags]
-            for qs in products_tags_products:
-                qs_parsed = produto_queryset_parser(qs)
-                for p in qs_parsed:
-                    products_tags_products_parsed.append(p)
-            products = products + products_tags_products_parsed
-            for p in products:
-                if p not in products_final:
-                    products_final.append(p)
-        else:
-            return render(request, 'erro.html', {'message': 'Pesquisa vazia...'})
+            products_final = search_at_db(result)
+    else:
+        result = request.GET.get('search')
+        products_final = search_at_db(result)
 
     form = SearchForm()
-    return render(request, 'produtos/produtos.html', {'dados':products_final, 'titulo':'Resultados', 'form': form})
+    paginacao = Paginator(products_final, 1)
+    pagina = request.GET.get('pagina')
+    products_final = paginacao.get_page(pagina)
+    print(request.GET)
+    
+    return render(request, 'produtos/produtos.html', {'dados':products_final, 'titulo':'Resultados', 'form': form, 'search': result})
+
+def search_at_db(result):
+    products_tags_products_parsed = []
+    products_final = []
+    result_broke = result.split()
+    products = Produto.objects.all().filter(nome__icontains=result)
+    products = produto_queryset_parser(products)
+    products_tags = Tag.objects.all().filter(nome__in=result_broke)
+    products_tags_products = [t.produtos.all() for t in products_tags]
+    for qs in products_tags_products:
+        qs_parsed = produto_queryset_parser(qs)
+        for p in qs_parsed:
+            products_tags_products_parsed.append(p)
+    products = products + products_tags_products_parsed
+    for p in products:
+        if p not in products_final:
+            products_final.append(p)
+
+    return products_final
