@@ -71,7 +71,7 @@ docs/_build/
 db.sqlite3
 Entra21/Ecommerce/db.sqlite3
 
-# local_settings.py
+local_settings.py
 # ssl/
 
 

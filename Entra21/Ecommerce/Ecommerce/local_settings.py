@@ -13,7 +13,7 @@ DbMySQL = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'DbE21G2',
         'USER': 'dbe21g2',
-        'PASSWORD': 'blumenaufazmuitocalor2.*',
+        'PASSWORD': 'b2349kluMenaUfazmuTtocalor2.*',
         'HOST': 'dbsolapp01.sol.app.br',
         'PORT': '3306',
         'OPTIONS':  {
