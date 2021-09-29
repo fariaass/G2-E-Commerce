@@ -130,7 +130,7 @@
   border-color: #b8a606;
   text-shadow: none;
   border-radius: 20px;
-  width: 10vw;
+  width: 90%;
   height: 50px;
   text-transform: uppercase;
 }
@@ -219,7 +219,6 @@
   text-align: left;
 }
 
-
 /* ---------------------------- RESPONSIVIDADE ---------------------------- */
 
 /* Catalogo produto */
@@ -279,13 +278,9 @@
     position: relative;
     text-align: left;
   }
+  
+  /* Detalhes produto */
 
-
-}
-
-/* Detalhes produto */
-
-@media screen and (max-width: 900px) {
   .container_detalhes {
     padding-top: 70px;
     display: flex;
@@ -368,4 +363,157 @@
     padding: 3px;
     font-size: 20;
   }
+
+  /* Recomendados */
+
+  #detalhes_recomendados {
+    margin: 0 auto;
+    width: 85%;
+    border-radius: 5px;
+    height: 5vh;
+    margin-top: 5vh;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1vh;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .recomendados {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+  }
+
+  .grid_recomendados {
+    display: grid;
+    place-items: center;
+    width: 25vw;
+    height: 300px;
+    padding: 10px;
+    margin: 5px;
+    grid-template-areas:
+      "foto" "foto" "foto"
+      "nome" "nome" "nome"
+      "preco" "preco" "preco";
+    border-radius: 5px;
+    border: 1px solid rgb(218, 218, 218);
+  }
+
+  .foto_recomendados img {
+    max-width: 160px;
+    max-height: 160px;
+    border-radius: 5px;
+    grid-area: foto;
+  }
+
+  .nome_recomendados a {
+    margin: 0 auto;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    grid-area: nome;
+    position: relative;
+    bottom: 0;
+  }
+
+  .nome_recomendados {
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .preco_recomendados {
+    place-items: center;
+    margin: 5px;
+    font-size: 16px;
+    grid-area: preco;
+    position: relative;
+    text-align: left;
+  }
+
+}
+
+
+@media screen and (max-width: 900px) {
+
+/* Recomendados */
+
+#detalhes_recomendados {
+  margin: 0 auto;
+  width: 85%;
+  border-radius: 5px;
+  height: 5vh;
+  margin-top: 5vh;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 1vh;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.recomendados {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+}
+
+.grid_recomendados {
+  display: grid;
+  place-items: center;
+  width: 25vw;
+  height: 300px;
+  padding: 10px;
+  margin: 5px;
+  grid-template-areas:
+    "foto" "foto" "foto"
+    "nome" "nome" "nome"
+    "preco" "preco" "preco";
+  border-radius: 5px;
+  border: 1px solid rgb(218, 218, 218);
+}
+
+.foto_recomendados img {
+  max-width: 160px;
+  max-height: 160px;
+  border-radius: 5px;
+  grid-area: foto;
+}
+
+.nome_recomendados a {
+  margin: 0 auto;
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+  grid-area: nome;
+  position: relative;
+  bottom: 0;
+}
+
+.nome_recomendados {
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  bottom: 0;
+  z-index: 1;
+}
+
+.preco_recomendados {
+  place-items: center;
+  margin: 5px;
+  font-size: 16px;
+  grid-area: preco;
+  position: relative;
+  text-align: left;
+}
 }
