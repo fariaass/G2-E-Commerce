@@ -162,7 +162,7 @@ nav .content .links{
   background: #FFFFFF;
   box-shadow: 1px 1px 2px rgb(141, 141, 141);
   top: 80px;
-  z-index: 2;
+  z-index: 1000;
   opacity: 0;
   visibility: hidden;
 }
@@ -231,15 +231,22 @@ nav .content .links{
 }
 
 @media screen and (max-width: 900px){
+  nav {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
   .wrapper .menu-icon{
     display: block;
+    z-index: 1000;
   }
   .wrapper #show-menu:checked ~ .menu-icon i::before{
     content: "\f00d";
+    z-index: 1000;
   }
   nav .content .links{
     display: block;
-    z-index: 100;
+    z-index: 1000;
     position: fixed;
     background: #FFFFFF;
     height: 100%;
@@ -254,9 +261,11 @@ nav .content .links{
   }
   nav #show-menu:checked ~ .content .links{
     left: 0%;
+    z-index: 1000;
   }
   .content .links li{
     margin: 15px 20px;
+    z-index: 1000;
   }
   .content .links li a,
   .content .links li label{
@@ -265,6 +274,7 @@ nav .content .links{
     display: block;
     padding: 8px 18px;
     cursor: pointer;
+    z-index: 1000;
   }
   .content .links li a.desktop-link{
     display: none;
@@ -275,7 +285,7 @@ nav .content .links{
   .content .links ul ul{
     position: static;
     opacity: 1;
-    z-index: 100;
+    z-index: 1000;
     visibility: visible;
     background: none;
     max-height: 0px;
@@ -286,13 +296,16 @@ nav .content .links{
   .content .links #show-services:checked ~ ul,
   .content .links #show-items:checked ~ ul{
     max-height: 100vh;
+    z-index: 1000;
   }
   .content .links ul li{
     margin: 7px 20px;
+    z-index: 1000;
   }
   .content .links ul li a{
     font-size: 18px;
     line-height: 30px;
+    z-index: 1000;
     border-radius: 5px!important;
   }
 }

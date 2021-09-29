@@ -36,6 +36,7 @@ article #carrossel-container {
     align-items: center;
     justify-content: center;
     position: absolute;
+    z-index: 1;
 }
 .cards {
     display: grid;
@@ -49,6 +50,15 @@ article #carrossel-container {
     grid-area: nome;
 }
 .cards img {
+    width: 300px;
+    height: 225px;
     border-radius: 5px;
     grid-area: foto;
+    z-index: 1;
+}
+
+@media screen and (max-width: 900px) {
+    #aaa {
+        padding-top: 70px;
+    }
 }

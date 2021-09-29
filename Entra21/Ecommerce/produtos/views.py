@@ -159,10 +159,10 @@ def bubblesort(v, n, key):
 
 def search(request):
     form = SearchForm(request.POST)
-    if form.cleaned_data['result'] == '':
-        products_tags_products_parsed = []
-        products_final = []
-        if form.is_valid():
+    if form.is_valid():
+        if form.cleaned_data['result'] != '':
+            products_tags_products_parsed = []
+            products_final = []
             result = form.cleaned_data['result']
             result_broke = result.split()
             products = Produto.objects.all().filter(nome__icontains=result)
@@ -177,8 +177,8 @@ def search(request):
             for p in products:
                 if p not in products_final:
                     products_final.append(p)
-    else:
-        return render(request, 'erro.html', {'message': 'Pesquisa vazia...'})
+        else:
+            return render(request, 'erro.html', {'message': 'Pesquisa vazia...'})
 
     form = SearchForm()
     return render(request, 'produtos/produtos.html', {'dados':products_final, 'titulo':'Resultados', 'form': form})

@@ -9,7 +9,7 @@ class Produto(models.Model):
 
     Tags tornam a pesquisa mais fácil.
     """
-    nome                = models.CharField(max_length=256)
+    nome                = models.CharField(max_length=72)
     descricao           = models.TextField()
     preco               = models.DecimalField(max_digits=12, decimal_places=2)
     imagem              = models.FileField(upload_to='media')

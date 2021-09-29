@@ -12,12 +12,13 @@
 
 <section class="container_detalhes">
 <div class="grid_produto_detalhe">
+    <h2 id="mobile_nome" class="nome_detalhe">{{produto.nome}}</h2><br>
     <div class="foto_detalhe"><img src="{{produto.imagem.url}}"></div>
     <div class="descricao_detalhe">
-        <p>Detalhes: <br><br> {{produto.descricao}}</p>
+        <p><br><br><strong>Detalhes:</strong> <br><br> {{produto.descricao}}</p>
     </div>
     <div class="cart_detalhe">
-        <p class="nome_detalhe">{{produto.nome}}</p><br>
+        <h2 class="nome_detalhe">{{produto.nome}}</h2><br>
         <p id="preco_detalhe">R${{produto.preco}}</p>
         {% if in_cart %}
             <button class="change_cart ajax-class" value="{% url 'carrinho:remover' pk=produto.id %}">Remover do carrinho</button>
