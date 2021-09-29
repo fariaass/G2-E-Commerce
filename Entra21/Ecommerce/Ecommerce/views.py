@@ -4,6 +4,9 @@ from Ecommerce.forms import SearchForm
 from produtos.views import search
 
 def home(request):
+    """
+    Esta função retorna as categorias, para a página inicial.
+    """
     if request.method == 'POST':
         return search(request)
     else:
