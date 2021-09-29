@@ -470,7 +470,7 @@
 .grid_recomendados {
   display: grid;
   place-items: center;
-  width: 25vw;
+  width: 80vw;
   height: 300px;
   padding: 10px;
   margin: 5px;

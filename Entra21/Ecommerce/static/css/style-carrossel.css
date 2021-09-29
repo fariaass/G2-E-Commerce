@@ -14,6 +14,7 @@
 }
 
 #carrossel-container {
+    padding-top: 10px;
     max-width: 80%;
     margin: 0 auto;
 }
@@ -40,6 +41,7 @@ article #carrossel-container {
 }
 .cards {
     display: grid;
+    width: 45vw;
     place-items: center;
     grid-template-areas: 'foto'
                          'nome';
