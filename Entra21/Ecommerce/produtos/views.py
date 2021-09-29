@@ -158,6 +158,12 @@ def bubblesort(v, n, key):
         bubblesort(v, n - 1, key)
 
 def search(request):
+    """
+    Esta função pega os dados do formulário enviado, que é o campo de pesquisa, e então confere se o resultado
+    da pesquisa é vazio, se for retorna erro, se não, pesquisa os produtos em que a pesquisa está presente no nome,
+    e então quebra a pesquisa, pesquisa as tags com as palavras da pesquisa, entãp confere os itens que se repetiram
+    e junta tudo em um vetor só, para retornar ao template que exibe os produtos.
+    """
     form = SearchForm(request.POST)
     if form.is_valid():
         if form.cleaned_data['result'] != '':
