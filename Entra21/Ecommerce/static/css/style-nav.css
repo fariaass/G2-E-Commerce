@@ -112,7 +112,7 @@ nav .content .links{
 
 .wrapper .search-box{
   position: absolute;
-  height: 70px;
+  height: 60px;
   max-width: calc(100% - 50px);
   width: 100%;
   opacity: 0;

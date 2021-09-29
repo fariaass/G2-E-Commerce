@@ -20,4 +20,20 @@
     {% endfor %}
 </section>
 
+<section class="paginacao">
+    <span class="buttons-paginacao">
+        {% if dados.has_previous %}
+            <a href="?pagina={{ dados.previous_page_number }}"><i class="fas fa-arrow-left"></i></a>
+        {% endif %}
+        {% if dados.paginator.num_pages %}
+        <span class="atual">
+            {{ dados.number }} de {{ dados.paginator.num_pages }}
+        </span>
+        {% endif %}
+        {% if dados.has_next %}
+            <a href="?pagina={{ dados.next_page_number }}"><i class="fas fa-arrow-right"></i></a>
+        {% endif %}
+    </span>
+</section>
+
 {% endblock %}

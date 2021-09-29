@@ -1,5 +1,6 @@
 from produtos.models import Produto
 from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator
 from .models import Produto
 from categorias.models import Tag
 from random import randint
@@ -13,7 +14,12 @@ def retorna_produtos(request):
         return search(request)
     else:
         form = SearchForm()
-    dados = Produto.objects.all()
+    dados_lista = Produto.objects.all()
+
+    paginacao = Paginator(dados_lista, 3)
+    pagina = request.GET.get('pagina')
+    dados = paginacao.get_page(pagina)
+    
     return render(request, 'produtos/produtos.html', {'dados':dados, 'form': form})
 
 
@@ -27,9 +33,14 @@ def retorna_produtos_mais_vendidos(request):
         return search(request)
     else:
         form = SearchForm()
-    dados = Produto.objects.all()
-    dados = produto_queryset_parser(dados)
-    bubblesort(dados, len(dados) - 1, 'vendas')
+    dados_lista = Produto.objects.all()
+    dados_lista = produto_queryset_parser(dados_lista)
+    bubblesort(dados_lista, len(dados_lista) - 1, 'vendas')
+
+    paginacao = Paginator(dados_lista, 3)
+    pagina = request.GET.get('pagina')
+    dados = paginacao.get_page(pagina)
+
     return render(request, 'produtos/produtos.html', {'dados': dados, 'titulo':'Mais Vendidos', 'form': form})
 
 
