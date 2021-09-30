@@ -99,16 +99,16 @@ class Endereco(models.Model):
     )
 
     usuario                 = models.ForeignKey(MyUser, on_delete=models.CASCADE, related_name='enderecos')
-    nome                    = models.CharField(max_length=256, default=usuario)
+    nome                    = models.CharField(max_length=256, default='')
     cep                     = models.CharField(max_length=10)
     rua                     = models.CharField(max_length=256)
-    numero                  = models.IntegerField(default='0000')
+    numero                  = models.IntegerField(default='')
     tipo                    = models.CharField(max_length=1, choices=CHOICES, default='O')
     bairro                  = models.CharField(max_length=256)
     cidade                  = models.CharField(max_length=256)
     estado                  = models.CharField(max_length=256)
     pais                    = models.CharField(max_length=256, default='Brasil')
-    referencia              = models.CharField(max_length=256, default=(f'Casa de {usuario}'))
+    referencia              = models.CharField(max_length=256, default='')
 
 
 """
