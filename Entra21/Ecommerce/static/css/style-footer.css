@@ -5,8 +5,11 @@
 }
 
 footer {
-    position: absolute;
+    position: relative;
+    margin-top: 50px;
     bottom: 0;
+    left: 0;
+    right: 0;
     background: black;
     height: auto;
     font-family: "Open Sans";

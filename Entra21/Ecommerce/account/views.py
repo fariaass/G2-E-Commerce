@@ -51,11 +51,3 @@ def addEndereco(request):
     else:
         form = EnderecoForm()
     return render(request, 'registration/addEndereco.html', {'form':form})
-
-def retorna_endereco(request):
-    if request.method == 'POST':
-        return search(request)
-    else:
-        form = SearchForm()
-    dados = Endereco.objects.all()
-    return render(request, 'registration/endereco.html', {'dados': dados, 'form': form})

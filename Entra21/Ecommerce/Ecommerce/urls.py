@@ -9,6 +9,7 @@ import produtos.urls
 import categorias.urls
 import account.urls
 import carrinho.urls
+import pedidos.urls
 
 urlpatterns = [
     path('', home, name='home'),
@@ -19,6 +20,7 @@ urlpatterns = [
     path('produtos/', include(produtos.urls)),
     path('categorias/', include(categorias.urls)),
     path('carrinho/', include(carrinho.urls)),
+    path('pedidos/', include(pedidos.urls)),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

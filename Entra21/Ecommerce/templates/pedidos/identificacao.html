@@ -1,0 +1,85 @@
+{% extends 'index.html' %}
+
+{% load static %}
+   
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+
+<style>
+    span a {
+        color: black;
+        text-decoration: none;
+    }
+
+</style>
+
+<section>
+    <div class="wrapper">
+    
+        <div class="checkout">
+
+                <div class="checkout-logotipo">
+                    
+                </div><!--/checkout-logotipo-->
+                <div class="navegador">
+                    <div class="check-carrinho"><div class="info-inativo">Carrinho</div></div>
+                           <hr class="linha-ativa">
+                    <div class="check-ativo">2 <div class="info-ativo">Identificação</div></div>
+                        <hr class="linha-inativa">
+                    <div class="check-inativo">3 <div class="info-inativo">Pagamento</div></div>
+                        <hr class="linha-inativa">
+                    <div class="check-inativo">4 <div class="info-inativo">Confirmação</div></div>
+                </div><!--/navegador-->
+   
+            <div class="titulo">
+                <span class="fa fa-user"></span>
+                <h1>Identificação</h1>
+            </div><!--/titulo-->
+            
+            {% if user.is_authenticated %}
+
+                <div class="entrar">
+                    <span>Você já está autenticado como: {{request.user.primeiro_nome}}.</span>
+                    <div class="bt-concluir-compra"><a href="#">Continuar > </a></div>
+
+                    <div class="alterar-pedido">
+                        <a href="#"><< alterar pedido</a>
+                    </div><!--/alterar-pedido-->
+                    
+                </div><!--/entrar-->
+
+                <div class="cadastrar">
+                    <span>Deseja se autenticar como outra pessoa?</span>
+                    <p></p>
+                    <div class="bt-continuar-comprando"><a href="#"> Faça login ></a></div>
+                </div><!--/cadastrar-->
+
+            {% else %}
+
+            <div class="entrar">
+                <span>Já tenho cadastro</span>
+                <span><a href="#">Clique aqui para fazer login.</a></span>
+                <div class="bt-concluir-compra"><a href="#">Continuar > </a></div>
+
+                <div class="alterar-pedido">
+                    <a href="#"><< alterar pedido</a>
+                </div><!--/alterar-pedido-->
+                
+            </div><!--/entrar-->
+
+            <div class="cadastrar">
+                <span>Ainda não tenho cadastro</span>
+                <br><br>
+                <div class="bt-continuar-comprando"><a href="#"> Criar cadastro ></a></div>
+            </div><!--/cadastrar-->
+             
+            {% endif %}
+
+        </div><!--/checkout-->
+        
+        
+     </div><!--/wrapper-->
+</section>
+
+{% endblock %}
