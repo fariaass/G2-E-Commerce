@@ -5,14 +5,10 @@
 }
 
 footer {
-    position: relative;
-    margin-top: 50px;
+    position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
-    background: #111;
+    background: black;
     height: auto;
-    width: 100vw;
     font-family: "Open Sans";
     padding-top: 40px;
     color: #fff;

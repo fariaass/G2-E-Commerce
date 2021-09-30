@@ -6,97 +6,96 @@
 
 <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
 
-<body>   
-	<section>
-        <div class="wrapper">
+
+<div id="container">
+    <div class="wrapper">
+    
+        <div class="checkout">
+
+                <!-- <div class="checkout-logotipo">
+                    
+                </div>/checkout-logotipo -->
+
+                <div class="navegador">
+                    <div class="check-carrinho"><div class="info-inativo">Carrinho</div></div>
+                        <hr class="linha-ativa">
+                    <div class="check-ativo">2 <div class="info-inativo">Identificação</div></div>
+                        <hr class="linha-ativa">
+                    <div class="check-ativo">3 <div class="info-ativo">Pagamento</div></div>
+                        <hr class="linha-inativa">
+                    <div class="check-inativo">4 <div class="info-inativo">Confirmação</div></div>
+                </div><!--/navegador-->
+    
+                <div class="titulo">
+                <span class="fa fa-credit-card"></span>
+                <h1>Pagamento</h1>
+            </div><!--/titulo-->
+
+            <p class="novo-endereco">Meus Endereços</p>
+
+            <div class="meus-enderecos">
+
+                {% for endereco in dados %}
+
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                    <td class="dados">
+                        <table>
+                        <tr>
+                            <td align="right"><b>Nome do Endereço:</b></td>
+                            <br><td>{{endereco.nome}}</td>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <td align="right"><b>Destinatario:</b></td>
+                            <td>{{endereco.usuario}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><b>Endereço:</b></td>
+                            <td>{{endereco.rua}}, {{endereco.numero}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><b>Bairro:</b></td>
+                            <td>{{endereco.bairro}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><b>CEP:</b></td>
+                            <td>{{endereco.cep}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><b>Cidade:</b></td>
+                            <td>{{endereco.cidade}} - {{endereco.estado}} - {{endereco.pais}}</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><b>Referência:</b></td>
+                            <td>{{endereco.referencia}}</td>
+                        </tr>
+                        </table>
+                    </td>
+                    </tr>
+                </table>
+                
+                    <input type="submit" value="Selecionar Endereço">
+                    <input type="submit" value="Editar">
+                    <input type="submit" value="Excluir">
+                
+                {% endfor %}
+
+            </div><!--/meus-enderecos-->
+            
+            
+            <div class="novo-endereco">
+
+                <h2>Incluir um novo endereço</h2>
+                
+                <button value="#"><a href="{% url 'account:cadastrar_endereco' %}">Adicionar novo endereço</a></button>
+            
+            </div><!--/novo-endereco-->				
+
+    </div><!--/checkout-->
         
-            <div class="checkout">
-
-                	<!-- <div class="checkout-logotipo">
-                    	
-                    </div>/checkout-logotipo -->
-
-                    <div class="navegador">
-                    	<div class="check-carrinho"><div class="info-inativo">Carrinho</div></div>
-                           	<hr class="linha-ativa">
-                        <div class="check-ativo">2 <div class="info-inativo">Identificação</div></div>
-                        	<hr class="linha-ativa">
-                        <div class="check-ativo">3 <div class="info-ativo">Pagamento</div></div>
-                        	<hr class="linha-inativa">
-                        <div class="check-inativo">4 <div class="info-inativo">Confirmação</div></div>
-                    </div><!--/navegador-->
-       
-            	  <div class="titulo">
-                    <span class="fa fa-credit-card"></span>
-                    <h1>Pagamento</h1>
-                </div><!--/titulo-->
-
-                <p class="novo-endereco">Meus Endereços</p>
-
-                <div class="meus-enderecos">
-
-                    {% for endereco in dados %}
-
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                      <tr>
-                        <td class="dados">
-                          <table>
-                            <tr>
-                              <td align="right"><b>Nome do Endereço:</b></td>
-                              <br><td>{{endereco.nome}}</td>
-                            </tr>
-                            <tr>
-                            <tr>
-                              <td align="right"><b>Destinatario:</b></td>
-                              <td>{{endereco.usuario}}</td>
-                            </tr>
-                            <tr>
-                              <td align="right"><b>Endereço:</b></td>
-                              <td>{{endereco.rua}}, {{endereco.numero}}</td>
-                            </tr>
-                            <tr>
-                              <td align="right"><b>Bairro:</b></td>
-                              <td>{{endereco.bairro}}</td>
-                            </tr>
-                            <tr>
-                              <td align="right"><b>CEP:</b></td>
-                              <td>{{endereco.cep}}</td>
-                            </tr>
-                            <tr>
-                              <td align="right"><b>Cidade:</b></td>
-                              <td>{{endereco.cidade}} - {{endereco.estado}} - {{endereco.pais}}</td>
-                            </tr>
-                            <tr>
-                              <td align="right"><b>Referência:</b></td>
-                              <td>{{endereco.referencia}}</td>
-                            </tr>
-                         </table>
-                        </td>
-                      </tr>
-                    </table>
-                    
-                      <input type="submit" value="Selecionar Endereço">
-                      <input type="submit" value="Editar">
-                      <input type="submit" value="Excluir">
-                    
-                    {% endfor %}
-
-                </div><!--/meus-enderecos-->
-              
-                
-                <div class="novo-endereco">
-
-                  <h2>Incluir um novo endereço</h2>
-                    
-                  <button value="#"><a href="{% url 'account:cadastrar_endereco' %}">Adicionar novo endereço</a></button>
-                
-                </div><!--/novo-endereco-->				
-
-		</div><!--/checkout-->
-            
-            
-         </div><!--/wrapper-->
-    </section>
-</body>
+        
+        </div><!--/wrapper-->
+    </div>
 
 {% endblock %}

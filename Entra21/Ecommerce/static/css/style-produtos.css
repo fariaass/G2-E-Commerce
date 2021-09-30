@@ -224,6 +224,9 @@
 .paginacao {
   margin-bottom: 20px;
   display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttons-paginacao {
