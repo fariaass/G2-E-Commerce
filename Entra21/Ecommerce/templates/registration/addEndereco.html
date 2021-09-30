@@ -1,17 +1,24 @@
-{% extends 'index.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
 
-{% block title%}Adicione um endereço{% endblock %}
+{% block title%}{% endblock %}
 
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'css/style-adress.css' %}">
+    <div class="seta">
+        <a class="seta" href="/"><img src="{% static 'img/seta.png' %}"></a>
+    </div>
 
-<form method="post" id="form-endereco">
-    {% csrf_token %}
-    {{form|crispy}}
-</form>
-<button type="submit" form="form-endereco">Adicionar</button>
+    <link rel="stylesheet" href="{% static 'css/style-adress.css' %}">
+    <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <div class="container">
+        <h3 class="text-center">Adicionar um Endereço</h3>
+        <form action="" method="POST" class="formulario">
+            {% csrf_token %}
+            {{form|crispy}}
+        </form>
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+    </div>
 
 {% endblock %}

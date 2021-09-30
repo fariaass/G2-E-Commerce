@@ -13,5 +13,8 @@ def retorna_produtos_categoria(request, pk):
     else:
         form = SearchForm()
     categoria = get_object_or_404(Categoria, pk=pk)
-    produtos = get_list_or_404(Produto, categoria=categoria.id)
+    try:
+        produtos = get_list_or_404(Produto, categoria=categoria.id)
+    except:
+        return render(request, 'erro.html', {'message': 'Não há produtos nesta categoria. Será adicionado em breve.'})
     return render(request, 'produtos/produtos.html', {'dados': produtos, 'titulo':categoria.nome, 'form': form})
