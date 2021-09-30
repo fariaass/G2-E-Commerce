@@ -20,6 +20,7 @@
               <label for="show-features">Olá, {{user.primeiro_nome}}!</label>
               <ul>
                 <li><a href="#">Meu perfil</a></li>
+                <li><a href="account/cadastrar_endereco">Cadastre um Endereço</a></li>
                 {% if user.is_superuser %}
                       <li><a href="/admin">Cadastrar produtos</a></li>
                   {% endif %}

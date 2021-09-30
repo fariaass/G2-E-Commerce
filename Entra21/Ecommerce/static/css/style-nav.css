@@ -231,7 +231,7 @@ nav .content .links{
   }
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1000px){
   nav {
     position: fixed;
     width: 100%;

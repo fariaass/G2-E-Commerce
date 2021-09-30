@@ -59,7 +59,7 @@ article #carrossel-container {
     z-index: 1;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
     #aaa {
         padding-top: 70px;
     }
