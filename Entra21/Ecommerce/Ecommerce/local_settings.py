@@ -25,8 +25,8 @@ DbMySQL = {
     }
 }
 
-#DATABASES = DbSqLite 
-DATABASES = DbMySQL
+DATABASES = DbSqLite 
+#DATABASES = DbMySQL
 
 
 

@@ -90,12 +90,25 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
 
 
 class Endereco(models.Model):
+
+    CHOICES = (
+        ('A', 'Apartamento',),
+        ('R', 'Residência',),
+        ('C', 'Comercial',),
+        ('O', 'Outro',),
+    )
+
     usuario                 = models.ForeignKey(MyUser, on_delete=models.CASCADE, related_name='enderecos')
+    nome                    = models.CharField(max_length=256, default=usuario)
     cep                     = models.CharField(max_length=10)
     rua                     = models.CharField(max_length=256)
+    numero                  = models.IntegerField(default='0000')
+    tipo                    = models.CharField(max_length=1, choices=CHOICES, default='O')
     bairro                  = models.CharField(max_length=256)
     cidade                  = models.CharField(max_length=256)
     estado                  = models.CharField(max_length=256)
+    pais                    = models.CharField(max_length=256, default='Brasil')
+    referencia              = models.CharField(max_length=256, default=(f'Casa de {usuario}'))
 
 
 """
