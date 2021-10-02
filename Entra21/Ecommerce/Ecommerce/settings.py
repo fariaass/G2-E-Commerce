@@ -30,6 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 1
 
 # Application definition
 
@@ -41,10 +42,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.twitter',
     'rest_framework',
     'colorfield',
     'crispy_forms',
-    'account',
+    'accounts',
     'produtos',
     'carrinho',
     'categorias',
@@ -59,6 +67,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 ROOT_URLCONF = 'Ecommerce.urls'
@@ -114,7 +126,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-AUTH_USER_MODEL = 'account.MyUser'
+AUTH_USER_MODEL = 'accounts.MyUser'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -160,8 +172,7 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/'
-
+LOGIN_REDIRECT_URL = 'http://localhost:8000'
 LOGOUT_REDIRECT_URL = '/login/'
 
 with open('Ecommerce/local_settings.py') as infile:

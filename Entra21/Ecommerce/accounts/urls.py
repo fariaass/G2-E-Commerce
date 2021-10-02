@@ -1,5 +1,5 @@
 from django.urls import path
-from account.views import addEndereco, cadastra_user, retorna_account
+from accounts.views import addEndereco, cadastra_user, retorna_account
 
 app_name = 'account'
 

@@ -1,5 +1,5 @@
 from django.db import models
-from account.models import Endereco, MyUser
+from accounts.models import Endereco, MyUser
 from produtos.models import Produto
 
 class Pedido(models.Model):

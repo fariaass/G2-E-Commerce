@@ -1,8 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
-from account.forms import MyUserForm, EnderecoForm
+from accounts.forms import MyUserForm, EnderecoForm
 from django.shortcuts import get_object_or_404, render
-from account.models import Endereco, MyUser
+from accounts.models import MyUser
 from carrinho.models import Carrinho
 from produtos.views import search
 from Ecommerce.forms import SearchForm

@@ -1,4 +1,5 @@
 {% load static %}
+{% load socialaccount %}
 {% load crispy_forms_tags %}
 
 <!DOCTYPE html>
@@ -33,11 +34,12 @@
                     {{form|crispy}}
                   </div>
   
-  
+                  <a href="{% provider_login_url "openid" openid="https://www.google.com/accounts/o8/id" next="/success/url/" %}">Google</a>
+
                   <div class="d-grid">
                         <input type="hidden" name="next" value="{{next}}">
                         <button type="submit">Entrar</button>
-                        Ainda não é cadastrado? <a href="{% url 'account:cadastrar' %}">Cadastre-se</a>
+                        Ainda não é cadastrado? <a href="{% url 'accounts:cadastrar' %}">Cadastre-se</a>
                     </div>
                   </div>
                 </form>
