@@ -1,92 +1,124 @@
-<h1>SWIFT ROOT</h1>
 
-<p id="sobre">
+
+<h1 align="center">
+     🌳 SWIFT ROOT
+</h1>
+
+<h3 align="center">
+     A raiz forte para seu Ecommerce
+</h3>
+ 
+<h4 align="center">
+	🚧   Em andamento🚀 🚧
+</h4>
+
+<h2>Tabela de conteúdos</h2>
+
+<!--ts-->
+   * [Sobre o projeto](#sobre)
+   * [Features](#features)
+   * [Layout](#layout)
+   * [Deploy](#deploy)
+   * [Pré-requisitos](#requirements)
+   * [Como executar o projeto](#executar)
+     * [Rodando a aplicação](#executar-rodas)
+   * [Databases](#databases)
+   * [Contribuidores](#contribuintes)
+   * [Licença](#user-content--licença)
+<!--te-->
+
+<h2 id="sobre"> 💻 Sobre o projeto </h2>
+
 Swift Root, é uma solução em Ecommerce, desenvolvida em Blumenau, através do Entra21, com o objetivo de ajudar micro e pequenos empreendedores da nossa região.
-</p>
 
+<h2 id="features"> ⚙️ Features </h2>
 
-<h4 align="center"> SWIFT ROOT em processo de construção!</h4>
-
-
-<p align="center">  
-	<a href="#sobre">Sobre</a> • 
-	<a href="#features">Features</a> • 
-	<a href="#funcionamento">Funcionamento</a> • 
-	<a href="#contribuintes">Contribuintes</a> •
-	<a href="#tecnologias">Tecnologias</a> • 
-	<a href="#license">Licença</a>  
-</p>
-
-##### Incluir (By me)
-Conteúdo deste README
-
-    Nome do Projeto
-    Status
-    Conteudo
-    Descrição
-    Layout
-    Deploy
-    Pré-Requisitos
-    Dependencias e Libs Instaladas
-    Como rodar a aplicação teste na WEB
-    Como rodar a aplicação em seu PC
-    Databases
-    Solução de Problemas
-    Contribuites
-    Tarefas em Aberto (TODO)
-    Licenças
-
-##### 
-
-<h2 id="features">Recursos prontos e recursos em desenvolvimento</h2>
-
-- [x] Cadastro de administrador
-- [x] Cadastro de usuário
+- [x] Users:
+ - Cadastro de usuário
+ - Cadastro de admin
 - [x] Login
+ - Autenticação social
 - [x] Cadastro de produtos
 - [x] Cadastro de categorias
 - [x] Cadastro de tags
 - [x] Carrinho ligado as sessões
 - [x] Recomendações
-- [ ] Responsividade
+- [x] Responsividade
 - [ ] Fechamento de compra
 - [ ] Pagamento via pix
-- [ ] Autenticação social
-
-<h2 id="tecnologias">Pré-requisitos</h2>
-<p>As seguintes tecnologias foram empregadas no projeto</p>
--Python 3.8 <br>
--Django <br>
-
--MySQL <br>
--Web Browser HTML5, compativel <br>
-
-# Ferramentas utilizadas para desenvolvimento
--Editor de códigos, como o VScode <br>
-- Repositorio git em github.com
 
 
-<h2 id="funcionamento"> Como rodar a loja</h2>
-<p>Para conseguir executar a aplicação e ver seu funcionamento, você precisa clonar este projeto em sua máquina, para clonar utilize o comando abaixo: 
-git clone https:/xxxxxxx.git
 
-Enquanto a aplicação não está terminada, decidimos mantê-la dentro do ambiente virtual, para facilitar o trabalho de nossos colaboradores. Para instalar em seu servidor será necessário instalar as bibliotecas abaixo listadas no arquivo requirements.txt. <br>
+<h2 id="layout"> 🎨 Layout </h2>
 
-</p>
-<p>
--Abra o diretório Entra21 dentro da pasta do Projeto, através do terminal, essa pasta se trata do ambiente virtual.<br>
--Abra a pasta Scripts, e digite o comando activate<br>
--Então volte para pasta Entra21 e abra a pasta Ecommerce<br>
--Execute o comando, "python manage.py runserver" e a loja estará na porta 8000. <br>
--Então abra seu navegador e entre no link "localhost:8000"
+<!--
+### Mobile
 
+<p align="center">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/home-mobile.png" width="200px">
+
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/detalhes-mobile.svg" width="200px">
 </p>
 
-<h2> Demonstração da aplicação</h2>
-Deploy será feito na plataforma Heroku em breve
-<a href=https://heroku.com/xxx> LINK A SER INSERIDO </A>
+### Web
 
-<h2 id="contribuintes"> Contribuintes</h2>
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/web.svg" width="400px">
+
+  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/sucesso-web.svg" width="400px">
+</p>
+-->
+<h2 id="deploy">🌎 Deploy</h2>
+
+O deploy será feito na plataforma Heroku em breve
+
+<h2 id="requirements"> 🛠 Pré-requisitos </h2>
+
+As seguintes ferramentas e tecnologias foram usadas na construção do projeto:
+
+```bash
+-Python 3.8  
+-Django  
+-MySQL  
+-Web Browser HTML5, compativel  
+-Editor de códigos, como o VScode  
+-Repositorio git em github.com
+-Bibliotecas e demais tecnologias estão listadas 
+em requirements.txt
+```
+
+<h2 id="executar"> 🚀 Como executar o projeto </h2>
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Python 3.8](https://www.python.org/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+
+O projeto, enquanto em andamento, está dentro do ambiente virtual com todas as dependências instaladas, então rodar o servidor é muito mais rápido.
+
+<h2 id="executar-rodar">🎲 Rodando a aplicação </h2>
+
+```bash
+# Clone este repositório
+git clone https://github.com/FarinhaProgrammer/G2-E-Commerce.git
+
+# Acesse a pasta do projeto no terminal/cmd
+cd G2-E-Commerce
+
+# Vá para a pasta do ambiente virtual
+cd Entra21
+
+# Vá para a pasta do Projeto
+cd Ecommerce
+
+# Execute a aplicação em modo de desenvolvimento
+python manage.py runserver
+
+# O servidor inciará na porta:8000 - acesse
+ http://localhost:8000 
+```
+
+<h2 id="contribuintes"> 👨‍💻 Contribuidores </h2>
+
 <table>
   <tr>
   <!-- Farias -->
@@ -102,7 +134,7 @@ Deploy será feito na plataforma Heroku em breve
 
 <h2 id="license">Licença</h2>
 
-Este projeto está dinivel na licença: 
+Este projeto está disponível na licença: 
 
  GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
@@ -111,5 +143,4 @@ Este projeto está dinivel na licença:
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
- Leia mais em https://xxxxx.LICENCE ...
-
+Leia mais em https://github.com/Machado-tec/readme/blob/main/LICENSE
