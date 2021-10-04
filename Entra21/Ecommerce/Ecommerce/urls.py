@@ -13,11 +13,11 @@ import pedidos.urls
 
 urlpatterns = [
     path('', home, name='home'),
-    path('accounts/', include('allauth.socialaccount.urls')),
+    path('accounts/', include('allauth.socialaccount.providers.google.urls')),
     path('admin/', admin.site.urls),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('account/', include(accounts.urls, namespace='accounts')),
+    path('users/', include(accounts.urls, namespace='users')),
     path('produtos/', include(produtos.urls)),
     path('categorias/', include(categorias.urls)),
     path('carrinho/', include(carrinho.urls)),

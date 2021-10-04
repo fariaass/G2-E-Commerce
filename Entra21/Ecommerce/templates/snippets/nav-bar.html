@@ -20,7 +20,7 @@
               <label for="show-features">Olá, {{user.primeiro_nome}}!</label>
               <ul>
                 <li><a href="#">Meu perfil</a></li>
-                <li><a href="account/cadastrar_endereco">Cadastre um Endereço</a></li>
+                <li><a href="{% url 'users:cadastrar_endereco' %}">Cadastre um Endereço</a></li>
                 {% if user.is_superuser %}
                       <li><a href="/admin">Cadastrar produtos</a></li>
                   {% endif %}
@@ -32,7 +32,7 @@
                 <a href="{% url 'login' %}">Faça Login</a>
             </li>
             <li>
-                <a href="{% url 'accounts:cadastrar' %}">Cadastre-se</a>    
+                <a href="{% url 'users:cadastrar' %}">Cadastre-se</a>    
             </li>
           {% endif %}
           <li><a href="{% url 'carrinho:retrieve' %}">Carrinho<!--<i class="fas fa-shopping-cart fa-lg"></i>--></a></li>

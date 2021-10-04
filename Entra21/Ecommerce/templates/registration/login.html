@@ -34,12 +34,12 @@
                     {{form|crispy}}
                   </div>
   
-                  <a href="{% provider_login_url "openid" openid="https://www.google.com/accounts/o8/id" next="/success/url/" %}">Google</a>
+                  <a href="{% provider_login_url "google" next="/" %}">Google</a>
 
                   <div class="d-grid">
                         <input type="hidden" name="next" value="{{next}}">
                         <button type="submit">Entrar</button>
-                        Ainda não é cadastrado? <a href="{% url 'accounts:cadastrar' %}">Cadastre-se</a>
+                        Ainda não é cadastrado? <a href="{% url 'users:cadastrar' %}">Cadastre-se</a>
                     </div>
                   </div>
                 </form>

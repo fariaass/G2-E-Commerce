@@ -73,6 +73,22 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+ACCOUNT_USER_MODEL_USERNAME_FIELD = 'nome_usuario'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
+
 ROOT_URLCONF = 'Ecommerce.urls'
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
