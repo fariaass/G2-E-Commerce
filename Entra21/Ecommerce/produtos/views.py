@@ -6,6 +6,14 @@ from categorias.models import Categoria, Tag
 from random import randint
 from Ecommerce.forms import SearchForm
 
+
+def paginacao(request, dados_lista):
+    paginacao = Paginator(dados_lista, 6)
+    pagina = request.GET.get('pagina')
+    dados = paginacao.get_page(pagina)
+    return dados
+
+
 def retorna_produtos(request):
     """
     Retorna os objetos do modelo Produto.
@@ -16,9 +24,7 @@ def retorna_produtos(request):
         form = SearchForm()
     dados_lista = Produto.objects.all()
 
-    paginacao = Paginator(dados_lista, 3)
-    pagina = request.GET.get('pagina')
-    dados = paginacao.get_page(pagina)
+    dados = paginacao(request, dados_lista)
     
     return render(request, 'produtos/produtos.html', {'dados':dados, 'form': form})
 
@@ -37,9 +43,7 @@ def retorna_produtos_mais_vendidos(request):
     dados_lista = produto_queryset_parser(dados_lista)
     bubblesort(dados_lista, len(dados_lista) - 1, 'vendas')
 
-    paginacao = Paginator(dados_lista, 1)
-    pagina = request.GET.get('pagina')
-    dados = paginacao.get_page(pagina)
+    dados = paginacao(request, dados_lista)
 
     return render(request, 'produtos/produtos.html', {'dados': dados, 'titulo':'Mais Vendidos', 'form': form})
 
@@ -54,13 +58,11 @@ def retorna_produtos_mais_visualizados(request):
         return search(request)
     else:
         form = SearchForm()
-    dados = Produto.objects.all()
-    dados = produto_queryset_parser(dados)
-    bubblesort(dados, len(dados) - 1, 'visualizacoes')
+    dados_lista = Produto.objects.all()
+    dados_lista = produto_queryset_parser(dados_lista)
+    bubblesort(dados_lista, len(dados_lista) - 1, 'visualizacoes')
 
-    paginacao = Paginator(dados, 1)
-    pagina = request.GET.get('pagina')
-    dados = paginacao.get_page(pagina)
+    dados = paginacao(request, dados_lista)
 
     return render(request, 'produtos/produtos.html', {'dados':dados, 'titulo':'Mais Visitados', 'form':form})
 
@@ -75,13 +77,11 @@ def retorna_produtos_mais_recentes(request):
         return search(request)
     else:
         form = SearchForm()
-    dados = Produto.objects.all()
-    dados = produto_queryset_parser(dados)
+    dados_lista = Produto.objects.all()
+    dados_lista = produto_queryset_parser(dados_lista)
     bubblesort(dados, len(dados) - 1, 'data_criacao')
 
-    paginacao = Paginator(dados, 6)
-    pagina = request.GET.get('pagina')
-    dados = paginacao.get_page(pagina)
+    dados = paginacao(request, dados_lista)
 
     return render(request, 'produtos/produtos.html', {'dados':dados, 'titulo':'Lançamentos', 'form': form})
 
