@@ -1,0 +1,30 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-socialaccount.css' %}">
+</head>
+<body>
+    <div id="content">
+        <h1>{% trans "Quase lá..." %}</h1>
+        <hr>
+        <p>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}Você está de acordo de usar sua conta do {{provider_name}} para se conectar em
+        Swift Root. Para completar seu cadastro, preencha o seguinte campo:{% endblocktrans %}</p>
+        <form class="signup" id="signup_form" method="post" action="{% url 'socialaccount_signup' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button type="submit">{% trans "Sign Up" %}</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -2,7 +2,7 @@ from produtos.models import Produto
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from .models import Produto
-from categorias.models import Tag
+from categorias.models import Categoria, Tag
 from random import randint
 from Ecommerce.forms import SearchForm
 
@@ -37,7 +37,7 @@ def retorna_produtos_mais_vendidos(request):
     dados_lista = produto_queryset_parser(dados_lista)
     bubblesort(dados_lista, len(dados_lista) - 1, 'vendas')
 
-    paginacao = Paginator(dados_lista, 6)
+    paginacao = Paginator(dados_lista, 1)
     pagina = request.GET.get('pagina')
     dados = paginacao.get_page(pagina)
 
@@ -58,7 +58,7 @@ def retorna_produtos_mais_visualizados(request):
     dados = produto_queryset_parser(dados)
     bubblesort(dados, len(dados) - 1, 'visualizacoes')
 
-    paginacao = Paginator(dados, 6)
+    paginacao = Paginator(dados, 1)
     pagina = request.GET.get('pagina')
     dados = paginacao.get_page(pagina)
 
@@ -126,15 +126,17 @@ def recomendacao(query, exclude):
     Esta função sorteia produtos aleatórios para retornar como recomendação.
     """
     recomendacao_list = []
-    for _ in range(3):
-        reco = query[randint(0, len(query) - 1)]
-        if reco not in recomendacao_list and reco.nome != exclude.nome:
-            recomendacao_list.append(reco)
-        else:
-            while reco in recomendacao_list or reco.nome == exclude.nome:
-                reco = query[randint(0, len(query) - 1)]
-            recomendacao_list.append(reco)
-
+    if len(query) < 3:
+        return query
+    else:
+        for _ in range(3):
+            reco = query[randint(0, len(query) - 1)]
+            if reco not in recomendacao_list and reco.nome != exclude.nome:
+                recomendacao_list.append(reco)
+            else:
+                while reco in recomendacao_list or reco.nome == exclude.nome:
+                    reco = query[randint(0, len(query) - 1)]
+                recomendacao_list.append(reco)
     return recomendacao_list
 
 
@@ -181,40 +183,77 @@ def bubblesort(v, n, key):
 def search(request):
     """
     Esta função pega os dados do formulário enviado, que é o campo de pesquisa, e então confere se o resultado
-    da pesquisa é vazio, se for retorna erro, se não, pesquisa os produtos em que a pesquisa está presente no nome,
-    e então quebra a pesquisa, pesquisa as tags com as palavras da pesquisa, entãp confere os itens que se repetiram
-    e junta tudo em um vetor só, para retornar ao template que exibe os produtos.
+    da pesquisa é vazio, se for retorna erro, se não, chama uma função para a pesquisa no banco de dados, e então retorna um template
+    com paginação feita.
     """
     if request.method == 'POST':
         form = SearchForm(request.POST)
         if form.is_valid():
             result = form.cleaned_data['result']
-            products_final = search_at_db(result)
+            products_final = search_in_db(result)
+            pagina = 1
     else:
         result = request.GET.get('search')
-        products_final = search_at_db(result)
+        products_final = search_in_db(result)
+        pagina = request.GET.get('pagina')
 
     form = SearchForm()
     paginacao = Paginator(products_final, 1)
-    pagina = request.GET.get('pagina')
     products_final = paginacao.get_page(pagina)
-    print(request.GET)
     
     return render(request, 'produtos/produtos.html', {'dados':products_final, 'titulo':'Resultados', 'form': form, 'search': result})
 
-def search_at_db(result):
+def search_in_db(result):
+    """
+    Esta função utilitária faz a pesquisa no banco de dados através do nome do produto, das tags e das categorias (ainda por fazer).
+    Retorna uma lista com os resultados.
+    """
+
+    # Inicializa as listas
+
     products_tags_products_parsed = []
+    products_categories_products_parsed = []
     products_final = []
+
+    # Quebra a pesquisa em uma lista de palavras
+
     result_broke = result.split()
+    
+    # Confere se o nome do produto contem a pesquisa
+    
     products = Produto.objects.all().filter(nome__icontains=result)
     products = produto_queryset_parser(products)
+    
+    # Confere em todas as tags, se elas estiverem presentes na pesquisa
+    
     products_tags = Tag.objects.all().filter(nome__in=result_broke)
+    
+    # Pega os produtos das tags, formata eles em json, e adiciona em uma lista
+    
     products_tags_products = [t.produtos.all() for t in products_tags]
     for qs in products_tags_products:
         qs_parsed = produto_queryset_parser(qs)
         for p in qs_parsed:
             products_tags_products_parsed.append(p)
-    products = products + products_tags_products_parsed
+            
+    # Pega os produtos das categorias, se elas estiverem presentes na pesquisa
+    
+    products_categories = Categoria.objects.all().filter(nome__in=result_broke)
+    
+    # Pega os produtos das categorias, formata eles em json, e adiciona em uma lista
+    
+    products_categories_products = [t.produtos.all() for t in products_categories]
+    for qs in products_categories_products:
+        qs_parsed = produto_queryset_parser(qs)
+        for p in qs_parsed:
+            products_categories_products_parsed.append(p)
+            
+    # Junta os produtos achados na pesquisa, com os produtos achados nas tags e nas categorias
+    
+    products = products + products_tags_products_parsed + products_categories_products_parsed
+    
+    # Anula as repetições e adiciona na lista final, que será retornada
+    
     for p in products:
         if p not in products_final:
             products_final.append(p)

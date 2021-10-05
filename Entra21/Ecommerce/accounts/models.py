@@ -55,7 +55,7 @@ class MyUserManager(BaseUserManager):
         return user
 
 
-class MyUser(AbstractBaseUser, PermissionsMixin):
+class MyUser(PermissionsMixin, AbstractBaseUser):
     """
     Modelo de usuário personalizado com seus respectivos campos.
     """

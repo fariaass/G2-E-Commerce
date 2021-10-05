@@ -1,7 +1,7 @@
 from django import forms
 from django.forms.widgets import PasswordInput
-from account.models import Endereco
-from account.models import MyUser
+from accounts.models import Endereco
+from accounts.models import MyUser
 from django.forms import ModelForm
 from django.core.exceptions import ValidationError
 
