@@ -2,7 +2,7 @@ from produtos.models import Produto
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from .models import Produto
-from categorias.models import Tag
+from categorias.models import Categoria, Tag
 from random import randint
 from Ecommerce.forms import SearchForm
 
@@ -208,18 +208,52 @@ def search_in_db(result):
     Esta função utilitária faz a pesquisa no banco de dados através do nome do produto, das tags e das categorias (ainda por fazer).
     Retorna uma lista com os resultados.
     """
+
+    # Inicializa as listas
+
     products_tags_products_parsed = []
+    products_categories_products_parsed = []
     products_final = []
+
+    # Quebra a pesquisa em uma lista de palavras
+
     result_broke = result.split()
+    
+    # Confere se o nome do produto contem a pesquisa
+    
     products = Produto.objects.all().filter(nome__icontains=result)
     products = produto_queryset_parser(products)
+    
+    # Confere em todas as tags, se elas estiverem presentes na pesquisa
+    
     products_tags = Tag.objects.all().filter(nome__in=result_broke)
+    
+    # Pega os produtos das tags, formata eles em json, e adiciona em uma lista
+    
     products_tags_products = [t.produtos.all() for t in products_tags]
     for qs in products_tags_products:
         qs_parsed = produto_queryset_parser(qs)
         for p in qs_parsed:
             products_tags_products_parsed.append(p)
-    products = products + products_tags_products_parsed
+            
+    # Pega os produtos das categorias, se elas estiverem presentes na pesquisa
+    
+    products_categories = Categoria.objects.all().filter(nome__in=result_broke)
+    
+    # Pega os produtos das categorias, formata eles em json, e adiciona em uma lista
+    
+    products_categories_products = [t.produtos.all() for t in products_categories]
+    for qs in products_categories_products:
+        qs_parsed = produto_queryset_parser(qs)
+        for p in qs_parsed:
+            products_categories_products_parsed.append(p)
+            
+    # Junta os produtos achados na pesquisa, com os produtos achados nas tags e nas categorias
+    
+    products = products + products_tags_products_parsed + products_categories_products_parsed
+    
+    # Anula as repetições e adiciona na lista final, que será retornada
+    
     for p in products:
         if p not in products_final:
             products_final.append(p)
