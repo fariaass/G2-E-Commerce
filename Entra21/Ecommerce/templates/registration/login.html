@@ -34,7 +34,9 @@
                     {{form|crispy}}
                   </div>
   
-                  <a href="{% provider_login_url "google" next="/" %}">Google</a>
+                  <a href="{% provider_login_url "google" next="/" process="connect" %}">Google</a>
+                  <a href="{% provider_login_url "twitter" next="/" process="connect" %}">Twitter</a>
+                  <a href="{% provider_login_url "facebook" method="oauth2" next="/" process="connect" %}">Facebook</a>
 
                   <div class="d-grid">
                         <input type="hidden" name="next" value="{{next}}">

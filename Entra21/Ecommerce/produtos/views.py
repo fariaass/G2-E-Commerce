@@ -37,7 +37,7 @@ def retorna_produtos_mais_vendidos(request):
     dados_lista = produto_queryset_parser(dados_lista)
     bubblesort(dados_lista, len(dados_lista) - 1, 'vendas')
 
-    paginacao = Paginator(dados_lista, 6)
+    paginacao = Paginator(dados_lista, 1)
     pagina = request.GET.get('pagina')
     dados = paginacao.get_page(pagina)
 
@@ -58,7 +58,7 @@ def retorna_produtos_mais_visualizados(request):
     dados = produto_queryset_parser(dados)
     bubblesort(dados, len(dados) - 1, 'visualizacoes')
 
-    paginacao = Paginator(dados, 6)
+    paginacao = Paginator(dados, 1)
     pagina = request.GET.get('pagina')
     dados = paginacao.get_page(pagina)
 
@@ -126,15 +126,17 @@ def recomendacao(query, exclude):
     Esta função sorteia produtos aleatórios para retornar como recomendação.
     """
     recomendacao_list = []
-    for _ in range(3):
-        reco = query[randint(0, len(query) - 1)]
-        if reco not in recomendacao_list and reco.nome != exclude.nome:
-            recomendacao_list.append(reco)
-        else:
-            while reco in recomendacao_list or reco.nome == exclude.nome:
-                reco = query[randint(0, len(query) - 1)]
-            recomendacao_list.append(reco)
-
+    if len(query) < 3:
+        return query
+    else:
+        for _ in range(3):
+            reco = query[randint(0, len(query) - 1)]
+            if reco not in recomendacao_list and reco.nome != exclude.nome:
+                recomendacao_list.append(reco)
+            else:
+                while reco in recomendacao_list or reco.nome == exclude.nome:
+                    reco = query[randint(0, len(query) - 1)]
+                recomendacao_list.append(reco)
     return recomendacao_list
 
 
@@ -181,28 +183,31 @@ def bubblesort(v, n, key):
 def search(request):
     """
     Esta função pega os dados do formulário enviado, que é o campo de pesquisa, e então confere se o resultado
-    da pesquisa é vazio, se for retorna erro, se não, pesquisa os produtos em que a pesquisa está presente no nome,
-    e então quebra a pesquisa, pesquisa as tags com as palavras da pesquisa, entãp confere os itens que se repetiram
-    e junta tudo em um vetor só, para retornar ao template que exibe os produtos.
+    da pesquisa é vazio, se for retorna erro, se não, chama uma função para a pesquisa no banco de dados, e então retorna um template
+    com paginação feita.
     """
     if request.method == 'POST':
         form = SearchForm(request.POST)
         if form.is_valid():
             result = form.cleaned_data['result']
-            products_final = search_at_db(result)
+            products_final = search_in_db(result)
+            pagina = 1
     else:
         result = request.GET.get('search')
-        products_final = search_at_db(result)
+        products_final = search_in_db(result)
+        pagina = request.GET.get('pagina')
 
     form = SearchForm()
     paginacao = Paginator(products_final, 1)
-    pagina = request.GET.get('pagina')
     products_final = paginacao.get_page(pagina)
-    print(request.GET)
     
     return render(request, 'produtos/produtos.html', {'dados':products_final, 'titulo':'Resultados', 'form': form, 'search': result})
 
-def search_at_db(result):
+def search_in_db(result):
+    """
+    Esta função utilitária faz a pesquisa no banco de dados através do nome do produto, das tags e das categorias (ainda por fazer).
+    Retorna uma lista com os resultados.
+    """
     products_tags_products_parsed = []
     products_final = []
     result_broke = result.split()
