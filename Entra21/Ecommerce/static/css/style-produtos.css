@@ -41,7 +41,7 @@
 
 .nome_produto a {
   margin: 0 auto;
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
   color: black;
   grid-area: nome;
@@ -374,7 +374,7 @@
     border-color: #b8a606;
     text-shadow: none;
     border-radius: 20px;
-    width: 10vw;
+    width: 90%;
     height: 50px;
     text-transform: uppercase;
   }
@@ -464,11 +464,6 @@
     text-align: left;
   }
 
-}
-
-
-@media screen and (max-width: 900px) {
-
   /* Recomendados */
 
   #detalhes_recomendados {
@@ -541,5 +536,34 @@
     grid-area: preco;
     position: relative;
     text-align: left;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .catalogo {
+    padding-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+  }
+  
+  .grid_produto {
+    background: #FFFFFF;
+    /* box-shadow:  3px 3px 3px 3px #FFFFFF; */
+    display: grid;
+    place-items: center;
+    height: 400px;
+    width: 85vw;
+    padding: 20px;
+    margin: 5px;
+    grid-template-areas:
+      "foto" "foto"
+      "nome" "nome" 
+      "preco" "preco";
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px;
   }
 }

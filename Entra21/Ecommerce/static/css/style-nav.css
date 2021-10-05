@@ -57,7 +57,7 @@ nav .content .links{
 .links li a{
   padding: 5px;
   display: inline-block;
-  color: var(--corFont);
+  color: var(--corPrimaria);
   text-decoration: none;
   font-size: 26px;
   letter-spacing: 4px;
@@ -172,7 +172,6 @@ nav .content .links{
   opacity: 1;
   visibility: visible;
   transition: all 0.3s ease;
-
 }
 .content .links ul li a{
   display: block;
@@ -236,6 +235,7 @@ nav .content .links{
     position: fixed;
     width: 100%;
     z-index: 1000;
+    top: 0;
   }
   .wrapper .menu-icon{
     display: block;

@@ -64,15 +64,11 @@
                   {% endfor %}
 
                   <tr>
-                      <td colspan="3" align="right" class="subtotal">SUBTOTAL</td>
-                    <td class="dados" align="center">R$ {{total}}</td>
-                  </tr>
-                  <tr>
                       <td colspan="3" class="frete"> 
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                           <tr>
                             <td width="7%" align="center"><span class="fa fa-truck"></span></td>
-                            <td width="30%" align="left">Consulte o prazo de entrega e o frete para seu CEP</td>
+                            <td width="30%" align="left">Consulte o frete para seu CEP</td>
                             <td width="1%" align="left"><input name="" id="cep" type="text" class="p" ></td>
                             <td width="1%"><div class="bt-ok"><a href="#">OK</a></div></td>
                             <td width="10%" align="right">FRETE</td>
@@ -81,19 +77,11 @@
                     </td>
                     <td class="dados" align="center"></td>
                   </tr>
-                  <tr>
-                      <td colspan="3" align="right">
-
-                    <table width="15%" border="0" cellspacing="0" cellpadding="0">
-                      <tr>
-                        <td class="total">TOTAL</td>
-                      </tr>
-                    </table>
-                    </td>
-                    <td align="center" class="total">R$ {{total}}</td>
+                  <tr id="total">
+                    <td colspan="3" align="right" class="subtotal">TOTAL</td>
+                    <td class="dados" align="center">R$ {{total}}</td>
                   </tr>
                  </table>
-
             
             </div><!--/carrinho-->
 
@@ -102,9 +90,7 @@
             <div class="bt-continuar-comprando"><a href="{% url 'produtos:lancamentos' %}"> < continuar comprando</a></div>
             <div class="bt-concluir-compra"><a href="#">concluir compra > </a></div>
     
-        </div><!--/checkout-->
-        
-        
+        </div><!--/checkout-->       
      </div><!--/wrapper-->
 </section>
 

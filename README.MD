@@ -1,11 +1,11 @@
 
 
 <h1 align="center">
-     🌳 SWIFT ROOT
+     🏪 SySales
 </h1>
 
 <h3 align="center">
-     A raiz forte para seu Ecommerce
+    O seu comércio fácil, ágil e acessível.
 </h3>
  
 <h4 align="center">
@@ -29,7 +29,7 @@
 
 <h2 id="sobre"> 💻 Sobre o projeto </h2>
 
-Swift Root, é uma solução em Ecommerce, desenvolvida em Blumenau, através do Entra21, com o objetivo de ajudar micro e pequenos empreendedores da nossa região.
+SySales, é uma solução em Ecommerce, desenvolvida em Blumenau, através do Entra21, com o objetivo de ajudar micro e pequenos empreendedores da nossa região.
 
 <h2 id="features"> ⚙️ Features </h2>
 

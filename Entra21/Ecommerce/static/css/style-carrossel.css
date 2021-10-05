@@ -1,10 +1,17 @@
+:root {
+    --corPrimaria: #8DA242;
+    --corSecundaria: #A7BC5B;
+    --corBackground: #FFFFFF;
+    --corFont: black;
+  }
+
 /* ---------------------------- CARROSSEL ---------------------------- */
 
 #aaa {
     max-width: 80%;
     height: 100%;
     text-transform: uppercase;
-    background-color: black;
+    background-color: var(--corPrimaria);
     color: white;
     border-radius: 5px;
     margin: 0 auto;
@@ -25,11 +32,11 @@
     justify-content: space-between;
 }
 .buttons a{
-    color: black;
+    color: var(--corPrimaria);
 }
 
 button.glider-dot.active {
-    background-color: grey;
+    background-color: var(--corSecundaria);
 }
 
 article #carrossel-container {

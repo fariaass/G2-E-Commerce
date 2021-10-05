@@ -4,20 +4,21 @@
     box-sizing: border-box;
 }
 
+:root {
+    --corPrimaria: #8DA242;
+    --corSecundaria: #A7BC5B;
+    --corBackground: #FFFFFF;
+    --corFont: black;
+}
+
 footer {
-    position: relative;
     margin-top: 50px;
-    bottom: 0;
     left: 0;
-    right: 0;
-    background: black;
-    height: auto;
+    background: var(--corPrimaria);
+    height: 300px;
     font-family: "Open Sans";
     padding-top: 40px;
     color: #fff;
-}
-
-.footer-content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,14 +26,14 @@ footer {
     text-align: center;
 }
 
-.footer-content h3 {
+footer h3 {
     font-size: 1.8rem;
     font-weight: 400;
     text-transform: capitalize;
     line-height: 3rem;
 }
 
-.footer-content p {
+footer p {
     max-width: 500px;
     margin: 10px auto;
     line-height: 28px;
@@ -66,7 +67,7 @@ footer {
 }
 
 .footer-bottom {
-    background: #000;
+    background: var(--corPrimaria);
     width: 100vw;
     padding: 20px 0;
     text-align: center;

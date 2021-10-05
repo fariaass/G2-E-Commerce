@@ -1,3 +1,9 @@
+:root {
+    --corPrimaria: #8DA242;
+    --corSecundaria: #A7BC5B;
+    --corBackground: #FFFFFF;
+    --corFont: black;
+}
 
 .wrapper {width: 100%;
 }
@@ -17,6 +23,9 @@
     text-decoration: black;
 }
 
+#total {
+    background-color: var(--corPrimaria);
+}
 /*==============================================================================================================
  RESET PRINCIPAL
 ================================================================================================================*/
@@ -39,6 +48,13 @@ hr{width:auto; height:1px; border:solid 0px; background:#ccc;}
 
 a{text-decoration:none; -webkit-transition:background 0.5s ease-out; -moz-transition:background 0.5s ease-out; -o-transition:background 0.5s ease-out; -ms-transition:background 0.5s ease-out; transition:background 0.5s ease-out;}
 
+#carrinho{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+}
 
 /*==============================================================================================================
  CHECKOUT GLOBAL
@@ -58,8 +74,8 @@ a{text-decoration:none; -webkit-transition:background 0.5s ease-out; -moz-transi
 .checkout .bt-continuar-comprando a{ padding:12px 25px 12px 25px; float:left; background:#e6e6e6; float:left; border-radius:10px; color:#333; font-weight:bold; font-size:14px; text-decoration:none;}
 .checkout .bt-continuar-comprando a:hover{background:#ccc; color:#333;}
 
-.checkout .bt-concluir-compra a{ padding:12px 45px 12px 45px; float:right; background:#ed1c24; border-radius:10px; color:#fff; font-weight:bold; font-size:14px; text-decoration:none;}
-.checkout .bt-concluir-compra a:hover{background:#be0007; color:#fff;}
+.checkout .bt-concluir-compra a{ padding:12px 45px 12px 45px; float:right; background:var(--corPrimaria); border-radius:10px; color:#fff; font-weight:bold; font-size:14px; text-decoration:none;}
+.checkout .bt-concluir-compra a:hover{background:var(--corPrimaria); color:#fff;}
 
 .checkout .bt-selecionar a{ padding:12px 45px 12px 45px; float:right; background:#ed1c24; border-radius:10px; color:#fff; font-weight:bold; font-size:14px; text-decoration:none;}
 .checkout .bt-selecionar a:hover{background:#be0007; color:#fff; }
