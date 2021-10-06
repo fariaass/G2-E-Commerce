@@ -38,3 +38,14 @@ class EnderecoForm(ModelForm):
     class Meta:
         model = Endereco
         fields = ('nome', 'cep', 'rua', 'numero', 'tipo', 'bairro', 'cidade', 'estado', 'pais', 'referencia')
+
+
+from allauth.socialaccount.forms import SignupForm
+class MyCustomSocialSignupForm(SignupForm):
+
+    def save(self, request):
+
+        user = super(MyCustomSocialSignupForm, self).save(request)
+        if user.provider in 'googleGoogleGOOGLE':
+            print(user.given_name)
+        return user
