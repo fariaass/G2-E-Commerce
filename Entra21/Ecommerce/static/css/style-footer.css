@@ -5,8 +5,8 @@
 }
 
 :root {
-    --corPrimaria: #8DA242;
-    --corSecundaria: #A7BC5B;
+    --corPrimaria: #24666b;
+    --corSecundaria: #184e52;
     --corBackground: #FFFFFF;
     --corFont: black;
 }
@@ -62,8 +62,8 @@ footer p {
     transition: color .4s ease;
 }
 
-.socials a:hover i {
-    color: aqua;
+.socials a:hover i{
+    color: #70f5ff;
 }
 
 .footer-bottom {

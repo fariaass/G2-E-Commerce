@@ -204,7 +204,7 @@ def search(request):
         pagina = request.GET.get('pagina')
 
     form = SearchForm()
-    paginacao = Paginator(products_final, 2)
+    paginacao = Paginator(products_final, 6)
     products_final = paginacao.get_page(pagina)
     
     return render(request, 'produtos/produtos.html', {'dados':products_final, 'titulo':'Resultados', 'form': form, 'search': result})
