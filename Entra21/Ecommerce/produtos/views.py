@@ -14,6 +14,7 @@ def retorna_produtos(request):
         return search(request)
     else:
         form = SearchForm()
+        
     dados = Produto.objects.all()
 
     paginacao = Paginator(dados, 6)
@@ -100,6 +101,8 @@ def detalhes_produto(request, pk):
         return search(request)
     else:
         form = SearchForm()
+        if request.GET.get('pagina') != None:
+            return search(request)
     produto = get_object_or_404(Produto, pk=pk)
     dados = Produto.objects.all()
     produto.visualizacoes += 1
@@ -204,7 +207,7 @@ def search(request):
         pagina = request.GET.get('pagina')
 
     form = SearchForm()
-    paginacao = Paginator(products_final, 2)
+    paginacao = Paginator(products_final, 6)
     products_final = paginacao.get_page(pagina)
     
     return render(request, 'produtos/produtos.html', {'dados':products_final, 'titulo':'Resultados', 'form': form, 'search': result})
@@ -230,25 +233,33 @@ def search_in_db(result):
     products = Produto.objects.all().filter(nome__icontains=result)
     products = produto_queryset_parser(products)
     
-    # Confere em todas as tags, se elas estiverem presentes na pesquisa
+    # Confere em todas as tags, se elas estiverem presentes na pesquisa e na pesquisa quebrada
     
-    products_tags = Tag.objects.all().filter(nome__in=result_broke)
-    
+    products_tags_1 = Tag.objects.all().filter(nome__icontains=result)
+    products_tags_2 = Tag.objects.all().filter(nome__in=result_broke)
+
     # Pega os produtos das tags, formata eles em json, e adiciona em uma lista
     
-    products_tags_products = [t.produtos.all() for t in products_tags]
+    products_tags_products_1 = [t.produtos.all() for t in products_tags_1]
+    products_tags_products_2 = [t.produtos.all() for t in products_tags_2]
+    products_tags_products = products_tags_products_1 + products_tags_products_2
+
     for qs in products_tags_products:
         qs_parsed = produto_queryset_parser(qs)
         for p in qs_parsed:
             products_tags_products_parsed.append(p)
             
-    # Pega os produtos das categorias, se elas estiverem presentes na pesquisa
+    # Pega os produtos das categorias, se elas estiverem presentes na pesquisa e na pesquisa quebrada
     
-    products_categories = Categoria.objects.all().filter(nome__in=result_broke)
+    products_categories_1 = Categoria.objects.all().filter(nome__icontains=result)
+    products_categories_2 = Categoria.objects.all().filter(nome__in=result_broke)
     
     # Pega os produtos das categorias, formata eles em json, e adiciona em uma lista
     
-    products_categories_products = [t.produtos.all() for t in products_categories]
+    products_categories_products_1 = [t.produtos.all() for t in products_categories_1]
+    products_categories_products_2 = [t.produtos.all() for t in products_categories_2]
+    products_categories_products = products_categories_products_1 + products_categories_products_2
+
     for qs in products_categories_products:
         qs_parsed = produto_queryset_parser(qs)
         for p in qs_parsed:

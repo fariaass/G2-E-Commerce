@@ -10,6 +10,12 @@
     <title>Signup</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/style-socialaccount.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".errorlist").find("li").text("Este email já está conectado a uma conta, faça login nela primeiro, para depois se conectar ao provedor.");
+        });
+    </script>
 </head>
 <body>
     <div id="content">
