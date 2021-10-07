@@ -1,0 +1,35 @@
+{% load static %}
+
+{% block navbar %}
+
+<link rel="stylesheet" href="{% static 'css/style-nav.css' %}">
+<style>
+nav .content {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo a {
+  margin: 0 auto;
+}
+
+</style>
+
+
+<div class="wrapper">
+
+  <nav>
+      <div class="content">
+      <div class="logo"><a href="{% url 'home' %}">SySales</a></div>
+      </div>
+  </nav>
+
+</div>
+
+
+  <script src="{% static 'js/nav-bar.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+
+{% endblock %}

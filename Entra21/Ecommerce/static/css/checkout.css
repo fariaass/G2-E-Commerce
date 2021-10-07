@@ -5,7 +5,8 @@
     --corFont: black;
 }
 
-.wrapper {width: 100%;
+.wrapper {
+    width: 100%;
 }
 
 .ajax-class {
@@ -97,19 +98,19 @@ a{text-decoration:none; -webkit-transition:background 0.5s ease-out; -moz-transi
 
 
 .checkout .checkout-logotipo{ width:20%; height:100px; float:left; background:#fafafa; margin:0 0 30px 0;}
-.checkout .navegador{ width:75%; height:100px; float:left; margin:30px 0 30px 5%;}
+.checkout .navegador{ width:75%; height:100px; float:left; margin:30px 0 30px 5%; display: flex; justify-content: center; align-items: center;}
 
-.checkout .navegador .check-carrinho{width:30px; height:30px; position:relative; float:left; border:solid 2px #ed1c24; border-radius:100%; background: url(../../imagens/layout/checkout/icon-passo-a-passo.png) no-repeat 50% 50% #ed1c24; }
+.checkout .navegador .check-carrinho{width:30px; height:30px; position:relative; float:left; border:solid 2px var(--corPrimaria); border-radius:100%; background: url(../../imagens/layout/checkout/icon-passo-a-passo.png) no-repeat 50% 50% var(--corPrimaria); }
 
-.checkout .navegador .check-ativo{width:30px; height:30px; position:relative; float:left; border:solid 2px #ed1c24; border-radius:100%; background:#ed1c24; color:#fff; text-align:center; font-weight:bold; font-size:14px; line-height: 26px;}
+.checkout .navegador .check-ativo{width:30px; height:30px; position:relative; float:left; border:solid 2px var(--corPrimaria); border-radius:100%; background:var(--corPrimaria); color:#fff; text-align:center; font-weight:bold; font-size:14px; line-height: 26px;}
 
 .checkout .navegador .check-inativo{width:30px; height:30px;  position:relative; float:left; border:solid 2px #333; border-radius:100%; background:#fff; color:#333; text-align:center; font-weight:bold; font-size:14px; line-height: 26px;}
 
-.checkout .navegador hr.linha-ativa{width:20%; height:2px; border:solid 0px; background:#ed1c24; float:left; margin:16px 0 0 0;}
+.checkout .navegador hr.linha-ativa{width:20%; height:2px; border:solid 0px; background:var(--corPrimaria); float:left; margin:16px 0 0 0;}
 .checkout .navegador hr.linha-inativa{width:20%; height:2px; border:solid 0px; background:#333333; float:left; margin:16px 0 0 0;}
 
 .checkout .navegador .info-inativo{position:absolute; top:-30%; left:140%; font-size:14px; color:#333; font-weight:bold;}
-.checkout .navegador .info-ativo{position:absolute; top:-30%; left:140%; font-size:14px; color:#ed1c24; font-weight:bold;}
+.checkout .navegador .info-ativo{position:absolute; top:-30%; left:140%; font-size:14px; color:var(--corPrimaria); font-weight:bold;}
 
 
 
@@ -337,7 +338,7 @@ a{text-decoration:none; -webkit-transition:background 0.5s ease-out; -moz-transi
 img{ max-width:100%;}	
 .wrapper{ width:auto; height:auto; padding:30px;}	
 .checkout .checkout-logotipo{ width:100%; margin:0 auto 30px auto; text-align:center;}
-.checkout .navegador{ width:100%;}
+.checkout .navegador{ width:100%; margin: 0 auto;}
 
 .checkout .navegador .info-inativo{left:120%;}
 .checkout .navegador .info-ativo{left:120%;}
@@ -367,7 +368,7 @@ img{ max-width:100%;}
 img{ max-width:100%;}	
 .wrapper{ width:auto; height:auto; padding:20px;}
 .checkout .checkout-logotipo{ width:100%; margin:0 auto 30px auto; text-align:center;}
-.checkout .navegador{ width:100%; height:auto; margin:0 0 40px 0;}
+.checkout .navegador{ width:100%; height:auto; margin: 0 auto; }
 
 .checkout .navegador .check-carrinho{float:none; line-height:0px;}
 .checkout .navegador .check-ativo{float:none; line-height:0px; }

@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'pedidos/index-pedidos.html' %}
 
 {% load static %}
 
@@ -12,7 +12,16 @@
     <div class="wrapper">
     
         <div class="checkout">
-        
+            <div class="navegador">
+                <div class="check-carrinho"><div class="info-ativo">Carrinho</div></div>
+                       <hr class="linha-inativa">
+                <div class="check-inativo">2 <div class="info-inativo">Identificação</div></div>
+                    <hr class="linha-inativa">
+                <div class="check-inativo">3 <div class="info-inativo">Pagamento</div></div>
+                    <hr class="linha-inativa">
+                <div class="check-inativo">4 <div class="info-inativo">Confirmação</div></div>
+            </div><!--/navegador-->
+
             <div class="titulo">
                 <span class="fa fa-shopping-cart"></span>
                 <h1>Meu Carrinho</h1>
@@ -88,7 +97,7 @@
             {% endif %}
             
             <div class="bt-continuar-comprando"><a href="{% url 'produtos:lancamentos' %}"> < continuar comprando</a></div>
-            <div class="bt-concluir-compra"><a href="#">concluir compra > </a></div>
+            <div class="bt-concluir-compra"><a href="{% url 'pedidos:identificacao' %}">concluir compra > </a></div>
     
         </div><!--/checkout-->       
      </div><!--/wrapper-->

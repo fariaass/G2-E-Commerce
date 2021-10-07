@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'pedidos/index-pedidos.html' %}
 
 {% load static %}
    
@@ -7,26 +7,22 @@
 <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
 
 
-<div id="container">
+<section>
     <div class="wrapper">
-    
+        
         <div class="checkout">
-
-                <!-- <div class="checkout-logotipo">
-                    
-                </div>/checkout-logotipo -->
 
                 <div class="navegador">
                     <div class="check-carrinho"><div class="info-inativo">Carrinho</div></div>
-                        <hr class="linha-ativa">
+                           <hr class="linha-ativa">
                     <div class="check-ativo">2 <div class="info-inativo">Identificação</div></div>
                         <hr class="linha-ativa">
                     <div class="check-ativo">3 <div class="info-ativo">Pagamento</div></div>
                         <hr class="linha-inativa">
                     <div class="check-inativo">4 <div class="info-inativo">Confirmação</div></div>
                 </div><!--/navegador-->
-    
-                <div class="titulo">
+   
+              <div class="titulo">
                 <span class="fa fa-credit-card"></span>
                 <h1>Pagamento</h1>
             </div><!--/titulo-->
@@ -35,9 +31,11 @@
 
             <div class="meus-enderecos">
 
+                {% if dados %}
+
                 {% for endereco in dados %}
 
-                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                     <td class="dados">
                         <table>
@@ -81,21 +79,44 @@
                 
                 {% endfor %}
 
-            </div><!--/meus-enderecos-->
+                {% else %}
+
+                    <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+                    
+                        <tr>
+                            <td align="right"><b>Você não tem nenhum endereço cadastrado.</b></td>
+                        </tr>
+
+                    </table>
+
+                {% endif %}
+
+        </div><!--/meus-enderecos-->
             
+
+          
             
             <div class="novo-endereco">
 
-                <h2>Incluir um novo endereço</h2>
-                
-                <button value="#"><a href="{% url 'account:cadastrar_endereco' %}">Adicionar novo endereço</a></button>
+              <h2>Incluir um novo endereço</h2>
+
+               <div class="formulario">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{formEndereco}}
+                        <input type="submit" value="Incluir Endereço">
+                    </form>
+                </div><!--/formulario-->
             
-            </div><!--/novo-endereco-->				
+            </div><!--/novo-endereco-->
+          
+            
+            
 
     </div><!--/checkout-->
         
         
-        </div><!--/wrapper-->
-    </div>
+     </div><!--/wrapper-->
+</section>
 
 {% endblock %}
