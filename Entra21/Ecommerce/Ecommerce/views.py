@@ -2,6 +2,7 @@ from django.shortcuts import render
 from categorias.models import Categoria
 from Ecommerce.forms import SearchForm
 from produtos.views import search
+from random import shuffle
 
 def home(request):
     """
@@ -18,5 +19,18 @@ def home(request):
             return search(request)
 
     categorias = Categoria.objects.all()
+    categorias = categorias_queryset_parser(categorias)
+    shuffle(categorias)
 
     return render(request, 'home.html', {'categorias': categorias, 'form': form})
+
+
+def categorias_queryset_parser(query):
+    """
+    Esta função é um parser que pega uma queryset de categoria, e retorna um json.
+    """
+    query_parsed = []
+    for item in query:
+        dic = {'id': item.id, 'nome': item.nome, 'imagem': item.imagem}
+        query_parsed.append(dic)
+    return query_parsed

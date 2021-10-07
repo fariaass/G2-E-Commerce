@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'pedidos/index-pedidos.html' %}
 
 {% load static %}
    
@@ -18,10 +18,6 @@
     <div class="wrapper">
     
         <div class="checkout">
-
-                <div class="checkout-logotipo">
-                    
-                </div><!--/checkout-logotipo-->
                 <div class="navegador">
                     <div class="check-carrinho"><div class="info-inativo">Carrinho</div></div>
                            <hr class="linha-ativa">
@@ -41,10 +37,11 @@
 
                 <div class="entrar">
                     <span>Você já está autenticado como: {{request.user.primeiro_nome}}.</span>
-                    <div class="bt-concluir-compra"><a href="#">Continuar > </a></div>
+                    <br><br>
+                    <div class="bt-concluir-compra"><a href="{% url 'pedidos:endereco' %}">Continuar > </a></div>
 
                     <div class="alterar-pedido">
-                        <a href="#"><< alterar pedido</a>
+                        <a href="{% url 'carrinho:retrieve' %}"><< alterar pedido</a>
                     </div><!--/alterar-pedido-->
                     
                 </div><!--/entrar-->
@@ -52,7 +49,7 @@
                 <div class="cadastrar">
                     <span>Deseja se autenticar como outra pessoa?</span>
                     <br><br><br>
-                    <div class="bt-continuar-comprando"><a href="#"> Faça login ></a></div>
+                    <div class="bt-continuar-comprando"><a href="{% url 'login' %}"> Faça login ></a></div>
                 </div><!--/cadastrar-->
 
             {% else %}
@@ -70,7 +67,6 @@
 
             <div class="cadastrar">
                 <span>Ainda não tenho cadastro</span>
-                <br><br>
                 <div class="bt-continuar-comprando"><a href="#"> Criar cadastro ></a></div>
             </div><!--/cadastrar-->
              

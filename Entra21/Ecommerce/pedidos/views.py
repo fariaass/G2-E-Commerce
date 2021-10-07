@@ -1,23 +1,16 @@
-# from django.contrib.auth.decorators import login_required
-# from django.contrib.auth import login
-#from account.forms import MyUserForm, EnderecoForm
 from django.shortcuts import render
 from accounts.models import Endereco, MyUser
 #from carrinho.models import Carrinho
 from produtos.views import search
 from Ecommerce.forms import SearchForm
+from accounts.forms import EnderecoForm
 
 def retorna_endereco(request):
-    if request.method == 'POST':
-        return search(request)
-    else:
-        form = SearchForm()
     dados = Endereco.objects.all()
-    return render(request, 'pedidos/endereco.html', {'dados': dados, 'form': form})
+    return render(request, 'pedidos/endereco.html', {'dados': dados})
 
 def teste_identificacao(request):
-    if request.method == 'POST':
-        return search(request)
-    else:
-        form = SearchForm()
-    return render(request, 'pedidos/identificacao.html', {'form': form})
+    return render(request, 'pedidos/identificacao.html')
+
+def pagamento(request):
+    return render(request, 'pedidos/pagamentos.html')
