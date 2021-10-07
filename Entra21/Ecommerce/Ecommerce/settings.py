@@ -96,7 +96,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-# SOCIALACCOUNT_FORMS = {'signup': 'mysite.forms.MyCustomSocialSignupForm'}
+SOCIALACCOUNT_FORMS = {'signup': 'accounts.forms.MyCustomSocialSignupForm'}
 
 ACCOUNT_USER_MODEL_USERNAME_FIELD = 'nome_usuario'
 ACCOUNT_EMAIL_REQUIRED = True
