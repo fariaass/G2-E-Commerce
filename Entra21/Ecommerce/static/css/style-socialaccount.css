@@ -64,3 +64,17 @@ button{
     background-color: rgb(5, 51, 199);
     color: #ffffff;
 }
+
+.seta img {
+    position: absolute;
+    height: 5vh;
+    margin-top: 3vh;
+    margin-left: 3vh;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.seta img:hover {
+    height: 6vh;
+    transition: 0.3s;
+}
