@@ -96,7 +96,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-SOCIALACCOUNT_FORMS = {'signup': 'accounts.forms.MyCustomSocialSignupForm'}
+SOCIALACCOUNT_ADAPTER = 'accounts.adapters.MyCustomAdapter'
 
 ACCOUNT_USER_MODEL_USERNAME_FIELD = 'nome_usuario'
 ACCOUNT_EMAIL_REQUIRED = True

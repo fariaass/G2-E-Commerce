@@ -17,9 +17,9 @@
           <li>
             {% if user.is_authenticated %}
             <li>
-                <a href="#" class="desktop-link">Olá, {{user.primeiro_nome}}!</a>
+                <a href="#" class="desktop-link">Olá, {{user.nome_usuario}}!</a>
                 <input type="checkbox" id="show-features">
-                <label for="show-features">Olá, {{user.primeiro_nome}}!</label>
+                <label for="show-features">Olá, {{user.nome_usuario}}!</label>
                 <ul>
                   <li><a href="#">Meu perfil</a></li>
                   <li><a href="{% url 'users:cadastrar_endereco' %}">Cadastre um Endereço</a></li>

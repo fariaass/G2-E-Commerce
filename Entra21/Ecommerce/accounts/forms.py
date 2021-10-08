@@ -4,7 +4,6 @@ from accounts.models import Endereco
 from accounts.models import MyUser
 from django.forms import ModelForm
 from django.core.exceptions import ValidationError
-from allauth.socialaccount.forms import SignupForm
 
 class MyUserForm(ModelForm):
     """
@@ -38,13 +37,3 @@ class EnderecoForm(ModelForm):
     class Meta:
         model = Endereco
         fields = ('nome', 'cep', 'rua', 'numero', 'tipo', 'bairro', 'cidade', 'estado', 'pais', 'referencia')
-
-
-class MyCustomSocialSignupForm(SignupForm):
-
-    def save(self, request):
-
-        user = super(MyCustomSocialSignupForm, self).save(request)
-        print(user)
-        print(self)
-        return user
