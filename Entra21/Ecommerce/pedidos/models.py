@@ -17,3 +17,4 @@ class Pedido(models.Model):
     endereco                = models.ForeignKey(Endereco, on_delete=models.SET_DEFAULT, default='Excluído', related_name='pedidos')
     quantidade_produtos     = models.JSONField()
     frete                   = models.DecimalField(decimal_places=2, max_digits=9)
+    foi_pago                = models.BooleanField(default=False)

@@ -36,9 +36,9 @@
             {% if user.is_authenticated %}
 
                 <div class="entrar">
-                    <span>Você já está autenticado como: {{request.user.primeiro_nome}}.</span>
+                    <span>Você já está autenticado como: {{request.user.nome_usuario}}.</span>
                     <br><br>
-                    <div class="bt-concluir-compra"><a href="{% url 'pedidos:endereco' %}">Continuar > </a></div>
+                    <div class="bt-concluir-compra"><a href="{% url 'pedidos:session-to-account' %}">Continuar > </a></div>
 
                     <div class="alterar-pedido">
                         <a href="{% url 'carrinho:retrieve' %}"><< alterar pedido</a>
@@ -49,7 +49,7 @@
                 <div class="cadastrar">
                     <span>Deseja se autenticar como outra pessoa?</span>
                     <br><br><br>
-                    <div class="bt-continuar-comprando"><a href="{% url 'login' %}"> Faça login ></a></div>
+                    <div class="bt-continuar-comprando"><a href="{% url 'login' %}?next=/pedidos/identificacao/?authenticated=True"> Faça login ></a></div>
                 </div><!--/cadastrar-->
 
             {% else %}

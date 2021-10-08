@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from categorias.models import Categoria
-from Ecommerce.forms import SearchForm
+from produtos.forms import SearchForm
 from produtos.views import search
 from random import shuffle
 

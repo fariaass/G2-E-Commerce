@@ -23,9 +23,14 @@ body {
   background-color: #FFFFFF;
 }
 
+.barras{
+  margin-top: 50px;
+  position: relative;
+}
+
 #block-erro {
   height: 200px;
-  width: 300px;
+  width: 400px;
   position: absolute;
   top: 50%;
   left: 50%;

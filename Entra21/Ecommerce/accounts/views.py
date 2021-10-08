@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from accounts.forms import MyUserForm, EnderecoForm
 from django.shortcuts import get_object_or_404, render
-from accounts.models import MyUser
+from accounts.models import MyUser, Endereco
 from carrinho.models import Carrinho
 
 @login_required(login_url='/login/')
@@ -49,3 +49,7 @@ def addEndereco(request):
     else:
         form = EnderecoForm()
     return render(request, 'registration/addEndereco.html', {'form':form})
+
+def retorna_enderecos(request):
+    dados = Endereco.objects.all()
+    return render(request, 'pedidos/endereco.html', {'dados': dados})

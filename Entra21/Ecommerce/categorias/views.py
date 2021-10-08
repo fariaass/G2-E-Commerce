@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404
 from produtos.models import Produto
 from categorias.models import Categoria
-from Ecommerce.forms import SearchForm
+from produtos.forms import SearchForm
 from produtos.views import search
 from django.core.paginator import Paginator
 

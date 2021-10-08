@@ -62,33 +62,20 @@ button[type="submit"] {
     width: 100%;
     height: 30px;
     border: 1px solid #6b6b6b;
-    animation: rainbow 2s infinite;
     border-radius: 25px;
     font-size: 18px;
     color: black;
     font-weight: 700;
     cursor: pointer;
     outline: none;
-    margin-top: 3vh
-}
-
-@keyframes rainbow{
-    0%{
-        background: rgb(110, 110, 255);
-    }
-
-    50%{
-        background: #fff01b;
-    }
-
-    100%{
-        background: rgb(255, 72, 72);
-    }
+    margin-top: 3vh;
+    background: linear-gradient(to right, rgb(104, 255, 255), rgb(151, 151, 252), rgb(104, 255, 255));
 }
 
 button[type="submit"]:hover {
     border-color: #000000;
-    transition: .5;
+    background-color: rgb(151, 151, 252);
+    transition: .1s;
 }
 
 .seta img {
@@ -162,4 +149,3 @@ padding: 0.75rem 1rem;
 .facebook{
     background-color: rgb(0, 47, 255);
 }
-  

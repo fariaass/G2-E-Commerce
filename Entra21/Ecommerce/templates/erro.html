@@ -4,9 +4,11 @@
 
 {% block content %}
 <div id="block-erro">
-    <h1 class="txt-erro">Acão Inválida!</h1>
+    <h1 class="txt-erro">Algo deu errado!</h1>
     <p class="txt-erro">{{message}}</p>
-    <div id="direita" class="barra"></div>
-    <div id="esquerda" class="barra"></div>
+    <div class="barras">
+        <div id="direita" class="barra"></div>
+        <div id="esquerda" class="barra"></div>
+    </div>
 </div>
 {% endblock %}

@@ -4,7 +4,7 @@ from django.core.paginator import Paginator
 from .models import Produto
 from categorias.models import Categoria, Tag
 from random import randint
-from Ecommerce.forms import SearchForm
+from produtos.forms import SearchForm
 
 def retorna_produtos(request):
     """
@@ -200,7 +200,10 @@ def search(request):
         if form.is_valid():
             result = form.cleaned_data['result']
             products_final = search_in_db(result)
-            pagina = 1
+            if products_final:
+                pagina = 1
+            else:
+                return render(request, 'erro.html', {'message':'Nenhum resultado encontrado para sua pesquisa.'})
     else:
         result = request.GET.get('search')
         products_final = search_in_db(result)
