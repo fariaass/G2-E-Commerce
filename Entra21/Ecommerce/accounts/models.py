@@ -110,6 +110,9 @@ class Endereco(models.Model):
     pais                    = models.CharField(max_length=256, default='Brasil')
     referencia              = models.CharField(max_length=256, default='')
 
+    def __str__(self):
+        return self.nome
+
 
 """
 Cria um token para o novo usuário cadastrado.

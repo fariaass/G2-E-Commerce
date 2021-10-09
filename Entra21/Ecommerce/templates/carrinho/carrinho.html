@@ -7,6 +7,9 @@
 {% block content %}
 
 <link href="{% static 'css/checkout.css' %}" rel="stylesheet" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">     window.CSRF_TOKEN = "{{ csrf_token }}"; </script> 
+<script src="{% static 'js/ajax-carrinho.js' %}"></script>
 
 <section id="carrinho">
     <div class="wrapper">
@@ -50,24 +53,21 @@
                             <img src="../../media/{{produto.imagem}}" max-width="210" max-height="210">
                         </div><!--/carrinho-imagem-produto-->
                         
-                        <div class="carrinho-descricao-produto">
+                        <div id="{{produto.id}}" class="carrinho-descricao-produto">
                            <a><strong>{{produto.nome}}</strong></a>
                         </div><!--/carrinho-descricao-produto-->
                     </td>
                     <td class="dados" align="center">
                         <div class="quantidade">
-                            <input name="" type="text" class="pp">
-                            <div class="controle-de-unidades">
-                                <a href="#" class="fa fa-arrow-up"></a>
-                                <a href="#" class="fa fa-arrow-down"></a>
-                            </div><!--/controle-de-unidades-->
+                            <input value="1" type="number" class="pp" max="50" min="1">
+                            <!--/controle-de-unidades-->
                         </div><!--/quantidade-->
                         <div class="bt-excluir">
                             <button class="ajax-class" value="{% url 'carrinho:remover' pk=produto.id %}"><i class="far fa-trash-alt"></i></button>
                         </div><!--/excluir-->
                     </td>
-                    <td class="dados" align="center">Valor Unitário</td>
-                    <td class="dados" align="center">R$ {{produto.preco}}</td>
+                    <td class="dados unit" align="center" name="valor unitário">{{produto.preco}}</td>
+                    <td class="dados mult" align="center" name="valor total">{{produto.preco}}</td>
                   </tr>
                   
                   {% endfor %}
@@ -88,7 +88,7 @@
                   </tr>
                   <tr id="total">
                     <td colspan="3" align="right" class="subtotal">TOTAL</td>
-                    <td class="dados" align="center">R$ {{total}}</td>
+                    <td class="dados total-carrinho" align="center">R$ {{total}}</td>
                   </tr>
                  </table>
             

@@ -5,7 +5,7 @@
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
-
+</script>
 
 <section>
     <div class="wrapper">
@@ -73,9 +73,8 @@
                     </tr>
                 </table>
                 
-                    <input type="submit" value="Selecionar Endereço">
-                    <input type="submit" value="Editar">
-                    <input type="submit" value="Excluir">
+                    <input class="endereco-btn" type="submit" value="Editar">
+                    <a href="{% url 'users:remover_endereco' pk=endereco.id %}?next=/pedidos/endereco/" class="endereco-btn">Excluir</a>
                 
                 {% endfor %}
 
@@ -103,7 +102,7 @@
                <div class="formulario">
                     <form method="POST">
                         {% csrf_token %}
-                        {{formEndereco}}
+                        {{form}}
                         <input type="submit" value="Incluir Endereço">
                     </form>
                 </div><!--/formulario-->

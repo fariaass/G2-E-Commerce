@@ -221,8 +221,8 @@ a{text-decoration:none; -webkit-transition:background 0.5s ease-out; -moz-transi
 
 .checkout .meus-enderecos{width:40%; float: left; border: solid 1px #999; padding: 3%; margin:0 20px 0 0;}
 .checkout .meus-enderecos td{padding: 3px;}
-.checkout .meus-enderecos input[type="submit"]{width:auto; padding: 10px 20px 10px 20px; background: #fff; border-radius:10px;  color: #333; margin: 15px 0 0 10px;  cursor: pointer; float: right; border: solid 1px #666;}
-.checkout .meus-enderecos input[type="submit"]:hover{background:#ed1c24; border:solid 1px #ed1c24; color: #fff;}
+.checkout .meus-enderecos .endereco-btn{width:auto; padding: 10px 20px 10px 20px; background: #fff; border-radius:10px;  color: #333; margin: 15px 0 0 10px;  cursor: pointer; float: right; border: solid 1px #666;}
+.checkout .meus-enderecos .endereco-btn:hover{background:#ed1c24; border:solid 1px #ed1c24; color: #fff;}
 
 .checkout .novo-endereco{ width: 100%; float: left; margin:40px 0 0 0;}
 .checkout .novo-endereco h2{color:#ed1c24; margin:20px 0 60px 0; font-size: 18px}

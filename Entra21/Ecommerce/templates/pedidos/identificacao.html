@@ -38,7 +38,7 @@
                 <div class="entrar">
                     <span>Você já está autenticado como: {{request.user.nome_usuario}}.</span>
                     <br><br>
-                    <div class="bt-concluir-compra"><a href="{% url 'pedidos:session-to-account' %}">Continuar > </a></div>
+                    <div class="bt-concluir-compra"><a href="{% url 'pedidos:endereco' %}">Continuar > </a></div>
 
                     <div class="alterar-pedido">
                         <a href="{% url 'carrinho:retrieve' %}"><< alterar pedido</a>
@@ -49,15 +49,15 @@
                 <div class="cadastrar">
                     <span>Deseja se autenticar como outra pessoa?</span>
                     <br><br><br>
-                    <div class="bt-continuar-comprando"><a href="{% url 'login' %}?next=/pedidos/identificacao/?authenticated=True"> Faça login ></a></div>
+                    <div class="bt-continuar-comprando"><a href="{% url 'login' %}?next=/pedidos/identificacao/"> Faça login ></a></div>
                 </div><!--/cadastrar-->
 
             {% else %}
 
             <div class="entrar">
                 <span>Já tenho cadastro</span>
-                <span><a href="#">Clique aqui para fazer login.</a></span>
-                <div class="bt-concluir-compra"><a href="#">Continuar > </a></div>
+                <span><a href="">Clique aqui para fazer login.</a></span>
+                <div class="bt-concluir-compra"><a href="{% url 'login' %}?next=/pedidos/session-to-account/?authenticated=True">Continuar > </a></div>
 
                 <div class="alterar-pedido">
                     <a href="#"><< alterar pedido</a>
