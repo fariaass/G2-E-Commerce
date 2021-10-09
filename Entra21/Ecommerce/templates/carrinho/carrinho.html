@@ -77,8 +77,8 @@
                           <tr>
                             <td width="7%" align="center"><span class="fa fa-truck"></span></td>
                             <td width="30%" align="left">Consulte o frete para seu CEP</td>
-                            <td width="1%" align="left"><input name="" id="cep" type="text" class="p" ></td>
-                            <td width="1%"><div class="bt-ok"><a href="">OK</a></div></td>
+                            <td width="1%" align="left"><input name="" id="cep" type="number" min="1000000" max="99999999" value="01000000" class="p" ></td>
+                            <td width="1%"><div class="bt-ok"><a href="#">OK</a></div></td>
                             <td width="10%" align="right">FRETE</td>
                           </tr>
                         </table>
@@ -87,7 +87,7 @@
                   </tr>
                   <tr id="total">
                     <td colspan="3" align="right" class="subtotal">TOTAL</td>
-                    <td class="dados total-carrinho" align="center">R$ {{total}}</td>
+                    <td class="dados total-carrinho" align="center">{{total}}</td>
                   </tr>
                  </table>
             

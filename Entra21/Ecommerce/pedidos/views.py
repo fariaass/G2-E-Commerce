@@ -23,18 +23,20 @@ def identificacao(request):
 
 
 @login_required(login_url='/login/')
-def pagamento(request, pk):
-    endereco = get_object_or_404(Endereco, pk=pk)
-    dados = get_object_or_404(Carrinho, pk=request.user.carrinho.pk)
-    produtos = [get_object_or_404(Produto, id=i.id) for i in dados.produtos.all()]
-    # total do carrinho
-    total_itens = len(produtos)
-    total = [i.preco for i in produtos]
-    total = sum(total)
-    return render(request, 'pedidos/pagamentos.html', {'endereco': endereco, 'dados': produtos, 'total_itens': total_itens, 'total': total})
+def pagamento(request):
+    print(request.session.get('pedido'))
+    endereco = get_object_or_404(Endereco, pk=request.session['pedido']['endereco'])
+    dados = request.user.carrinho.produtos.all()
+    total = request.session['pedido'].get('total')
+    frete = request.session['pedido'].get('frete')
+    total_final = total + frete
+    total_itens = 0
+    for i in request.session['pedido']['qtd']:
+        total_itens += int(i.get('qtd'))
+    return render(request, 'pedidos/pagamentos.html', {'endereco': endereco, 'dados': dados, 'total_itens': total_itens, 'total': total, 'frete': frete, 'total_final': total_final})
 
 
-def sessiont_cart_to_account_cart(request):
+def session_cart_to_account_cart(request):
     if request.GET.get('authenticated', False):
         if request.user.is_authenticated:
             products = request.session['cart_products']
@@ -47,6 +49,7 @@ def sessiont_cart_to_account_cart(request):
             return render(request, 'erro.html', {'message': 'Usuário não autenticado.'})
     return redirect("/pedidos/identificacao/")
 
+
 def fecha_pedido(request):
     if request.method == 'POST':
         form = PedidoForm()
@@ -58,7 +61,6 @@ def fecha_pedido(request):
 
 def inicia_pedido(request):
     request.session['pedido'] = {}
-    print(request.POST)
     dados = []
     dicio = {}
     for k, v in request.POST.items():
@@ -73,17 +75,22 @@ def inicia_pedido(request):
             dados.append(dicio)
             dicio = {}
         else:
-            csrf = v
-
-    qtd_produtos = [{get_object_or_404(Produto, id=i['id']).nome: {'qtd': i['qtd'], 'preco_unitario': i['unit']}} for i in dados]
+            frete = v
+    
+    qtd_produtos = [{get_object_or_404(Produto, id=i['id']).nome: i['id'], 'qtd': i['qtd'], 'preco_unitario': i['unit']} for i in dados]
     total = 0
     for i in dados:
         total += float(i['total'])
     request.session['pedido']['qtd'] = qtd_produtos
-    request.session['pedido']['valor'] = total
-    print(dados)
-    print(request.session['pedido'])
+    request.session['pedido']['total'] = total
+    request.session['pedido']['frete'] = float(frete)
     request.session.modified = True
+    print(request.session.get('pedido', False))
     return redirect("/carrinho/")
 
-# def continua_pedido(request):
+def continua_pedido(request):
+    print(request.session.get('pedido', False))
+    endereco = request.GET.get('id')
+    request.session['pedido']['endereco'] = endereco
+    request.session.modified = True
+    return redirect("/pedidos/pagamento/")

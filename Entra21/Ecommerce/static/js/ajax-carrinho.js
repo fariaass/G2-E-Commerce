@@ -1,40 +1,22 @@
 $(document).ready(function(){
+    send_to_server();
     $(".pp").click(function(){
-        var json = devolve_json();
-        var csrftoken = getCookie('csrftoken');
-        $.ajax({
-            method: "POST",
-            url: "/pedidos/inicia-pedido/",
-            data: {dados: json, csrfmiddlewaretoken: csrftoken},    
-        });
-
-        function csrfSafeMethod(method) {
-            // these HTTP methods do not require CSRF protection
-            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-        }
-
-        $.ajaxSetup({
-        beforeSend: function(xhr, settings) {
-                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
-                }
-            }
-        });
+        send_to_server();
     });
     $(".bt-ok").click(function(){
-        var cep = document.getElementsByClassName("p");
-        alert(cep.value);
-        console.log(cep);
-        $.ajax({
-            method: "GET",
-            url: `https://maps.googleapis.com/maps/api/distancematrix/json?origins=place_id:89110536&destinations=place_id:89110458&key=${'AIzaSyAYLU0UXZLiKI4TQbbFr76i9shto3fUvOU'}`,
-            success: function(data){
-                console.log(data);
-                var element = document.getElementsByClassName("frete-result");
-                element.innerText = data.rows.elements.distance.value;
-                alert(data); 
-            }
-        });
+        var cep = document.getElementById("cep");
+        var frete = document.getElementsByClassName("frete-result");
+        var total = document.getElementsByClassName("total-carrinho");
+        cep = cep.value;
+        if (cep < 88000000 || cep > 89999999){
+            var valor_frete = 40;
+        }else{
+            var valor_frete = 15;
+        }
+        var somatotal = valor_frete + Number(total[0].innerText);
+        frete[0].innerText = valor_frete;
+        total[0].innerText = somatotal;
+        send_to_server();
     });
 });
 
@@ -44,6 +26,8 @@ function devolve_json(){
     var elementsunit = document.getElementsByClassName("unit");
     var elementsid = document.getElementsByClassName("carrinho-descricao-produto");
     var total = document.getElementsByClassName("total-carrinho");
+    var frete = document.getElementsByClassName("frete-result");
+
     var objects = [];
     var somatotal = 0;
     for (var i = 0; i < elementspp.length; i++){
@@ -57,8 +41,10 @@ function devolve_json(){
         elementsmult[i].innerText = valor_final;
         somatotal += valor_final;
     }
-    total[0].innerText = somatotal;
-    console.log(objects)
+    var valor_frete = Number(frete[0].innerText);
+    total[0].innerText = somatotal + valor_frete;
+    objects.push(valor_frete);
+    console.log(objects);
     return objects;
 }
 
@@ -76,4 +62,27 @@ function getCookie(name) {
         }
     }
     return cookieValue;
+}
+
+function send_to_server(){
+    var json = devolve_json();
+    var csrftoken = getCookie('csrftoken');
+    $.ajax({
+        method: "POST",
+        url: "/pedidos/inicia-pedido/",
+        data: {dados: json, csrfmiddlewaretoken: csrftoken},    
+    });
+
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+
+    $.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
 }

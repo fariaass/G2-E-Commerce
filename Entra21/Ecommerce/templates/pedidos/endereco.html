@@ -5,7 +5,6 @@
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
-</script>
 
 <section>
     <div class="wrapper">
@@ -13,18 +12,18 @@
         <div class="checkout">
 
             <div class="navegador">
-                <div class="check-carrinho"><div class="info-inativo">Carrinho</div></div>
+                <div class="check-ativo">1<div class="info-inativo">Carrinho</div></div>
                         <hr class="linha-ativa">
                 <div class="check-ativo">2 <div class="info-inativo">Identificação</div></div>
                     <hr class="linha-ativa">
-                <div class="check-ativo">3 <div class="info-ativo">Pagamento</div></div>
+                <div class="check-ativo">3 <div class="info-ativo">Endereço</div></div>
                     <hr class="linha-inativa">
                 <div class="check-inativo">4 <div class="info-inativo">Confirmação</div></div>
             </div><!--/navegador-->
    
             <div class="titulo">
-                <span class="fa fa-credit-card"></span>
-                <h1>Pagamento</h1>
+                <span class="fas fa-home"></span>
+                <h1>Endereços</h1>
             </div><!--/titulo-->
 
             <p class="novo-endereco">Meus Endereços</p>
@@ -74,7 +73,7 @@
                 </table>
                 
                 <a href="{% url 'users:remover_endereco' pk=endereco.id %}?next=/pedidos/endereco/" class="endereco-btn">Excluir</a>
-                <a href="{% url 'pedidos:pagamento' pk=endereco.id %}" class="endereco-btn">Selecionar endereço</a>
+                <a href="{% url 'pedidos:continua-pedido' %}?id={{endereco.id}}" class="endereco-btn">Selecionar endereço</a>
                   
             </div><!--/meus-enderecos-->
             <br>  
@@ -97,13 +96,7 @@
 
               <h2>Incluir um novo endereço</h2>
 
-               <div class="formulario">
-                    <form method="POST">
-                        {% csrf_token %}
-                        {{form}}
-                        <input type="submit" value="Incluir Endereço">
-                    </form>
-                </div><!--/formulario-->
+               <a href="{% url 'users:cadastrar_endereco' %}?next=/pedidos/endereco/" class="endereco-btn" id="incluir">Incluir Endereço</a>
             
             </div><!--/novo-endereco-->
           

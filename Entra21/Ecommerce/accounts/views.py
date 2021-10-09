@@ -24,7 +24,7 @@ def cadastra_user(request):
         if form.is_valid():
             user = form.save(commit=False)
             user.save()
-            login(request, user)
+            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
             carrinho = Carrinho()
             carrinho.usuario = user
             carrinho.save()
@@ -46,16 +46,15 @@ def addEndereco(request):
             endereco = form.save(commit=False)
             endereco.usuario = request.user
             endereco.save()
-        return redirect("/")
+        return redirect(request.GET.get('next'))
     else:
         form = EnderecoForm()
     return render(request, 'registration/addEndereco.html', {'form':form})
 
 
 def retorna_enderecos(request):
-    dados = Endereco.objects.all()
-    form = PedidoForm()
-    return render(request, 'pedidos/endereco.html', {'dados': dados, 'form': form})
+    dados = Endereco.objects.all().filter(usuario=request.user.id)
+    return render(request, 'pedidos/endereco.html', {'dados': dados})
 
 
 @login_required(login_url='/login/')
