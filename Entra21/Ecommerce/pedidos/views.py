@@ -38,7 +38,7 @@ def sessiont_cart_to_account_cart(request):
             return render(request, 'erro.html', {'message': 'Usuário não autenticado.'})
     return redirect("/pedidos/identificacao/")
 
-def salva_pedido(request):
+def fecha_pedido(request):
     if request.method == 'POST':
         form = PedidoForm()
         if form.is_valid():
@@ -47,6 +47,34 @@ def salva_pedido(request):
             pedido.produtos = request.user.carrinho.produtos.all()
 
 
-def test_js(request):
-    print(request.GET)
+def inicia_pedido(request):
+    request.session['pedido'] = {}
+    print(request.POST)
+    dados = []
+    dicio = {}
+    for k, v in request.POST.items():
+        if 'id' in k:
+            dicio['id'] = v
+        elif 'qtd' in k:
+            dicio['qtd'] = v
+        elif 'unit' in k:
+            dicio['unit'] = v
+        elif 'total' in k:
+            dicio['total'] = v
+            dados.append(dicio)
+            dicio = {}
+        else:
+            csrf = v
+
+    qtd_produtos = [{get_object_or_404(Produto, id=i['id']).nome: {'qtd': i['qtd'], 'preco_unitario': i['unit']}} for i in dados]
+    total = 0
+    for i in dados:
+        total += float(i['total'])
+    request.session['pedido']['qtd'] = qtd_produtos
+    request.session['pedido']['valor'] = total
+    print(dados)
+    print(request.session['pedido'])
+    request.session.modified = True
     return redirect("/carrinho/")
+
+# def continua_pedido(request):

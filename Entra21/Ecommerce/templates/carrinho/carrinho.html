@@ -8,7 +8,6 @@
 
 <link href="{% static 'css/checkout.css' %}" rel="stylesheet" type="text/css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript">     window.CSRF_TOKEN = "{{ csrf_token }}"; </script> 
 <script src="{% static 'js/ajax-carrinho.js' %}"></script>
 
 <section id="carrinho">
@@ -50,7 +49,7 @@
                   <tr >
                     <td class="dados">
                         <div class="carrinho-imagem-produto">
-                            <img src="../../media/{{produto.imagem}}" max-width="210" max-height="210">
+                            <img src="{{produto.imagem.url}}" max-width="210" max-height="210">
                         </div><!--/carrinho-imagem-produto-->
                         
                         <div id="{{produto.id}}" class="carrinho-descricao-produto">
@@ -79,12 +78,12 @@
                             <td width="7%" align="center"><span class="fa fa-truck"></span></td>
                             <td width="30%" align="left">Consulte o frete para seu CEP</td>
                             <td width="1%" align="left"><input name="" id="cep" type="text" class="p" ></td>
-                            <td width="1%"><div class="bt-ok"><a href="#">OK</a></div></td>
+                            <td width="1%"><div class="bt-ok"><a href="">OK</a></div></td>
                             <td width="10%" align="right">FRETE</td>
                           </tr>
                         </table>
                     </td>
-                    <td class="dados" align="center"></td>
+                    <td class="dados frete-result" align="center"></td>
                   </tr>
                   <tr id="total">
                     <td colspan="3" align="right" class="subtotal">TOTAL</td>
