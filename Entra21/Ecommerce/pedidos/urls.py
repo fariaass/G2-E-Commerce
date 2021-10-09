@@ -11,7 +11,7 @@ Urls do app pedidos.
 urlpatterns = [
     path('identificacao/', identificacao, name='identificacao'),
     path('endereco/', retorna_enderecos, name='endereco'),
-    path('pagamento/', pagamento, name='pagamento'),
+    path('pagamento/<int:pk>/', pagamento, name='pagamento'),
     path('session-to-account/', sessiont_cart_to_account_cart, name='session-to-account'),
     path('inicia-pedido/', inicia_pedido, name='inicia-pedido'),
 ]
