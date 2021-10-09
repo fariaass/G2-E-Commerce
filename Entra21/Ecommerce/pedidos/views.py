@@ -3,6 +3,8 @@ from django.shortcuts import get_object_or_404, render, redirect
 from json import loads
 from pedidos.forms import PedidoForm
 from produtos.models import Produto
+from accounts.models import Endereco
+from carrinho.models import Carrinho
 
 def identificacao(request):
     if request.user.is_authenticated:
@@ -21,8 +23,15 @@ def identificacao(request):
 
 
 @login_required(login_url='/login/')
-def pagamento(request):
-    return render(request, 'pedidos/pagamentos.html')
+def pagamento(request, pk):
+    endereco = get_object_or_404(Endereco, pk=pk)
+    dados = get_object_or_404(Carrinho, pk=request.user.carrinho.pk)
+    produtos = [get_object_or_404(Produto, id=i.id) for i in dados.produtos.all()]
+    # total do carrinho
+    total_itens = len(produtos)
+    total = [i.preco for i in produtos]
+    total = sum(total)
+    return render(request, 'pedidos/pagamentos.html', {'endereco': endereco, 'dados': produtos, 'total_itens': total_itens, 'total': total})
 
 
 def sessiont_cart_to_account_cart(request):

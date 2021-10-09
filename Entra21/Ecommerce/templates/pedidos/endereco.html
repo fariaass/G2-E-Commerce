@@ -12,31 +12,31 @@
         
         <div class="checkout">
 
-                <div class="navegador">
-                    <div class="check-carrinho"><div class="info-inativo">Carrinho</div></div>
-                           <hr class="linha-ativa">
-                    <div class="check-ativo">2 <div class="info-inativo">Identificação</div></div>
+            <div class="navegador">
+                <div class="check-carrinho"><div class="info-inativo">Carrinho</div></div>
                         <hr class="linha-ativa">
-                    <div class="check-ativo">3 <div class="info-ativo">Pagamento</div></div>
-                        <hr class="linha-inativa">
-                    <div class="check-inativo">4 <div class="info-inativo">Confirmação</div></div>
-                </div><!--/navegador-->
+                <div class="check-ativo">2 <div class="info-inativo">Identificação</div></div>
+                    <hr class="linha-ativa">
+                <div class="check-ativo">3 <div class="info-ativo">Pagamento</div></div>
+                    <hr class="linha-inativa">
+                <div class="check-inativo">4 <div class="info-inativo">Confirmação</div></div>
+            </div><!--/navegador-->
    
-              <div class="titulo">
+            <div class="titulo">
                 <span class="fa fa-credit-card"></span>
                 <h1>Pagamento</h1>
             </div><!--/titulo-->
 
             <p class="novo-endereco">Meus Endereços</p>
 
+            {% if dados %}
+
+            {% for endereco in dados %}
+
             <div class="meus-enderecos">
 
-                {% if dados %}
-
-                {% for endereco in dados %}
-
-                <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tr>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
                     <td class="dados">
                         <table>
                         <tr>
@@ -70,31 +70,29 @@
                         </tr>
                         </table>
                     </td>
-                    </tr>
+                  </tr>
                 </table>
                 
-                    <input class="endereco-btn" type="submit" value="Editar">
-                    <a href="{% url 'users:remover_endereco' pk=endereco.id %}?next=/pedidos/endereco/" class="endereco-btn">Excluir</a>
+                <a href="{% url 'users:remover_endereco' pk=endereco.id %}?next=/pedidos/endereco/" class="endereco-btn">Excluir</a>
+                <a href="{% url 'pedidos:pagamento' pk=endereco.id %}" class="endereco-btn">Selecionar endereço</a>
+                  
+            </div><!--/meus-enderecos-->
+            <br>  
+
+            {% endfor %}
+
+            {% else %}
+
+                <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
                 
-                {% endfor %}
+                    <tr>
+                        <td align="right"><b>Você não tem nenhum endereço cadastrado.</b></td>
+                    </tr>
 
-                {% else %}
+                </table>
 
-                    <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
-                    
-                        <tr>
-                            <td align="right"><b>Você não tem nenhum endereço cadastrado.</b></td>
-                        </tr>
+            {% endif %}
 
-                    </table>
-
-                {% endif %}
-
-        </div><!--/meus-enderecos-->
-            
-
-          
-            
             <div class="novo-endereco">
 
               <h2>Incluir um novo endereço</h2>

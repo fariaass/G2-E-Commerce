@@ -7,26 +7,23 @@
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 
 <section>
     <div class="wrapper">
     
-    
         <div class="checkout">
 
-              <div class="checkout-logotipo">
-                    
-              </div><!--/checkout-logotipo-->
-
-                <div class="navegador">
-                    <div class="check-carrinho"><div class="info-inativo">Carrinho</div></div>
-                           <hr class="linha-ativa">
-                    <div class="check-ativo">2 <div class="info-inativo">Identificação</div></div>
+            <div class="navegador">
+                <div class="check-carrinho"><div class="info-inativo">Carrinho</div></div>
                         <hr class="linha-ativa">
-                    <div class="check-ativo">3 <div class="info-ativo">Pagamento</div></div>
-                        <hr class="linha-inativa">
-                    <div class="check-inativo">4 <div class="info-inativo">Confirmação</div></div>
-                </div><!--/navegador-->
+                <div class="check-ativo">2 <div class="info-inativo">Identificação</div></div>
+                    <hr class="linha-ativa">
+                <div class="check-ativo">3 <div class="info-ativo">Pagamento</div></div>
+                    <hr class="linha-inativa">
+                <div class="check-inativo">4 <div class="info-inativo">Confirmação</div></div>
+            </div><!--/navegador-->
    
             <div class="titulo">
                 <span class="fa fa-credit-card"></span>
@@ -37,11 +34,11 @@
             <div class="seu-pedido">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td colspan="2" class="header" >Seu Pedido</td>
+                    <td colspan="2" class="header" >Seu pedido <a id="revisar-pedido" href="{% url 'carrinho:retrieve' %}">Revisar pedido</a></td>
                   </tr>
                   <tr>
-                    <td class="dados">Total em Produtos (1 item)</td>
-                    <td class="dados">R$ 200,00</td>
+                    <td class="dados">Total em Produtos ({{total_itens}} itens)</td>
+                    <td class="dados">R$ {{total}}</td>
                   </tr>
                   <tr>
                     <td class="dados">Frete</td>
@@ -49,7 +46,7 @@
                   </tr>
                   <tr>
                     <td class="total">Total</td>
-                    <td class="total">R$ 205,00</td>
+                    <td class="total">R$ {{total}}</td>
                   </tr>
                 </table>
             </div><!--/seu-pedido-->
@@ -57,123 +54,54 @@
              <div class="endereco-entrega">
                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td colspan="2" class="header" >Endereço de Entrega <a href="#">Selecionar outro endereço</a></td>
-
+                    <td colspan="2" class="header" >Endereço de Entrega <a href="{% url 'pedidos:endereco' %}">Selecionar outro endereço</a></td>
                   </tr>
                   <tr>
                     <td class="dados"><strong>Meu Endereço</strong></td>
-
                   </tr>
                   <tr>
                     <td class="dados">
-                      <table>
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                          <td align="right"><b>Nome do Endereço:</b></td>
-                          <td>Minha Casa</td>
-                        </tr>
-                        <tr>
-                        <tr>
-                          <td align="right"><b>Destinatario:</b></td>
-                          <td>João Souza Oliveida</td>
-                        </tr>
-                        <tr>
-                          <td align="right"><b>Endedeço:</b></td>
-                          <td>Al São Caetano, 2790</td>
-                        </tr>
-                        <tr>
-                          <td align="right"><b>Bairro:</b></td>
-                          <td>Santa Madia</td>
-                        </tr>
-                        <tr>
-                          <td align="right"><b>CEP:</b></td>
-                          <td>09560-500</td>
-                        </tr>
-                        <tr>
-                          <td align="right"><b>Cidade:</b></td>
-                          <td>São Caetano do Sul  - SP - Brasil</td>
-                        </tr>
-                        <tr>
-                          <td align="right"><b>Referência:</b></td>
-                          <td>Faculdade Unisquina</td>
-                        </tr>
-                        <tr>
-                          <td align="right"><b>Tipo:</b></td>
-                          <td>Residencial</td>
-                        </tr>
-                     </table>
-                    </td>
+                          <td class="dados">
+                              <table>
+                              <tr>
+                                  <td align="right"><b>Nome do Endereço:</b></td>
+                                  <br><td>{{endereco.nome}}</td>
                               </tr>
-                  <tr>
-                    <td class="alerta">
-                        
-                        <div class="icon-alerta fa fa-exclamation-triangle"></div>
-                        
-                        <div class="descritivo">
-                            Faz tempo que não compra com a gente?<br>
-                            Revise seu endereço para evitar<br>
-                            problemas na entrega.
-                        </div><!--/descritivo-->
-                    
-                        <div class="bt-revisar"><a class="inline" href="#inline_content">Revisar</a></div>
-                        
+                              <tr>
+                              <tr>
+                                  <td align="right"><b>Destinatario:</b></td>
+                                  <td>{{endereco.usuario}}</td>
+                              </tr>
+                              <tr>
+                                  <td align="right"><b>Endereço:</b></td>
+                                  <td>{{endereco.rua}}, {{endereco.numero}}</td>
+                              </tr>
+                              <tr>
+                                  <td align="right"><b>Bairro:</b></td>
+                                  <td>{{endereco.bairro}}</td>
+                              </tr>
+                              <tr>
+                                  <td align="right"><b>CEP:</b></td>
+                                  <td>{{endereco.cep}}</td>
+                              </tr>
+                              <tr>
+                                  <td align="right"><b>Cidade:</b></td>
+                                  <td>{{endereco.cidade}} - {{endereco.estado}} - {{endereco.pais}}</td>
+                              </tr>
+                              <tr>
+                                  <td align="right"><b>Referência:</b></td>
+                                  <td>{{endereco.referencia}}</td>
+                              </tr>
+                              </table>
+                          </td>
+                        </tr>
+                      </table>
                     </td>
-                  </tr>
+                    </tr>
                 </table>
-                
-                    <div style="display:none">
-                            <div id="inline_content" class="checkout">
-                            
-                               <div class="formulario">
-
-                                  <label>* CEP</label>
-                                  <input name="" type="text" class="p" id="cep">
-                                  
-                                  <label>* Tipo do Endereço</label>
-                                  <select name="" class="m">
-                                    <option>Apartamento</option>
-                                    <option>Casa</option>
-                                    <option>Comercial</option>
-                                    <option>Outro</option>
-                                  </select>
-                                  
-                                  
-                                  <label>* Nome do Enderço</label>
-                                  <input name="" type="text" class="g" placeholder="Ex.: Meu Trabalho, Casa dos Pais">
-
-                                  <label>* Endereço</label>
-                                  <input name="" type="text" class="g">
-                                  
-                                  <label>* Número</label>
-                                  <input name="" type="text" class="pp" >
-                               
-                                  <label>Complemento</label>
-                                  <input name="" type="text" class="m">
-                                  
-                                  <label>* Bairro</label>
-                                  <input name="" type="text" class="p">
-                                  
-                                  <label>* Cidade</label>
-                                  <input name="" type="text" class="p">
-                                  
-                                  <label>* Estado</label>
-                                  <input name="" type="text" class="p">
-                                  
-                                  <label>* País</label>
-                                  <input name="" type="text" class="p">
-                                  
-                                  <label>Ponto de Referência</label>
-                                  <textarea name="" cols="10" rows="5" class="g"></textarea>
-
-                                  <input type="submit" value="Salvar Alterações">
-
-                            </div><!--/formulario-->
-                                
-                            </div><!--/inline_content-->
-                       </div><!--/none-->
-                
             </div><!--/endereco-entrega-->
-            
-            
             
             <div class="titulo">
                 <p>Escolha a Forma de Pagamento</p>
@@ -181,24 +109,30 @@
             
           <div class="forma-de-pagamento">
                 <div class="tipo">
-                    <img src="imagens/layout/checkout/pagseguro.jpg" width="304" height="103" alt="Pagseguro"> 
-                    <p><span>Pagseguro UOL</span><br>
-                    Pagamentos com Cartões de Credito, Débito e Boleto Bancário</p>
-                    
+                    <p><span>Boleto</span><br>Pagamento com boleto bancário</p>
                     <div class="bt-selecionar"><a href="#">Selecionar</a></div>
-                    
-                 </div><!--/tipo-->   
-      
+                </div><!--/tipo--> 
+                <br><br> 
+          </div><!--/forma-de-pagamento-->
+
+          <div class="forma-de-pagamento">
+            <div class="tipo">
+                <p><span>Pix</span><br>Pagamento via Pix</p>
+                <div class="bt-selecionar disabled"><a href="#">Selecionar</a></div>
+            </div><!--/tipo--> 
+            <br><br> 
+          </div><!--/forma-de-pagamento--><br><br></br>
+
+          <div class="forma-de-pagamento">
+          <div class="tipo">
+            <p><span>Cartões</span><br>Pagamento com Cartões</p>
+            <div class="bt-selecionar disabled"><a href="#">Selecionar</a></div>
+          </div><!--/tipo--> 
+          <br><br> 
           </div><!--/forma-de-pagamento-->
             
-          
-            
-            
-
-    </div><!--/checkout-->
-        
-        
-     </div><!--/wrapper-->
+    </div><!--/checkout-->        
+    </div><!--/wrapper-->
 </section>
 
 {% endblock %}
