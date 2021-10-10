@@ -1,10 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render, redirect
 from json import loads
-from pedidos.forms import PedidoForm
 from produtos.models import Produto
 from accounts.models import Endereco
-from carrinho.models import Carrinho
+from pedidos.models import Pedido
 
 def identificacao(request):
     if request.user.is_authenticated:
@@ -24,7 +23,6 @@ def identificacao(request):
 
 @login_required(login_url='/login/')
 def pagamento(request):
-    print(request.session.get('pedido'))
     endereco = get_object_or_404(Endereco, pk=request.session['pedido']['endereco'])
     dados = request.user.carrinho.produtos.all()
     total = request.session['pedido'].get('total')
@@ -50,13 +48,12 @@ def session_cart_to_account_cart(request):
     return redirect("/pedidos/identificacao/")
 
 
-def fecha_pedido(request):
-    if request.method == 'POST':
-        form = PedidoForm()
-        if form.is_valid():
-            pedido = form.save(commit=False)
-            pedido.usuario = request.user
-            pedido.produtos = request.user.carrinho.produtos.all()
+def finaliza_pedido(request):
+    fm = request.POST.get('fm')
+    pedido = Pedido.objects.create(usuario=request.user.id, valor=request.session['pedido'].get('total'), forma_pagamento=fm, endereco=request.session['pedido'].get('endereco'), quantidade_produtos=request.session['pedido'].get('qtd'), frete=request.session['pedido'].get('frete'))
+    pedido.produtos.add(request.user.carrinho.produtos.all())
+    pedido.save()
+    redirect("/")
 
 
 def inicia_pedido(request):
@@ -87,6 +84,7 @@ def inicia_pedido(request):
     request.session.modified = True
     print(request.session.get('pedido', False))
     return redirect("/carrinho/")
+
 
 def continua_pedido(request):
     print(request.session.get('pedido', False))
