@@ -48,12 +48,20 @@ def session_cart_to_account_cart(request):
     return redirect("/pedidos/identificacao/")
 
 
-def finaliza_pedido(request):
-    fm = request.POST.get('fm')
-    pedido = Pedido.objects.create(usuario=request.user.id, valor=request.session['pedido'].get('total'), forma_pagamento=fm, endereco=request.session['pedido'].get('endereco'), quantidade_produtos=request.session['pedido'].get('qtd'), frete=request.session['pedido'].get('frete'))
-    pedido.produtos.add(request.user.carrinho.produtos.all())
-    pedido.save()
-    redirect("/")
+@login_required(login_url='/login/')
+def finaliza_pedido(request, fm):
+    print("finaliza pedido")
+    fms = {1:'B', 2:'P', 3:'C'}
+    if fms.get(fm, False):
+        endereco = get_object_or_404(Endereco, id=request.session['pedido'].get('endereco'))
+        pedido = Pedido.objects.create(usuario=request.user, valor=request.session['pedido'].get('total'), forma_pagamento=fms.get(fm), endereco=endereco, quantidade_produtos=request.session['pedido'].get('qtd'), frete=request.session['pedido'].get('frete'))
+        [pedido.produtos.add(i.id) for i in request.user.carrinho.produtos.all()]
+        pedido.save()
+        request.user.carrinho.produtos.clear(     )
+        del request.session['pedido']
+    else:
+        return render(request, 'erro.html', {'message': 'Pagina não encontrada.'})
+    return redirect("/")
 
 
 def inicia_pedido(request):

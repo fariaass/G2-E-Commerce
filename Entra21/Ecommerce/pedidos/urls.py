@@ -15,5 +15,5 @@ urlpatterns = [
     path('session-to-account/', session_cart_to_account_cart, name='session-to-account'),
     path('inicia-pedido/', inicia_pedido, name='inicia-pedido'),
     path('continua-pedido/', continua_pedido, name='continua-pedido'),
-    path('finaliza-pedido', finaliza_pedido, name='finaliza-pedido'),
+    path('finaliza-pedido/<int:fm>/', finaliza_pedido, name='finaliza-pedido'),
 ]

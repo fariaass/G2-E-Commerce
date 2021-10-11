@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-
 <section>
     <div class="wrapper">
     
@@ -110,7 +109,7 @@
           <div class="forma-de-pagamento" id="B">
                 <div class="tipo">
                     <p><span>Boleto</span><br>Pagamento com boleto bancário</p>
-                    <div class="bt-selecionar"><a href="#">Selecionar</a></div>
+                    <div class="bt-selecionar"><a href="{% url 'pedidos:finaliza-pedido' fm=1 %}">Selecionar</a></div>
                 </div><!--/tipo--> 
                 <br><br> 
           </div><!--/forma-de-pagamento-->
@@ -118,7 +117,7 @@
           <div class="forma-de-pagamento" id="P">
             <div class="tipo">
                 <p><span>Pix</span><br>Pagamento via Pix</p>
-                <div class="bt-selecionar disabled"><a href="#">Selecionar</a></div>
+                <div class="bt-selecionar disabled"><a href="{% url 'pedidos:finaliza-pedido' fm=2 %}">Selecionar</a></div>
             </div><!--/tipo--> 
             <br><br> 
           </div><!--/forma-de-pagamento--><br><br></br>
@@ -126,7 +125,7 @@
           <div class="forma-de-pagamento" id="C">
           <div class="tipo">
             <p><span>Cartões</span><br>Pagamento com Cartões</p>
-            <div class="bt-selecionar disabled"><a href="#">Selecionar</a></div>
+            <div class="bt-selecionar disabled"><a href="{% url 'pedidos:finaliza-pedido' fm=3 %}">Selecionar</a></div>
           </div><!--/tipo--> 
           <br><br> 
           </div><!--/forma-de-pagamento-->
