@@ -21,6 +21,7 @@ a:hover {
 
 body {
   background-color: #FFFFFF;
+  overflow-x: hidden;
 }
 
 .barras{
