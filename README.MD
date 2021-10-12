@@ -51,23 +51,56 @@ SySales, é uma solução em Ecommerce, desenvolvida em Blumenau, através do En
 
 <h2 id="layout"> 🎨 Layout </h2>
 
-<!--
-### Mobile
+> Home  
+>>      Carrossel de categorias  
+>>      Barra de pesquisa
+>>      Destaques
 
-<p align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/home-mobile.png" width="200px">
+> Destaques
+>>       Mais vendidos
+>>       Mais vistos
+>>       Mais recentes
 
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/detalhes-mobile.svg" width="200px">
-</p>
+> Catálogo Produtos
+>>       Produtos
+>>       Paginação
 
-### Web
+> Produto
+>>       Foto produto
+>>       Descrição produto
+>>       Produtos recomendados
 
-<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/web.svg" width="400px">
+>#### Admin
+>
+>>>######     Accounts
+>>>     Email addresses
+>>>     Enderecos
+>>>     My users
+>>>     Auth tokens
+>>>     Groups
+>
+>>######      Carrinho
+>>>     Carrinhos
+>
+>>######      Categorias
+>>>     Categorias
+>>>     Tags
+>
+>>######      Pedidos
+>>>     Pedidos
+>
+>>######      Produtos
+>>>     Produtos
+>
+>>######      Sessions
+>>>     Sessions
+>
+>>######      Social Accounts
+>>>     Social accounts
+>>>     Social application tokens
+>>>     Social applications
 
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/sucesso-web.svg" width="400px">
-</p>
--->
+
 <h2 id="deploy">🌎 Deploy</h2>
 
 O deploy será feito na plataforma Heroku em breve
