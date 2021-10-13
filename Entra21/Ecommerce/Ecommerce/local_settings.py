@@ -1,5 +1,5 @@
-SECRET_KEY = 'django-insecure-s)cf1c(3ss*^1fxfpq#83=l(m*z-zhrq^_on(c1#8-ypca81mf'
-
+# SECRET_KEY = 'django-insecure-s)cf1c(3ss*^1fxfpq#83=l(m*z-zhrq^_on(c1#8-ypca81mf'
+SECRET_KEY = 'O6B3pfZnEgAakyFXc59fc38rC2fHKO6B3pfZnEgAakyFXc59fc38SfLFpa2BAN294H'
 
 DbSqLite = {
      'default': {

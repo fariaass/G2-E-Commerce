@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+
+import django_heroku
 import os
 from pathlib import Path
 
@@ -26,9 +28,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = False
 
-ALLOWED_HOSTS = []
+DEBUG = os.environ.get('DEBUG') == True
+
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://sysales.herokuapp.com']
 
 SITE_ID = 1
 
@@ -150,6 +155,8 @@ WSGI_APPLICATION = 'Ecommerce.wsgi.application'
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
@@ -212,3 +219,7 @@ with open('Ecommerce/local_settings.py') as infile:
 # Crispy
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfile')
+
+django_heroku.settings(locals())
