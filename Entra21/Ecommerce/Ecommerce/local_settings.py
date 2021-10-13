@@ -16,16 +16,16 @@ DbMySQL = {
         'PASSWORD': 'b2349kluMenaUfazmuTtocalor2.*',
         'HOST': 'dbsolapp01.sol.app.br',
         'PORT': '3306',
-        'OPTIONS':  {
-            'ssl': {'ca': 'C:/ssl/server-ca.pem',
-            'cert': 'C:/ssl/client-cert.pem',
-            'key': 'C:/ssl/client-key.pem'
-            }
-        }
+        # 'OPTIONS':  {
+        #     'ssl': {'ca': 'C:/ssl/server-ca.pem',
+        #     'cert': 'C:/ssl/client-cert.pem',
+        #     'key': 'C:/ssl/client-key.pem'
+        #     }
+        # }
     }
 }
 
-# DATABASES = DbSqLite 
+#DATABASES = DbSqLite 
 DATABASES = DbMySQL
 
 
