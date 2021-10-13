@@ -39,8 +39,7 @@ SITE_ID = 1
 
 # Application definition
 
-INSTALLED_APPS = [
-    # 'rest_framework.authtoken',
+INSTALLED_APPS = [    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -212,8 +211,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
 
-with open('Ecommerce/local_settings.py') as infile:
-    exec(infile.read())
+# with open('Ecommerce/local_settings.py') as infile:
+#     exec(infile.read())
 
 
 # Crispy
