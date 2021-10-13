@@ -17,7 +17,8 @@ DbMySQL = {
         'HOST': 'dbsolapp01.sol.app.br',
         'PORT': '3306',
         'OPTIONS':  {
-            'ssl': {'ca': '/home/adriano/x/proway/venv_g2/ssl/server-ca.pem',
+            # 'ssl': {'ca': 'c:/ssl/server-ca.pem',            
+            'ssl': {'ca': '/home/adriano/x/proway/venv_g2/ssl/server-ca.pem',            
             'cert': '/home/adriano/x/proway/venv_g2/ssl/client-cert.pem',
             'key': '/home/adriano/x/proway/venv_g2/ssl/client-key.pem'
             }
