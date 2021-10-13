@@ -55,12 +55,12 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.twitter',
     'rest_framework',
     'colorfield',
-    'crispy_forms',
-    # 'Entra21.Ecommerce.accounts.apps.AccountsConfig',    
-    'Entra21.Ecommerce.produtos.apps.ProdutosConfig',
-    'Entra21.Ecommerce.carrinho.apps.CarrinhoConfig',
-    'Entra21.Ecommerce.categorias.apps.CategoriaConfig',
-    'Entra21.Ecommerce.pedidos.apps.PedidosConfig'    
+    'crispy_forms',    
+    'Ecommerce.produtos.apps.produtos',
+    'Ecommerce.carrinho.apps.CarrinhoConfig',
+    'Ecommerce.categorias.apps.CategoriaConfig',
+    'Ecommerce.pedidos.apps.PedidosConfig',
+    'Ecommerce.accounts.apps.AccountsConfig',    
 ]
 
 MIDDLEWARE = [
