@@ -56,11 +56,16 @@ INSTALLED_APPS = [
     'rest_framework',
     'colorfield',
     'crispy_forms',
-    'Entra21.Ecommerce.Ecommerce.accounts',
-    'Entra21.Ecommerce.Ecommerce.produtos',
-    'Entra21.Ecommerce.Ecommerce.carrinho',
-    'Entra21.Ecommerce.Ecommerce.categorias',
-    'Entra21.Ecommerce.Ecommerce.pedidos',
+    '.accounts',
+    '.produtos',
+    '.carrinho',
+    '.categorias',
+    '.pedidos',
+    'Entra21.Ecommerce.Ecommerce.accounts.apps.AccountConfig',
+    'Entra21.Ecommerce.Ecommerce.produtos.apps.ProdutosConfig',
+    'Entra21.Ecommerce.Ecommerce.carrinho.apps.CarrinhoConfig',
+    'Entra21.Ecommerce.Ecommerce.categorias.apps.CategoriasConfig',
+    'Entra21.Ecommerce.Ecommerce.pedidos.apps.PedidosConfig',
 ]
 
 MIDDLEWARE = [
