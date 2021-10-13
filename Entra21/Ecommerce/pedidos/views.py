@@ -57,7 +57,7 @@ def finaliza_pedido(request, fm):
         pedido = Pedido.objects.create(usuario=request.user, valor=request.session['pedido'].get('total'), forma_pagamento=fms.get(fm), endereco=endereco, quantidade_produtos=request.session['pedido'].get('qtd'), frete=request.session['pedido'].get('frete'))
         [pedido.produtos.add(i.id) for i in request.user.carrinho.produtos.all()]
         pedido.save()
-        request.user.carrinho.produtos.clear(     )
+        request.user.carrinho.produtos.clear()
         del request.session['pedido']
     else:
         return render(request, 'erro.html', {'message': 'Pagina não encontrada.'})
@@ -100,3 +100,11 @@ def continua_pedido(request):
     request.session['pedido']['endereco'] = endereco
     request.session.modified = True
     return redirect("/pedidos/pagamento/")
+
+def confirmacao_pedido(request, pk):
+    pedido = get_object_or_404(Pedido, pk=pk)
+    if pedido.foi_pago == True:
+        msg = 'Pago'
+    else:
+        msg = 'Não pago'
+    return render(request, 'pedidos/confirmacao.html', {'mensagem': msg})

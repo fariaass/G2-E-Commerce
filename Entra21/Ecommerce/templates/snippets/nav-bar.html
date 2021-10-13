@@ -21,8 +21,8 @@
                 <input type="checkbox" id="show-features">
                 <label for="show-features">Olá, {{user.nome_usuario}}!</label>
                 <ul>
-                  <li><a href="#">Meu perfil</a></li>
-                  <li><a href="{% url 'users:cadastrar_endereco' %}">Cadastre um Endereço</a></li>
+                  <li><a href="{% url 'users:retorna_perfil' %}">Meu perfil</a></li>
+                  <!-- <li><a href="{% url 'users:cadastrar_endereco' %}">Cadastre um Endereço</a></li> -->
                   {% if user.is_superuser %}
                         <li><a href="/admin">Cadastrar produtos</a></li>
                     {% endif %}

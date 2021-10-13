@@ -1,5 +1,5 @@
 from django.urls import path
-from pedidos.views import identificacao, pagamento, session_cart_to_account_cart, inicia_pedido, continua_pedido, finaliza_pedido
+from pedidos.views import identificacao, pagamento, session_cart_to_account_cart, inicia_pedido, continua_pedido, finaliza_pedido, confirmacao_pedido
 from accounts.views import retorna_enderecos
 
 app_name = 'pedidos'
@@ -16,4 +16,5 @@ urlpatterns = [
     path('inicia-pedido/', inicia_pedido, name='inicia-pedido'),
     path('continua-pedido/', continua_pedido, name='continua-pedido'),
     path('finaliza-pedido/<int:fm>/', finaliza_pedido, name='finaliza-pedido'),
+    path('confirmacao/', confirmacao_pedido, name='confirmacao')
 ]

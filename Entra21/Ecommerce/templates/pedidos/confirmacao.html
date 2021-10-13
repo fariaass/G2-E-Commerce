@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}Confirmação de pagamento{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/style-confirmacao.css' %}">
+
+{% if mensagem == 'Pago' %}
+
+<section class="section-confirm">
+
+    <p>Seu pedido foi pago e está a caminho!</p> 
+    <p>Obrigado por comprar conosco!</p>
+
+</section>
+
+{% else %}
+
+<section class="section-confirm">
+
+    <p>Seu pagamento ainda não recebido</p> 
+    <p>Assim que for detectado, seu pedido será encaminhado!</p>
+
+</section>
+
+{% endif %}
+
+{% endblock %}

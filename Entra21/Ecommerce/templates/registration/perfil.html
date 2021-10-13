@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}Meu perfil{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'css/style-perfil.css' %}">
+    
+<section class="perfil-container">
+
+    <h1 class="titulo">Meu Perfil</h1><br>
+    <div class="dados">
+
+
+        <!-- Meus dados -->
+
+        <section class="meus-dados">
+
+            <h3>Meus dados: </h3><br>
+            
+            <p>Nome de usuário: {{request.user.nome_usuario}}</p>
+            <p>Email: {{request.user.email}}</p>
+
+        </section>
+
+        <!-- Meus endereços -->
+
+        <section class="meus-enderecos">
+
+            <h3>Meus endereços: </h3><br>
+            <div class="novo-endereco">
+                <a href="{% url 'pedidos:endereco' %}" class="endereco-btn" id="incluir">Ver endereços</a>
+            </div><!--/novo-endereco-->
+
+        </section>
+
+    </div>    
+
+    <section class="meus-pedidos">
+
+        <h3>Meus pedidos</h3><br>
+        
+        {% for pedido in pedidos %}
+
+        <div class="pedido">
+            <p class="nome-pedido">Usuário: {{pedido.usuario}}</p>
+            <p class="valor-pedido">Valor: R${{pedido.valor}}</p>
+            <p class="endereco-pedido">Endereço: {{pedido.endereco}}</p>
+            <p class="status">Para verificar o status do pedido clique <a class="a-status" href="{% url 'pedidos:confirmacao' %}">aqui</a></p>
+        </div>
+
+        {% endfor %}
+
+    </section>
+
+</section>
+    
+{% endblock %}

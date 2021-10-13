@@ -5,6 +5,7 @@ from accounts.forms import MyUserForm, EnderecoForm
 from django.shortcuts import get_object_or_404, redirect, render
 from accounts.models import MyUser, Endereco
 from carrinho.models import Carrinho
+from pedidos.models import Pedido
 
 @login_required(login_url='/login/')
 def retorna_account(request, pk):
@@ -61,3 +62,9 @@ def retorna_enderecos(request):
 def remover_endereco(request, pk):
     Endereco.objects.filter(id=pk).delete()
     return redirect(request.GET.get('next'))
+
+@login_required(login_url='/login/')
+def retorna_perfil(request):
+    enderecos = Endereco.objects.all().filter(usuario=request.user.id)
+    pedidos = Pedido.objects.all().filter(usuario=request.user.id)
+    return render(request, 'registration/perfil.html', {'enderecos': enderecos, 'pedidos': pedidos})

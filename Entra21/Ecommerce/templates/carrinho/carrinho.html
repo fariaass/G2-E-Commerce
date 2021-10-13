@@ -31,7 +31,50 @@
             
             {% if no_match%}
 
-            <p>Seu carrinho está vazio...</p><br><br><br>
+            <div class="carrinho">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="55%" class="header">Produto(s) no Meu Carrinho</td>
+                  <td width="15%" class="header">Quantidade</td>
+                  <td width="15%" class="header">Valor Unitário</td>
+                  <td width="15%" class="header">Valor Total</td>
+                </tr>
+                <tr >
+                  <td class="dados"> 
+                      <div id="" class="carrinho-descricao-produto">
+                         <a><strong><p>Seu carrinho está vazio...</p></strong></a>
+                      </div><!--/carrinho-descricao-produto-->
+                  </td>
+                  <td class="dados" align="center">
+                      <div class="quantidade">
+                      </div><!--/quantidade-->
+                      <div class="bt-excluir">
+                      </div><!--/excluir-->
+                  </td>
+                  <td class="dados unit" align="center" name="valor unitário"></td>
+                  <td class="dados mult" align="center" name="valor total"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="frete"> 
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="7%" align="center"><span class="fa fa-truck"></span></td>
+                          <td width="30%" align="left">Consulte o frete para seu CEP</td>
+                          <td width="1%" align="left"><input name="" id="cep" type="number" min="1000000" max="99999999" value="01000000" class="p" ></td>
+                          <td width="1%"><div class="bt-ok"><a href="#">OK</a></div></td>
+                          <td width="10%" align="right">FRETE</td>
+                        </tr>
+                      </table>
+                  </td>
+                  <td class="dados frete-result" align="center"></td>
+                </tr>
+                <tr id="total">
+                  <td colspan="3" align="right" class="subtotal">TOTAL</td>
+                  <td class="dados total-carrinho" align="center">{{total}}</td>
+                </tr>
+               </table>
+          
+          </div><!--/carrinho-->
 
             {% else %}
             
