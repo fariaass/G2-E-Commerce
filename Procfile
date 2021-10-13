@@ -1,1 +1,1 @@
-web: gunicorn Ecommerce.wsgi
+web: gunicorn Entra21.Ecommerce.Ecommerce.wsgi
