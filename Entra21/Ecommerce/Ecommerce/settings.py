@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'colorfield',
     'crispy_forms',    
-    'Entra21.Ecommerce.produtos.apps.ProdutosConfig.produtos',
+    'Ecommerce.produtos.apps.ProdutosConfig.produtos',
     'Entra21.Ecommerce.carrinho.apps.CarrinhoConfig.carrinho',
     'Entra21.Ecommerce.categorias.apps.CategoriaConfig',
     'Entra21.Ecommerce.pedidos.apps.PedidosConfig',
