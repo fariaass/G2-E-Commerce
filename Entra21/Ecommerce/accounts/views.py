@@ -1,6 +1,5 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
-from pedidos.forms import PedidoForm
 from accounts.forms import MyUserForm, EnderecoForm
 from django.shortcuts import get_object_or_404, redirect, render
 from accounts.models import MyUser, Endereco
