@@ -43,8 +43,6 @@
                   <a href="{% provider_login_url "twitter" next="/" process="connect" %}">
                     <p class="sociallogin twitter"><i class="fa fa-twitter"></i> Twitter</p>
                   </a>
-                  <a href="{% provider_login_url "facebook" method="oauth2" next="/" process="connect" %}">
-                    <p class="sociallogin facebook"><i class="fa fa-facebook"></i> Facebook</p>
                   </a>
                   {% else %}
                   <a href="{% provider_login_url "google" next="/" %}">
@@ -52,9 +50,6 @@
                   </a>
                   <a href="{% provider_login_url "twitter" next="/" %}">
                     <p class="sociallogin twitter"><i class="fa fa-twitter"></i> Twitter</p>
-                  </a>
-                  <a href="{% provider_login_url "facebook" method="oauth2" next="/" %}"> 
-                    <p class="sociallogin facebook"><i class="fa fa-facebook"></i> Facebook</p>
                   </a>
                   {% endif %}
 
