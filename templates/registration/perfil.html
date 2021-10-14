@@ -24,6 +24,17 @@
             <p>Nome de usuário: {{request.user.nome_usuario}}</p>
             <p>Email: {{request.user.email}}</p>
 
+            <h4 class="sub-titulo1">Vincular contas: </h4>
+            <div class="facebook">
+                <p>Vincular sua conta com <a href="#">Facebook</a></p>
+            </div>
+            <div class="twitter">
+                <p>Vincular sua conta com <a href="#">Twitter</a></p>
+            </div>
+            <div class="email">
+                <p>Vincular sua conta com <a href="#">Email</a></p>
+            </div>
+
         </section>
 
         <!-- Meus endereços -->
@@ -32,7 +43,69 @@
 
             <h3>Meus endereços: </h3><br>
             <div class="novo-endereco">
-                <a href="{% url 'pedidos:endereco' %}" class="endereco-btn" id="incluir">Ver endereços</a>
+
+                {% if enderecos %}
+
+                {% for endereco in enderecos %}
+
+                <div class="meus-enderecos">
+
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td class="dados">
+                            <table>
+                            <tr>
+                                <td align="right"><b>Nome do Endereço:</b></td>
+                                <br><td>{{endereco.nome}}</td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td align="right"><b>Destinatario:</b></td>
+                                <td>{{endereco.usuario}}</td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>Endereço:</b></td>
+                                <td>{{endereco.rua}}, {{endereco.numero}}</td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>Bairro:</b></td>
+                                <td>{{endereco.bairro}}</td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>CEP:</b></td>
+                                <td>{{endereco.cep}}</td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>Cidade:</b></td>
+                                <td>{{endereco.cidade}} - {{endereco.estado}} - {{endereco.pais}}</td>
+                            </tr>
+                            <tr>
+                                <td align="right"><b>Referência:</b></td>
+                                <td>{{endereco.referencia}}</td>
+                            </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    </table>
+                    
+                    <a href="{% url 'users:remover_endereco' pk=endereco.id %}?next=/users/perfil/" class="endereco-btn">Excluir</a>
+
+                </div><!--/meus-enderecos-->
+                <br>  
+
+                {% endfor %}
+
+                {% else %}
+
+                    <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
+                    
+                        <tr>
+                            <td align="right"><b>Você não tem nenhum endereço cadastrado.</b></td>
+                        </tr>
+
+                    </table>
+
+                {% endif %}
             </div><!--/novo-endereco-->
 
         </section>
