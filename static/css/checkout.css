@@ -6,7 +6,7 @@
 }
 
 .wrapper {
-    width: 100%;
+    /* width: 100%; */
 }
 
 .ajax-class {
@@ -18,7 +18,7 @@
     color: black;
 }
 
-.link-add-endereco a{
+.nome{
     font-size: 20px;
     color: black;
     text-decoration: black;
@@ -342,10 +342,10 @@ a{text-decoration:none; -webkit-transition:background 0.5s ease-out; -moz-transi
 
 /* TABLET */
 
-@media screen and (min-width: 480px) and (max-width: 989px){
+@media screen and (min-width: 200px) and (max-width: 989px){
 
 img{ max-width:100%;}	
-.wrapper{ width:auto; height:auto; padding:30px;}	
+.wrapper{ width:auto; height:auto; padding:30px; font-size: 14;}	
 .checkout .checkout-logotipo{ width:100%; margin:0 auto 30px auto; text-align:center;}
 .checkout .navegador{ width:100%; margin: 0 auto;}
 
@@ -372,7 +372,7 @@ img{ max-width:100%;}
 
 /* SMARTPHONE */
 
-@media screen and (min-width: 0px) and (max-width: 479px){
+/* @media screen and (min-width: 0px) and (max-width: 479px){
 
 img{ max-width:100%;}	
 .wrapper{ width:auto; height:auto; padding:20px;}
@@ -426,4 +426,4 @@ img{ max-width:100%;}
 .checkout .meus-enderecos{width:92%; margin:0 0 20px 0;}
 
 
-}
+} */

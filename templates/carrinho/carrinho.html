@@ -14,15 +14,6 @@
     <div class="wrapper">
     
         <div class="checkout">
-            <div class="navegador">
-                <div class="check-carrinho"><div class="info-ativo">Carrinho</div></div>
-                       <hr class="linha-inativa">
-                <div class="check-inativo">2 <div class="info-inativo">Identificação</div></div>
-                    <hr class="linha-inativa">
-                <div class="check-inativo">3 <div class="info-inativo">Pagamento</div></div>
-                    <hr class="linha-inativa">
-                <div class="check-inativo">4 <div class="info-inativo">Confirmação</div></div>
-            </div><!--/navegador-->
 
             <div class="titulo">
                 <span class="fa fa-shopping-cart"></span>
@@ -81,9 +72,9 @@
             <div class="carrinho">
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td width="55%" class="header">Produto(s) no Meu Carrinho</td>
+                    <td width="50%" class="header">Produto(s)</td>
                     <td width="15%" class="header">Quantidade</td>
-                    <td width="15%" class="header">Valor Unitário</td>
+                    <td width="20%" class="header">Valor Unidade</td>
                     <td width="15%" class="header">Valor Total</td>
                   </tr>
 
@@ -92,7 +83,7 @@
                   <tr >
                     <td class="dados">
                         <div class="carrinho-imagem-produto">
-                            <img src="{{produto.imagem.url}}" max-width="210" max-height="210">
+                            <!-- <img src="{{produto.imagem.url}}" max-width="210" max-height="210"> -->
                         </div><!--/carrinho-imagem-produto-->
                         
                         <div id="{{produto.id}}" class="carrinho-descricao-produto">
@@ -118,8 +109,11 @@
                       <td colspan="3" class="frete"> 
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                           <tr>
-                            <td width="7%" align="center"><span class="fa fa-truck"></span></td>
-                            <td width="30%" align="left">Consulte o frete para seu CEP</td>
+                            <td width="7%" align="center"> 
+                              <!-- <span class="fa fa-truck"></span> -->
+                              <span></span>
+                            </td>
+                            <td width="30%" align="left">Consulte o frete</td>
                             <td width="1%" align="left"><input name="" id="cep" type="number" min="1000000" max="99999999" value="01000000" class="p" ></td>
                             <td width="1%"><div class="bt-ok"><a href="#">OK</a></div></td>
                             <td width="10%" align="right">FRETE</td>
