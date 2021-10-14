@@ -1,0 +1,569 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+:root {
+  --font: "Ubuntu", sans-serif;
+  --preto: #1a1a1a;
+}
+
+/* ---------------------------- PRODUTOS ---------------------------- */
+
+.catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+}
+
+.grid_produto {
+  background: #FFFFFF;
+  /* box-shadow:  3px 3px 3px 3px #FFFFFF; */
+  display: grid;
+  place-items: center;
+  height: 400px;
+  width: 25vw;
+  padding: 20px;
+  margin: 5px;
+  grid-template-areas:
+    "foto" "foto" "foto" "foto"
+    "nome" "nome" "nome" "nome"
+    "preco" "preco" "preco" "preco";
+  border: 1px solid rgb(218, 218, 218);
+  border-radius: 5px;
+}
+
+.foto_produto img {
+  max-width: 210px;
+  max-height: 210px;
+  border-radius: 5px;
+  grid-area: foto;
+}
+
+.nome_produto a {
+  margin: 0 auto;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+  grid-area: nome;
+  /* position: relative; */
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.nome_produto:hover a{
+  color: rgb(153, 151, 151);
+}
+
+.preco_produto {
+  font-size: 20px;
+  grid-area: preco;
+  position: relative;
+  text-align: left;
+}
+
+/* ---------------------------- PRODUTOS DETALHES ---------------------------- */
+
+
+.container_detalhes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+}
+
+.grid_produto_detalhe {
+  display: grid;
+  place-items: center;
+  width: 90%;
+  margin-top: 20px;
+  grid-template-areas: "nome"
+                       "foto"
+                       "info"
+                       "desc";
+}
+
+#mobile_nome {
+  display: flex;
+  color: black;
+}
+.nome_detalhe {
+  font-size: 24px;
+  text-align: center;
+  grid-area: nome;
+}
+.foto_detalhe {
+  grid-area: foto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foto_detalhe img {
+  max-width: 400px;
+  max-height: 300px;
+}
+.cart_detalhe {
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  grid-area: info;
+  text-align: center;
+}
+.cart_detalhe .nome_detalhe {
+  display: none;
+}
+.cart_detalhe #preco_detalhe {
+  font-size: 25px;
+}
+
+.cart_detalhe button {
+  background: #ffe600;
+  border-color: #ffe600;
+  text-shadow: none;
+  border-radius: 20px;
+  width: 90%;
+  height: 50px;
+}
+
+.cart_detalhe button:hover {
+  background: #b8a606;
+  border-color: #b8a606;
+  text-shadow: none;
+  border-radius: 20px;
+  width: 90%;
+  height: 50px;
+  text-transform: uppercase;
+}
+.descricao_detalhe {
+  width: 100%;
+  grid-area: desc;
+  place-items: center;
+  padding: 10px;
+}
+
+.descricao_detalhe p {
+  padding: 3px;
+  font-size: 20;
+}
+
+/* ---------------------------- RECOMENDADOS ---------------------------- */
+
+#detalhes_recomendados {
+  margin: 0 auto;
+  width: 85%;
+  border-radius: 5px;
+  height: 5vh;
+  margin-top: 5vh;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 1vh;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.recomendados {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+}
+
+.grid_recomendados {
+  display: grid;
+  place-items: center;
+  width: 25vw;
+  height: 400px;
+  padding: 10px;
+  margin: 5px;
+  grid-template-areas:
+    "foto" "foto" "foto"
+    "nome" "nome" "nome"
+    "preco" "preco" "preco";
+  border-radius: 5px;
+  border: 1px solid rgb(218, 218, 218);
+}
+
+.foto_recomendados img {
+  max-width: 210px;
+  max-height: 210px;
+  border-radius: 5px;
+  grid-area: foto;
+}
+
+.nome_recomendados a {
+  margin: 0 auto;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  grid-area: nome;
+  position: relative;
+  bottom: 0;
+}
+
+.nome_recomendados {
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  bottom: 0;
+  z-index: 1;
+}
+
+.preco_recomendados {
+  place-items: center;
+  margin: 5px;
+  font-size: 20px;
+  grid-area: preco;
+  position: relative;
+  text-align: left;
+}
+
+/* ---------------------------- PAGINAÇÃO ---------------------------- */
+
+.paginacao {
+  margin-bottom: 20px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-paginacao {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-paginacao a {
+  color: black;
+}
+
+.buttons-paginacao .atual {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* ---------------------------- RESPONSIVIDADE ---------------------------- */
+
+/* Catalogo produto */
+
+@media screen and (max-width: 1000px) {
+  .catalogo {
+    padding-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+  }
+  
+  .grid_produto {
+    background: #FFFFFF;
+    /* box-shadow:  3px 3px 3px 3px #FFFFFF; */
+    display: grid;
+    place-items: center;
+    height: 400px;
+    width: 45vw;
+    padding: 20px;
+    margin: 5px;
+    grid-template-areas:
+      "foto" "foto"
+      "nome" "nome" 
+      "preco" "preco";
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px;
+  }
+  
+  .foto_produto img {
+    max-width: 210px;
+    max-height: 210px;
+    border-radius: 5px;
+    grid-area: foto;
+  }
+  
+  .nome_produto a {
+    margin: 0 auto;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    grid-area: nome;
+    /* position: relative; */
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .nome_produto:hover a{
+    color: rgb(153, 151, 151);
+  }
+  
+  .preco_produto {
+    font-size: 20px;
+    grid-area: preco;
+    position: relative;
+    text-align: left;
+  }
+  
+  /* Detalhes produto */
+
+  .container_detalhes {
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+  }
+  
+  .grid_produto_detalhe {
+    display: grid;
+    place-items: center;
+    width: 90%;
+    margin-top: 20px;
+    grid-template-areas: "nome"
+                         "foto"
+                         "info"
+                         "desc";
+  }
+
+  #mobile_nome {
+    display: flex;
+    color: black;
+  }
+  .nome_detalhe {
+    font-size: 24px;
+    text-align: center;
+    grid-area: nome;
+  }
+  .foto_detalhe {
+    grid-area: foto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .foto_detalhe img {
+    max-width: 400px;
+    max-height: 300px;
+  }
+  .cart_detalhe {
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    grid-area: info;
+    text-align: center;
+  }
+  .cart_detalhe .nome_detalhe {
+    display: none;
+  }
+  .cart_detalhe #preco_detalhe {
+    font-size: 25px;
+  }
+  
+  .cart_detalhe button {
+    background: #ffe600;
+    border-color: #ffe600;
+    text-shadow: none;
+    border-radius: 20px;
+    width: 90%;
+    height: 50px;
+  }
+  
+  .cart_detalhe button:hover {
+    background: #b8a606;
+    border-color: #b8a606;
+    text-shadow: none;
+    border-radius: 20px;
+    width: 90%;
+    height: 50px;
+    text-transform: uppercase;
+  }
+  .descricao_detalhe {
+    width: 100%;
+    grid-area: desc;
+    place-items: center;
+    padding: 10px;
+  }
+  
+  .descricao_detalhe p {
+    padding: 3px;
+    font-size: 20;
+  }
+
+  /* Recomendados */
+
+  #detalhes_recomendados {
+    margin: 0 auto;
+    width: 85%;
+    border-radius: 5px;
+    height: 5vh;
+    margin-top: 5vh;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1vh;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .recomendados {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+  }
+
+  .grid_recomendados {
+    display: grid;
+    place-items: center;
+    width: 25vw;
+    height: 300px;
+    padding: 10px;
+    margin: 5px;
+    grid-template-areas:
+      "foto" "foto" "foto"
+      "nome" "nome" "nome"
+      "preco" "preco" "preco";
+    border-radius: 5px;
+    border: 1px solid rgb(218, 218, 218);
+  }
+
+  .foto_recomendados img {
+    max-width: 160px;
+    max-height: 160px;
+    border-radius: 5px;
+    grid-area: foto;
+  }
+
+  .nome_recomendados a {
+    margin: 0 auto;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    grid-area: nome;
+    position: relative;
+    bottom: 0;
+  }
+
+  .nome_recomendados {
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .preco_recomendados {
+    place-items: center;
+    margin: 5px;
+    font-size: 16px;
+    grid-area: preco;
+    position: relative;
+    text-align: left;
+  }
+
+  /* Recomendados */
+
+  #detalhes_recomendados {
+    margin: 0 auto;
+    width: 85%;
+    border-radius: 5px;
+    height: 5vh;
+    margin-top: 5vh;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1vh;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .recomendados {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+  }
+
+  .grid_recomendados {
+    display: grid;
+    place-items: center;
+    width: 80vw;
+    height: 300px;
+    padding: 10px;
+    margin: 5px;
+    grid-template-areas:
+      "foto" "foto" "foto"
+      "nome" "nome" "nome"
+      "preco" "preco" "preco";
+    border-radius: 5px;
+    border: 1px solid rgb(218, 218, 218);
+  }
+
+  .foto_recomendados img {
+    max-width: 160px;
+    max-height: 160px;
+    border-radius: 5px;
+    grid-area: foto;
+  }
+
+  .nome_recomendados a {
+    margin: 0 auto;
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    grid-area: nome;
+    position: relative;
+    bottom: 0;
+  }
+
+  .nome_recomendados {
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .preco_recomendados {
+    place-items: center;
+    margin: 5px;
+    font-size: 16px;
+    grid-area: preco;
+    position: relative;
+    text-align: left;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .catalogo {
+    padding-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+  }
+  
+  .grid_produto {
+    background: #FFFFFF;
+    /* box-shadow:  3px 3px 3px 3px #FFFFFF; */
+    display: grid;
+    place-items: center;
+    height: 400px;
+    width: 85vw;
+    padding: 20px;
+    margin: 5px;
+    grid-template-areas:
+      "foto" "foto"
+      "nome" "nome" 
+      "preco" "preco";
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px;
+  }
+}

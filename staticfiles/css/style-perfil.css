@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+.titulo {
+    text-align: center;
+    margin-bottom: 10vh;
+    margin-top: 5vh;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+.perfil-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    width: 80vw;
+}
+
+.dados {
+    width: 75vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meus-dados {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: grid;
+    height: 30vh;
+    width: 35vw;
+    grid-template-areas: "titulo"
+                         "nome"
+                         "email";
+}
+
+.meus-dados h3 {
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.meus-enderecos {
+    margin: 20px;
+    padding: 20px;
+    height: 30vh;
+    width: 35vw;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.meus-enderecos h3 {
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.novo-endereco {
+    bottom: 0;
+}
+
+.meus-pedidos {
+    margin: 20px;
+    padding: 20px;
+    height: 30vh;
+    width: 35vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.meus-pedidos h3 {
+    margin: 0 auto;
+    font-size: 20px;
+} 
+
+.pedido {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.a-status {
+    text-decoration: none;
+    color: #37a4ac;
+}
+
+.a-status:hover {
+    text-decoration: none;
+    color: #80e8f0;
+}

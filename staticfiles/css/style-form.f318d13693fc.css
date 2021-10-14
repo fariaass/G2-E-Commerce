@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #007bff;
+    background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+                                    
+.card-img-left {
+    width: 45%;
+    /* Link to your background image using in the property below! */
+    background: scroll center url('https://source.unsplash.com/5drSp70oRmY/600x1200');
+    background-size: cover;
+}
+
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+}
+
+
+:root{
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --preto: #1a1a1a;
+}
+
+.content {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    height: 80vh;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px #b6b6b6;
+    text-align: center;
+    background-color: white;
+    min-width: 300px;
+    min-height: 350px;
+}
+
+.title{
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 2px;
+    border-bottom: 2px solid black;
+    width: 12vw;
+    padding-bottom: 10px;
+    font-size: 26px;
+}
+
+/* --------------------------------------- FORMULÁRIO DE CADASTRO --------------------------------------- */
+
+#content-form{
+    display: grid;
+    grid-template-areas:
+    "title" 
+    "form"
+    "btn";
+    place-items: center;
+}
+
+#form-cadastro{
+    display: inline;
+    margin: 0;
+    align-items: left;
+    justify-content: left;
+    grid-area: form;
+}
+
+.control-group{
+    font-family: var(--font);
+    flex-basis: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.control-group .controls{
+    text-align: center;
+}
+
+.control-group label{
+    margin-left: 12px;
+}
+
+#btn[type="submit"] {
+    width: 80%;
+    height: 50px;
+    border: 1px solid #6b6b6b;
+    background: linear-gradient(120deg, #adadad, #4e4e4e);;
+    border-radius: 25px;
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+/* --------------------------------------- FORMULÁRIO DE CADASTRO CONCLUIDO--------------------------------------- */
+
+.text{
+    border: 1px solid var(--preto);
+    border-radius: 10px;
+    padding: 3px;
+    width: 400px;
+    font-size: 16px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.subtitle{
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.link-success{
+    flex-basis: 30%;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid var(--preto);
+    border-radius: 50px;
+}
+
+.btn-link-success{
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    padding: 3px;
+}
+
+.link-success:hover{
+    background-color: var(--preto);
+}
+
+.link-success:hover > .btn-link-success{
+    color: white;
+}
+
+#content-success{
+    text-align: center;
+    font-family: var(--font);
+}
+
+#title-success{
+    margin-top: 20px;
+}
+
+#links{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seta img {
+    position: absolute;
+    height: 5vh;
+    width: 5vh;
+    margin-top: 3vh;
+    margin-left: 3vh;
+    transition: 0.3s;
+}
+
+.seta img:hover {
+    height: 6vh;
+    width: 6vh;
+    transition: 0.3s;
+}
+
+li {
+    list-style: none;
+}
+
+input{
+    width: 80%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+@media screen and (max-width: 650px) {
+    .seta img {
+      display: none;
+    }
+}

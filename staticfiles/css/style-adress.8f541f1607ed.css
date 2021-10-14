@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap%27');
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background: white;
+    font-family: 'PT Sans';
+}
+
+#content{
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20vw;
+    height: 40vh;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px #b6b6b6;
+    text-align: center;
+    background-color: white;
+    min-width: 300px;
+    min-height: 350px;
+}
+
+#title{
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 2px;
+    border-bottom: 2px solid black;
+    width: 12vw;
+    padding-bottom: 10px;
+    font-size: 26px;
+}
+
+.control-group{
+    font-size: 18px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.control-label{
+    padding-top: 10px;
+}
+
+.textinput{
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.control-label {
+    color: black;
+}
+
+button[type="submit"] {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #6b6b6b;
+    background: linear-gradient(120deg, #B2F4D1, #106F3C);
+    border-radius: 25px;
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    margin-top: 3vh
+}
+
+button[type="submit"]:hover {
+    border-color: #000000;
+    transition: .5;
+}
+
+.seta img {
+    position: absolute;
+    height: 5vh;
+    margin-top: 3vh;
+    margin-left: 3vh;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.seta img:hover {
+    height: 6vh;
+    transition: 0.3s;
+}
+
+.signup_link {
+    padding-top: 1.5vh;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+}
+
+.signup_link a{
+    color: #8DA242;
+    text-decoration: none;
+}
+
+.signup_link a:hover {
+    text-decoration: underline;
+}
+
+.login {
+    min-height: 100vh;
+  }
+  
+  .bg-image {
+    background-image: url("../img/login.c0155bfc52e9.svg");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  
+  .login-heading {
+    font-weight: 300;
+  }
+  
+  .btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }
+  
