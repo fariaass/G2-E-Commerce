@@ -1,0 +1,3445 @@
+[
+{
+  "model": "sites.site",
+  "fields": {
+    "domain": "localhost:8000",
+    "name": "localhost:8000"
+  }
+},
+{
+  "model": "socialaccount.socialapp",
+  "pk": 1,
+  "fields": {
+    "provider": "google",
+    "name": "GOOGLE",
+    "client_id": "368714839028-8mh0s9sghoc9banklbng91rm8c83e08f.apps.googleusercontent.com",
+    "secret": "UtpIVNMcUUWY2QoFgbCGgnOV",
+    "key": "",
+    "sites": [
+      [
+        "localhost:8000"
+      ]
+    ]
+  }
+},
+{
+  "model": "socialaccount.socialapp",
+  "pk": 2,
+  "fields": {
+    "provider": "twitter",
+    "name": "Twitter",
+    "client_id": "8IRCny2hbd8C8cxHCjE8EA3tR",
+    "secret": "C44pLs16ckwMHS4lmduZ3EEmt6MzbBiKGVasjO5HLwZneYFRrV",
+    "key": "",
+    "sites": [
+      [
+        "localhost:8000"
+      ]
+    ]
+  }
+},
+{
+  "model": "socialaccount.socialapp",
+  "pk": 3,
+  "fields": {
+    "provider": "facebook",
+    "name": "Facebook",
+    "client_id": "563139348243662",
+    "secret": "c563700e4639d606b9b0146ca0e2ef87",
+    "key": "",
+    "sites": [
+      [
+        "localhost:8000"
+      ]
+    ]
+  }
+},
+{
+  "model": "socialaccount.socialtoken",
+  "pk": 28,
+  "fields": {
+    "app": 1,
+    "account": 28,
+    "token": "ya29.a0ARrdaM_Nh6TBPJdMITv5fjxzCHaERPgosymdeG0555zTCHP3v__YxpG_BQrAGElBqzpT9oyTsf368d1-F4fx-u55GX1s8mBFiMpeDtSQRarXYkdoFeWgGrg4gYwLlB6e4tJ1XR5jftdfy-8dnmz68TddC-DE",
+    "token_secret": "",
+    "expires_at": "2021-10-13T01:12:26.302Z"
+  }
+},
+{
+  "model": "accounts.myuser",
+  "fields": {
+    "password": "pbkdf2_sha256$216000$HriHl7jY0Odm$rmpMae50EV1Ra5uGJXSC2atKzK/gTgpTt23d8Iydtjk=",
+    "last_login": "2021-10-09T22:32:36.554Z",
+    "email": "pedro@pedro.com",
+    "nome_usuario": "Testossauro",
+    "primeiro_nome": "Testinho",
+    "ultimo_nome": "da Silva",
+    "data_criacao": "2021-10-02T14:43:31.426Z",
+    "ultimo_login": "2021-10-06T22:37:14.718Z",
+    "is_admin": true,
+    "is_active": true,
+    "is_staff": true,
+    "is_superuser": true,
+    "contato": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.myuser",
+  "fields": {
+    "password": "pbkdf2_sha256$216000$riSMWqcpJaXt$9MlbYM3oOkfivHT9zvcw3yNuTbmAZ90dhA6nx5MifGU=",
+    "last_login": "2021-10-12T23:27:51.365Z",
+    "email": "pedrolindo@lindo.com",
+    "nome_usuario": "pedro",
+    "primeiro_nome": "pedro",
+    "ultimo_nome": "lindo",
+    "data_criacao": "2021-10-05T16:23:50.444Z",
+    "ultimo_login": "2021-10-05T16:23:50.565Z",
+    "is_admin": true,
+    "is_active": true,
+    "is_staff": true,
+    "is_superuser": true,
+    "contato": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.myuser",
+  "fields": {
+    "password": "pbkdf2_sha256$216000$7qLrAzAncHtx$DdquP+An+CDEv+YmNegPZmuAXn1dAqCsaAQIncMomSk=",
+    "last_login": "2021-10-13T12:48:07.343Z",
+    "email": "pedrolucas4362@gmail.com",
+    "nome_usuario": "Pedro",
+    "primeiro_nome": "Pedro",
+    "ultimo_nome": "Rosa",
+    "data_criacao": "2021-10-05T16:57:57.739Z",
+    "ultimo_login": "2021-10-05T16:57:57.835Z",
+    "is_admin": true,
+    "is_active": true,
+    "is_staff": true,
+    "is_superuser": true,
+    "contato": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.myuser",
+  "fields": {
+    "password": "pbkdf2_sha256$216000$wEheoBWu9TH4$6BW8fyzu0U6wVx3+TqlsTU5n5AlDlHxF0Kga9/zE8vo=",
+    "last_login": "2021-10-09T18:40:58.031Z",
+    "email": "isabel@isabel.corna",
+    "nome_usuario": "bebel",
+    "primeiro_nome": "isabel",
+    "ultimo_nome": "brandes",
+    "data_criacao": "2021-10-09T18:40:57.938Z",
+    "ultimo_login": "2021-10-09T18:40:57.938Z",
+    "is_admin": false,
+    "is_active": true,
+    "is_staff": false,
+    "is_superuser": false,
+    "contato": "47998989898",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.myuser",
+  "fields": {
+    "password": "pbkdf2_sha256$216000$eA038eL2ke3W$LOLNluczYbRqN0gTRfPh4glyCoWunwqcFiRzB/YseWo=",
+    "last_login": "2021-10-13T00:10:28.356Z",
+    "email": "carlos@carlos.carlos",
+    "nome_usuario": "Carlinhos maia",
+    "primeiro_nome": "Carlão",
+    "ultimo_nome": "Rosa",
+    "data_criacao": "2021-10-13T00:05:08.947Z",
+    "ultimo_login": "2021-10-13T00:05:08.947Z",
+    "is_admin": false,
+    "is_active": true,
+    "is_staff": false,
+    "is_superuser": false,
+    "contato": "47999998888",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.myuser",
+  "fields": {
+    "password": "!3Ux6WTWVQmcCzJkqMhM1EOHJjwSSZFeu3t5pOqdr",
+    "last_login": "2021-10-13T00:12:27.593Z",
+    "email": "fabi4362@gmail.com",
+    "nome_usuario": "fabi4362",
+    "primeiro_nome": "Fabiana",
+    "ultimo_nome": "volpato da rosa",
+    "data_criacao": "2021-10-13T00:12:12.942Z",
+    "ultimo_login": "2021-10-13T00:12:12.942Z",
+    "is_admin": false,
+    "is_active": true,
+    "is_staff": false,
+    "is_superuser": false,
+    "contato": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.myuser",
+  "fields": {
+    "password": "pbkdf2_sha256$216000$27A6o9XzBvn3$/3KTqB0V3PiONR19kvU5NyKu+qyPrQXs5m5QOcdOck0=",
+    "last_login": "2021-10-13T17:33:28.988Z",
+    "email": "adriano@sol.app.br",
+    "nome_usuario": "jacare1",
+    "primeiro_nome": "jacaré",
+    "ultimo_nome": "machado",
+    "data_criacao": "2021-10-13T17:28:14.828Z",
+    "ultimo_login": "2021-10-13T17:28:14.828Z",
+    "is_admin": false,
+    "is_active": true,
+    "is_staff": false,
+    "is_superuser": false,
+    "contato": "55679926367",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.endereco",
+  "pk": 6,
+  "fields": {
+    "usuario": [
+      "pedro@pedro.com"
+    ],
+    "nome": "Casa do caralho",
+    "cep": "89110-458",
+    "rua": "Rua Lírio",
+    "numero": 999,
+    "tipo": "C",
+    "bairro": "Figueira",
+    "cidade": "Gaspar",
+    "estado": "SC",
+    "pais": "Brasil",
+    "referencia": "Sei lá nem conheço essa porra"
+  }
+},
+{
+  "model": "accounts.endereco",
+  "pk": 8,
+  "fields": {
+    "usuario": [
+      "pedrolindo@lindo.com"
+    ],
+    "nome": "Pedro bahias",
+    "cep": "89012472",
+    "rua": "Rua João Pessoa",
+    "numero": 15,
+    "tipo": "O",
+    "bairro": "Centro",
+    "cidade": "Blumenau",
+    "estado": "SC",
+    "pais": "Brasil",
+    "referencia": "Casa das bahias"
+  }
+},
+{
+  "model": "accounts.endereco",
+  "pk": 10,
+  "fields": {
+    "usuario": [
+      "pedro@pedro.com"
+    ],
+    "nome": "Casa da Larissa",
+    "cep": "89040-010",
+    "rua": "Rua Raul Deeke",
+    "numero": 630,
+    "tipo": "O",
+    "bairro": "Velha",
+    "cidade": "Blumenau",
+    "estado": "SC",
+    "pais": "Brasil",
+    "referencia": "Rua inclinada pra caralho"
+  }
+},
+{
+  "model": "accounts.endereco",
+  "pk": 11,
+  "fields": {
+    "usuario": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "nome": "Pedro da Rosa",
+    "cep": "89023-510",
+    "rua": "Rua Josephina Zendron",
+    "numero": 100,
+    "tipo": "R",
+    "bairro": "Valparaiso",
+    "cidade": "Blumenau",
+    "estado": "SC",
+    "pais": "Brasil",
+    "referencia": "Casa do POP"
+  }
+},
+{
+  "model": "accounts.endereco",
+  "pk": 14,
+  "fields": {
+    "usuario": [
+      "carlos@carlos.carlos"
+    ],
+    "nome": "Carlos putão",
+    "cep": "88380000",
+    "rua": "paraíba",
+    "numero": 2,
+    "tipo": "C",
+    "bairro": "Camburiú",
+    "cidade": "Balneário Piçarras",
+    "estado": "SC",
+    "pais": "Brasil",
+    "referencia": "Casa do carlos"
+  }
+},
+{
+  "model": "accounts.endereco",
+  "pk": 15,
+  "fields": {
+    "usuario": [
+      "carlos@carlos.carlos"
+    ],
+    "nome": "Carlos putão",
+    "cep": "88380000",
+    "rua": "paraíba",
+    "numero": 2,
+    "tipo": "C",
+    "bairro": "Camburiú",
+    "cidade": "Balneário Piçarras",
+    "estado": "SC",
+    "pais": "Brasil",
+    "referencia": "Casa do carlos"
+  }
+},
+{
+  "model": "accounts.endereco",
+  "pk": 16,
+  "fields": {
+    "usuario": [
+      "pedrolindo@lindo.com"
+    ],
+    "nome": "Casa do Pedrinho do Ceará",
+    "cep": "89012-472",
+    "rua": "Rua João Pessoa",
+    "numero": 15,
+    "tipo": "O",
+    "bairro": "Centro",
+    "cidade": "Blumenau",
+    "estado": "SC",
+    "pais": "Brasil",
+    "referencia": "Frente a casa da mãe Joana"
+  }
+},
+{
+  "model": "accounts.endereco",
+  "pk": 17,
+  "fields": {
+    "usuario": [
+      "adriano@sol.app.br"
+    ],
+    "nome": "Adriano Machado",
+    "cep": "79010340",
+    "rua": "Rua Coronel Zózimo",
+    "numero": 557,
+    "tipo": "O",
+    "bairro": "Coronel Antonino",
+    "cidade": "Campo Grande",
+    "estado": "MS",
+    "pais": "Brasil",
+    "referencia": "De frente ao pub tcno amazonia pub bar"
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 3,
+  "fields": {
+    "nome": "Guarda Roupa Solteiro com Espelho 3 Portas 4 Gavetas sem Banco J&A Móveis Branco",
+    "descricao": "O Guarda Roupa Penteadeira Cancun é um produto completo! Além do espaço convencional, com cabideiro, maleiro e 4 gavetas. Possui também 1 porta com Espelho, com 2 prateleiras internas, e 3 prateleiras externas. Proporciona tudo ao seu alcance na hora de se arrumar! Acabamento em pintura UV verniz brilho de alta qualidade oferecendo maior durabilidade e resistência ao produto. *Banco vendido separadamente.",
+    "preco": "1209.50",
+    "imagem": "media/imagem_2021-10-05_134703.png",
+    "categoria": 2,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 22,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      3
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 4,
+  "fields": {
+    "nome": "Guarda Roupa Solteiro 5 Portas 1 Espelho Single F04 Branco – Mpozenato",
+    "descricao": "Guarda Roupa Single, da Mpozenato, praticidade e organização não vão faltar no seu quarto! Com estrutura 100% em MDF, esse guarda roupas solteiro conta com 5 portas, 2 gavetas, 7 prateleiras e 3 cabideiros, tudo com acabamento em UV fosco texturizado para garantir maior durabilidade ao produto. Além disso, seu design compacto, moderno e com espelho central dá um ar de charme ao quarto de solteiro, criando um ambiente agradável e aconchegante que todo quarto deve e pode ter.",
+    "preco": "3457.89",
+    "imagem": "media/imagem_2021-10-05_134743.png",
+    "categoria": 2,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 12,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      3
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 5,
+  "fields": {
+    "nome": "GUARDA-ROUPA SOLTEIRO MADESA DENVER 2 PORTAS DE CORRER COM ESPELHO BRANCO/CARVALHO – COR:BRANCO/CARVALHO",
+    "descricao": "O Guarda-Roupa Denver da Madesa conta com duas portas de correr com deslizamento suave, trilhos superiores e inferiores em alumínio, dobradiças metálicas e ferragens de qualidade que proporcionam melhor sustentação ao móvel.",
+    "preco": "1200.00",
+    "imagem": "media/imagem_2021-10-05_134829.png",
+    "categoria": 2,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 3,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      3
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 6,
+  "fields": {
+    "nome": "Estante para Livros 5 Prateleiras Multy Artely",
+    "descricao": "Que tal organizar e valorizar a decoração de sua casa com mais estilo e sofisticação? Com a Estante Multy, o ambiente de sua casa fica mais moderno e sofisticado. O excelente acabamento garante maior durabilidade e resistência ao móvel.",
+    "preco": "300.00",
+    "imagem": "media/imagem_2021-10-05_134926.png",
+    "categoria": 2,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      4
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 7,
+  "fields": {
+    "nome": "Conjunto Estantes Para Livros Future 2 Portas Basculantes 6 Prateleiras Pinho/preto – Pnr Móveis",
+    "descricao": "O(a) Estante para Livros Match 1 Porta 3 Prateleiras Pinho/Preto – Artely é produzido em MDF e MDP na escala de brilho Fosca com Textura, e possui um grau de dificuldade de montagem: Médio.\r\nSeu revestimento/acabamento é: Pintura UV e Texturizada.",
+    "preco": "578.60",
+    "imagem": "media/imagem_2021-10-05_135016.png",
+    "categoria": 2,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 4,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      4
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 8,
+  "fields": {
+    "nome": "Estante Xis para Livros e Objetos Branco com 12 Nichos – Artely",
+    "descricao": "Organizador é como podemos definir a Estante Xis, com 04 Prateleiras espaçosos e 12 nichos, nela você poderá organizar livros, porta-retratos e objetos decorativos, pode ser utilizada como divisória de ambiente. Acabamento em pintura UV texturizada, sua manutenção fica muito mais fácil. Aproveite!",
+    "preco": "435.25",
+    "imagem": "media/imagem_2021-10-05_135103.png",
+    "categoria": 2,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 2,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      4
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 9,
+  "fields": {
+    "nome": "Kit poltrona Nina preta + Puff Preto Pés Palitos",
+    "descricao": "Estrutura em Eucalipto e pinus, compensado ou MDF; -Persinta elástica 100% ótimo acabamento – Espuma de alta qualidade, e com procedência; - Suporta até 100 kg com total segurança; - 04 Pés com 30 cm; - Revestimento em tecidos de ótima qualidade",
+    "preco": "298.50",
+    "imagem": "media/imagem_2021-10-05_135231.png",
+    "categoria": 2,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      5
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 10,
+  "fields": {
+    "nome": "Poltrona Reclinável Goya Elétrica - Couro Legítimo",
+    "descricao": "Poltrona do papai reclinável elétrica em couro. Ideal para salas de TV. Imponente, trará seu merecido descanso após um longo dia e a única coisa que você terá que administrar é a disputa por quem sentará nela. Pode também ser feita com reclinação manual ou elétrica. O mecanismo Leggett & Platt e o motor OKIN garantem qualidade e durabilidade.",
+    "preco": "6300.00",
+    "imagem": "media/imagem_2021-10-05_135313.png",
+    "categoria": 2,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      5
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 11,
+  "fields": {
+    "nome": "Poltrona Reclinável Probon Roma em Corino",
+    "descricao": "Poltrona Reclinável Roma Corino – Probon, revestida em couro sintético, produto de ótima qualidade produzido melhor custo beneficio do mercado. Ótima para seu descanso no aconchego do lar. Valoriza o ambiente e é ideal tanto para o quarto quanto para a sala.",
+    "preco": "545.80",
+    "imagem": "media/imagem_2021-10-05_135407.png",
+    "categoria": 2,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      5
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 12,
+  "fields": {
+    "nome": "Poltrona Tilla Suede Azul Turquesa",
+    "descricao": "Cnd Estofados, trás para vocês clientes a Poltrona Tilla \r\nElaborada com materiais de excelente qualidade, a mesma chega agregando conforto e sofisticação.\r\nEssa poltrona é uma ótima escolha para quem quer praticidade e conforto sem perder o charme na hora de decorar.\r\nSem dúvidas é o que faltava para abrilhantar seu ambiente!",
+    "preco": "189.00",
+    "imagem": "media/imagem_2021-10-05_135453.png",
+    "categoria": 2,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      5
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 13,
+  "fields": {
+    "nome": "Avon True Color Batom Ultramatte Vermelho",
+    "descricao": "Batom com acabamento 100% matte. Avon True Color Ultramatte Batom fps 15 oferece um acabamento 100% matte com muito conforto e dá sensação aveludada aos seus lábios. Tenha lábios perfeitos e sem brilho!",
+    "preco": "18.99",
+    "imagem": "media/imagem_2021-10-05_135911.png",
+    "categoria": 3,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 3,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      6
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 14,
+  "fields": {
+    "nome": "Batom Ultracremoso FPS 15 3,6g",
+    "descricao": "Chegou o novo Batom Avon Ultracremoso! Sua nova fórmula além de ser ultra hidratante e trazer maciez nos lábios e contém Vitamina E, Óleo de Abacate e Óleo de Gergelim! O novo formato de bala garante uma aplicação mais precisa, seu blend de óleos promove muito conforto e além de tudo ainda possui uma nova fragrância deliciosa! Com um acabamento cremoso apaixonante e sensação de balm, mantém a hidratação e melhora a aparência dos lábios. Possui cobertura total e uniforme, com cores vivas e vibrantes, sem escorrer ou acumular!",
+    "preco": "17.99",
+    "imagem": "media/imagem_2021-10-05_140008.png",
+    "categoria": 3,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 2,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      6
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 15,
+  "fields": {
+    "nome": "Batom Avon Ultra 8 em 1 3,6g",
+    "descricao": "O Batom Ultra 8 em 1 é pra quem gosta de muito benefício em um único produto! Com seu acabamento acetinado e cores incríveis, ele trata* os lábios deixando-os mais cheios, firmes, volumosos e macios! Tudo isso devido aos seu Complexo UltraImpact, composto por extrato de romã, ácido hialurônico**, colágeno hidrolizado e cafeína. Além de tudo isso, o batom contém vitamina E (antioxidante) que ajuda a retexturizar os lábios para uma aparência mais suave e mais jovem. Em duas semanas, o batom reduz o ressecamento dos lábios em 90%.",
+    "preco": "22.80",
+    "imagem": "media/imagem_2021-10-05_140051.png",
+    "categoria": 3,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      6
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 16,
+  "fields": {
+    "nome": "Base Líquida Soul Leve Pra Pele Bege 20ml",
+    "descricao": "Soul Base Líquida Leve Pra Pele garante toque seco e controle de oleosidade. Rica em vitaminas, contém FPS15.",
+    "preco": "14.99",
+    "imagem": "media/imagem_2021-10-05_140135.png",
+    "categoria": 3,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      7
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 17,
+  "fields": {
+    "nome": "Bulova Relógio masculino automático, com pulseira de aço inoxidável, dourado.",
+    "descricao": "Da Coleção Automática\r\nNovo estilo esportivo em caixa de aço inoxidável IP de dois tons dourado e bronze\r\nMovimento de corda automático\r\nDiâmetro da caixa: 46 mm\r\nResistente à água até 100 m: em geral, adequado para natação e snorkeling, mas não para mergulho",
+    "preco": "3760.40",
+    "imagem": "media/Bulova_Relógio_masculino_automático_com_pulseira_de_aço_inoxidável_dourado.jpg",
+    "categoria": 4,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 4,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      9
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 18,
+  "fields": {
+    "nome": "Base Maybelline Super Stay 24H Cor Nude Light",
+    "descricao": "A base facial Super Stay 24h possui fórmula e tecnologia Super Stay que acompanha você o dia INTEIRO.\r\nUma base liquida com proteção solar que tem ALTA resistência ao calor, umidade, suor e possui média cobertura, cobrindo qualquer imperfeição!",
+    "preco": "61.90",
+    "imagem": "media/imagem_2021-10-05_140345.png",
+    "categoria": 3,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      7
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 19,
+  "fields": {
+    "nome": "Relógio Bulova Masculino Automático Wb31998m 98165 Couro",
+    "descricao": "Relógio Bulova Automático Esqueleto Modelo Wb31998m – 98ª165 Masculino Funções : - Analógico Características : - Bateria – Tampa posterior : Rosqueado Transparente – Resistência a água – Vidro : Cristal Mineral – Mostrador esqueleto prata com detalhes Rose – Material da caixa : Aço Inox preto com aro externo rosê – Material da pulseira : Couro Marrom escuro Medidas : - Diâmetro da caixa : 4,4 cm – Diâmetro do visor : 3,5 cm – Espessura da caixa : 1,1 cm Acompanha : - Nota Fiscal – Manual – Embalagem Bulova – Certificado de garantia de 1 ano.",
+    "preco": "3459.70",
+    "imagem": "media/Relógio_Bulova_Masculino_Automático_Wb31998m_98165_Couro.jpg",
+    "categoria": 4,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      9
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 20,
+  "fields": {
+    "nome": "Relógio Bulova Masculino Automático Modern 96204",
+    "descricao": "Relógio Bulova Masculino Automático 96ª204 Esqueleto Azul Relógio Bulova Automático Esqueleto Modelo 96ª204 Masculino  Funções : - Analógico  Características : - Automático  - Tampa posterior : Rosqueado Transparente – Resistência a água 30m – Vidro : Cristal Mineral com borda azul – Mostrador Azul esqueleto – Material da caixa : Aço – Material da pulseira : Aço Medidas  - Diâmetro da caixa : 4,1 cm   - Diâmetro do visor : 3,5 cm – Espessura da caixa : 1,1 cm  Acompanha : - Nota Fiscal – Manual – Embalagem Bulova – Certificado de garantia de 1 ano pelo fabricante",
+    "preco": "2567.45",
+    "imagem": "media/Relógio_Bulova_Masculino_Automático_Modern_96204.jpg",
+    "categoria": 4,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      9
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 21,
+  "fields": {
+    "nome": "Dior DiorSkin Nude Air Serum 050 Dark Beige – Base Líquida 30ml",
+    "descricao": "Base líquida para todos os tipos de pele. Dior Diorskin Nude Air Serum corrige completamente a pele com acabamento fresco e natural. Dior Diorskin Nude Air Serum possui uma textura sérum fluida e leve que cobre a pele uniformemente, garante uma beleza fresca e natural e deixa um toque aveludado. Seu aplicador preciso em conta-gotas deposita a quantidade exata de produto para criar camada imperceptível de maquiagem com alto poder de correção. Possui formula enriquecida com pigmentos que se adequam a todos os tipos de pele e agentes que proporcionam um efeito radiante e natural.",
+    "preco": "267.80",
+    "imagem": "media/imagem_2021-10-05_140749.png",
+    "categoria": 3,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 2,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      7
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 22,
+  "fields": {
+    "nome": "Anel Solitário de ouro branco 18K polido com diamantes redondos – Stern Noble – 0,30ct",
+    "descricao": "Uma conjugação perfeita entre beleza clássica e visual moderno. Os eternos solitários de diamantes ganham design único e assinatura exclusiva na coleção Stern Noble. O resultado é fruto de uma elegante combinação do Ouro Branco com a arquitetura diferenciada formada por seis grifas que sustentam o diamante central moldando o desenho sutil de uma estrela.",
+    "preco": "19100.00",
+    "imagem": "media/Anel_Solitário_de_ouro_branco_18K_polido_com_diamantes_redondos__Stern_Noble__030ct.jpg",
+    "categoria": 4,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 6,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      10
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 23,
+  "fields": {
+    "nome": "Caneta Delineadora para Olhos Preta 1ml",
+    "descricao": "Caneta delineadora de fácil aplicação para um traço perfeito, seja ele mais fino ou mais espesso. Delineador líquido de secagem rápida, define o contorno dos olhos, proporcionando um delinado profissional. Resistente à água e de longa duração, o delineado não transfere",
+    "preco": "29.99",
+    "imagem": "media/imagem_2021-10-05_140907.png",
+    "categoria": 3,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 1,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      8
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 24,
+  "fields": {
+    "nome": "Meia Aliança de ouro com 10 Diamantes e 5 Cristais de Topázio Sky Blue",
+    "descricao": "Meia Aliança de ouro com 10 Diamantes e 5 Cristais de Topázio Sky Blue\r\nLargura: 10 mm\r\nPeso: 3,4 gramas\r\n10 Diamantes\r\n5 Cristais Topázio Sky Blue\r\nOuro Amarelo 18 Kilates\r\nAcabamento: Polido",
+    "preco": "3345.45",
+    "imagem": "media/Meia_Aliança_de_ouro_com_10_Diamantes_e_5_Cristais_de_Topázio_Sky_Blue.jpg",
+    "categoria": 4,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      10
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 25,
+  "fields": {
+    "nome": "Delineador Líquido para Olhos Azul Hipnose Intense",
+    "descricao": "Sabe aquele item que não pode faltar no nécessaire? O Delineador Líquido para Olhos Azul Hipnose Intense by Manu Gavassi é super pigmentado e possui longa duração. Um produto não tão básico assim para você ficar ainda mais linda com esse tom hipnotizante de azul.",
+    "preco": "43.20",
+    "imagem": "media/imagem_2021-10-05_140949.png",
+    "categoria": 3,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      8
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 26,
+  "fields": {
+    "nome": "Eyeliner Real Brown Mariana Saad - Caneta Delineadora Marrom",
+    "descricao": "Eyeliner Real Brown Mariana Saad Océane e Mari Saad apresentam seis tonalidades de caneta delineadora, todas com cores vibrantes, traço preciso e acabamento cintilante. Para a coleção, Mari buscou inspiração na moda, onde há liberdade para explorar cores e combinações. Aqui, apresenta tons versáteis e democráticos sendo eles o Real Green (verde), Real Dark Green (verde escuro), Real Blue (azul), Real Rose Gold (rose), Real Violet (Violeta) e Real Brown (marrom). – A caneta possui uma ponta de fibra desenvolvida na Coréia do Sul, perfeita para aplicar produtos cintilantes com precisão – Alta Pigmentação – Possui emoliência, o que confere melhor acabamento.",
+    "preco": "37.99",
+    "imagem": "media/imagem_2021-10-05_141038.png",
+    "categoria": 3,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      8
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 27,
+  "fields": {
+    "nome": "Anel de ouro branco 18K com diamantes - MyCollection",
+    "descricao": "Leve, casual e com espírito jovem, a MyCollection tem joias perfeitas para quem está iniciando seu porta-joias com itens clássicos, ou para quem curte joias antenadas e versáteis.",
+    "preco": "2820.00",
+    "imagem": "media/Anel_de_ouro_branco_18K_com_diamantes_-_MyCollection.jpg",
+    "categoria": 4,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 2,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      10
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 28,
+  "fields": {
+    "nome": "BRINCO DE LUXO FOLHEADO A OURO 18K. PEDRAS EM CRISTAIS DE QUARTZO BRANCA.BR0004",
+    "descricao": "Impossível resistir a esse modelo maravilhoso, Brinco com Pedras em Cristais de Quartzo Brancas-Formato de Coração e Navetes Cravejado em Micro Zircônias Brancas. Ideal para tornar a sua composição ainda mais linda. Perfeito para você usar e arrasar por onde passar, especialmente em um evento especial. Seu detalhe lindo rodeado em micro zircônias deixa um ar de elegância e muito luxo! Peça já o seu! Acesse o site da Luxor e encontre esses e outros modelos de brincos disponível para você arrasar por onde passar.",
+    "preco": "207.00",
+    "imagem": "media/BRINCO_DE_LUXO_FOLHEADO_A_OURO_18K._PEDRAS_EM_CRISTAIS_DE_QUARTZO_BRANCA.BR0004.jpg",
+    "categoria": 4,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      11
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 29,
+  "fields": {
+    "nome": "Brinco Swarovski Attract – 5509935",
+    "descricao": "Uma coleção de bijuterias não estaria completa sem estes brincos clássicos. Conjunto de pedras deslumbrantes com corte quadrado, este par esplêndido revestido em tom de ouro rosa é simplesmente elegante. Um item clássico, com certeza você usará sempre.",
+    "preco": "323.40",
+    "imagem": "media/Brinco_Swarovski_Attract__5509935.jpg",
+    "categoria": 4,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 1,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      11
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 30,
+  "fields": {
+    "nome": "Brinco de argola folheado à ouro 18K, pingente patinha",
+    "descricao": "Brinco de argola folheado à ouro 18K com pingente de patinha vazada, uma graça, super moderno e versátil para o dia-a-dia!",
+    "preco": "338.00",
+    "imagem": "media/Brinco_de_argola_folheado_à_ouro_18K_pingente_patinha.jpg",
+    "categoria": 4,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 2,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      11
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 31,
+  "fields": {
+    "nome": "Caneta Hidrográfica, Stabilo, 118.5602, Multicor, pacote de 15",
+    "descricao": "Caneta Hidrográfica Multiuso Extrafina 0.4 mm – Corpo Sextavado em Plástico rígido Point 88/8815-1 Estojo Com 15 Cores neon sortidas. Caneta fabricada pela marca Stabilo.",
+    "preco": "94.70",
+    "imagem": "media/Caneta_Hidrográfica_Stabilo_118.5602_Multicor_pacote_de_15.jpg",
+    "categoria": 5,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 1,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      12
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 32,
+  "fields": {
+    "nome": "Kit com 10 Canetas ponta fina azul",
+    "descricao": "Kit com 10 Canetas ponta fina azul",
+    "preco": "15.90",
+    "imagem": "media/Kit_com_10_Canetas_ponta_fina_azul.jpg",
+    "categoria": 5,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 3,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      12
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 33,
+  "fields": {
+    "nome": "Caneta Esferográfica Retrátil Emborrachada Wow 0,7mm Preta – Pentel",
+    "descricao": "Caneta esferográfica retrátil que possui uma escrita suave com cores vivas, seu corpo triangular proporciona mais conforto e praticidade.",
+    "preco": "3.50",
+    "imagem": "media/Caneta_Esferográfica_Retrátil_Emborrachada_Wow_07mm_Preta__Pentel.jpg",
+    "categoria": 5,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 23,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      12
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 34,
+  "fields": {
+    "nome": "Mochila Hang Loose Sea Notebook Reforçada - Vermelho+Preto",
+    "descricao": "Marca: Hang Loose – Modelo: Red Sea – Material: Poliéster 900D – Cor: Preto C/ Vermelho – Dimensões (A*P*L): 43,5x14x30 cm – Peso: 0,375 kg – Capacidade: 18 litros – Fechamento: Zíper – Compartimento Interno Notebook: Até 15” polegadas – Mochila Hang Loose confeccionada em tecido 100% poliéster 900D resistente – Bolso frontal – Divisória interna – Logo emborrachado – Puxadores em metal – Etiquetas e forro personalizados – Alças ergonômicas e reguláveis – Mochila autêntica e resistente.",
+    "preco": "70.00",
+    "imagem": "media/Mochila_Hang_Loose_Sea_Notebook_Reforçada_-_VermelhoPreto.jpg",
+    "categoria": 5,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      13
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 35,
+  "fields": {
+    "nome": "Mochila Pro – Transporta Notebook até 15.6”, Dell, Mochilas, Preto",
+    "descricao": "Escolha a Mochila Dell Pro 15, feita com um processo de tingimento de solução que respeita mais o meio ambiente do que os processos tradicionais de tingimento e espuma EVA com absorção de choque que protege seu notebook contra o impactos.",
+    "preco": "219.90",
+    "imagem": "media/Mochila_Pro__Transporta_Notebook_até_15.6_Dell_Mochilas_Preto.jpg",
+    "categoria": 5,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      13
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 36,
+  "fields": {
+    "nome": "Mochila Nike Brasilia M 9.0 – 24 Litros",
+    "descricao": "A mochila Nike Brasilia M 9.0 é ideal para quem prioriza organização e praticidade. Com divisória para Notebook e dois compartimentos principais amplos que garantem a visualizam rápida de seus pertences. Os bolsos e divisórias externas são o complemento deste modelo. Possui capacidade de 24 litros, painel traseiro e alças acolchoadas para garantir conforto enquanto a utiliza, reafirmando a qualidade do produto. Garanta já a sua!",
+    "preco": "180.00",
+    "imagem": "media/Mochila_Nike_Brasilia_M_9.0__24_Litros.jpg",
+    "categoria": 5,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      13
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 37,
+  "fields": {
+    "nome": "Lapiseira Automática Pentel Graphgear 1000-0.5mm PG1015",
+    "descricao": "Marca: Pentel\r\nMaterial: Alumínio\r\nTipo de fechamento: Retrátil",
+    "preco": "101.40",
+    "imagem": "media/Lapiseira_Automática_Pentel_Graphgear_1000-0.5mm_PG1015.jpg",
+    "categoria": 5,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      14
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 38,
+  "fields": {
+    "nome": "KIT LAPISEIRA PENTEL GRAPHGEAR 500-0,3-0,5-0,7-0,9",
+    "descricao": "KIT LAPISEIRA PENTEL GRAPHGEAR 500 – 0,3 – 0,5 – 0,7 – 0,9 Com grip de metal e uma ponta fixa de 4 mm Contém 3 grafites e borracha Z2-1 como refil.",
+    "preco": "119.90",
+    "imagem": "media/KIT_LAPISEIRA_PENTEL_GRAPHGEAR_500-03-05-07-09.jpg",
+    "categoria": 5,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      14
+    ]
+  }
+},
+{
+  "model": "produtos.produto",
+  "pk": 39,
+  "fields": {
+    "nome": "Lapiseira Pentel Orenz 0,3 Preta – Sistema Antiquebra Grafit",
+    "descricao": "Lapiseira Pentel Orenz 0.3 mm Preto SM/PP503-A SM/PP503-A",
+    "preco": "29.35",
+    "imagem": "media/Lapiseira_Pentel_Orenz_03_Preta__Sistema_Antiquebra_Grafit.jpg",
+    "categoria": 5,
+    "data_criacao": "2021-10-05",
+    "visualizacoes": 0,
+    "vendas": 0,
+    "is_disponivel": true,
+    "estoque": 20,
+    "tags": [
+      14
+    ]
+  }
+},
+{
+  "model": "carrinho.carrinho",
+  "pk": 1,
+  "fields": {
+    "usuario": [
+      "pedro@pedro.com"
+    ],
+    "produtos": [
+      3,
+      32
+    ]
+  }
+},
+{
+  "model": "carrinho.carrinho",
+  "pk": 2,
+  "fields": {
+    "usuario": [
+      "pedrolindo@lindo.com"
+    ],
+    "produtos": []
+  }
+},
+{
+  "model": "carrinho.carrinho",
+  "pk": 3,
+  "fields": {
+    "usuario": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "produtos": []
+  }
+},
+{
+  "model": "carrinho.carrinho",
+  "pk": 4,
+  "fields": {
+    "usuario": [
+      "isabel@isabel.corna"
+    ],
+    "produtos": []
+  }
+},
+{
+  "model": "carrinho.carrinho",
+  "pk": 5,
+  "fields": {
+    "usuario": [
+      "carlos@carlos.carlos"
+    ],
+    "produtos": []
+  }
+},
+{
+  "model": "carrinho.carrinho",
+  "pk": 6,
+  "fields": {
+    "usuario": [
+      "adriano@sol.app.br"
+    ],
+    "produtos": [
+      17,
+      33
+    ]
+  }
+},
+{
+  "model": "categorias.categoria",
+  "pk": 2,
+  "fields": {
+    "nome": "Móveis",
+    "imagem": "media/categorias/imagem_2021-10-05_141246.png"
+  }
+},
+{
+  "model": "categorias.categoria",
+  "pk": 3,
+  "fields": {
+    "nome": "Beleza",
+    "imagem": "media/categorias/imagem_2021-10-05_135743.png"
+  }
+},
+{
+  "model": "categorias.categoria",
+  "pk": 4,
+  "fields": {
+    "nome": "Acessórios",
+    "imagem": "media/categorias/acessorio.jpg"
+  }
+},
+{
+  "model": "categorias.categoria",
+  "pk": 5,
+  "fields": {
+    "nome": "Material Escolar",
+    "imagem": "media/categorias/Material_Escolar.jpg"
+  }
+},
+{
+  "model": "categorias.tag",
+  "pk": 3,
+  "fields": {
+    "nome": "Guarda-roupa",
+    "imagem": "media/barbie2.jpg"
+  }
+},
+{
+  "model": "categorias.tag",
+  "pk": 4,
+  "fields": {
+    "nome": "Estantes",
+    "imagem": "media/barbie2.jpg"
+  }
+},
+{
+  "model": "categorias.tag",
+  "pk": 5,
+  "fields": {
+    "nome": "Poltronas",
+    "imagem": "media/barbie2.jpg"
+  }
+},
+{
+  "model": "categorias.tag",
+  "pk": 6,
+  "fields": {
+    "nome": "Batom",
+    "imagem": "media/categorias/imagem_2021-10-05_135805.png"
+  }
+},
+{
+  "model": "categorias.tag",
+  "pk": 7,
+  "fields": {
+    "nome": "Base",
+    "imagem": "media/barbie2.jpg"
+  }
+},
+{
+  "model": "categorias.tag",
+  "pk": 8,
+  "fields": {
+    "nome": "Delineador",
+    "imagem": "media/barbie2.jpg"
+  }
+},
+{
+  "model": "categorias.tag",
+  "pk": 9,
+  "fields": {
+    "nome": "Relógio",
+    "imagem": "media/categorias/relogio.jpg"
+  }
+},
+{
+  "model": "categorias.tag",
+  "pk": 10,
+  "fields": {
+    "nome": "Anel",
+    "imagem": "media/categorias/anel.jpg"
+  }
+},
+{
+  "model": "categorias.tag",
+  "pk": 11,
+  "fields": {
+    "nome": "brincos",
+    "imagem": "media/categorias/brincos.jpg"
+  }
+},
+{
+  "model": "categorias.tag",
+  "pk": 12,
+  "fields": {
+    "nome": "Canetas",
+    "imagem": "media/categorias/Canetas.jpg"
+  }
+},
+{
+  "model": "categorias.tag",
+  "pk": 13,
+  "fields": {
+    "nome": "Mochilas",
+    "imagem": "media/categorias/Mochilas.jpg"
+  }
+},
+{
+  "model": "categorias.tag",
+  "pk": 14,
+  "fields": {
+    "nome": "Lapiseira",
+    "imagem": "media/categorias/Lapiseira.jpg"
+  }
+},
+{
+  "model": "pedidos.pedido",
+  "pk": 5,
+  "fields": {
+    "usuario": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "valor": "8460.00",
+    "forma_pagamento": "B",
+    "endereco": 11,
+    "quantidade_produtos": [
+      {
+        "qtd": "3",
+        "preco_unitario": "2820",
+        "Anel de ouro branco 18K com diamantes - MyCollection": "27"
+      }
+    ],
+    "frete": "15.00",
+    "foi_pago": false,
+    "produtos": [
+      27
+    ]
+  }
+},
+{
+  "model": "pedidos.pedido",
+  "pk": 6,
+  "fields": {
+    "usuario": [
+      "pedrolindo@lindo.com"
+    ],
+    "valor": "5086.80",
+    "forma_pagamento": "B",
+    "endereco": 8,
+    "quantidade_produtos": [
+      {
+        "qtd": "2",
+        "preco_unitario": "1209.5",
+        "Guarda Roupa Solteiro com Espelho 3 Portas 4 Gavetas sem Banco J&A Móveis Branco": "3"
+      },
+      {
+        "qtd": "2",
+        "preco_unitario": "1200",
+        "GUARDA-ROUPA SOLTEIRO MADESA DENVER 2 PORTAS DE CORRER COM ESPELHO BRANCO/CARVALHO – COR:BRANCO/CARVALHO": "5"
+      },
+      {
+        "qtd": "1",
+        "preco_unitario": "267.8",
+        "Dior DiorSkin Nude Air Serum 050 Dark Beige – Base Líquida 30ml": "21"
+      }
+    ],
+    "frete": "15.00",
+    "foi_pago": false,
+    "produtos": [
+      3,
+      5,
+      21
+    ]
+  }
+},
+{
+  "model": "pedidos.pedido",
+  "pk": 7,
+  "fields": {
+    "usuario": [
+      "carlos@carlos.carlos"
+    ],
+    "valor": "38200.00",
+    "forma_pagamento": "P",
+    "endereco": 14,
+    "quantidade_produtos": [
+      {
+        "qtd": "2",
+        "preco_unitario": "19100",
+        "Anel Solitário de ouro branco 18K polido com diamantes redondos – Stern Noble – 0,30ct": "22"
+      }
+    ],
+    "frete": "15.00",
+    "foi_pago": false,
+    "produtos": [
+      22
+    ]
+  }
+},
+{
+  "model": "pedidos.pedido",
+  "pk": 8,
+  "fields": {
+    "usuario": [
+      "carlos@carlos.carlos"
+    ],
+    "valor": "38200.00",
+    "forma_pagamento": "B",
+    "endereco": 14,
+    "quantidade_produtos": [
+      {
+        "qtd": "2",
+        "preco_unitario": "19100",
+        "Anel Solitário de ouro branco 18K polido com diamantes redondos – Stern Noble – 0,30ct": "22"
+      }
+    ],
+    "frete": "15.00",
+    "foi_pago": false,
+    "produtos": [
+      22
+    ]
+  }
+},
+{
+  "model": "pedidos.pedido",
+  "pk": 9,
+  "fields": {
+    "usuario": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "valor": "38200.00",
+    "forma_pagamento": "B",
+    "endereco": 11,
+    "quantidade_produtos": [
+      {
+        "qtd": "2",
+        "preco_unitario": "19100",
+        "Anel Solitário de ouro branco 18K polido com diamantes redondos – Stern Noble – 0,30ct": "22"
+      }
+    ],
+    "frete": "0.00",
+    "foi_pago": false,
+    "produtos": [
+      22
+    ]
+  }
+},
+{
+  "model": "pedidos.pedido",
+  "pk": 10,
+  "fields": {
+    "usuario": [
+      "pedro@pedro.com"
+    ],
+    "valor": "564.00",
+    "forma_pagamento": "P",
+    "endereco": 6,
+    "quantidade_produtos": [
+      {
+        "qtd": "2",
+        "preco_unitario": "19100",
+        "Anel Solitário de ouro branco 18K polido com diamantes redondos – Stern Noble – 0,30ct": "22"
+      }
+    ],
+    "frete": "43.00",
+    "foi_pago": false,
+    "produtos": [
+      4,
+      5,
+      6
+    ]
+  }
+},
+{
+  "model": "pedidos.pedido",
+  "pk": 11,
+  "fields": {
+    "usuario": [
+      "pedrolindo@lindo.com"
+    ],
+    "valor": "110.94",
+    "forma_pagamento": "B",
+    "endereco": 8,
+    "quantidade_produtos": [
+      {
+        "qtd": "3",
+        "preco_unitario": "18.99",
+        "Avon True Color Batom Ultramatte Vermelho": "13"
+      },
+      {
+        "qtd": "3",
+        "preco_unitario": "17.99",
+        "Batom Ultracremoso FPS 15 3,6g": "14"
+      }
+    ],
+    "frete": "15.00",
+    "foi_pago": false,
+    "produtos": [
+      13,
+      14
+    ]
+  }
+},
+{
+  "model": "pedidos.pedido",
+  "pk": 12,
+  "fields": {
+    "usuario": [
+      "adriano@sol.app.br"
+    ],
+    "valor": "1223.50",
+    "forma_pagamento": "B",
+    "endereco": 17,
+    "quantidade_produtos": [
+      {
+        "qtd": "1",
+        "preco_unitario": "1209.5",
+        "Guarda Roupa Solteiro com Espelho 3 Portas 4 Gavetas sem Banco J&A Móveis Branco": "3"
+      },
+      {
+        "qtd": "4",
+        "preco_unitario": "3.5",
+        "Caneta Esferográfica Retrátil Emborrachada Wow 0,7mm Preta – Pentel": "33"
+      }
+    ],
+    "frete": "40.00",
+    "foi_pago": false,
+    "produtos": [
+      3,
+      33
+    ]
+  }
+},
+{
+  "model": "socialaccount.socialaccount",
+  "pk": 28,
+  "fields": {
+    "user": [
+      "fabi4362@gmail.com"
+    ],
+    "provider": "google",
+    "uid": "107876497821580650664",
+    "last_login": "2021-10-13T00:12:27.519Z",
+    "date_joined": "2021-10-13T00:12:13.024Z",
+    "extra_data": "{\"id\": \"107876497821580650664\", \"email\": \"fabi4362@gmail.com\", \"verified_email\": true, \"name\": \"Fabiana volpato da rosa\", \"given_name\": \"Fabiana\", \"family_name\": \"volpato da rosa\", \"picture\": \"https://lh3.googleusercontent.com/a-/AOh14Gh6RWSxK6RZV8poSCckqcmzLAX4k1hG4GEUqM6-wA=s96-c\", \"locale\": \"pt-BR\"}"
+  }
+},
+{
+  "model": "account.emailaddress",
+  "pk": 24,
+  "fields": {
+    "user": [
+      "fabi4362@gmail.com"
+    ],
+    "email": "fabi4362@gmail.com",
+    "verified": true,
+    "primary": true
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2021-10-02T15:00:25.313Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "socialaccount",
+      "socialapp"
+    ],
+    "object_id": "1",
+    "object_repr": "GOOGLE",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2021-10-02T17:20:42.379Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "1",
+    "object_repr": "antonio",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2021-10-02T17:22:34.254Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "1",
+    "object_repr": "antonio",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2021-10-04T14:25:38.103Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "sites",
+      "site"
+    ],
+    "object_id": "1",
+    "object_repr": "localhost:8000",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Domain name\", \"Display name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2021-10-04T21:06:11.643Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "categorias",
+      "categoria"
+    ],
+    "object_id": "1",
+    "object_repr": "preto",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2021-10-04T21:06:24.958Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "2",
+    "object_repr": "escuro",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2021-10-04T21:08:08.501Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "1",
+    "object_repr": "ESCRAVO",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2021-10-04T21:14:07.367Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "2",
+    "object_repr": "Privilegio branco",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2021-10-04T22:48:54.812Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "socialaccount",
+      "socialapp"
+    ],
+    "object_id": "2",
+    "object_repr": "Twitter",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2021-10-04T23:30:13.398Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "2",
+    "object_repr": "programmer.lucas.teixeira",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2021-10-05T01:25:33.677Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "socialaccount",
+      "socialapp"
+    ],
+    "object_id": "3",
+    "object_repr": "Facebook",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2021-10-05T14:28:07.903Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "2",
+    "object_repr": "Privilegio branco",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2021-10-05T14:28:07.953Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "1",
+    "object_repr": "ESCRAVO",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2021-10-05T14:28:19.046Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "2",
+    "object_repr": "escuro",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2021-10-05T14:28:31.299Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "categorias",
+      "categoria"
+    ],
+    "object_id": "1",
+    "object_repr": "preto",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2021-10-05T16:32:43.516Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "categorias",
+      "categoria"
+    ],
+    "object_id": "2",
+    "object_repr": "Móveis",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2021-10-05T16:42:20.379Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "categorias",
+      "categoria"
+    ],
+    "object_id": "2",
+    "object_repr": "Móveis",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Imagem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2021-10-05T16:42:43.723Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "3",
+    "object_repr": "Guarda-roupa",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2021-10-05T16:42:53.185Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "4",
+    "object_repr": "Estantes",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2021-10-05T16:43:02.197Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "5",
+    "object_repr": "Poltronas",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2021-10-05T16:47:07.558Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "3",
+    "object_repr": "Guarda Roupa Solteiro com Espelho 3 Portas 4 Gavetas sem Banco J&A Móveis Branco",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2021-10-05T16:47:56.622Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "4",
+    "object_repr": "Guarda Roupa Solteiro 5 Portas 1 Espelho Single F04 Branco – Mpozenato",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2021-10-05T16:48:41.568Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "5",
+    "object_repr": "GUARDA-ROUPA SOLTEIRO MADESA DENVER 2 PORTAS DE CORRER COM ESPELHO BRANCO/CARVALHO – COR:BRANCO/CARVALHO",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2021-10-05T16:49:39.247Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "6",
+    "object_repr": "Estante para Livros 5 Prateleiras Multy Artely",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2021-10-05T16:50:27.145Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "7",
+    "object_repr": "Conjunto Estantes Para Livros Future 2 Portas Basculantes 6 Prateleiras Pinho/preto – Pnr Móveis",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2021-10-05T16:51:14.259Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "8",
+    "object_repr": "Estante Xis para Livros e Objetos Branco com 12 Nichos – Artely",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2021-10-05T16:52:43.729Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "9",
+    "object_repr": "Kit poltrona Nina preta + Puff Preto Pés Palitos",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2021-10-05T16:53:25.249Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "10",
+    "object_repr": "Poltrona Reclinável Goya Elétrica - Couro Legítimo",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2021-10-05T16:54:19.999Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "11",
+    "object_repr": "Poltrona Reclinável Probon Roma em Corino",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2021-10-05T16:55:05.800Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "12",
+    "object_repr": "Poltrona Tilla Suede Azul Turquesa",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2021-10-05T16:57:46.554Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "categorias",
+      "categoria"
+    ],
+    "object_id": "3",
+    "object_repr": "Beleza",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2021-10-05T16:58:09.374Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "6",
+    "object_repr": "Batom",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2021-10-05T16:58:21.291Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "7",
+    "object_repr": "Base",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2021-10-05T16:58:31.433Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "8",
+    "object_repr": "Delineador",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2021-10-05T16:59:24.142Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "13",
+    "object_repr": "Avon True Color Batom Ultramatte Vermelho",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2021-10-05T17:00:29.104Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "categorias",
+      "categoria"
+    ],
+    "object_id": "4",
+    "object_repr": "Acessórios",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2021-10-05T17:00:24.957Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "14",
+    "object_repr": "Batom Ultracremoso FPS 15 3,6g",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2021-10-05T17:01:04.824Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "9",
+    "object_repr": "Relógio",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2021-10-05T17:01:06.651Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "15",
+    "object_repr": "Batom Avon Ultra 8 em 1 3,6g",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2021-10-05T17:01:26.938Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "10",
+    "object_repr": "Anel",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2021-10-05T17:01:46.575Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "16",
+    "object_repr": "Base Líquida Soul Leve Pra Pele Bege 20ml",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2021-10-05T17:02:10.586Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "11",
+    "object_repr": "brincos",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2021-10-05T17:04:04.478Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "17",
+    "object_repr": "Bulova Relógio masculino automático, com pulseira de aço inoxidável, dourado.",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2021-10-05T17:03:58.985Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "18",
+    "object_repr": "Base Maybelline Super Stay 24H Cor Nude Light",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2021-10-05T17:05:23.608Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "19",
+    "object_repr": "Relógio Bulova Masculino Automático Wb31998m 98165 Couro",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2021-10-05T17:08:06.734Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "20",
+    "object_repr": "Relógio Bulova Masculino Automático Modern 96204",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2021-10-05T17:08:06.703Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "21",
+    "object_repr": "Dior DiorSkin Nude Air Serum 050 Dark Beige – Base Líquida 30ml",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2021-10-05T17:09:18.408Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "22",
+    "object_repr": "Anel Solitário de ouro branco 18K polido com diamantes redondos – Stern Noble – 0,30ct",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2021-10-05T17:09:23.004Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "23",
+    "object_repr": "Caneta Delineadora para Olhos Preta 1ml",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2021-10-05T17:10:10.584Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "24",
+    "object_repr": "Meia Aliança de ouro com 10 Diamantes e 5 Cristais de Topázio Sky Blue",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2021-10-05T17:10:10.541Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "25",
+    "object_repr": "Delineador Líquido para Olhos Azul Hipnose Intense",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2021-10-05T17:10:54.243Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "26",
+    "object_repr": "Eyeliner Real Brown Mariana Saad - Caneta Delineadora Marrom",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2021-10-05T17:11:23.643Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "27",
+    "object_repr": "Anel de ouro branco 18K com diamantes - MyCollection",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2021-10-05T17:12:31.187Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "28",
+    "object_repr": "BRINCO DE LUXO FOLHEADO A OURO 18K. PEDRAS EM CRISTAIS DE QUARTZO BRANCA.BR0004",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2021-10-05T17:12:49.253Z",
+    "user": [
+      "pedrolindo@lindo.com"
+    ],
+    "content_type": [
+      "categorias",
+      "categoria"
+    ],
+    "object_id": "2",
+    "object_repr": "Móveis",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Imagem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2021-10-05T17:13:18.250Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "29",
+    "object_repr": "Brinco Swarovski Attract – 5509935",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2021-10-05T17:14:01.304Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "30",
+    "object_repr": "Brinco de argola folheado à ouro 18K, pingente patinha",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2021-10-05T17:18:50.831Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "categorias",
+      "categoria"
+    ],
+    "object_id": "5",
+    "object_repr": "Material Escolar",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2021-10-05T17:19:25.067Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "12",
+    "object_repr": "Canetas",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2021-10-05T17:21:16.672Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "13",
+    "object_repr": "Mochilas",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2021-10-05T17:21:45.471Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "categorias",
+      "tag"
+    ],
+    "object_id": "14",
+    "object_repr": "Lapiseira",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2021-10-05T17:22:46.095Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "31",
+    "object_repr": "Caneta Hidrográfica, Stabilo, 118.5602, Multicor, pacote de 15",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2021-10-05T17:23:49.920Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "32",
+    "object_repr": "Kit com 10 Canetas ponta fina azul",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2021-10-05T17:25:05.180Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "33",
+    "object_repr": "Caneta Esferográfica Retrátil Emborrachada Wow 0,7mm Preta – Pentel",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2021-10-05T17:25:49.432Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "34",
+    "object_repr": "Mochila Hang Loose Sea Notebook Reforçada - Vermelho+Preto",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2021-10-05T17:26:46.186Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "35",
+    "object_repr": "Mochila Pro – Transporta Notebook até 15.6”, Dell, Mochilas, Preto",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2021-10-05T17:28:11.782Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "36",
+    "object_repr": "Mochila Nike Brasilia M 9.0 – 24 Litros",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2021-10-05T17:29:09.670Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "37",
+    "object_repr": "Lapiseira Automática Pentel Graphgear 1000-0.5mm PG1015",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 69,
+  "fields": {
+    "action_time": "2021-10-05T17:30:18.913Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "38",
+    "object_repr": "KIT LAPISEIRA PENTEL GRAPHGEAR 500-0,3-0,5-0,7-0,9",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 70,
+  "fields": {
+    "action_time": "2021-10-05T17:31:12.607Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "produtos",
+      "produto"
+    ],
+    "object_id": "39",
+    "object_repr": "Lapiseira Pentel Orenz 0,3 Preta – Sistema Antiquebra Grafit",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 71,
+  "fields": {
+    "action_time": "2021-10-06T22:36:07.461Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "account",
+      "emailaddress"
+    ],
+    "object_id": "3",
+    "object_repr": "programmer.lucas.teixeira@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 72,
+  "fields": {
+    "action_time": "2021-10-06T22:36:14.022Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "account",
+      "emailaddress"
+    ],
+    "object_id": "2",
+    "object_repr": "lucas.ft2004@aluno.ifsc.edu.br",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 73,
+  "fields": {
+    "action_time": "2021-10-06T22:36:29.898Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "4",
+    "object_repr": "programmer.lucas.teixeira",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 74,
+  "fields": {
+    "action_time": "2021-10-06T22:36:40.975Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "3",
+    "object_repr": "lucas.ft2004",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 75,
+  "fields": {
+    "action_time": "2021-10-06T22:36:51.369Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "socialaccount",
+      "socialaccount"
+    ],
+    "object_id": "5",
+    "object_repr": "Testossauro",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 76,
+  "fields": {
+    "action_time": "2021-10-06T22:36:57.872Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "socialaccount",
+      "socialaccount"
+    ],
+    "object_id": "4",
+    "object_repr": "Testossauro",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 77,
+  "fields": {
+    "action_time": "2021-10-06T22:37:40.557Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "socialaccount",
+      "socialaccount"
+    ],
+    "object_id": "6",
+    "object_repr": "Testossauro",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 78,
+  "fields": {
+    "action_time": "2021-10-06T22:43:14.868Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "socialaccount",
+      "socialaccount"
+    ],
+    "object_id": "8",
+    "object_repr": "lucas.ft2004",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 79,
+  "fields": {
+    "action_time": "2021-10-06T22:43:27.845Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "account",
+      "emailaddress"
+    ],
+    "object_id": "5",
+    "object_repr": "lucas.ft2004@aluno.ifsc.edu.br",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 80,
+  "fields": {
+    "action_time": "2021-10-06T22:44:37.851Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "8",
+    "object_repr": "lucas.ft2004",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 81,
+  "fields": {
+    "action_time": "2021-10-07T00:43:37.300Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "7",
+    "object_repr": "farinhafeio",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 82,
+  "fields": {
+    "action_time": "2021-10-07T03:49:32.681Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "9",
+    "object_repr": "farinhafeio",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 83,
+  "fields": {
+    "action_time": "2021-10-07T03:49:42.671Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "10",
+    "object_repr": "lucas.ft2004",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 84,
+  "fields": {
+    "action_time": "2021-10-07T03:57:34.765Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "12",
+    "object_repr": "lucas.ft2004",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 85,
+  "fields": {
+    "action_time": "2021-10-07T03:57:34.810Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "11",
+    "object_repr": "programmer.lucas.teixeira",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 86,
+  "fields": {
+    "action_time": "2021-10-07T04:16:23.885Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "14",
+    "object_repr": "blabla",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 87,
+  "fields": {
+    "action_time": "2021-10-07T04:16:23.915Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "13",
+    "object_repr": "programmer.lucas.teixeira",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 88,
+  "fields": {
+    "action_time": "2021-10-07T04:20:04.123Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "16",
+    "object_repr": "lucas.ft2004",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 89,
+  "fields": {
+    "action_time": "2021-10-07T04:20:04.149Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "15",
+    "object_repr": "farinhafeio",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 90,
+  "fields": {
+    "action_time": "2021-10-07T04:22:04.168Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "18",
+    "object_repr": "programmer.lucas",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 91,
+  "fields": {
+    "action_time": "2021-10-07T04:22:04.193Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "17",
+    "object_repr": "programmer.lucas.teixeira",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 92,
+  "fields": {
+    "action_time": "2021-10-07T19:15:03.831Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "20",
+    "object_repr": "programmer.lucixeira",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 93,
+  "fields": {
+    "action_time": "2021-10-07T19:15:03.895Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "19",
+    "object_repr": "programmer.lucas.teixeira",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 94,
+  "fields": {
+    "action_time": "2021-10-07T19:24:59.597Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "21",
+    "object_repr": "programmer.lucas.teixeira",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 95,
+  "fields": {
+    "action_time": "2021-10-07T20:00:06.398Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "23",
+    "object_repr": "lucas.ft2004",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 96,
+  "fields": {
+    "action_time": "2021-10-07T20:00:06.451Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "22",
+    "object_repr": "programmer.lucas.teixeira",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 97,
+  "fields": {
+    "action_time": "2021-10-07T20:21:55.308Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "26",
+    "object_repr": "programmer.lucas",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 98,
+  "fields": {
+    "action_time": "2021-10-07T20:21:55.349Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "25",
+    "object_repr": "lucas.ft2004",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 99,
+  "fields": {
+    "action_time": "2021-10-07T20:21:55.376Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "24",
+    "object_repr": "programmer.lucas.teixeira",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 100,
+  "fields": {
+    "action_time": "2021-10-09T18:39:52.893Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "29",
+    "object_repr": "nintendo",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 101,
+  "fields": {
+    "action_time": "2021-10-09T18:39:52.939Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "28",
+    "object_repr": "nintendo",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 102,
+  "fields": {
+    "action_time": "2021-10-09T18:40:00.729Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "accounts",
+      "myuser"
+    ],
+    "object_id": "27",
+    "object_repr": "Isabel",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 103,
+  "fields": {
+    "action_time": "2021-10-11T12:10:02.346Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "pedidos",
+      "pedido"
+    ],
+    "object_id": "4",
+    "object_repr": "Pedido object (4)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 104,
+  "fields": {
+    "action_time": "2021-10-11T12:10:02.395Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "pedidos",
+      "pedido"
+    ],
+    "object_id": "3",
+    "object_repr": "Pedido object (3)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 105,
+  "fields": {
+    "action_time": "2021-10-11T12:10:02.423Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "pedidos",
+      "pedido"
+    ],
+    "object_id": "2",
+    "object_repr": "Pedido object (2)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 106,
+  "fields": {
+    "action_time": "2021-10-11T12:10:02.450Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "pedidos",
+      "pedido"
+    ],
+    "object_id": "1",
+    "object_repr": "Pedido object (1)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 107,
+  "fields": {
+    "action_time": "2021-10-13T12:57:11.498Z",
+    "user": [
+      "pedrolucas4362@gmail.com"
+    ],
+    "content_type": [
+      "categorias",
+      "categoria"
+    ],
+    "object_id": "4",
+    "object_repr": "Acessórios",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Imagem\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 108,
+  "fields": {
+    "action_time": "2021-10-13T14:47:11.920Z",
+    "user": [
+      "pedro@pedro.com"
+    ],
+    "content_type": [
+      "pedidos",
+      "pedido"
+    ],
+    "object_id": "10",
+    "object_repr": "Pedido object (10)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+]
