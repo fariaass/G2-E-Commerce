@@ -254,8 +254,8 @@ def search_in_db(result):
             
     # Pega os produtos das categorias, se elas estiverem presentes na pesquisa e na pesquisa quebrada
     
-    products_categories_1 = Categoria.objects.all().filter(nome__icontains=result)
-    products_categories_2 = Categoria.objects.all().filter(nome__in=result_broke)
+    products_categories_1 = Categorias.objects.all().filter(nome__icontains=result)
+    products_categories_2 = Categorias.objects.all().filter(nome__in=result_broke)
     
     # Pega os produtos das categorias, formata eles em json, e adiciona em uma lista
     
