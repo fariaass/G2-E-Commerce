@@ -103,7 +103,8 @@ SySales, é uma solução em Ecommerce, desenvolvida em Blumenau, através do En
 
 <h2 id="deploy">🌎 Deploy</h2>
 
-O deploy será feito na plataforma Heroku em breve
+O deploy foi feito na plataforma heroku no seguinte link: https://sysales.herokuapp.com/
+porém ainda está sendo atualizada e tendo alguns erros corrigidos
 
 <h2 id="requirements"> 🛠 Pré-requisitos </h2>
 
