@@ -59,7 +59,7 @@
             <div class="cadastrar">
                 <span>Ainda não tenho cadastro</span>
                 <br><br><br>
-                <div class="bt-continuar-comprando"><a href="{% url 'users:cadastrar' %}?next=/pedidos/identificacao/"> Criar cadastro ></a></div>
+                <div class="bt-continuar-comprando"><a href="{% url 'users:cadastrar' %}?next=/pedidos/session-to-account/?authenticated=True"> Criar cadastro ></a></div>
             </div><!--/cadastrar-->
              
             {% endif %}
