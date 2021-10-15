@@ -16,5 +16,5 @@ urlpatterns = [
     path('inicia-pedido/', inicia_pedido, name='inicia-pedido'),
     path('continua-pedido/', continua_pedido, name='continua-pedido'),
     path('finaliza-pedido/<int:fm>/', finaliza_pedido, name='finaliza-pedido'),
-    path('confirmacao/', confirmacao_pedido, name='confirmacao')
+    path('confirmacao/<int:pk>/', confirmacao_pedido, name='confirmacao')
 ]

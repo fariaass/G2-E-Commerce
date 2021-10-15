@@ -4,6 +4,7 @@ from json import loads
 from produtos.models import Produto
 from accounts.models import Endereco
 from pedidos.models import Pedido
+from pedidos.decorators import confere_session
 
 def identificacao(request):
     """
@@ -25,6 +26,7 @@ def identificacao(request):
             return render(request, 'erro.html', {'message': 'Seu carrinho está vazio.'})
 
 
+@confere_session
 @login_required(login_url='/login/')
 def pagamento(request):
     """
@@ -59,24 +61,27 @@ def session_cart_to_account_cart(request):
     return redirect("/pedidos/identificacao/")
 
 
+@confere_session
 @login_required(login_url='/login/')
 def finaliza_pedido(request, fm):
     """
     Esta função pega o numero enviado, confere qual a forma de pagamento, se não existe retorna um template de erro,
     e se existe, pega todas as informações, cria um modelo de pedido e salva. Ao salvar, o carrinho e a sessão são limpos.
     """
-    print("finaliza pedido")
     fms = {1:'B', 2:'P', 3:'C'}
     if fms.get(fm, False):
         endereco = get_object_or_404(Endereco, id=request.session['pedido'].get('endereco'))
         pedido = Pedido.objects.create(usuario=request.user, valor=request.session['pedido'].get('total'), forma_pagamento=fms.get(fm), endereco=endereco, quantidade_produtos=request.session['pedido'].get('qtd'), frete=request.session['pedido'].get('frete'))
         [pedido.produtos.add(i.id) for i in request.user.carrinho.produtos.all()]
         pedido.save()
+        for i in request.user.carrinho.produtos.all():
+            i.vendas += 1
+            i.save()
         request.user.carrinho.produtos.clear()
         del request.session['pedido']
     else:
         return render(request, 'erro.html', {'message': 'Pagina não encontrada.'})
-    return redirect("/")
+    return redirect(f"/pedidos/confirmacao/{pedido.id}/")
 
 
 def inicia_pedido(request):
@@ -114,6 +119,7 @@ def inicia_pedido(request):
     return redirect("/carrinho/")
 
 
+@confere_session
 def continua_pedido(request):
     """
     Esta função pega o pedido já existente na sessão e complementa com o id do endereço escolhido.
@@ -123,10 +129,12 @@ def continua_pedido(request):
     request.session.modified = True
     return redirect("/pedidos/pagamento/")
 
+
+@login_required(login_url='/login/')
 def confirmacao_pedido(request, pk):
     pedido = get_object_or_404(Pedido, pk=pk)
-    if pedido.foi_pago == True:
-        msg = 'Pago'
+    if pedido.foi_pago:
+        msg = True
     else:
-        msg = 'Não pago'
-    return render(request, 'pedidos/confirmacao.html', {'mensagem': msg})
+        msg = False
+    return render(request, 'pedidos/confirmacao.html', {'msg': msg})

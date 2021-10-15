@@ -1,5 +1,7 @@
 .section-confirm {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
 }

@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'pedidos/index-pedidos.html' %}
 
 {% load static %}
 
@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" href="{% static 'css/style-confirmacao.css' %}">
 
-{% if mensagem == 'Pago' %}
+{% if msg%}
 
 <section class="section-confirm">
 
@@ -21,8 +21,14 @@
 
 <section class="section-confirm">
 
-    <p>Seu pagamento ainda não recebido</p> 
+    <h1>Ainda não...</h1>
+    <p>Seu pagamento ainda não foi recebido.</p> 
     <p>Assim que for detectado, seu pedido será encaminhado!</p>
+    <div id="anim">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
 
 </section>
 
