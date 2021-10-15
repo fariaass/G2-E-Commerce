@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'pedidos/index-pedidos.html' %}
 
 {% load static %}
 
@@ -6,7 +6,6 @@
 
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'css/checkout.css' %}">
 <link rel="stylesheet" href="{% static 'css/style-perfil.css' %}">
     
 <section class="perfil-container">
@@ -39,7 +38,15 @@
 
         <!-- Meus endereços -->
 
+        {% if more_than_one %}
+
         <section class="meus-enderecos">
+
+        {% else %}
+
+        <section class="meus-enderecos2">
+
+        {% endif %}
 
             <h3>Meus endereços: </h3><br>
             <div class="novo-endereco">
@@ -48,39 +55,39 @@
 
                 {% for endereco in enderecos %}
 
-                <div class="meus-enderecos">
+                <div class="endereco">
 
                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td class="dados">
                             <table>
                             <tr>
-                                <td align="right"><b>Nome do Endereço:</b></td>
+                                <td align="left"><b>Nome do Endereço:</b></td>
                                 <br><td>{{endereco.nome}}</td>
                             </tr>
                             <tr>
                             <tr>
-                                <td align="right"><b>Destinatario:</b></td>
+                                <td align="left"><b>Destinatario:</b></td>
                                 <td>{{endereco.usuario}}</td>
                             </tr>
                             <tr>
-                                <td align="right"><b>Endereço:</b></td>
+                                <td align="left"><b>Endereço:</b></td>
                                 <td>{{endereco.rua}}, {{endereco.numero}}</td>
                             </tr>
                             <tr>
-                                <td align="right"><b>Bairro:</b></td>
+                                <td align="left"><b>Bairro:</b></td>
                                 <td>{{endereco.bairro}}</td>
                             </tr>
                             <tr>
-                                <td align="right"><b>CEP:</b></td>
+                                <td align="left"><b>CEP:</b></td>
                                 <td>{{endereco.cep}}</td>
                             </tr>
                             <tr>
-                                <td align="right"><b>Cidade:</b></td>
+                                <td align="left"><b>Cidade:</b></td>
                                 <td>{{endereco.cidade}} - {{endereco.estado}} - {{endereco.pais}}</td>
                             </tr>
                             <tr>
-                                <td align="right"><b>Referência:</b></td>
+                                <td align="left"><b>Referência: </b></td>
                                 <td>{{endereco.referencia}}</td>
                             </tr>
                             </table>
@@ -100,10 +107,14 @@
                     <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
                     
                         <tr>
-                            <td align="right"><b>Você não tem nenhum endereço cadastrado.</b></td>
+                            <td align="center"><b>Você não tem nenhum endereço cadastrado.</b></td>
                         </tr>
-
+                        
                     </table>
+
+                        <div>
+                            <a href="{% url 'users:cadastrar_endereco' %}?next=/users/perfil/"><button class="btn-endereco">Cadastre Um</button></a>
+                        </div>
 
                 {% endif %}
             </div><!--/novo-endereco-->

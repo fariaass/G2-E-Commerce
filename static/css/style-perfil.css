@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 
-/* .titulo {
+.titulo {
     text-align: center;
     margin-bottom: 10vh;
     margin-top: 5vh;
@@ -19,7 +19,6 @@
 }
 
 .dados {
-    width: 75vw;
     height: auto;
     display: flex;
     justify-content: center;
@@ -28,6 +27,7 @@
 
 .meus-dados {
     margin: 20px;
+    min-width: 300px;
     padding: 20px;
     border: 1px solid black;
     border-radius: 5px;
@@ -51,11 +51,29 @@
     width: 35vw;
     border: 1px solid black;
     border-radius: 5px;
+    min-width: 200px;
+    overflow-y: scroll;
+}
+
+.meus-enderecos2 {
+    margin: 20px;
+    padding: 20px;
+    height: 30vh;
+    width: 35vw;
+    border: 1px solid black;
+    border-radius: 5px;
+    min-width: 200px;
+    overflow-y: hidden;
+}
+
+.endereco {
+    text-align: left;
 }
 
 .meus-enderecos h3 {
     margin: 0 auto;
     font-size: 20px;
+    text-align: center;
 }
 
 .novo-endereco {
@@ -91,4 +109,26 @@
 .a-status:hover {
     text-decoration: none;
     color: #80e8f0;
-} */
+}
+
+.btn-endereco {
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #37a4ac;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    margin-top: 10vh;
+    min-width: 150px;
+    background: #37a4ac;
+}
+
+.endereco-btn {
+    background: #37a4ac;
+    border: 3px solid #37a4ac;
+    border-radius: 5px;
+}

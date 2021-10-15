@@ -66,4 +66,9 @@ def remover_endereco(request, pk):
 def retorna_perfil(request):
     enderecos = Endereco.objects.all().filter(usuario=request.user.id)
     pedidos = Pedido.objects.all().filter(usuario=request.user.id)
-    return render(request, 'registration/perfil.html', {'enderecos': enderecos, 'pedidos': pedidos})
+    if len(enderecos) > 1:
+        more_than_one = True
+    else:
+        more_than_one = False
+    return render(request, 'registration/perfil.html', {'enderecos': enderecos, 'pedidos': pedidos, 'more_than_one': more_than_one})
+    
