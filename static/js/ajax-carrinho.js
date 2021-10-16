@@ -43,7 +43,6 @@ function devolve_json(){
     }
     var valor_frete = Number(frete[0].innerText);
     total[0].innerText = somatotal + valor_frete;
-    objects.push(valor_frete);
     console.log(objects);
     return objects;
 }

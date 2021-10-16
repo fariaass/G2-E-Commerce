@@ -104,8 +104,6 @@ def inicia_pedido(request):
             dicio['total'] = v
             dados.append(dicio)
             dicio = {}
-        else:
-            frete = v
     
     qtd_produtos = [{get_object_or_404(Produto, id=i['id']).nome: i['id'], 'qtd': i['qtd'], 'preco_unitario': i['unit']} for i in dados]
     total = 0
@@ -113,7 +111,6 @@ def inicia_pedido(request):
         total += float(i['total'])
     request.session['pedido']['qtd'] = qtd_produtos
     request.session['pedido']['total'] = total
-    request.session['pedido']['frete'] = float(frete)
     request.session.modified = True
     print(request.session.get('pedido', False))
     return redirect("/carrinho/")
@@ -124,8 +121,20 @@ def continua_pedido(request):
     """
     Esta função pega o pedido já existente na sessão e complementa com o id do endereço escolhido.
     """
-    endereco = request.GET.get('id')
+    endereco = request.GET.get('id')    
+    obj_endereco = get_object_or_404(Endereco, id=int(endereco))
+    cep = obj_endereco.cep.replace('-', '')
+    cep_str = ''
+    for i in cep:
+        if i.isnumeric():
+            cep_str += i
+    cep = int(cep_str)
+    if cep < 88000000 or cep > 89999999:
+        frete = 40
+    else:
+        frete = 15
     request.session['pedido']['endereco'] = endereco
+    request.session['pedido']['frete'] = frete
     request.session.modified = True
     return redirect("/pedidos/pagamento/")
 
