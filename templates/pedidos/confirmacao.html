@@ -12,8 +12,14 @@
 
 <section class="section-confirm">
 
-    <p>Seu pedido foi pago e está a caminho!</p> 
+    <h1>Perfeito!</h1>
+    <p>Seu pagamento foi recebido e seu pedido está a caminho!</p> 
     <p>Obrigado por comprar conosco!</p>
+    <div class="anim">
+        <div class="div-ok">
+            <img src="{% static 'img/ok.png' %}" alt="Ok" class="ok">
+        </div>
+    </div>
 
 </section>
 
@@ -23,11 +29,12 @@
 
     <h1>Ainda não...</h1>
     <p>Seu pagamento ainda não foi recebido.</p> 
+    <p>Após efetuar o pagamento, reinicie está página.</p>
     <p>Assim que for detectado, seu pedido será encaminhado!</p>
-    <div id="anim">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+    <div class="anim">
+        <div class="circle" id="first"></div>
+        <div class="circle" id="middle"></div>
+        <div class="circle" id="last"></div>
     </div>
 
 </section>
