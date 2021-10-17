@@ -1,5 +1,7 @@
 {% extends 'pedidos/index-pedidos.html' %}
 
+{% load socialaccount %}
+
 {% load static %}
 
 {% block title %}Meu perfil{% endblock %}
@@ -20,19 +22,31 @@
 
             <h3>Meus dados: </h3><br>
             
-            <p>Nome de usuário: {{request.user.nome_usuario}}</p>
-            <p>Email: {{request.user.email}}</p>
+            <p><strong>Nome de usuário</strong>: {{request.user.nome_usuario}}</p>
+            <p><strong>Email</strong>: {{request.user.email}}</p>
 
-            <h4 class="sub-titulo1">Vincular contas: </h4>
-            <div class="facebook">
-                <p>Vincular sua conta com <a href="#">Facebook</a></p>
-            </div>
-            <div class="twitter">
-                <p>Vincular sua conta com <a href="#">Twitter</a></p>
-            </div>
-            <div class="email">
-                <p>Vincular sua conta com <a href="#">Email</a></p>
-            </div>
+            <h3>Vincular contas: </h4><br>
+            
+
+            {% if user.authenticated %}
+
+                <div class="email">
+                    <p>Vincular sua conta com <a class="links" href="{% provider_login_url "google" next="/" process="connect" %}">Email</a></p>
+                </div>
+                <div class="twitter">
+                    <p>Vincular sua conta com <a class="links" href="{% provider_login_url "twitter" next="/" process="connect" %}">Twitter</a></p>
+                </div>
+
+            {% else %}
+
+                <div class="email">
+                    <p>Vincular sua conta com <a class="links" href="{% provider_login_url "google" next="/" %}">Email</a></p>
+                </div>
+                <div class="twitter">
+                    <p>Vincular sua conta com <a class="links" href="{% provider_login_url "twitter" next="/" %}">Twitter</a></p>
+                </div>
+            
+            {% endif %}
 
         </section>
 
@@ -107,7 +121,7 @@
                     <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
                     
                         <tr>
-                            <td align="center"><b>Você não tem nenhum endereço cadastrado.</b></td>
+                            <td align="center"><b>Você não tem <br>nenhum endereço <br>cadastrado.</b></td>
                         </tr>
                         
                     </table>

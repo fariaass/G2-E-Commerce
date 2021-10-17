@@ -32,7 +32,7 @@
     border: 1px solid black;
     border-radius: 5px;
     display: grid;
-    height: 30vh;
+    height: 35vh;
     width: 35vw;
     grid-template-areas: "titulo"
                          "nome"
@@ -41,28 +41,30 @@
 
 .meus-dados h3 {
     margin: 0 auto;
-    font-size: 20px;
+    font-size: 28px;
+    text-align: left;
 }
+
 
 .meus-enderecos {
     margin: 20px;
     padding: 20px;
-    height: 30vh;
+    height: 35vh;
     width: 35vw;
     border: 1px solid black;
     border-radius: 5px;
-    min-width: 200px;
+    min-width: 300px;
     overflow-y: scroll;
 }
 
 .meus-enderecos2 {
     margin: 20px;
     padding: 20px;
-    height: 30vh;
+    height: 35vh;
     width: 35vw;
     border: 1px solid black;
     border-radius: 5px;
-    min-width: 200px;
+    min-width: 450px;
     overflow-y: hidden;
 }
 
@@ -72,7 +74,7 @@
 
 .meus-enderecos h3 {
     margin: 0 auto;
-    font-size: 20px;
+    font-size: 28px;
     text-align: center;
 }
 
@@ -122,7 +124,7 @@
     font-weight: 700;
     cursor: pointer;
     outline: none;
-    margin-top: 10vh;
+    margin-top: 2vh;
     min-width: 150px;
     background: #37a4ac;
 }
@@ -131,4 +133,36 @@
     background: #37a4ac;
     border: 3px solid #37a4ac;
     border-radius: 5px;
+}
+
+.links {
+    color: #37a4ac;
+}
+
+@media screen and (max-height: 800px){
+    .meus-dados{
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-height: 740px){
+    .meus-enderecos2 {
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .titulo {
+        margin-top: 15vh;
+    }
+}
+
+@media screen and (max-width: 650px){   
+    .dados {
+        flex-direction: column;
+    }
+    
+    .meus-enderecos2 {
+        min-height: 310px;
+    }
 }

@@ -27,7 +27,7 @@
         <h1>{% trans "Quase lá..." %}</h1>
         <hr>
         <p>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}Você está de acordo de usar sua conta do {{provider_name}} para se conectar em
-        Swift Root. Para completar seu cadastro, preencha o seguinte campo:{% endblocktrans %}</p>
+        SySales. Para completar seu cadastro, preencha o seguinte campo:{% endblocktrans %}</p>
         <form class="signup" id="signup_form" method="post" action="{% url 'socialaccount_signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
