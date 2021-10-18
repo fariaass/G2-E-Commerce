@@ -27,26 +27,12 @@
 
             <h3>Vincular contas: </h4><br>
             
-
-            {% if user.authenticated %}
-
-                <div class="email">
-                    <p>Vincular sua conta com <a class="links" href="{% provider_login_url "google" next="/" process="connect" %}">Email</a></p>
-                </div>
-                <div class="twitter">
-                    <p>Vincular sua conta com <a class="links" href="{% provider_login_url "twitter" next="/" process="connect" %}">Twitter</a></p>
-                </div>
-
-            {% else %}
-
-                <div class="email">
-                    <p>Vincular sua conta com <a class="links" href="{% provider_login_url "google" next="/" %}">Email</a></p>
-                </div>
-                <div class="twitter">
-                    <p>Vincular sua conta com <a class="links" href="{% provider_login_url "twitter" next="/" %}">Twitter</a></p>
-                </div>
-            
-            {% endif %}
+            <a href="{% provider_login_url "google" next="/" process="connect" %}">
+                <p class="sociallogin google"><i class="fa fa-google"></i> Google</p>
+            </a>
+            <a href="{% provider_login_url "twitter" next="/" process="connect" %}">
+                <p class="sociallogin twitter"><i class="fa fa-twitter"></i> Twitter</p>
+            </a>
 
         </section>
 
@@ -147,7 +133,7 @@
             <p class="nome-pedido">Usuário: {{pedido.usuario}}</p>
             <p class="valor-pedido">Valor: R${{pedido.valor}}</p>
             <p class="endereco-pedido">Endereço: {{pedido.endereco}}</p>
-            <p class="status">Para verificar o status do pedido clique <a class="a-status" href="{% url 'pedidos:confirmacao' %}">aqui</a></p>
+            <p class="status">Para verificar o status do pedido clique <a class="a-status" href="{% url 'pedidos:confirmacao' pk=pedido.id %}">aqui</a></p>
         </div>
 
         {% endfor %}

@@ -32,7 +32,7 @@
     border: 1px solid black;
     border-radius: 5px;
     display: grid;
-    height: 35vh;
+    height: 55vh;
     width: 35vw;
     grid-template-areas: "titulo"
                          "nome"
@@ -49,7 +49,7 @@
 .meus-enderecos {
     margin: 20px;
     padding: 20px;
-    height: 35vh;
+    height: 55vh;
     width: 35vw;
     border: 1px solid black;
     border-radius: 5px;
@@ -60,11 +60,11 @@
 .meus-enderecos2 {
     margin: 20px;
     padding: 20px;
-    height: 35vh;
+    height: 55vh;
     width: 35vw;
     border: 1px solid black;
     border-radius: 5px;
-    min-width: 450px;
+    min-width: 300px;
     overflow-y: hidden;
 }
 
@@ -139,21 +139,36 @@
     color: #37a4ac;
 }
 
-@media screen and (max-height: 800px){
-    .meus-dados{
-        overflow-y: scroll;
-    }
+.sociallogin{
+    border-radius: 10px;
+    text-align: center;
+    height: 25px;
+    width: 100%;
+    text-decoration: none;
+    color: white;
 }
 
-@media screen and (max-height: 740px){
-    .meus-enderecos2 {
-        overflow-y: scroll;
-    }
+.google{
+    background-color: rgb(255, 19, 19);
+}
+
+.twitter{
+    background-color: rgb(29, 155, 240);
 }
 
 @media screen and (max-width: 1000px){
     .titulo {
         margin-top: 15vh;
+    }
+}
+
+@media screen and (max-width: 1099px){
+    .meus-enderecos2 {
+        min-height: 410px;
+    }
+
+    .meus-dados{
+        min-height: 410px;
     }
 }
 
@@ -163,6 +178,8 @@
     }
     
     .meus-enderecos2 {
-        min-height: 310px;
+        min-height: 410px;
     }
+
+
 }

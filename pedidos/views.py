@@ -121,7 +121,7 @@ def continua_pedido(request):
     """
     Esta função pega o pedido já existente na sessão e complementa com o id do endereço escolhido.
     """
-    endereco = request.GET.get('id')    
+    endereco = request.GET.get('id')
     obj_endereco = get_object_or_404(Endereco, id=int(endereco))
     cep = obj_endereco.cep.replace('-', '')
     cep_str = ''

@@ -1,19 +1,10 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from accounts.forms import MyUserForm, EnderecoForm
-from django.shortcuts import get_object_or_404, redirect, render
-from accounts.models import MyUser, Endereco
+from django.shortcuts import redirect, render
+from accounts.models import Endereco
 from carrinho.models import Carrinho
 from pedidos.models import Pedido
-
-@login_required(login_url='/login/')
-def retorna_account(request, pk):
-    """
-    O retorno consiste em um template acompanhado das informações do usuário.
-    """
-    dados = get_object_or_404(MyUser, pk=pk)
-    return render(request, 'EM ABERTO', {'dados':dados})
-
 
 def cadastra_user(request):
     """
@@ -52,6 +43,7 @@ def addEndereco(request):
     return render(request, 'registration/addEndereco.html', {'form':form})
 
 
+@login_required(login_url='/login/')
 def retorna_enderecos(request):
     dados = Endereco.objects.all().filter(usuario=request.user.id)
     return render(request, 'pedidos/endereco.html', {'dados': dados})
@@ -71,4 +63,3 @@ def retorna_perfil(request):
     else:
         more_than_one = False
     return render(request, 'registration/perfil.html', {'enderecos': enderecos, 'pedidos': pedidos, 'more_than_one': more_than_one})
-    
