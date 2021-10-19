@@ -113,7 +113,7 @@ As seguintes ferramentas e tecnologias foram usadas na construção do projeto:
 ```bash
 -Python 3.8  
 -Django  
--MySQL  
+-PostGreSQL  
 -Web Browser HTML5, compativel  
 -Editor de códigos, como o VScode  
 -Repositorio git em github.com
@@ -127,8 +127,6 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 [Git](https://git-scm.com), [Python 3.8](https://www.python.org/). 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-O projeto, enquanto em andamento, está dentro do ambiente virtual com todas as dependências instaladas, então rodar o servidor é muito mais rápido.
-
 <h2 id="executar-rodar">🎲 Rodando a aplicação </h2>
 
 ```bash
@@ -138,11 +136,9 @@ git clone https://github.com/FarinhaProgrammer/G2-E-Commerce.git
 # Acesse a pasta do projeto no terminal/cmd
 cd G2-E-Commerce
 
-# Vá para a pasta do ambiente virtual
-cd Entra21
+# Baixe todas as dependências
 
-# Vá para a pasta do Projeto
-cd Ecommerce
+pip install -r requirements.txt
 
 # Execute a aplicação em modo de desenvolvimento
 python manage.py runserver
