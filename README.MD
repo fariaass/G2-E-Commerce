@@ -44,7 +44,7 @@ SySales, é uma solução em Ecommerce, desenvolvida em Blumenau, através do En
 - [x] Carrinho ligado as sessões
 - [x] Recomendações
 - [x] Responsividade
-- [ ] Fechamento de compra
+- [x] Fechamento de compra
 - [ ] Pagamento via pix
 
 
