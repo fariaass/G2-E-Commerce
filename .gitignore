@@ -70,7 +70,6 @@ docs/_build/
 
 db.sqlite3
 
-local_settings.py
 # ssl/
 
 
